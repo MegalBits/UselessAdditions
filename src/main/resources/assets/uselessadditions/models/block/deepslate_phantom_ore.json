@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "uselessadditions:block/deepslate_phantom_ore"
+  }
+}

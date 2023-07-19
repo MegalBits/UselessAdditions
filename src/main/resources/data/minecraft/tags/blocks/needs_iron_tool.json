@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "uselessadditions:cave_spider_ore",
+    "uselessadditions:deepslate_cave_spider_ore",
+    "uselessadditions:endermite_ore",
+    "uselessadditions:deepslate_endermite_ore",
+    "uselessadditions:guardian_ore",
+    "uselessadditions:deepslate_guardian_ore",
+    "uselessadditions:hoglin_ore",
+    "uselessadditions:deepslate_hoglin_ore",
+    "uselessadditions:magma_cube_ore",
+    "uselessadditions:deepslate_magma_cube_ore",
+    "uselessadditions:silverfish_ore",
+    "uselessadditions:deepslate_silverfish_ore",
+    "uselessadditions:skeleton_ore",
+    "uselessadditions:deepslate_skeleton_ore",
+    "uselessadditions:slime_ore",
+    "uselessadditions:deepslate_slime_ore",
+    "uselessadditions:snow_golem_ore",
+    "uselessadditions:deepslate_snow_golem_ore",
+    "uselessadditions:spider_ore",
+    "uselessadditions:deepslate_spider_ore",
+    "uselessadditions:strider_ore",
+    "uselessadditions:deepslate_strider_ore",
+    "uselessadditions:zombie_ore",
+    "uselessadditions:deepslate_zombie_ore"
+  ]
+}

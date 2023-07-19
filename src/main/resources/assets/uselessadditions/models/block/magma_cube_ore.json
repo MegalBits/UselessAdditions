@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "uselessadditions:block/magma_cube_ore"
+  }
+}

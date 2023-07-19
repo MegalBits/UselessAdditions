@@ -1,0 +1,12 @@
+{
+	"required": true,
+	"package": "net.megal.uselessadditions.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"NaturalMending",
+		"CraftingOutput"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "uselessadditions:ravager_ore",
+    "uselessadditions:deepslate_ravager_ore",
+    "uselessadditions:wither_skeleton_ore",
+    "uselessadditions:deepslate_wither_skeleton_ore",
+    "uselessadditions:warden_ore",
+    "uselessadditions:deepslate_warden_ore"
+  ]
+}

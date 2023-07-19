@@ -1,0 +1,27 @@
+{
+  "replace": false,
+  "values": [
+    "uselessadditions:blaze_ore",
+    "uselessadditions:deepslate_blaze_ore",
+    "uselessadditions:creeper_ore",
+    "uselessadditions:deepslate_creeper_ore",
+    "uselessadditions:enderman_ore",
+    "uselessadditions:deepslate_enderman_ore",
+    "uselessadditions:ghast_ore",
+    "uselessadditions:deepslate_ghast_ore",
+    "uselessadditions:illager_ore",
+    "uselessadditions:deepslate_illager_ore",
+    "uselessadditions:iron_golem_ore",
+    "uselessadditions:deepslate_iron_golem_ore",
+    "uselessadditions:phantom_ore",
+    "uselessadditions:deepslate_phantom_ore",
+    "uselessadditions:piglin_ore",
+    "uselessadditions:deepslate_piglin_ore",
+    "uselessadditions:shulker_ore",
+    "uselessadditions:deepslate_shulker_ore",
+    "uselessadditions:vex_ore",
+    "uselessadditions:deepslate_vex_ore",
+    "uselessadditions:villager_ore",
+    "uselessadditions:deepslate_villager_ore"
+  ]
+}
