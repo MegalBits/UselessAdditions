@@ -214,7 +214,7 @@ public class UItems {
             Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "emerald_hoe"),
                     new UHoeItem(UMaterials.EMERALD, -3, 0.0F, new FabricItemSettings()));
     private static Item createItem() {
-        return createItem();
+        return new Item(new FabricItemSettings());
     }
     public static void itemTabs() {
         ItemGroupEvents.modifyEntriesEvent(UGroups.UAddTab).register(entries -> {
