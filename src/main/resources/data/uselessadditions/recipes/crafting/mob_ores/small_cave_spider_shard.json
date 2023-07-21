@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "uselessadditions:cave_spider_shard"
+    }
+  ],
+  "result": {
+    "item": "uselessadditions:small_cave_spider_shard",
+    "count": 9
+  }
+}

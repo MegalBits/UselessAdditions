@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "uselessadditions:item/small_iron_golem_shard"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "uselessadditions:wither_skeleton_shard"
+    }
+  ],
+  "result": {
+    "item": "uselessadditions:small_wither_skeleton_shard",
+    "count": 9
+  }
+}

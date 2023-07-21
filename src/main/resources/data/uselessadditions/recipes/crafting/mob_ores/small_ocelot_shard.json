@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "uselessadditions:ocelot_shard"
+    }
+  ],
+  "result": {
+    "item": "uselessadditions:small_ocelot_shard",
+    "count": 9
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uselessadditions:small_phantom_shard"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:phantom_shard",
+    "count": 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "uselessadditions:phantom_shard"
+    }
+  ],
+  "result": {
+    "item": "uselessadditions:small_phantom_shard",
+    "count": 9
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "uselessadditions:guardian_shard"
+    }
+  ],
+  "result": {
+    "item": "uselessadditions:small_guardian_shard",
+    "count": 9
+  }
+}

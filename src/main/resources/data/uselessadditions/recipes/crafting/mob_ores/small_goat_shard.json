@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "uselessadditions:goat_shard"
+    }
+  ],
+  "result": {
+    "item": "uselessadditions:small_goat_shard",
+    "count": 9
+  }
+}

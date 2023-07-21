@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uselessadditions:small_strider_shard"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:strider_shard",
+    "count": 1
+  }
+}

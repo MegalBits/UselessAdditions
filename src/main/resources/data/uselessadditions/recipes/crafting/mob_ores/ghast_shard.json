@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uselessadditions:small_ghast_shard"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:ghast_shard",
+    "count": 1
+  }
+}

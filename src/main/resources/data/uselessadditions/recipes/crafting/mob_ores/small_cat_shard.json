@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "uselessadditions:cat_shard"
+    }
+  ],
+  "result": {
+    "item": "uselessadditions:small_cat_shard",
+    "count": 9
+  }
+}

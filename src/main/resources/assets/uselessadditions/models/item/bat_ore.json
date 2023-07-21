@@ -1,6 +1,3 @@
 {
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "uselessadditions:block/bat_ore"
-  }
+  "parent": "uselessadditions:block/bat_ore"
 }

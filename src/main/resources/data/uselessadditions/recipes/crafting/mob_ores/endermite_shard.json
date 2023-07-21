@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uselessadditions:small_endermite_shard"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:endermite_shard",
+    "count": 1
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uselessadditions:small_frog_shard"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:frog_shard",
+    "count": 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "uselessadditions:pig_shard"
+    }
+  ],
+  "result": {
+    "item": "uselessadditions:small_pig_shard",
+    "count": 9
+  }
+}

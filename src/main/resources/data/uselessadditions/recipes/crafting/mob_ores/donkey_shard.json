@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uselessadditions:small_donkey_shard"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:donkey_shard",
+    "count": 1
+  }
+}

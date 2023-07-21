@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "uselessadditions:shulker_shard"
+    }
+  ],
+  "result": {
+    "item": "uselessadditions:small_shulker_shard",
+    "count": 9
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "uselessadditions:squid_shard"
+    }
+  ],
+  "result": {
+    "item": "uselessadditions:small_squid_shard",
+    "count": 9
+  }
+}

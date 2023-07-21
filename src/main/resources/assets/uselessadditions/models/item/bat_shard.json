@@ -1,6 +1,6 @@
 {
-  "parent": "block/cube_all",
+  "parent": "item/generated",
   "textures": {
-    "all": "uselessadditions:block/bat_ore"
+    "layer0": "uselessadditions:item/bat_shard"
   }
 }

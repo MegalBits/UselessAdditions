@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uselessadditions:small_hoglin_shard"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:hoglin_shard",
+    "count": 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "uselessadditions:horse_shard"
+    }
+  ],
+  "result": {
+    "item": "uselessadditions:small_horse_shard",
+    "count": 9
+  }
+}

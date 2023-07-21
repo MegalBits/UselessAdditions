@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uselessadditions:small_bee_shard"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:bee_shard",
+    "count": 1
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uselessadditions:small_turtle_shard"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:turtle_shard",
+    "count": 1
+  }
+}

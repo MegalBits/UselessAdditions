@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "uselessadditions:ghast_shard"
+    }
+  ],
+  "result": {
+    "item": "uselessadditions:small_ghast_shard",
+    "count": 9
+  }
+}

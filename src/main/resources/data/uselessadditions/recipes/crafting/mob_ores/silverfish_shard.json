@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uselessadditions:small_silverfish_shard"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:silverfish_shard",
+    "count": 1
+  }
+}

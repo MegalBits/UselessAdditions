@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "uselessadditions:endermite_shard"
+    }
+  ],
+  "result": {
+    "item": "uselessadditions:small_endermite_shard",
+    "count": 9
+  }
+}

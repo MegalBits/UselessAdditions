@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uselessadditions:small_ravager_shard"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:ravager_shard",
+    "count": 1
+  }
+}

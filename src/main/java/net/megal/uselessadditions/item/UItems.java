@@ -178,6 +178,171 @@ public class UItems {
     public static final Item ZOMBIE_SHARD =
             Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "zombie_shard"),
                     createItem());
+    public static final Item SMALL_ALLAY_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_allay_shard"),
+                    createItem());
+    public static final Item SMALL_AXOLOTL_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_axolotl_shard"),
+                    createItem());
+    public static final Item SMALL_BAT_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_bat_shard"),
+                    createItem());
+    public static final Item SMALL_BEE_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_bee_shard"),
+                    createItem());
+    public static final Item SMALL_BLAZE_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_blaze_shard"),
+                    createItem());
+    public static final Item SMALL_CAT_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_cat_shard"),
+                    createItem());
+    public static final Item SMALL_CAVE_SPIDER_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_cave_spider_shard"),
+                    createItem());
+    public static final Item SMALL_CHICKEN_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_chicken_shard"),
+                    createItem());
+    public static final Item SMALL_COD_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_cod_shard"),
+                    createItem());
+    public static final Item SMALL_COW_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_cow_shard"),
+                    createItem());
+    public static final Item SMALL_CREEPER_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_creeper_shard"),
+                    createItem());
+    public static final Item SMALL_DOLPHIN_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_dolphin_shard"),
+                    createItem());
+    public static final Item SMALL_DONKEY_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_donkey_shard"),
+                    createItem());
+    public static final Item SMALL_ENDERMAN_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_enderman_shard"),
+                    createItem());
+    public static final Item SMALL_ENDERMITE_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_endermite_shard"),
+                    createItem());
+    public static final Item SMALL_FOX_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_fox_shard"),
+                    createItem());
+    public static final Item SMALL_FROG_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_frog_shard"),
+                    createItem());
+    public static final Item SMALL_GHAST_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_ghast_shard"),
+                    createItem());
+    public static final Item SMALL_GLOW_SQUID_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_glow_squid_shard"),
+                    createItem());
+    public static final Item SMALL_GOAT_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_goat_shard"),
+                    createItem());
+    public static final Item SMALL_GUARDIAN_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_guardian_shard"),
+                    createItem());
+    public static final Item SMALL_HOGLIN_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_hoglin_shard"),
+                    createItem());
+    public static final Item SMALL_HORSE_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_horse_shard"),
+                    createItem());
+    public static final Item SMALL_ILLAGER_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_illager_shard"),
+                    createItem());
+    public static final Item SMALL_IRON_GOLEM_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_iron_golem_shard"),
+                    createItem());
+    public static final Item SMALL_LLAMA_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_llama_shard"),
+                    createItem());
+    public static final Item SMALL_MAGMA_CUBE_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_magma_cube_shard"),
+                    createItem());
+    public static final Item SMALL_OCELOT_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_ocelot_shard"),
+                    createItem());
+    public static final Item SMALL_PANDA_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_panda_shard"),
+                    createItem());
+    public static final Item SMALL_PARROT_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_parrot_shard"),
+                    createItem());
+    public static final Item SMALL_PHANTOM_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_phantom_shard"),
+                    createItem());
+    public static final Item SMALL_PIG_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_pig_shard"),
+                    createItem());
+    public static final Item SMALL_PIGLIN_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_piglin_shard"),
+                    createItem());
+    public static final Item SMALL_POLAR_BEAR_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_polar_bear_shard"),
+                    createItem());
+    public static final Item SMALL_PUFFERFISH_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_pufferfish_shard"),
+                    createItem());
+    public static final Item SMALL_RABBIT_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_rabbit_shard"),
+                    createItem());
+    public static final Item SMALL_RAVAGER_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_ravager_shard"),
+                    createItem());
+    public static final Item SMALL_SALMON_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_salmon_shard"),
+                    createItem());
+    public static final Item SMALL_SHEEP_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_sheep_shard"),
+                    createItem());
+    public static final Item SMALL_SHULKER_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_shulker_shard"),
+                    createItem());
+    public static final Item SMALL_SILVERFISH_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_silverfish_shard"),
+                    createItem());
+    public static final Item SMALL_SKELETON_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_skeleton_shard"),
+                    createItem());
+    public static final Item SMALL_SLIME_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_slime_shard"),
+                    createItem());
+    public static final Item SMALL_SNOW_GOLEM_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_snow_golem_shard"),
+                    createItem());
+    public static final Item SMALL_SPIDER_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_spider_shard"),
+                    createItem());
+    public static final Item SMALL_SQUID_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_squid_shard"),
+                    createItem());
+    public static final Item SMALL_STRIDER_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_strider_shard"),
+                    createItem());
+    public static final Item SMALL_TROPICAL_FISH_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_tropical_fish_shard"),
+                    createItem());
+    public static final Item SMALL_TURTLE_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_turtle_shard"),
+                    createItem());
+    public static final Item SMALL_VEX_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_vex_shard"),
+                    createItem());
+    public static final Item SMALL_VILLAGER_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_villager_shard"),
+                    createItem());
+    public static final Item SMALL_WARDEN_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_warden_shard"),
+                    createItem());
+    public static final Item SMALL_WITHER_SKELETON_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_wither_skeleton_shard"),
+                    createItem());
+    public static final Item SMALL_WOLF_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_wolf_shard"),
+                    createItem());
+    public static final Item SMALL_ZOMBIE_SHARD =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_zombie_shard"),
+                    createItem());
     //Materials
     public static final Item MAGIC_INGOT =
             Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "magic_ingot"),
@@ -385,6 +550,61 @@ public class UItems {
             entries.add(WITHER_SKELETON_SHARD.getDefaultStack());
             entries.add(WOLF_SHARD.getDefaultStack());
             entries.add(ZOMBIE_SHARD.getDefaultStack());
+            entries.add(SMALL_ALLAY_SHARD.getDefaultStack());
+            entries.add(SMALL_AXOLOTL_SHARD.getDefaultStack());
+            entries.add(SMALL_BAT_SHARD.getDefaultStack());
+            entries.add(SMALL_BEE_SHARD.getDefaultStack());
+            entries.add(SMALL_BLAZE_SHARD.getDefaultStack());
+            entries.add(SMALL_CAT_SHARD.getDefaultStack());
+            entries.add(SMALL_CAVE_SPIDER_SHARD.getDefaultStack());
+            entries.add(SMALL_CHICKEN_SHARD.getDefaultStack());
+            entries.add(SMALL_COD_SHARD.getDefaultStack());
+            entries.add(SMALL_COW_SHARD.getDefaultStack());
+            entries.add(SMALL_CREEPER_SHARD.getDefaultStack());
+            entries.add(SMALL_DOLPHIN_SHARD.getDefaultStack());
+            entries.add(SMALL_DONKEY_SHARD.getDefaultStack());
+            entries.add(SMALL_ENDERMAN_SHARD.getDefaultStack());
+            entries.add(SMALL_ENDERMITE_SHARD.getDefaultStack());
+            entries.add(SMALL_FOX_SHARD.getDefaultStack());
+            entries.add(SMALL_FROG_SHARD.getDefaultStack());
+            entries.add(SMALL_GHAST_SHARD.getDefaultStack());
+            entries.add(SMALL_GLOW_SQUID_SHARD.getDefaultStack());
+            entries.add(SMALL_GOAT_SHARD.getDefaultStack());
+            entries.add(SMALL_GUARDIAN_SHARD.getDefaultStack());
+            entries.add(SMALL_HOGLIN_SHARD.getDefaultStack());
+            entries.add(SMALL_HORSE_SHARD.getDefaultStack());
+            entries.add(SMALL_ILLAGER_SHARD.getDefaultStack());
+            entries.add(SMALL_IRON_GOLEM_SHARD.getDefaultStack());
+            entries.add(SMALL_LLAMA_SHARD.getDefaultStack());
+            entries.add(SMALL_MAGMA_CUBE_SHARD.getDefaultStack());
+            entries.add(SMALL_OCELOT_SHARD.getDefaultStack());
+            entries.add(SMALL_PANDA_SHARD.getDefaultStack());
+            entries.add(SMALL_PARROT_SHARD.getDefaultStack());
+            entries.add(SMALL_PHANTOM_SHARD.getDefaultStack());
+            entries.add(SMALL_PIG_SHARD.getDefaultStack());
+            entries.add(SMALL_PIGLIN_SHARD.getDefaultStack());
+            entries.add(SMALL_POLAR_BEAR_SHARD.getDefaultStack());
+            entries.add(SMALL_PUFFERFISH_SHARD.getDefaultStack());
+            entries.add(SMALL_RABBIT_SHARD.getDefaultStack());
+            entries.add(SMALL_RAVAGER_SHARD.getDefaultStack());
+            entries.add(SMALL_SALMON_SHARD.getDefaultStack());
+            entries.add(SMALL_SHEEP_SHARD.getDefaultStack());
+            entries.add(SMALL_SHULKER_SHARD.getDefaultStack());
+            entries.add(SMALL_SILVERFISH_SHARD.getDefaultStack());
+            entries.add(SMALL_SKELETON_SHARD.getDefaultStack());
+            entries.add(SMALL_SLIME_SHARD.getDefaultStack());
+            entries.add(SMALL_SNOW_GOLEM_SHARD.getDefaultStack());
+            entries.add(SMALL_SPIDER_SHARD.getDefaultStack());
+            entries.add(SMALL_SQUID_SHARD.getDefaultStack());
+            entries.add(SMALL_STRIDER_SHARD.getDefaultStack());
+            entries.add(SMALL_TROPICAL_FISH_SHARD.getDefaultStack());
+            entries.add(SMALL_TURTLE_SHARD.getDefaultStack());
+            entries.add(SMALL_VEX_SHARD.getDefaultStack());
+            entries.add(SMALL_VILLAGER_SHARD.getDefaultStack());
+            entries.add(SMALL_WARDEN_SHARD.getDefaultStack());
+            entries.add(SMALL_WITHER_SKELETON_SHARD.getDefaultStack());
+            entries.add(SMALL_WOLF_SHARD.getDefaultStack());
+            entries.add(SMALL_ZOMBIE_SHARD.getDefaultStack());
             // Materials
             entries.add(MAGIC_INGOT.getDefaultStack());
             // Tools & Utility

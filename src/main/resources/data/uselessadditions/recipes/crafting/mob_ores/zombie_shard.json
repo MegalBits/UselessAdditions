@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uselessadditions:small_zombie_shard"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:zombie_shard",
+    "count": 1
+  }
+}
