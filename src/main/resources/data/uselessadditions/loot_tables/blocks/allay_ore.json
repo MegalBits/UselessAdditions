@@ -24,8 +24,8 @@
                   }
                 }
               ],
-              "name": "uselessadditions:deepslate_allay_shard"
-                    },
+              "name": "uselessadditions:allay_ore"
+            },
             {
               "type": "minecraft:item",
               "functions": [

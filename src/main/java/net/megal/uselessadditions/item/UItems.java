@@ -344,6 +344,9 @@ public class UItems {
             Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_zombie_shard"),
                     createItem());
     //Materials
+    public static final DamageableItem BUNDLED_FLOWERS =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "bundled_flowers"),
+                    new DamageableItem(new FabricItemSettings().maxCount(1).maxDamage(16)));
     public static final Item MAGIC_INGOT =
             Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "magic_ingot"),
                     createItem());
@@ -606,6 +609,7 @@ public class UItems {
             entries.add(SMALL_WOLF_SHARD.getDefaultStack());
             entries.add(SMALL_ZOMBIE_SHARD.getDefaultStack());
             // Materials
+            entries.add(BUNDLED_FLOWERS.getDefaultStack());
             entries.add(MAGIC_INGOT.getDefaultStack());
             // Tools & Utility
             entries.add(AMETHYST_SWORD.getDefaultStack());

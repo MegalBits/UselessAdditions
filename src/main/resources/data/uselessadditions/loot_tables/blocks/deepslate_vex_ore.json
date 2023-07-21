@@ -24,8 +24,8 @@
                   }
                 }
               ],
-              "name": "uselessadditions:allay_shard"
-                    },
+              "name": "uselessadditions:deepslate_vex_ore"
+            },
             {
               "type": "minecraft:item",
               "functions": [
@@ -47,7 +47,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "uselessadditions:small_allay_shard"
+              "name": "uselessadditions:small_vex_shard"
             }
           ]
         }
