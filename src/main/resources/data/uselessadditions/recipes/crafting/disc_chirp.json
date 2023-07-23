@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "uselessadditions:creeper_shard"
+    },
+    {
+      "item": "uselessadditions:small_creeper_shard"
+    },
+    {
+      "item": "uselessadditions:empty_disc"
+    },
+    {
+      "item": "minecraft:red_wool"
+    },
+    {
+      "item": "minecraft:red_wool"
+    },
+    {
+      "item": "minecraft:diamond"
+    }
+  ],
+  "result": {
+    "item": "minecraft:music_disc_chirp",
+    "count": 1
+  }
+}

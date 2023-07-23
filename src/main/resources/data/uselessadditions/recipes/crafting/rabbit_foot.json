@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "uselessadditions:rabbit_shard"
+    },
+    {
+      "item": "uselessadditions:small_rabbit_shard"
+    },
+    {
+      "item": "minecraft:brown_mushroom"
+    }
+  ],
+  "result": {
+    "item": "minecraft:rabbit_foot",
+    "count": 1
+  }
+}

@@ -48,7 +48,7 @@
   "block.uselessadditions.illager_ore": "Illager Ore",
   "block.uselessadditions.deepslate_illager_ore": "Deepslate Illager Ore",
   "block.uselessadditions.iron_golem_ore": "Iron Golem Ore",
-  "block.uselessadditions.deepslate_iron_golem_ore": "IDeepslate ron Golem Ore",
+  "block.uselessadditions.deepslate_iron_golem_ore": "Deepslate Iron Golem Ore",
   "block.uselessadditions.llama_ore": "Llama Ore",
   "block.uselessadditions.deepslate_llama_ore": "Deepslate Llama Ore",
   "block.uselessadditions.magma_cube_ore": "Magma Cube Ore",
@@ -221,6 +221,9 @@
   "item.uselessadditions.zombie_shard": "Zombie Shard",
   "item.uselessadditions.small_zombie_shard": "Fragmented Zombie Shard",
 
+  "item.uselessadditions.empty_disc": "Template Disc",
+  "item.uselessadditions.fortress_nugget": "Nether Nugget",
+  "item.uselessadditions.fortress_nugget.tooltip": "Spawns in fortress chests",
   "item.uselessadditions.bundled_flowers": "Bundled Flowers",
   "item.uselessadditions.magic_ingot": "Magic Ingot",
 

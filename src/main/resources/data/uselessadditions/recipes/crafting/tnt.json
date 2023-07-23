@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "212",
+    "131",
+    "212"
+  ],
+  "key": {
+    "1": {
+      "item": "uselessadditions:creeper_shard"
+    },
+    "2": [
+      {
+        "item": "minecraft:sand"
+      },
+      {
+        "item": "minecraft:red_sand"
+      }
+    ],
+    "3": {
+      "item": "uselessadditions:small_creeper_shard"
+    }
+  },
+  "result": {
+    "item": "minecraft:tnt",
+    "count": 2
+  }
+}

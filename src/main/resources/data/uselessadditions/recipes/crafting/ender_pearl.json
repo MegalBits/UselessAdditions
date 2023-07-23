@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "212",
+    "131",
+    "212"
+  ],
+  "key": {
+    "1": {
+      "item": "uselessadditions:enderman_shard"
+    },
+    "2": [
+      {
+        "item": "uselessadditions:small_enderman_shard"
+      },
+      {
+        "item": "uselessadditions:small_endermite_shard"
+      }
+    ],
+    "3": {
+      "item": "minecraft:chorus_fruit"
+    }
+  },
+  "result": {
+    "item": "minecraft:ender_pearl",
+    "count": 1
+  }
+}

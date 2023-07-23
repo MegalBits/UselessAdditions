@@ -7,6 +7,7 @@ import net.megal.uselessadditions.item.base.*;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 
 import static net.megal.uselessadditions.block.UBlocks.*;
@@ -344,9 +345,15 @@ public class UItems {
             Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "small_zombie_shard"),
                     createItem());
     //Materials
+    public static final Item EMPTY_DISC =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "empty_disc"),
+                    createItem());
     public static final DamageableItem BUNDLED_FLOWERS =
             Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "bundled_flowers"),
                     new DamageableItem(new FabricItemSettings().maxCount(1).maxDamage(16)));
+    public static final TooltipItem FORTRESS_NUGGET =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "fortress_nugget"),
+                    new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
     public static final Item MAGIC_INGOT =
             Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "magic_ingot"),
                     createItem());
@@ -609,7 +616,9 @@ public class UItems {
             entries.add(SMALL_WOLF_SHARD.getDefaultStack());
             entries.add(SMALL_ZOMBIE_SHARD.getDefaultStack());
             // Materials
+            entries.add(EMPTY_DISC.getDefaultStack());
             entries.add(BUNDLED_FLOWERS.getDefaultStack());
+            entries.add(FORTRESS_NUGGET.getDefaultStack());
             entries.add(MAGIC_INGOT.getDefaultStack());
             // Tools & Utility
             entries.add(AMETHYST_SWORD.getDefaultStack());

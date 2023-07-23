@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    [
+      {
+        "item": "uselessadditions:horse_shard"
+      },
+      {
+        "item": "uselessadditions:donkey_shard"
+      }
+    ],
+    [
+      {
+        "item": "uselessadditions:horse_shard"
+      },
+      {
+        "item": "uselessadditions:donkey_shard"
+      }
+    ],
+    [
+      {
+        "item": "minecraft:wheat"
+      },
+      {
+        "item": "minecraft:apple"
+      }
+    ]
+  ],
+  "result": {
+    "item": "minecraft:leather",
+    "count": 1
+  }
+}

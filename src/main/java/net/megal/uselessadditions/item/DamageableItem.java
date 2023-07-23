@@ -18,8 +18,6 @@ public class DamageableItem extends Item {
 
     @Override
     public ItemStack getRecipeRemainder(ItemStack stack) {
-        UAdd.LOGGER.info(String.valueOf(stack.getDamage()));
-        UAdd.LOGGER.info(String.valueOf(stack.isDamageable()));
         ItemStack alteredStack = new ItemStack(this, stack.getCount());
         alteredStack.setNbt(stack.getNbt());
         alteredStack.setDamage(stack.getDamage()+1);

@@ -12,9 +12,9 @@ import java.util.List;
 
 public class UAllItems {
     //Unused for now
-    public static List<Text> globalTooltips(ItemStack defaultItemStack) {
+    public static List<Text> globalTooltips(ItemStack stack) {
         List<Text> tooltip = new ArrayList<Text>();
-        tooltip.add(Text.translatable("tooltip.uselessadditions.placeholder").formatted(Formatting.GRAY));
+        //tooltip.add(Text.translatable("tooltip.uselessadditions.placeholder").formatted(Formatting.GRAY));
         return tooltip;
     }
     //Changes the default stack for items based on conditions

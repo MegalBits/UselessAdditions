@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "uselessadditions:small_sheep_shard"
+    },
+    {
+      "item": "uselessadditions:sheep_shard"
+    },
+    {
+      "item": "uselessadditions:small_sheep_shard"
+    },
+    {
+      "item": "minecraft:wheat"
+    }
+  ],
+  "result": {
+    "item": "minecraft:wool",
+    "count": 2
+  }
+}
