@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "111",
+    "131",
+    "121"
+  ],
+  "key": {
+    "1": {
+      "item": "uselessadditions:iron_golem_shard"
+    },
+    "2": {
+      "item": "minecraft:experience_bottle"
+    },
+    "3": {
+      "item": "minecraft:poppy"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:iron_golem_spawn_egg",
+    "count": 1
+  }
+}

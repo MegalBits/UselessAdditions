@@ -4,6 +4,7 @@ import net.megal.uselessadditions.UAdd;
 import net.megal.uselessadditions.enchantment.UEnchantments;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.SpawnEggItem;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 
