@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.megal.uselessadditions.UAdd;
 import net.megal.uselessadditions.item.base.*;
+import net.megal.uselessadditions.item.bundles.*;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.item.*;
@@ -11,6 +12,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 
 import static net.megal.uselessadditions.block.UBlocks.*;
 
@@ -380,12 +382,18 @@ public class UItems {
     public static final SpawnEgg CREEPER_SPAWN_EGG =
             Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "creeper_spawn_egg"),
                     createSpawnEgg(EntityType.CREEPER));
+    public static final SpawnEgg DROWNED_SPAWN_EGG =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "drowned_spawn_egg"),
+                    createSpawnEgg(EntityType.DROWNED));
     public static final SpawnEgg DOLPHIN_SPAWN_EGG =
             Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "dolphin_spawn_egg"),
                     createSpawnEgg(EntityType.DOLPHIN));
     public static final SpawnEgg DONKEY_SPAWN_EGG =
             Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "donkey_spawn_egg"),
                     createSpawnEgg(EntityType.DONKEY));
+    public static final SpawnEgg ELDER_GUARDIAN_SPAWN_EGG =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "elder_guardian_spawn_egg"),
+                    createSpawnEgg(EntityType.ELDER_GUARDIAN));
     public static final SpawnEgg ENDERMAN_SPAWN_EGG =
             Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "enderman_spawn_egg"),
                     createSpawnEgg(EntityType.ENDERMAN));
@@ -419,6 +427,9 @@ public class UItems {
     public static final SpawnEgg HORSE_SPAWN_EGG =
             Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "horse_spawn_egg"),
                     createSpawnEgg(EntityType.HORSE));
+    public static final SpawnEgg HUSK_SPAWN_EGG =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "husk_spawn_egg"),
+                    createSpawnEgg(EntityType.HUSK));
     public static final SpawnEgg IRON_GOLEM_SPAWN_EGG =
             Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "iron_golem_spawn_egg"),
                     createSpawnEgg(EntityType.IRON_GOLEM));
@@ -488,6 +499,9 @@ public class UItems {
     public static final SpawnEgg SQUID_SPAWN_EGG =
             Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "squid_spawn_egg"),
                     createSpawnEgg(EntityType.SQUID));
+    public static final SpawnEgg STRAY_SPAWN_EGG =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "stray_spawn_egg"),
+                    createSpawnEgg(EntityType.STRAY));
     public static final SpawnEgg STRIDER_SPAWN_EGG =
             Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "strider_spawn_egg"),
                     createSpawnEgg(EntityType.STRIDER));
@@ -515,12 +529,27 @@ public class UItems {
     public static final SpawnEgg WOLF_SPAWN_EGG =
             Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "wolf_spawn_egg"),
                     createSpawnEgg(EntityType.WOLF));
+    public static final SpawnEgg ZOGLIN_SPAWN_EGG =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "zoglin_spawn_egg"),
+                    createSpawnEgg(EntityType.ZOGLIN));
     public static final SpawnEgg ZOMBIE_SPAWN_EGG =
             Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "zombie_spawn_egg"),
                     createSpawnEgg(EntityType.ZOMBIE));
+    public static final SpawnEgg ZOMBIE_VILLAGER_SPAWN_EGG =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "zombie_villager_spawn_egg"),
+                    createSpawnEgg(EntityType.ZOMBIE_VILLAGER));
+    public static final SpawnEgg ZOMBIFIED_PIGLIN_SPAWN_EGG =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "zombified_piglin_spawn_egg"),
+                    createSpawnEgg(EntityType.ZOMBIFIED_PIGLIN));
     //Materials
     public static final Item EMPTY_DISC =
             Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "empty_disc"),
+                    createItem());
+    public static final Item IRON_BUNDLE_UPGRADE =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "iron_bundle_upgrade"),
+                    createItem());
+    public static final Item DIAMOND_BUNDLE_UPGRADE =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "diamond_bundle_upgrade"),
                     createItem());
     public static final DamageableItem BUNDLED_FLOWERS =
             Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "bundled_flowers"),
@@ -534,7 +563,7 @@ public class UItems {
     public static final Item MAGIC_INGOT =
             Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "magic_ingot"),
                     createItem());
-    //Tools & Utility
+    //Tools
     public static final SwordItem AMETHYST_SWORD =
             Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "amethyst_sword"),
                     new USwordItem(UMaterials.AMETHYST, 3, -2.4F, new FabricItemSettings()));
@@ -565,6 +594,22 @@ public class UItems {
     public static final HoeItem EMERALD_HOE =
             Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "emerald_hoe"),
                     new UHoeItem(UMaterials.EMERALD, -3, 0.0F, new FabricItemSettings()));
+    //Utility
+    public static final Bundle BUNDLE =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "bundle"),
+                    new Bundle(new FabricItemSettings().maxCount(1)));
+    public static final IronBundle IRON_BUNDLE =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "iron_bundle"),
+                    new IronBundle(new FabricItemSettings().maxCount(1)));
+    public static final DiamondBundle DIAMOND_BUNDLE =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "diamond_bundle"),
+                    new DiamondBundle(new FabricItemSettings().maxCount(1)));
+    public static final NetheriteBundle NETHERITE_BUNDLE =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "netherite_bundle"),
+                    new NetheriteBundle(new FabricItemSettings().maxCount(1).fireproof()));
+    public static final DragonBundle DRAGON_BUNDLE =
+            Registry.register(Registries.ITEM, new Identifier(UAdd.MOD_ID, "dragon_bundle"),
+                    new DragonBundle(new FabricItemSettings().maxCount(1).fireproof().rarity(Rarity.EPIC)));
     private static Item createItem() {
         return new Item(new FabricItemSettings());
     }
@@ -809,8 +854,10 @@ public class UItems {
             entries.add(CREEPER_SPAWN_EGG.getDefaultStack());
             entries.add(DOLPHIN_SPAWN_EGG.getDefaultStack());
             entries.add(DONKEY_SPAWN_EGG.getDefaultStack());
+            entries.add(DROWNED_SPAWN_EGG.getDefaultStack());
             entries.add(ENDERMAN_SPAWN_EGG.getDefaultStack());
             entries.add(ENDERMITE_SPAWN_EGG.getDefaultStack());
+            entries.add(ELDER_GUARDIAN_SPAWN_EGG.getDefaultStack());
             entries.add(EVOKER_SPAWN_EGG.getDefaultStack());
             entries.add(FOX_SPAWN_EGG.getDefaultStack());
             entries.add(FROG_SPAWN_EGG.getDefaultStack());
@@ -820,6 +867,7 @@ public class UItems {
             entries.add(GUARDIAN_SPAWN_EGG.getDefaultStack());
             entries.add(HOGLIN_SPAWN_EGG.getDefaultStack());
             entries.add(HORSE_SPAWN_EGG.getDefaultStack());
+            entries.add(HUSK_SPAWN_EGG.getDefaultStack());
             entries.add(IRON_GOLEM_SPAWN_EGG.getDefaultStack());
             entries.add(LLAMA_SPAWN_EGG.getDefaultStack());
             entries.add(MAGMA_CUBE_SPAWN_EGG.getDefaultStack());
@@ -843,6 +891,7 @@ public class UItems {
             entries.add(SNOW_GOLEM_SPAWN_EGG.getDefaultStack());
             entries.add(SPIDER_SPAWN_EGG.getDefaultStack());
             entries.add(SQUID_SPAWN_EGG.getDefaultStack());
+            entries.add(STRAY_SPAWN_EGG.getDefaultStack());
             entries.add(STRIDER_SPAWN_EGG.getDefaultStack());
             entries.add(TROPICAL_FISH_SPAWN_EGG.getDefaultStack());
             entries.add(TURTLE_SPAWN_EGG.getDefaultStack());
@@ -852,14 +901,19 @@ public class UItems {
             entries.add(WARDEN_SPAWN_EGG.getDefaultStack());
             entries.add(WITHER_SKELETON_SPAWN_EGG.getDefaultStack());
             entries.add(WOLF_SPAWN_EGG.getDefaultStack());
+            entries.add(ZOGLIN_SPAWN_EGG.getDefaultStack());
             entries.add(ZOMBIE_SPAWN_EGG.getDefaultStack());
+            entries.add(ZOMBIE_VILLAGER_SPAWN_EGG.getDefaultStack());
+            entries.add(ZOMBIFIED_PIGLIN_SPAWN_EGG.getDefaultStack());
             // Materials
             entries.add(EMPTY_DISC.getDefaultStack());
+            entries.add(IRON_BUNDLE_UPGRADE.getDefaultStack());
+            entries.add(DIAMOND_BUNDLE_UPGRADE.getDefaultStack());
             entries.add(BUNDLED_FLOWERS.getDefaultStack());
             entries.add(FORTRESS_NUGGET.getDefaultStack());
             entries.add(ENDER_PEARL_SHARD.getDefaultStack());
             entries.add(MAGIC_INGOT.getDefaultStack());
-            // Tools & Utility
+            // Tools
             entries.add(AMETHYST_SWORD.getDefaultStack());
             entries.add(AMETHYST_SHOVEL.getDefaultStack());
             entries.add(AMETHYST_PICKAXE.getDefaultStack());
@@ -870,6 +924,12 @@ public class UItems {
             entries.add(EMERALD_PICKAXE.getDefaultStack());
             entries.add(EMERALD_AXE.getDefaultStack());
             entries.add(EMERALD_HOE.getDefaultStack());
+            //Utility
+            entries.add(BUNDLE.getDefaultStack());
+            entries.add(IRON_BUNDLE.getDefaultStack());
+            entries.add(DIAMOND_BUNDLE.getDefaultStack());
+            entries.add(NETHERITE_BUNDLE.getDefaultStack());
+            entries.add(DRAGON_BUNDLE.getDefaultStack());
         });
     }
 }

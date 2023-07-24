@@ -26,7 +26,7 @@ public class DamageableItem extends Item {
 
     @Override
     public void onCraft(ItemStack stack, World world, PlayerEntity player) {
-        UAllItems.unstackItems(stack, player);
+        UAllItems.unstackItems(stack, world, player);
         super.onCraft(stack, world, player);
     }
 }

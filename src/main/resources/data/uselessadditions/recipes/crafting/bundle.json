@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "343",
+    "121",
+    "111"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:leather"
+    },
+    "2": {
+      "item": "minecraft:chest"
+    },
+    "3": {
+      "item": "minecraft:rabbit_hide"
+    },
+    "4": {
+      "item": "minecraft:lead"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:bundle",
+    "count": 1
+  }
+}

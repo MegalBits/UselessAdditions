@@ -2,11 +2,13 @@ package net.megal.uselessadditions.item.base;
 
 import net.megal.uselessadditions.UAdd;
 import net.megal.uselessadditions.enchantment.UEnchantments;
+import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
+import net.minecraft.world.World;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,11 +27,13 @@ public class UAllItems {
     }
 
     //Unstacks stacks
-    public static ItemStack unstackItems(ItemStack stack, PlayerEntity player) {
+    public static ItemStack unstackItems(ItemStack stack, World world, PlayerEntity player) {
         if(stack.getCount() > stack.getMaxCount()) {
-            ItemStack extraStacks = stack.copy();
-            extraStacks.setCount(extraStacks.getCount()-1);
-            player.giveItemStack(extraStacks);
+            for (int i = 0; i < stack.getCount()-1; i++) {
+                if (!world.isClient) {
+                    world.spawnEntity(new ItemEntity(world, player.getX(), player.getY(), player.getZ(), stack));
+                }
+            }
             stack.setCount(1);
         }
         return stack;

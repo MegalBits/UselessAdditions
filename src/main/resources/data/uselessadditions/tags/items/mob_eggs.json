@@ -14,6 +14,8 @@
     "uselessadditions:creeper_spawn_egg",
     "uselessadditions:dolphin_spawn_egg",
     "uselessadditions:donkey_spawn_egg",
+    "uselessadditions:drowned_spawn_egg",
+    "uselessadditions:elder_guardian_spawn_egg",
     "uselessadditions:enderman_spawn_egg",
     "uselessadditions:endermite_spawn_egg",
     "uselessadditions:evoker_spawn_egg",
@@ -25,6 +27,7 @@
     "uselessadditions:guardian_spawn_egg",
     "uselessadditions:hoglin_spawn_egg",
     "uselessadditions:horse_spawn_egg",
+    "uselessadditions:husk_spawn_egg",
     "uselessadditions:iron_golem_spawn_egg",
     "uselessadditions:llama_spawn_egg",
     "uselessadditions:magma_cube_spawn_egg",
@@ -48,6 +51,7 @@
     "uselessadditions:snow_golem_spawn_egg",
     "uselessadditions:spider_spawn_egg",
     "uselessadditions:squid_spawn_egg",
+    "uselessadditions:stray_spawn_egg",
     "uselessadditions:strider_spawn_egg",
     "uselessadditions:tropical_fish_spawn_egg",
     "uselessadditions:turtle_spawn_egg",
@@ -57,6 +61,9 @@
     "uselessadditions:warden_spawn_egg",
     "uselessadditions:wither_skeleton_spawn_egg",
     "uselessadditions:wolf_spawn_egg",
-    "uselessadditions:zombie_spawn_egg"
+    "uselessadditions:zoglin_spawn_egg",
+    "uselessadditions:zombie_spawn_egg",
+    "uselessadditions:zombie_villager_spawn_egg",
+    "uselessadditions:zombified_piglin_spawn_egg"
   ]
 }

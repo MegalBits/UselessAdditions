@@ -1,0 +1,6 @@
+{
+    "parent": "uselessadditions:item/diamond_bundle",
+    "textures": {
+        "layer0": "uselessadditions:item/diamond_bundle_filled"
+    }
+}

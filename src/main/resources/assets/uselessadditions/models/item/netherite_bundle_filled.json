@@ -1,0 +1,6 @@
+{
+    "parent": "uselessadditions:item/netherite_bundle",
+    "textures": {
+        "layer0": "uselessadditions:item/netherite_bundle_filled"
+    }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "uselessadditions:bundle"
+  },
+  "addition": {
+    "item": "uselessadditions:iron_bundle_upgrade"
+  },
+  "result": {
+    "item": "uselessadditions:iron_bundle"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "uselessadditions:netherite_bundle"
+  },
+  "addition": {
+    "item": "minecraft:dragon_egg"
+  },
+  "result": {
+    "item": "uselessadditions:dragon_bundle"
+  }
+}
