@@ -1,24 +1,202 @@
 package net.megal.uselessadditions;
 
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
+import net.fabricmc.fabric.api.loot.v2.LootTableSource;
 import net.megal.uselessadditions.item.UItems;
+import net.minecraft.entity.EntityType;
+import net.minecraft.item.Item;
 import net.minecraft.loot.LootPool;
+import net.minecraft.loot.LootTable;
 import net.minecraft.loot.LootTables;
-import net.minecraft.loot.condition.LootConditionType;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.function.ConditionalLootFunction;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
+import net.minecraft.util.Identifier;
 
 public class ULootTables {
     public static void modifyLootTables() {
         LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
-            if (source.isBuiltin() && LootTables.NETHER_BRIDGE_CHEST.equals(id)) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .conditionally(RandomChanceLootCondition.builder(0.4F))
-                        .with(ItemEntry.builder(UItems.FORTRESS_NUGGET).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1, 4))));
-                tableBuilder.pool(poolBuilder);
-            }
+            lootBuilder(id, LootTables.NETHER_BRIDGE_CHEST, tableBuilder, source, LootPool.builder()
+                    .conditionally(RandomChanceLootCondition.builder(0.4F))
+                    .with(ItemEntry.builder(UItems.FORTRESS_NUGGET).apply(uniformNumber(1,4)))
+            );
+            shardLootBuilder(id, EntityType.ALLAY, UItems.SMALL_ALLAY_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            entityLootBuilder(id, EntityType.ALLAY, tableBuilder, source, LootPool.builder()
+                    .conditionally(RandomChanceLootCondition.builder(0.07F))
+                    .with(ItemEntry.builder(UItems.ALLAY_COOKIE)
+            ));
+            shardLootBuilder(id, EntityType.AXOLOTL, UItems.SMALL_AXOLOTL_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            entityLootBuilder(id, EntityType.AXOLOTL, tableBuilder, source, LootPool.builder()
+                    .conditionally(RandomChanceLootCondition.builder(0.02F))
+                    .with(ItemEntry.builder(UItems.GOLDEN_TROPICAL_FISH)
+                    ));
+            shardLootBuilder(id, EntityType.BAT, UItems.SMALL_BAT_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            entityLootBuilder(id, EntityType.BAT, tableBuilder, source, LootPool.builder()
+                    .conditionally(RandomChanceLootCondition.builder(0.86F))
+                    .with(ItemEntry.builder(UItems.BAT_WING).apply(uniformNumber(1,2))
+                    ));
+            shardLootBuilder(id, EntityType.BEE, UItems.SMALL_BEE_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            entityLootBuilder(id, EntityType.BEE, tableBuilder, source, LootPool.builder()
+                    .conditionally(RandomChanceLootCondition.builder(0.02F))
+                    .with(ItemEntry.builder(UItems.GOLDEN_HONEY_BOTTLE)
+                    ));
+            shardLootBuilder(id, EntityType.BLAZE, UItems.SMALL_BLAZE_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            entityLootBuilder(id, EntityType.BLAZE, tableBuilder, source, LootPool.builder()
+                    .conditionally(RandomChanceLootCondition.builder(0.04F))
+                    .with(ItemEntry.builder(UItems.BLAZE_METAL)
+                    ));
+            shardLootBuilder(id, EntityType.CAT, UItems.SMALL_CAT_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.CAVE_SPIDER, UItems.SMALL_CAVE_SPIDER_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.CHICKEN, UItems.SMALL_CHICKEN_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.COD, UItems.SMALL_COD_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.COW, UItems.SMALL_COW_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.CREEPER, UItems.SMALL_CREEPER_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.DOLPHIN, UItems.SMALL_DOLPHIN_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.DONKEY, UItems.SMALL_DONKEY_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.DROWNED, UItems.SMALL_ZOMBIE_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.ENDERMAN, UItems.SMALL_ENDERMAN_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.ENDERMITE, UItems.SMALL_ENDERMITE_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.ELDER_GUARDIAN, UItems.SMALL_GUARDIAN_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.EVOKER, UItems.SMALL_ILLAGER_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.FOX, UItems.SMALL_FOX_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.FROG, UItems.SMALL_FROG_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.GHAST, UItems.SMALL_GHAST_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.GLOW_SQUID, UItems.SMALL_GLOW_SQUID_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.GOAT, UItems.SMALL_GOAT_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.GUARDIAN, UItems.SMALL_GUARDIAN_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.HOGLIN, UItems.SMALL_HOGLIN_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.HORSE, UItems.SMALL_HORSE_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.HUSK, UItems.SMALL_ZOMBIE_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.IRON_GOLEM, UItems.SMALL_IRON_GOLEM_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.LLAMA, UItems.SMALL_LLAMA_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.MAGMA_CUBE, UItems.SMALL_MAGMA_CUBE_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.OCELOT, UItems.SMALL_OCELOT_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.PANDA, UItems.SMALL_PARROT_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.PARROT, UItems.SMALL_PARROT_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.PHANTOM, UItems.SMALL_PHANTOM_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.PIG, UItems.SMALL_PIG_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.PIGLIN, UItems.SMALL_PIGLIN_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.PIGLIN_BRUTE, UItems.SMALL_PIGLIN_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.PILLAGER, UItems.SMALL_ILLAGER_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.POLAR_BEAR, UItems.SMALL_POLAR_BEAR_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.PUFFERFISH, UItems.SMALL_PUFFERFISH_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.RABBIT, UItems.SMALL_RABBIT_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.RAVAGER, UItems.SMALL_RAVAGER_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.SALMON, UItems.SMALL_SALMON_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.SHEEP, UItems.SMALL_SHEEP_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.SHULKER, UItems.SMALL_SHULKER_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.SILVERFISH, UItems.SMALL_SILVERFISH_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.SKELETON, UItems.SMALL_SKELETON_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.SLIME, UItems.SMALL_SLIME_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.SNOW_GOLEM, UItems.SMALL_SNOW_GOLEM_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.SPIDER, UItems.SMALL_SPIDER_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.SQUID, UItems.SMALL_SQUID_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.STRAY, UItems.SMALL_SKELETON_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.STRIDER, UItems.SMALL_STRIDER_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.TROPICAL_FISH, UItems.SMALL_TROPICAL_FISH_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.TURTLE, UItems.SMALL_TURTLE_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.VEX, UItems.SMALL_VEX_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.VILLAGER, UItems.SMALL_VILLAGER_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.VINDICATOR, UItems.SMALL_ILLAGER_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.WARDEN, UItems.SMALL_WARDEN_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.WITHER_SKELETON, UItems.SMALL_WITHER_SKELETON_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.WOLF, UItems.SMALL_WOLF_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.ZOGLIN, UItems.SMALL_HOGLIN_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.ZOGLIN, UItems.SMALL_ZOMBIE_SHARD, tableBuilder, source,
+                    0.1f, 1, 1);
+            shardLootBuilder(id, EntityType.ZOMBIE, UItems.SMALL_ZOMBIE_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.ZOMBIE_VILLAGER, UItems.SMALL_VILLAGER_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.ZOMBIE_VILLAGER, UItems.SMALL_ZOMBIE_SHARD, tableBuilder, source,
+                    0.1f, 1, 1);
+            shardLootBuilder(id, EntityType.ZOMBIFIED_PIGLIN, UItems.SMALL_PIGLIN_SHARD, tableBuilder, source,
+                    0.2f, 1, 2);
+            shardLootBuilder(id, EntityType.ZOMBIFIED_PIGLIN, UItems.SMALL_ZOMBIE_SHARD, tableBuilder, source,
+                    0.1f, 1, 1);
         });
+    }
+    private static ConditionalLootFunction.Builder<?> uniformNumber(int min, int max) {
+        return SetCountLootFunction.builder(UniformLootNumberProvider.create(min, max));
+    }
+    private static void shardLootBuilder(Identifier id, EntityType<?> entity, Item item, LootTable.Builder tableBuilder, LootTableSource source, float chance, int min, int max) {
+        entityLootBuilder(id, entity, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumber(min,max)))
+        );
+    }
+    private static void lootBuilder(Identifier id, Identifier otherId, LootTable.Builder tableBuilder, LootTableSource source, LootPool.Builder builder) {
+        if (source.isBuiltin() && otherId.equals(id)) {
+            tableBuilder.pool(builder);
+        }
+    }
+    private static void entityLootBuilder(Identifier id, EntityType<?> entity, LootTable.Builder tableBuilder, LootTableSource source, LootPool.Builder builder) {
+        if (source.isBuiltin() && entity.getLootTableId().equals(id)) {
+            tableBuilder.pool(builder);
+        }
     }
 }

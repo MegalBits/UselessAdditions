@@ -7,7 +7,6 @@ import net.minecraft.util.math.MathHelper;
 
 public class UBundles {
     //Sends back the amount of additional space that a bundle will take up whilst inside another
-    private static double i = 1;
     public static int getBundleSpace(ItemStack stack, int occupancy) {
         //Would use switch here but idk how to use it with instanceof
         if (stack.getItem() instanceof Bundle) {
