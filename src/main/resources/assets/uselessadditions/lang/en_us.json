@@ -303,10 +303,9 @@
   "item.uselessadditions.allay_cookie.tooltip": "Rare allay drop",
   "item.uselessadditions.bat_wing": "Bat Wing",
   "item.uselessadditions.boneless_bat_wing": "Boneless Bat Wing",
-  "item.uselessadditions.golden_honey_bottle": "Golden Honey Bottle",
-  "item.uselessadditions.golden_honey_bottle.tooltip": "Rare bee drop",
-  "item.uselessadditions.golden_tropical_fish": "Golden Tropical Fish",
-  "item.uselessadditions.golden_tropical_fish.tooltip": "Rare axolotl drop",
+  "item.uselessadditions.bee_stinger": "Bee Stinger",
+  "item.uselessadditions.bee_stinger.tooltip": "Rare bee drop",
+  "item.uselessadditions.raw_axolotl": "Raw Axolotl",
 
   "item.uselessadditions.bundle": "Leather Bundle",
   "item.uselessadditions.iron_bundle": "Iron Bundle",
@@ -324,8 +323,16 @@
   "item.uselessadditions.emerald_pickaxe": "Emerald Pickaxe",
   "item.uselessadditions.emerald_axe": "Emerald Axe",
   "item.uselessadditions.emerald_hoe": "Emerald Hoe",
+  "item.uselessadditions.blaze_metal_sword": "Blaze-Metal Sword",
+  "item.uselessadditions.blaze_metal_shovel": "Blaze-Metal Shovel",
+  "item.uselessadditions.blaze_metal_pickaxe": "Blaze-Metal Pickaxe",
+  "item.uselessadditions.blaze_metal_axe": "Blaze-Metal Axe",
+  "item.uselessadditions.blaze_metal_hoe": "Blaze-Metal Hoe",
 
   "itemgroup.uadd": "Useless Additions",
 
-  "enchantment.uselessadditions.natural_mending": "Crystalized Mending"
+  "enchantment.uselessadditions.auto_smelt": "Auto Smelting",
+  "enchantment.uselessadditions.auto_smelt.description": "Automatically smelts any blocks mined.",
+  "enchantment.uselessadditions.natural_mending": "Crystalized Mending",
+  "enchantment.uselessadditions.natural_mending.description": "Repairs the durability of armor and tools with XP."
 }

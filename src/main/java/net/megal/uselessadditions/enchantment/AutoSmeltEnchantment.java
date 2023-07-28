@@ -11,17 +11,17 @@ import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 
-public class NaturalMendingEnchantment extends Enchantment {
-    public NaturalMendingEnchantment(Enchantment.Rarity weight, EquipmentSlot ... slotTypes) {
-        super(weight, EnchantmentTarget.BREAKABLE, slotTypes);
+public class AutoSmeltEnchantment extends Enchantment {
+    public AutoSmeltEnchantment(Rarity weight, EquipmentSlot ... slotTypes) {
+        super(weight, EnchantmentTarget.DIGGER, slotTypes);
     }
     @Override
     public int getMinPower(int level) {
-        return 10;
+        return 5;
     }
     @Override
     public int getMaxPower(int level) {
-        return 35;
+        return 40;
     }
     @Override
     public boolean isAvailableForEnchantedBookOffer() {
@@ -37,20 +37,17 @@ public class NaturalMendingEnchantment extends Enchantment {
     }
     @Override
     public boolean isAcceptableItem(ItemStack stack) {
-        return stack.isIn(UAdd.NATURAL_MENDING);
+        return stack.isIn(UAdd.AUTO_SMELT);
     }
     @Override
     public boolean canAccept(Enchantment other) {
-        if (other instanceof MendingEnchantment) {
-            return false;
-        }
         return super.canAccept(other);
     }
     @Override
     public Text getName(int level) {
         MutableText mutableText = Text.translatable(this.getTranslationKey());
         if (this.isCursed()) {
-            mutableText.formatted(Formatting.LIGHT_PURPLE);
+            mutableText.formatted(Formatting.GOLD);
         } else {
             mutableText.formatted(Formatting.GRAY);
         }

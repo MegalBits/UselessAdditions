@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "uselessadditions:blaze_metal_sword",
+    "uselessadditions:blaze_metal_shovel",
+    "uselessadditions:blaze_metal_pickaxe",
+    "uselessadditions:blaze_metal_axe",
+    "uselessadditions:blaze_metal_hoe"
+  ]
+}

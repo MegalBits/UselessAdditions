@@ -11,7 +11,12 @@ import net.minecraft.loot.LootTables;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.ConditionalLootFunction;
+import net.minecraft.loot.function.LootFunctionTypes;
+import net.minecraft.loot.function.LootingEnchantLootFunction;
 import net.minecraft.loot.function.SetCountLootFunction;
+import net.minecraft.loot.provider.number.LootNumberProvider;
+import net.minecraft.loot.provider.number.LootNumberProviderType;
+import net.minecraft.loot.provider.number.LootNumberProviderTypes;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.util.Identifier;
 
@@ -20,7 +25,7 @@ public class ULootTables {
         LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
             lootBuilder(id, LootTables.NETHER_BRIDGE_CHEST, tableBuilder, source, LootPool.builder()
                     .conditionally(RandomChanceLootCondition.builder(0.4F))
-                    .with(ItemEntry.builder(UItems.FORTRESS_NUGGET).apply(uniformNumber(1,4)))
+                    .with(ItemEntry.builder(UItems.FORTRESS_NUGGET).apply(uniformNumberBuilder(1,4)))
             );
             shardLootBuilder(id, EntityType.ALLAY, UItems.SMALL_ALLAY_SHARD, tableBuilder, source,
                     0.2f, 1, 2);
@@ -31,20 +36,20 @@ public class ULootTables {
             shardLootBuilder(id, EntityType.AXOLOTL, UItems.SMALL_AXOLOTL_SHARD, tableBuilder, source,
                     0.2f, 1, 2);
             entityLootBuilder(id, EntityType.AXOLOTL, tableBuilder, source, LootPool.builder()
-                    .conditionally(RandomChanceLootCondition.builder(0.02F))
-                    .with(ItemEntry.builder(UItems.GOLDEN_TROPICAL_FISH)
+                    .conditionally(RandomChanceLootCondition.builder(0.9F))
+                    .with(ItemEntry.builder(UItems.RAW_AXOLOTL).apply(uniformNumberBuilder(1,2)).apply(lootingFunction(0,1))
                     ));
             shardLootBuilder(id, EntityType.BAT, UItems.SMALL_BAT_SHARD, tableBuilder, source,
                     0.2f, 1, 2);
             entityLootBuilder(id, EntityType.BAT, tableBuilder, source, LootPool.builder()
                     .conditionally(RandomChanceLootCondition.builder(0.86F))
-                    .with(ItemEntry.builder(UItems.BAT_WING).apply(uniformNumber(1,2))
+                    .with(ItemEntry.builder(UItems.BAT_WING).apply(uniformNumberBuilder(1,2))
                     ));
             shardLootBuilder(id, EntityType.BEE, UItems.SMALL_BEE_SHARD, tableBuilder, source,
                     0.2f, 1, 2);
             entityLootBuilder(id, EntityType.BEE, tableBuilder, source, LootPool.builder()
                     .conditionally(RandomChanceLootCondition.builder(0.02F))
-                    .with(ItemEntry.builder(UItems.GOLDEN_HONEY_BOTTLE)
+                    .with(ItemEntry.builder(UItems.BEE_STINGER)
                     ));
             shardLootBuilder(id, EntityType.BLAZE, UItems.SMALL_BLAZE_SHARD, tableBuilder, source,
                     0.2f, 1, 2);
@@ -180,13 +185,19 @@ public class ULootTables {
                     0.1f, 1, 1);
         });
     }
-    private static ConditionalLootFunction.Builder<?> uniformNumber(int min, int max) {
-        return SetCountLootFunction.builder(UniformLootNumberProvider.create(min, max));
+    private static LootingEnchantLootFunction.Builder lootingFunction(int min, int max) {
+        return LootingEnchantLootFunction.builder(uniformNumber(min,max));
+    }
+    private static ConditionalLootFunction.Builder<?> uniformNumberBuilder(int min, int max) {
+        return SetCountLootFunction.builder(uniformNumber(min, max));
+    }
+    private static UniformLootNumberProvider uniformNumber(int min, int max) {
+        return UniformLootNumberProvider.create(min, max);
     }
     private static void shardLootBuilder(Identifier id, EntityType<?> entity, Item item, LootTable.Builder tableBuilder, LootTableSource source, float chance, int min, int max) {
         entityLootBuilder(id, entity, tableBuilder, source, LootPool.builder()
                 .conditionally(RandomChanceLootCondition.builder(chance))
-                .with(ItemEntry.builder(item).apply(uniformNumber(min,max)))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
         );
     }
     private static void lootBuilder(Identifier id, Identifier otherId, LootTable.Builder tableBuilder, LootTableSource source, LootPool.Builder builder) {

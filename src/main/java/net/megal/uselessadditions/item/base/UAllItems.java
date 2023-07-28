@@ -23,6 +23,7 @@ public class UAllItems {
     //Changes the default stack for items based on conditions
     public static ItemStack modifyDefaultStack(ItemStack stack) {
         if (stack.isIn(UAdd.NATURAL_MENDING)) stack.addEnchantment(UEnchantments.NATURAL_MENDING, 1);
+        if (stack.isIn(UAdd.AUTO_SMELT)) stack.addEnchantment(UEnchantments.AUTO_SMELT, 1);
         return stack;
     }
 

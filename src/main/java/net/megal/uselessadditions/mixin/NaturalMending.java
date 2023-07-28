@@ -22,7 +22,6 @@ import java.util.function.Predicate;
 
 @Mixin(ExperienceOrbEntity.class)
 public abstract class NaturalMending {
-    private Random random;
     @Shadow
     private int amount;
     @Shadow
@@ -31,8 +30,8 @@ public abstract class NaturalMending {
     protected abstract int getMendingRepairCost(int repairAmount);
     @Shadow
     protected abstract int repairPlayerGears(PlayerEntity player, int amount);
-    @Inject(at = {@At("HEAD")},
-            method = {"repairPlayerGears(Lnet/minecraft/entity/player/PlayerEntity;I)I"},
+    @Inject(at = @At("HEAD"),
+            method = "repairPlayerGears(Lnet/minecraft/entity/player/PlayerEntity;I)I",
             cancellable = true)
     private void naturalRepair(PlayerEntity player, int amount, CallbackInfoReturnable<Integer> cir) {
         Map.Entry<EquipmentSlot, ItemStack> entry = EnchantmentHelper.chooseEquipmentWith(UEnchantments.NATURAL_MENDING, player, ItemStack::isDamaged);
@@ -41,7 +40,7 @@ public abstract class NaturalMending {
             int i = Math.min(getMendingRepairAmount(this.amount), itemStack.getDamage());
             itemStack.setDamage(itemStack.getDamage() - i);
             int j = amount - getMendingRepairCost(i);
-            random = new Random();
+            Random random = new Random();
             if (j > 0 && random.nextInt(2) == 0) {
                 cir.setReturnValue(repairPlayerGears(player, j));
             }

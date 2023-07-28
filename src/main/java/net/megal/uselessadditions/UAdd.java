@@ -18,9 +18,9 @@ import org.slf4j.LoggerFactory;
 public class UAdd implements ModInitializer {
     public static final String MOD_ID = "uselessadditions";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-    //Used to apply the enchantments when using /give or grabbing via creative, crafting recipes are handled by a separate list in a mixin
     public static final TagKey<Item> BUNDLES = TagKey.of(RegistryKeys.ITEM, new Identifier("c", "bundles"));
     public static final TagKey<Item> NATURAL_MENDING = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "natural_mending"));
+    public static final TagKey<Item> AUTO_SMELT = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "auto_smelt"));
     public static final TagKey<Item> MOB_SHARDS = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "mob_shards"));
     public static final TagKey<Item> SMALL_MOB_SHARDS = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "small_mob_shards"));
     @Override

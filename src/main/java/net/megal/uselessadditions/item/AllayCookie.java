@@ -22,13 +22,16 @@ public class AllayCookie extends TooltipItem {
 
     @Override
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
-        if (!world.isClient && user instanceof ServerPlayerEntity player) {
-            MinecraftServer server = world.getServer();
-            ServerWorld spawnWorld = server.getWorld(player.getSpawnPointDimension());
-            BlockPos spawnPoint = player.getSpawnPointPosition();
-            if (spawnPoint == null) spawnPoint = world.getSpawnPos();
-            if (spawnWorld == null) spawnWorld = (ServerWorld)world;
-            player.teleport(spawnWorld, spawnPoint.getX()+0.5d, spawnPoint.getY(), spawnPoint.getZ()+0.5d, player.getYaw(), player.getPitch());
+        if (user instanceof ServerPlayerEntity player) {
+            if (!world.isClient) {
+                MinecraftServer server = world.getServer();
+                ServerWorld spawnWorld = server.getWorld(player.getSpawnPointDimension());
+                BlockPos spawnPoint = player.getSpawnPointPosition();
+                if (spawnPoint == null) spawnPoint = world.getSpawnPos();
+                if (spawnWorld == null) spawnWorld = (ServerWorld) world;
+                player.teleport(spawnWorld, spawnPoint.getX() + 0.5d, spawnPoint.getY(), spawnPoint.getZ() + 0.5d, player.getYaw(), player.getPitch());
+            }
+            player.getItemCooldownManager().set(stack.getItem(), 200);
         }
         return super.finishUsing(stack, world, user);
     }

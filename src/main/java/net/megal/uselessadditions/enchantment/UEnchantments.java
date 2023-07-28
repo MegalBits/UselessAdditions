@@ -8,8 +8,12 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class UEnchantments {
-    public static final Enchantment NATURAL_MENDING = Registry.register(Registries.ENCHANTMENT, new Identifier(UAdd.MOD_ID, "natural_mending"),
+    public static final NaturalMendingEnchantment NATURAL_MENDING = registerEnchantment(new Identifier(UAdd.MOD_ID, "natural_mending"),
             new NaturalMendingEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.values()));
-
+    public static final AutoSmeltEnchantment AUTO_SMELT = registerEnchantment(new Identifier(UAdd.MOD_ID, "auto_smelt"),
+            new AutoSmeltEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
+    public static <T extends Enchantment> T registerEnchantment(Identifier id, T enchantment) {
+        return  Registry.register(Registries.ENCHANTMENT, id, enchantment);
+    }
     public static void enchLoad() {};
 }
