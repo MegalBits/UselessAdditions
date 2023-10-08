@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "212",
+    "242",
+    "131"
+  ],
+  "key": {
+    "1": {
+      "item": "uselessadditions:exotic_dust"
+    },
+    "2": {
+      "item": "uselessadditions:exotic_ingot"
+    },
+    "3": {
+      "item": "minecraft:diamond"
+    },
+    "4": {
+      "item": "minecraft:cobblestone"
+    }
+  },
+  "result": {
+    "item": "minecraft:sentry_armor_trim_smithing_template",
+    "count": 1
+  }
+}

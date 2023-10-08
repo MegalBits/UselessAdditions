@@ -22,8 +22,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import static net.megal.uselessadditions.UAdd.autoSmeltItems;
-import static net.megal.uselessadditions.UAdd.naturalMendingItems;
+import static net.megal.uselessadditions.UAdd.*;
 
 @Mixin(SmithingScreenHandler.class)
 public abstract class SmithingDamageTemplate extends ForgingScreenHandler {
@@ -36,7 +35,7 @@ public abstract class SmithingDamageTemplate extends ForgingScreenHandler {
     private void decrementStack(int slot, CallbackInfo ci) {
         if (slot == 0) {
             ItemStack stack = input.getStack(slot);
-            if(stack.getItem() instanceof DamageableItem && stack.getDamage() <= stack.getMaxDamage() - 2) {
+            if((stack.getItem() instanceof DamageableItem || (stack.isIn(HAMMERS) && stack.isDamageable())) && stack.getDamage() <= stack.getMaxDamage() - 2) {
                 stack.setDamage(stack.getDamage() + 1);
                 ci.cancel();
             }

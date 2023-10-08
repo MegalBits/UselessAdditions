@@ -1,26 +1,23 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "4 1",
-    " 23",
-    "23 "
+    "121",
+    "232",
+    "121"
   ],
   "key": {
     "1": {
-      "item": "minecraft:iron_nugget"
+      "item": "minecraft:nautilus_shell"
     },
     "2": {
-      "item": "minecraft:leather"
+      "item": "minecraft:prismarine"
     },
     "3": {
-      "item": "minecraft:paper"
-    },
-    "4": {
       "item": "uselessadditions:exotic_dust"
     }
   },
   "result": {
-    "item": "minecraft:name_tag",
+    "item": "minecraft:heart_of_the_sea",
     "count": 1
   }
 }

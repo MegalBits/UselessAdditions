@@ -24,7 +24,9 @@ public class ULootTables {
     public static void modifyLootTables() {
         LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
             //Global
-            rareItemLootBuilder(id, UItems.EXOTIC_DUST, tableBuilder, source, 0.005F, 1, 1);
+            globalItemLootBuilder(id, UItems.EXOTIC_DUST, tableBuilder, source, 0.005F, 1, 1);
+            globalItemLootBuilder(id, UItems.EXOTIC_INGOT, tableBuilder, source, 0.00025F, 1, 1);
+            globalItemLootBuilder(id, UItems.MAGIC_BOOK, tableBuilder, source, 0.0001F, 1, 1);
 
             //Specifics
             lootBuilder(id, LootTables.NETHER_BRIDGE_CHEST, tableBuilder, source, LootPool.builder()
@@ -87,6 +89,10 @@ public class ULootTables {
                     0.2f, 1, 2);
             shardLootBuilder(id, EntityType.EVOKER, UItems.SMALL_ILLAGER_SHARD, tableBuilder, source,
                     0.2f, 1, 2);
+            entityLootBuilder(id, EntityType.EVOKER, tableBuilder, source, LootPool.builder()
+                    .conditionally(RandomChanceLootCondition.builder(0.05F))
+                    .with(ItemEntry.builder(UItems.MAGIC_BOOK))
+                    );
             shardLootBuilder(id, EntityType.FOX, UItems.SMALL_FOX_SHARD, tableBuilder, source,
                     0.2f, 1, 2);
             shardLootBuilder(id, EntityType.FROG, UItems.SMALL_FROG_SHARD, tableBuilder, source,
@@ -204,7 +210,7 @@ public class ULootTables {
                 .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
         );
     }
-    private static void rareItemLootBuilder(Identifier id, Item item, LootTable.Builder tableBuilder, LootTableSource source, float chance, int min, int max) {
+    private static void globalItemLootBuilder(Identifier id, Item item, LootTable.Builder tableBuilder, LootTableSource source, float chance, int min, int max) {
         lootBuilder(id, LootTables.ABANDONED_MINESHAFT_CHEST, tableBuilder, source, LootPool.builder()
                 .conditionally(RandomChanceLootCondition.builder(chance))
                 .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))

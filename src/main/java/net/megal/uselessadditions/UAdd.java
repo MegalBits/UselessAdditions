@@ -22,6 +22,7 @@ public class UAdd implements ModInitializer {
     public static final String MOD_ID = "uselessadditions";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
     public static final TagKey<Item> BUNDLES = TagKey.of(RegistryKeys.ITEM, new Identifier("c", "bundles"));
+    public static final TagKey<Item> HAMMERS = TagKey.of(RegistryKeys.ITEM, new Identifier("c", "smithing_hammers"));
     public static final TagKey<Item> NATURAL_MENDING = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "natural_mending"));
     public static final TagKey<Item> AUTO_SMELT = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "auto_smelt"));
     public static final TagKey<Item> MOB_SHARDS = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "mob_shards"));
@@ -44,7 +45,7 @@ public class UAdd implements ModInitializer {
     private void AddCompostable() {
         compostableItem(UItems.LESSER_GOLDEN_APPLE, ComposterRarities.HIGH);
         compostableItem(UItems.LESSER_GOLDEN_CARROT, ComposterRarities.HIGH);
-        compostableItem(UItems.BUNDLED_FLOWERS, ComposterRarities.GUARUNTEED);
+        compostableItem(UItems.BUNDLED_FLOWERS, ComposterRarities.HIGH);
     }
     @Override
     public void onInitialize() {

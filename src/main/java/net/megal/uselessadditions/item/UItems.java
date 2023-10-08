@@ -202,7 +202,7 @@ public class UItems {
     public static final MagicBook MAGIC_BOOK = registerItem(new Identifier(UAdd.MOD_ID, "magic_book"), new MagicBook(new FabricItemSettings().maxCount(1).maxDamage(3), Formatting.GRAY));
     public static final Item IRON_BUNDLE_UPGRADE = registerItem(new Identifier(UAdd.MOD_ID, "iron_bundle_upgrade"), createItem());
     public static final Item DIAMOND_BUNDLE_UPGRADE = registerItem(new Identifier(UAdd.MOD_ID, "diamond_bundle_upgrade"), createItem());
-    // -- Dust
+    // -- Dusts
     public static final Item DIRT_PILE = registerItem(new Identifier(UAdd.MOD_ID, "dirt_pile"), createItem());
     public static final Item EXOTIC_DUST = registerItem(new Identifier(UAdd.MOD_ID, "exotic_dust"), new Item(new FabricItemSettings().rarity(Rarity.UNCOMMON)));
 
@@ -214,6 +214,7 @@ public class UItems {
     public static final Item MAGIC_INGOT = registerItem(new Identifier(UAdd.MOD_ID, "magic_ingot"), createItem());
     public static final GlintItem ENCHANTED_MAGIC_INGOT = registerItem(new Identifier(UAdd.MOD_ID, "enchanted_magic_ingot"), new GlintItem(new FabricItemSettings().rarity(Rarity.RARE)));
     public static final TooltipItem BLAZE_METAL = registerItem(new Identifier(UAdd.MOD_ID, "blaze_metal"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
+    public static final Item EXOTIC_INGOT = registerItem(new Identifier(UAdd.MOD_ID, "exotic_ingot"), new Item(new FabricItemSettings().rarity(Rarity.UNCOMMON)));
     // -- Tool Components
     public static final Item NETHERITE_STICK = registerItem(new Identifier(UAdd.MOD_ID, "netherite_stick"), new Item(new FabricItemSettings().fireproof()));
     //Hammer
@@ -552,6 +553,7 @@ public class UItems {
             entries.add(ZOMBIE_VILLAGER_SPAWN_EGG.getDefaultStack());
             entries.add(ZOMBIFIED_PIGLIN_SPAWN_EGG.getDefaultStack());
             // Materials
+            // -- Misc
             entries.add(EMPTY_DISC.getDefaultStack());
             entries.add(BUNDLED_FLOWERS.getDefaultStack());
             entries.add(BEE_STINGER.getDefaultStack());
@@ -560,12 +562,17 @@ public class UItems {
             entries.add(DIAMOND_BUNDLE_UPGRADE.getDefaultStack());
             entries.add(FORTRESS_NUGGET.getDefaultStack());
             entries.add(ENDER_PEARL_SHARD.getDefaultStack());
+            // -- Dusts
             entries.add(DIRT_PILE.getDefaultStack());
             entries.add(EXOTIC_DUST.getDefaultStack());
+            // -- Nuggets
             entries.add(NETHERITE_NUGGET.getDefaultStack());
+            // -- Ingots
             entries.add(MAGIC_INGOT.getDefaultStack());
             entries.add(ENCHANTED_MAGIC_INGOT.getDefaultStack());
             entries.add(BLAZE_METAL.getDefaultStack());
+            entries.add(EXOTIC_INGOT.getDefaultStack());
+            // -- Tool Components
             entries.add(NETHERITE_STICK.getDefaultStack());
             // Hammer
             entries.add(HAMMER.getDefaultStack());

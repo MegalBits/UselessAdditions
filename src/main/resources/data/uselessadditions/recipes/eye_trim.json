@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "131",
+    "242",
+    "212"
+  ],
+  "key": {
+    "1": {
+      "item": "uselessadditions:exotic_dust"
+    },
+    "2": {
+      "item": "uselessadditions:exotic_ingot"
+    },
+    "3": {
+      "item": "minecraft:diamond"
+    },
+    "4": {
+      "item": "minecraft:end_stone"
+    }
+  },
+  "result": {
+    "item": "minecraft:eye_armor_trim_smithing_template",
+    "count": 1
+  }
+}
