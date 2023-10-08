@@ -4,13 +4,13 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.megal.uselessadditions.UAdd;
 import net.minecraft.block.Block;
-import net.minecraft.block.Material;
+import net.minecraft.block.enums.Instrument;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+import net.minecraft.registry.Registry;
+import net.minecraft.registry.Registries;
 
 public class UBlocks {
     //Blocks
@@ -134,10 +134,10 @@ public class UBlocks {
     }
     //Some default block types so that I don't have to do as much copy/pasting
     private static Block createOre() {
-        return new Block(FabricBlockSettings.of(Material.STONE).strength(3.0F,3.0F).requiresTool().sounds(BlockSoundGroup.STONE));
+        return new Block(FabricBlockSettings.create().instrument(Instrument.BASS).strength(3.0F,3.0F).requiresTool().sounds(BlockSoundGroup.STONE));
     }
     private static Block createDeepslateOre() {
-        return new Block(FabricBlockSettings.of(Material.STONE).strength(4.5F,3.0F).requiresTool().sounds(BlockSoundGroup.DEEPSLATE));
+        return new Block(FabricBlockSettings.create().instrument(Instrument.BASS).strength(4.5F,3.0F).requiresTool().sounds(BlockSoundGroup.DEEPSLATE));
     }
     public static void blockLoad() {}
 }

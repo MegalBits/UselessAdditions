@@ -1,10 +1,10 @@
 package net.megal.uselessadditions.enchantment;
 
 import net.megal.uselessadditions.UAdd;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentTarget;
-import net.minecraft.enchantment.MendingEnchantment;
+import net.minecraft.enchantment.*;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ScreenTexts;
 import net.minecraft.text.MutableText;
@@ -41,7 +41,15 @@ public class AutoSmeltEnchantment extends Enchantment {
     }
     @Override
     public boolean canAccept(Enchantment other) {
+        if (other instanceof LuckEnchantment || other instanceof FireAspectEnchantment) {
+            return false;
+        }
         return super.canAccept(other);
+    }
+    @Override
+    public void onTargetDamaged(LivingEntity user, Entity target, int level) {
+        int duration = level * 20 + 20;
+        if (target.getFireTicks() < duration) target.setFireTicks(duration);
     }
     @Override
     public Text getName(int level) {

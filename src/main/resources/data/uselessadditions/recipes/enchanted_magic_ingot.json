@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "uselessadditions:magic_book"
+  },
+  "base": {
+    "item": "uselessadditions:magic_ingot"
+  },
+  "addition": {
+    "item": "minecraft:lapis_lazuli"
+  },
+  "result": {
+    "item": "uselessadditions:enchanted_magic_ingot"
+  }
+}

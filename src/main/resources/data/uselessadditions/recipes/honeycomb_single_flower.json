@@ -2,18 +2,19 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     " 1 ",
-    "121"
+    "1 1",
+    " 2 "
   ],
   "key": {
     "1": {
-      "tag": "minecraft:small_flowers"
+      "item": "uselessadditions:bee_shard"
     },
     "2": {
-      "item": "minecraft:lead"
+      "tag": "minecraft:small_flowers"
     }
   },
   "result": {
-    "item": "uselessadditions:bundled_flowers",
+    "item": "minecraft:honeycomb",
     "count": 2
   }
 }

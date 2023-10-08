@@ -25,6 +25,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Stream;
 
@@ -146,7 +147,7 @@ public class NetheriteBundle extends Item {
     }
 
     public static boolean canCombine(ItemStack stack, ItemStack otherStack) {
-        return stack.isOf(otherStack.getItem()) && ItemStack.areNbtEqual(stack, otherStack) && stack.getCount() + otherStack.getCount() <= stack.getMaxCount();
+        return stack.isOf(otherStack.getItem()) && Objects.equals(stack.getNbt(), otherStack.getNbt()) && stack.getCount() + otherStack.getCount() <= stack.getMaxCount();
     }
 
     private static int getItemOccupancy(ItemStack stack) {

@@ -12,22 +12,11 @@ import org.spongepowered.asm.mixin.injection.At;
 import java.util.ArrayList;
 import java.util.List;
 
+import static net.megal.uselessadditions.UAdd.autoSmeltItems;
+import static net.megal.uselessadditions.UAdd.naturalMendingItems;
+
 @Mixin(ShapedRecipe.class)
 public abstract class CraftingOutput {
-    private static final List<Item> naturalMendingItems = new ArrayList<>();
-    private static final List<Item> autoSmeltItems = new ArrayList<>();
-    static {
-        naturalMendingItems.add(UItems.AMETHYST_SWORD);
-        naturalMendingItems.add(UItems.AMETHYST_SHOVEL);
-        naturalMendingItems.add(UItems.AMETHYST_PICKAXE);
-        naturalMendingItems.add(UItems.AMETHYST_AXE);
-        naturalMendingItems.add(UItems.AMETHYST_HOE);
-        autoSmeltItems.add(UItems.BLAZE_METAL_SWORD);
-        autoSmeltItems.add(UItems.BLAZE_METAL_SHOVEL);
-        autoSmeltItems.add(UItems.BLAZE_METAL_PICKAXE);
-        autoSmeltItems.add(UItems.BLAZE_METAL_AXE);
-        autoSmeltItems.add(UItems.BLAZE_METAL_HOE);
-    }
     @ModifyReturnValue(at = @At("RETURN"),
             method = "outputFromJson(Lcom/google/gson/JsonObject;)Lnet/minecraft/item/ItemStack;")
     private static ItemStack outputWithEnchantment(ItemStack stack) {

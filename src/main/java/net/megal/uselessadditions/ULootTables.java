@@ -23,6 +23,10 @@ import net.minecraft.util.Identifier;
 public class ULootTables {
     public static void modifyLootTables() {
         LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
+            //Global
+            rareItemLootBuilder(id, UItems.EXOTIC_DUST, tableBuilder, source, 0.005F, 1, 1);
+
+            //Specifics
             lootBuilder(id, LootTables.NETHER_BRIDGE_CHEST, tableBuilder, source, LootPool.builder()
                     .conditionally(RandomChanceLootCondition.builder(0.4F))
                     .with(ItemEntry.builder(UItems.FORTRESS_NUGGET).apply(uniformNumberBuilder(1,4)))
@@ -196,6 +200,164 @@ public class ULootTables {
     }
     private static void shardLootBuilder(Identifier id, EntityType<?> entity, Item item, LootTable.Builder tableBuilder, LootTableSource source, float chance, int min, int max) {
         entityLootBuilder(id, entity, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+    }
+    private static void rareItemLootBuilder(Identifier id, Item item, LootTable.Builder tableBuilder, LootTableSource source, float chance, int min, int max) {
+        lootBuilder(id, LootTables.ABANDONED_MINESHAFT_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.ANCIENT_CITY_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.ANCIENT_CITY_ICE_BOX_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.BASTION_BRIDGE_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.BASTION_HOGLIN_STABLE_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.BASTION_OTHER_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.BASTION_TREASURE_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.BURIED_TREASURE_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.DESERT_PYRAMID_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.END_CITY_TREASURE_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.IGLOO_CHEST_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.JUNGLE_TEMPLE_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.PILLAGER_OUTPOST_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.RUINED_PORTAL_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.SHIPWRECK_MAP_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.SHIPWRECK_SUPPLY_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.SHIPWRECK_TREASURE_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.SIMPLE_DUNGEON_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.STRONGHOLD_CORRIDOR_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.STRONGHOLD_CROSSING_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.STRONGHOLD_LIBRARY_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.UNDERWATER_RUIN_BIG_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.UNDERWATER_RUIN_SMALL_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.VILLAGE_ARMORER_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.VILLAGE_BUTCHER_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.VILLAGE_CARTOGRAPHER_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.VILLAGE_DESERT_HOUSE_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.VILLAGE_FISHER_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.VILLAGE_FLETCHER_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.VILLAGE_MASON_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.VILLAGE_PLAINS_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.VILLAGE_SAVANNA_HOUSE_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.VILLAGE_SHEPARD_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.VILLAGE_SNOWY_HOUSE_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.VILLAGE_TAIGA_HOUSE_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.VILLAGE_TANNERY_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.VILLAGE_TEMPLE_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.VILLAGE_TOOLSMITH_CHEST, tableBuilder, source, LootPool.builder()
+                .conditionally(RandomChanceLootCondition.builder(chance))
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
+        );
+        lootBuilder(id, LootTables.VILLAGE_WEAPONSMITH_CHEST, tableBuilder, source, LootPool.builder()
                 .conditionally(RandomChanceLootCondition.builder(chance))
                 .with(ItemEntry.builder(item).apply(uniformNumberBuilder(min,max)))
         );

@@ -10,8 +10,10 @@ import java.util.function.Supplier;
 
 public enum UMaterials implements ToolMaterial {
     AMETHYST(2, 832, 11.0F, 2.5F, 52, () -> Ingredient.ofItems(UItems.MAGIC_INGOT)),
+    AMETHYST_P5(AMETHYST.miningLevel, AMETHYST.itemDurability, AMETHYST.miningSpeed, AMETHYST.attackDamage-.5f, AMETHYST.enchantability, () -> AMETHYST.repairIngredient),
     EMERALD(3, 625, 8.5F, 3.0F, 21, () -> Ingredient.ofItems(Items.EMERALD)),
-    BLAZE_METAL(4, 1920, 8.5f, 3.5f, 15, () -> Ingredient.ofItems(UItems.BLAZE_METAL));
+    BLAZE_METAL(4, 1920, 8.5f, 3.5f, 15, () -> Ingredient.ofItems(UItems.BLAZE_METAL)),
+    BLAZE_METAL_P5(BLAZE_METAL.miningLevel, BLAZE_METAL.itemDurability, BLAZE_METAL.miningSpeed, BLAZE_METAL.attackDamage-.5f, BLAZE_METAL.enchantability, () -> BLAZE_METAL.repairIngredient);
 
     //Copied from ToolMaterials
     private final int miningLevel;

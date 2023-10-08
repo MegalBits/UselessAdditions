@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "111",
+    "121"
+  ],
+  "key": {
+    "1": {
+      "tag": "minecraft:small_flowers"
+    },
+    "2": {
+      "item": "minecraft:lead"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:bundled_flowers",
+    "count": 3
+  }
+}

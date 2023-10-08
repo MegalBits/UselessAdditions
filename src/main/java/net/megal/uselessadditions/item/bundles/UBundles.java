@@ -30,6 +30,6 @@ public class UBundles {
         else return 0;
     }
     public static int getBundleColor(float occupancy, float max) {
-        return MathHelper.packRgb(1.0f, 0.0f, Math.max((occupancy / max) * 1.25f, 0.0f));
+        return MathHelper.packRgb(1.0f, 0.0f, 0.25f);
     }
 }

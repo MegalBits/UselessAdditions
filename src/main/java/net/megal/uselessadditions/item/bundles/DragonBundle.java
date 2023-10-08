@@ -25,12 +25,13 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Stream;
 
 public class DragonBundle extends Item {
     private static final String ITEMS_KEY = "Items";
-    public static int MAX_STORAGE = 512;
+    public static int MAX_STORAGE = 1024;
     public static final int BUNDLE_ITEM_OCCUPANCY = 64;
     public DragonBundle(Settings settings) {
         super(settings);
@@ -145,7 +146,7 @@ public class DragonBundle extends Item {
     }
 
     public static boolean canCombine(ItemStack stack, ItemStack otherStack) {
-        return stack.isOf(otherStack.getItem()) && ItemStack.areNbtEqual(stack, otherStack) && stack.getCount() + otherStack.getCount() <= stack.getMaxCount();
+        return stack.isOf(otherStack.getItem()) && Objects.equals(stack.getNbt(), otherStack.getNbt()) && stack.getCount() + otherStack.getCount() <= stack.getMaxCount();
     }
 
     private static int getItemOccupancy(ItemStack stack) {

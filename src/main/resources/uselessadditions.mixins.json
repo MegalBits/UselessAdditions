@@ -6,7 +6,11 @@
 		"AutoSmelt",
 		"NaturalMending",
 		"ItemRemainder",
-		"CraftingOutput"
+		"CraftingOutput",
+		"SmithingOutput",
+		"FarmlandNerf",
+		"SmithingDamageTemplate",
+		"ComposterOutput"
 	],
 	"injectors": {
 		"defaultRequire": 1

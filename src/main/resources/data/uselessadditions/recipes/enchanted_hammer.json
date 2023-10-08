@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "uselessadditions:magic_book"
+  },
+  "base": {
+    "item": "uselessadditions:hammer"
+  },
+  "addition": {
+    "item": "uselessadditions:enchanted_magic_ingot"
+  },
+  "result": {
+    "item": "uselessadditions:enchanted_hammer"
+  }
+}

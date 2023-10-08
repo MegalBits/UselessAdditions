@@ -15,7 +15,6 @@ public class DamageableItem extends Item {
         super(settings);
         ((ItemRemainder)this).setRecipeRemainder(this);
     }
-
     @Override
     public ItemStack getRecipeRemainder(ItemStack stack) {
         ItemStack alteredStack = new ItemStack(this, stack.getCount());
@@ -23,7 +22,6 @@ public class DamageableItem extends Item {
         alteredStack.setDamage(stack.getDamage()+1);
         return !(alteredStack.getDamage() >= alteredStack.getMaxDamage()) ? alteredStack : ItemStack.EMPTY;
     }
-
     @Override
     public void onCraft(ItemStack stack, World world, PlayerEntity player) {
         UAllItems.unstackItems(stack, world, player);

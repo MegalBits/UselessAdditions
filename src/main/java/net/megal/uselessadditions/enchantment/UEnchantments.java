@@ -3,8 +3,8 @@ package net.megal.uselessadditions.enchantment;
 import net.megal.uselessadditions.UAdd;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 
 public class UEnchantments {
@@ -15,5 +15,5 @@ public class UEnchantments {
     public static <T extends Enchantment> T registerEnchantment(Identifier id, T enchantment) {
         return  Registry.register(Registries.ENCHANTMENT, id, enchantment);
     }
-    public static void enchLoad() {};
+    public static void enchLoad() {}
 }

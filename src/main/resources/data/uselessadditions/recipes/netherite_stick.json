@@ -1,5 +1,8 @@
 {
-  "type": "minecraft:smithing",
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "tag": "c:smithing_hammers"
+  },
   "base": {
     "item": "minecraft:stick"
   },
