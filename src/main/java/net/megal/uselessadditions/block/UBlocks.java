@@ -13,7 +13,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.Registries;
 
 public class UBlocks {
-    //Blocks
+    //Ores
     public static final Block ALLAY_ORE = register(new Identifier(UAdd.MOD_ID, "allay_ore"), createOre(), new FabricItemSettings());
     public static final Block DEEPSLATE_ALLAY_ORE = register(new Identifier(UAdd.MOD_ID, "deepslate_allay_ore"), createDeepslateOre(), new FabricItemSettings());
     public static final Block AXOLOTL_ORE = register(new Identifier(UAdd.MOD_ID, "axolotl_ore"), createOre(), new FabricItemSettings());
@@ -124,8 +124,10 @@ public class UBlocks {
     public static final Block DEEPSLATE_WOLF_ORE = register(new Identifier(UAdd.MOD_ID, "deepslate_wolf_ore"), createDeepslateOre(), new FabricItemSettings());
     public static final Block ZOMBIE_ORE = register(new Identifier(UAdd.MOD_ID, "zombie_ore"), createOre(), new FabricItemSettings());
     public static final Block DEEPSLATE_ZOMBIE_ORE = register(new Identifier(UAdd.MOD_ID, "deepslate_zombie_ore"), createDeepslateOre(), new FabricItemSettings());
+    // Farming blocks
+    public static final Sprinkler SPRINKLER = register(new Identifier(UAdd.MOD_ID, "sprinkler"), new Sprinkler(FabricBlockSettings.create().strength(1.25F, 1.0F).requiresTool().noCollision().breakInstantly().nonOpaque()), new FabricItemSettings());
     //Registers blocks as well as a block item
-    private static Block register(Identifier id, Block block, FabricItemSettings settings) {
+    private static <T extends Block> T register(Identifier id, T block, FabricItemSettings settings) {
         registerBlockItem(id, block, settings);
         return Registry.register(Registries.BLOCK, id, block);
     }

@@ -1,4 +1,6 @@
 {
+  "block.uselessadditions.sprinkler": "Sprinkler",
+
   "block.uselessadditions.allay_ore": "Allay Ore",
   "block.uselessadditions.deepslate_allay_ore": "Deepslate Allay Ore",
   "block.uselessadditions.axolotl_ore": "Axolotl Ore",
@@ -295,6 +297,8 @@
   "item.uselessadditions.fortress_nugget.tooltip": "Spawns in fortress chests",
   "item.uselessadditions.ender_pearl_shard": "Ender Pearl Shard",
   "item.uselessadditions.dirt_pile": "Dirt Pile",
+  "item.uselessadditions.rock": "Rock",
+  "item.uselessadditions.deepslate_rock": "Deepslate Rock",
   "item.uselessadditions.exotic_dust": "Exotic Dust",
   "item.uselessadditions.exotic_ingot": "Exotic Ingot",
   "item.uselessadditions.netherite_nugget": "Netherite Nugget",
@@ -303,8 +307,8 @@
   "item.uselessadditions.magic_book": "Magic Book",
   "item.uselessadditions.magic_book.tooltip": "Used to create enchanted versions of items",
   "item.uselessadditions.blaze_metal": "Blaze-Metal",
-  "item.uselessadditions.netherite_stick": "Netherite Stick",
   "item.uselessadditions.blaze_metal.tooltip": "Rare blaze drop",
+  "item.uselessadditions.netherite_stick": "Netherite Stick",
 
   "item.uselessadditions.allay_cookie": "Allay Cookie",
   "item.uselessadditions.allay_cookie.tooltip": "Rare allay drop",

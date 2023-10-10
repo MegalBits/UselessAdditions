@@ -1,8 +1,11 @@
 package net.megal.uselessadditions;
 
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.megal.uselessadditions.block.UBlocks;
 import net.megal.uselessadditions.item.UItems;
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.client.render.entity.model.ShieldEntityModel;
 import net.minecraft.client.texture.SpriteAtlasTexture;
@@ -16,6 +19,9 @@ import net.minecraft.util.Identifier;
 public class UAddClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
+		BlockRenderLayerMap.INSTANCE.putBlock(UBlocks.SPRINKLER, RenderLayer.getCutoutMipped());
+
+
 		bundlePredicate(UItems.BUNDLE);
 		bundlePredicate(UItems.IRON_BUNDLE);
 		bundlePredicate(UItems.DIAMOND_BUNDLE);

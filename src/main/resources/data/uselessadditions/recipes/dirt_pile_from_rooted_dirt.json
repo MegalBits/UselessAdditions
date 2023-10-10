@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "tag": "c:smithing_hammers"
+  },
+  "base": {
+    "item": "minecraft:rooted_dirt"
+  },
+  "addition": {
+    "item": "minecraft:cobblestone"
+  },
+  "result": {
+    "item": "uselessadditions:dirt_pile"
+  }
+}

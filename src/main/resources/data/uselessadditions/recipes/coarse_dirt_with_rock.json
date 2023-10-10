@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "12",
+    "21"
+  ],
+  "key": {
+    "1": {
+      "item": "uselessadditions:dirt_pile"
+    },
+    "2": {
+      "item": "uselessadditions:rock"
+    }
+  },
+  "result": {
+    "item": "minecraft:coarse_dirt",
+    "count": 1
+  }
+}

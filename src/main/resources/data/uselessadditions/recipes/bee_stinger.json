@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 13",
+    "121",
+    "21 "
+  ],
+  "key": {
+    "1": {
+      "item": "uselessadditions:small_bee_shard"
+    },
+    "2": {
+      "item": "uselessadditions:bee_shard"
+    },
+    "3": {
+      "item": "uselessadditions:exotic_dust"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:bee_stinger",
+    "count": 1
+  }
+}

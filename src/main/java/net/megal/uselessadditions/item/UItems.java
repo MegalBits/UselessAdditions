@@ -3,6 +3,7 @@ package net.megal.uselessadditions.item;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.megal.uselessadditions.UAdd;
+import net.megal.uselessadditions.block.Sprinkler;
 import net.megal.uselessadditions.item.base.*;
 import net.megal.uselessadditions.item.bundles.*;
 import net.minecraft.entity.EntityType;
@@ -199,13 +200,14 @@ public class UItems {
     public static final Item EMPTY_DISC = registerItem(new Identifier(UAdd.MOD_ID, "empty_disc"), createItem());
     public static final DamageableItem BUNDLED_FLOWERS = registerItem(new Identifier(UAdd.MOD_ID, "bundled_flowers"), new DamageableItem(new FabricItemSettings().maxCount(1).maxDamage(16)));
     public static final TooltipItem BEE_STINGER = registerItem(new Identifier(UAdd.MOD_ID, "bee_stinger"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
-    public static final MagicBook MAGIC_BOOK = registerItem(new Identifier(UAdd.MOD_ID, "magic_book"), new MagicBook(new FabricItemSettings().maxCount(1).maxDamage(3), Formatting.GRAY));
+    public static final MagicBook MAGIC_BOOK = registerItem(new Identifier(UAdd.MOD_ID, "magic_book"), new MagicBook(new FabricItemSettings().maxCount(1).maxDamage(3).rarity(Rarity.EPIC), Formatting.GRAY));
     public static final Item IRON_BUNDLE_UPGRADE = registerItem(new Identifier(UAdd.MOD_ID, "iron_bundle_upgrade"), createItem());
     public static final Item DIAMOND_BUNDLE_UPGRADE = registerItem(new Identifier(UAdd.MOD_ID, "diamond_bundle_upgrade"), createItem());
     // -- Dusts
     public static final Item DIRT_PILE = registerItem(new Identifier(UAdd.MOD_ID, "dirt_pile"), createItem());
+    public static final Item ROCK = registerItem(new Identifier(UAdd.MOD_ID, "rock"), createItem());
+    public static final Item DEEPSLATE_ROCK = registerItem(new Identifier(UAdd.MOD_ID, "deepslate_rock"), createItem());
     public static final Item EXOTIC_DUST = registerItem(new Identifier(UAdd.MOD_ID, "exotic_dust"), new Item(new FabricItemSettings().rarity(Rarity.UNCOMMON)));
-
     // -- Nuggets
     public static final TooltipItem FORTRESS_NUGGET = registerItem(new Identifier(UAdd.MOD_ID, "fortress_nugget"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
     public static final Item ENDER_PEARL_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "ender_pearl_shard"), createItem());
@@ -224,7 +226,7 @@ public class UItems {
     public static final USwordItem AMETHYST_SWORD = registerItem(new Identifier(UAdd.MOD_ID, "amethyst_sword"), new USwordItem(UMaterials.AMETHYST, 3, -2.4F, new FabricItemSettings()));
     public static final UShovelItem AMETHYST_SHOVEL = registerItem(new Identifier(UAdd.MOD_ID, "amethyst_shovel"), new UShovelItem(UMaterials.AMETHYST, 1.5F, -3.0F, new FabricItemSettings()));
     public static final UPickaxeItem AMETHYST_PICKAXE = registerItem(new Identifier(UAdd.MOD_ID, "amethyst_pickaxe"), new UPickaxeItem(UMaterials.AMETHYST, 1, -2.8F, new FabricItemSettings()));
-    public static final UAxeItem AMETHYST_AXE = registerItem(new Identifier(UAdd.MOD_ID, "amethyst_axe"), new UAxeItem(UMaterials.AMETHYST, 6.0F, -3F, new FabricItemSettings()));
+    public static final UAxeItem AMETHYST_AXE = registerItem(new Identifier(UAdd.MOD_ID, "amethyst_axe"), new UAxeItem(UMaterials.AMETHYST, 5.0F, -3F, new FabricItemSettings()));
     public static final UHoeItem AMETHYST_HOE = registerItem(new Identifier(UAdd.MOD_ID, "amethyst_hoe"), new UHoeItem(UMaterials.AMETHYST_P5, -2, 0.0F, new FabricItemSettings()));
     public static final USwordItem EMERALD_SWORD = registerItem(new Identifier(UAdd.MOD_ID, "emerald_sword"), new USwordItem(UMaterials.EMERALD, 3, -2.4F, new FabricItemSettings()));
     public static final UShovelItem EMERALD_SHOVEL = registerItem(new Identifier(UAdd.MOD_ID, "emerald_shovel"), new UShovelItem(UMaterials.EMERALD, 1.5F, -3.0F, new FabricItemSettings()));
@@ -235,7 +237,7 @@ public class UItems {
     public static final UShovelItem BLAZE_METAL_SHOVEL = registerItem(new Identifier(UAdd.MOD_ID, "blaze_metal_shovel"), new UShovelItem(UMaterials.BLAZE_METAL, 1.5F, -3.0F, new FabricItemSettings()));
     public static final UPickaxeItem BLAZE_METAL_PICKAXE = registerItem(new Identifier(UAdd.MOD_ID, "blaze_metal_pickaxe"), new UPickaxeItem(UMaterials.BLAZE_METAL, 1, -2.8F, new FabricItemSettings()));
     public static final UAxeItem BLAZE_METAL_AXE = registerItem(new Identifier(UAdd.MOD_ID, "blaze_metal_axe"), new UAxeItem(UMaterials.BLAZE_METAL, 5.0F, -3.0F, new FabricItemSettings()));
-    public static final UHoeItem BLAZE_METAL_HOE = registerItem(new Identifier(UAdd.MOD_ID, "blaze_metal_hoe"), new UHoeItem(UMaterials.BLAZE_METAL, -3, 0.0F, new FabricItemSettings()));
+    public static final UHoeItem BLAZE_METAL_HOE = registerItem(new Identifier(UAdd.MOD_ID, "blaze_metal_hoe"), new UHoeItem(UMaterials.BLAZE_METAL_P5, -3, 0.0F, new FabricItemSettings()));
     //Utility
     public static final Bundle BUNDLE = registerItem(new Identifier(UAdd.MOD_ID, "bundle"), new Bundle(new FabricItemSettings().maxCount(1)));
     public static final IronBundle IRON_BUNDLE = registerItem(new Identifier(UAdd.MOD_ID, "iron_bundle"), new IronBundle(new FabricItemSettings().maxCount(1)));
@@ -264,6 +266,8 @@ public class UItems {
     }
     public static void itemTabs() {
         ItemGroupEvents.modifyEntriesEvent(UGroups.UAddTab).register(entries -> {
+            //Farming stuff
+            entries.add(SPRINKLER.asItem().getDefaultStack());
             //Ores
             entries.add(ALLAY_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_ALLAY_ORE.asItem().getDefaultStack());
@@ -564,6 +568,8 @@ public class UItems {
             entries.add(ENDER_PEARL_SHARD.getDefaultStack());
             // -- Dusts
             entries.add(DIRT_PILE.getDefaultStack());
+            entries.add(ROCK.getDefaultStack());
+            entries.add(DEEPSLATE_ROCK.getDefaultStack());
             entries.add(EXOTIC_DUST.getDefaultStack());
             // -- Nuggets
             entries.add(NETHERITE_NUGGET.getDefaultStack());

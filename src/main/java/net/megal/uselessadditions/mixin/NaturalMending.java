@@ -41,7 +41,7 @@ public abstract class NaturalMending {
             itemStack.setDamage(itemStack.getDamage() - i);
             int j = amount - getMendingRepairCost(i);
             Random random = new Random();
-            if (j > 0 && random.nextInt(2) == 0) {
+            if (j > 0 && random.nextBoolean()) {
                 cir.setReturnValue(repairPlayerGears(player, j));
             }
         }

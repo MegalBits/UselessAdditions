@@ -43,6 +43,7 @@ public class UAdd implements ModInitializer {
         autoSmeltItems.add(UItems.BLAZE_METAL_HOE);
     }
     private void AddCompostable() {
+        compostableItem(UItems.DIRT_PILE, ComposterRarities.EXTREMELY_LOW);
         compostableItem(UItems.LESSER_GOLDEN_APPLE, ComposterRarities.HIGH);
         compostableItem(UItems.LESSER_GOLDEN_CARROT, ComposterRarities.HIGH);
         compostableItem(UItems.BUNDLED_FLOWERS, ComposterRarities.HIGH);
@@ -74,6 +75,7 @@ public class UAdd implements ModInitializer {
         CompostingChanceRegistry.INSTANCE.add(item, rarity.getRarity());
     }
     private enum ComposterRarities {
+        EXTREMELY_LOW(.1f),
         VERY_LOW(.3f),
         LOW(.5f),
         MED(.65f),
