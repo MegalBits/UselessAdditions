@@ -355,5 +355,7 @@
   "enchantment.uselessadditions.auto_smelt": "Auto Smelting",
   "enchantment.uselessadditions.auto_smelt.description": "Automatically smelts any blocks mined.",
   "enchantment.uselessadditions.natural_mending": "Crystalized Mending",
-  "enchantment.uselessadditions.natural_mending.description": "Repairs the durability of armor and tools with XP."
+  "enchantment.uselessadditions.natural_mending.description": "Repairs the durability of armor and tools with XP.",
+  "enchantment.uselessadditions.poisoning": "Poisoning",
+  "enchantment.uselessadditions.poisoning.description": "Poisons entities hit."
 }

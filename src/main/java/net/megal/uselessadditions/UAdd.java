@@ -6,6 +6,8 @@ import net.megal.uselessadditions.block.UBlocks;
 import net.megal.uselessadditions.enchantment.UEnchantments;
 import net.megal.uselessadditions.item.UGroups;
 import net.megal.uselessadditions.item.UItems;
+import net.megal.uselessadditions.recipe.URecipes;
+import net.megal.uselessadditions.screen.UScreens;
 import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
@@ -63,6 +65,12 @@ public class UAdd implements ModInitializer {
 
         //Makes items compostable
         AddCompostable();
+
+        //Loads screens so that they work
+        UScreens.loadStuff();
+
+        //
+        URecipes.loadStuff();
 
         //Loads in world gen stuff such as ores
         UWorldgen.wgenLoad();

@@ -6,13 +6,10 @@ import net.megal.uselessadditions.UAdd;
 import net.minecraft.block.Block;
 import net.minecraft.block.enums.Instrument;
 import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.Registries;
-import org.jetbrains.annotations.Nullable;
 
 public class UBlocks {
     //Ores
@@ -126,7 +123,7 @@ public class UBlocks {
     public static final Block DEEPSLATE_WOLF_ORE = register(new Identifier(UAdd.MOD_ID, "deepslate_wolf_ore"), createDeepslateOre(), new FabricItemSettings());
     public static final Block ZOMBIE_ORE = register(new Identifier(UAdd.MOD_ID, "zombie_ore"), createOre(), new FabricItemSettings());
     public static final Block DEEPSLATE_ZOMBIE_ORE = register(new Identifier(UAdd.MOD_ID, "deepslate_zombie_ore"), createDeepslateOre(), new FabricItemSettings());
-
+    public static final EnhancementTable ENHANCEMENT_TABLE = register(new Identifier(UAdd.MOD_ID, "enhancement_table"), new EnhancementTable(FabricBlockSettings.create().instrument(Instrument.BASS).strength(2.5F).requiresTool().sounds(BlockSoundGroup.WOOD).burnable()), new FabricItemSettings());
     //Registers blocks as well as a block item
     private static <T extends Block> T register(Identifier id, T block, FabricItemSettings settings) {
         registerBlockItem(id, block, settings);
@@ -143,7 +140,7 @@ public class UBlocks {
     }
     //Some default block types so that I don't have to do as much copy/pasting
     private static Block createOre() {
-        return new Block(FabricBlockSettings.create().instrument(Instrument.BASS).strength(3.0F,3.0F).requiresTool().sounds(BlockSoundGroup.STONE));
+        return new Block(FabricBlockSettings.create().instrument(Instrument.BASS).strength(3.0F).requiresTool().sounds(BlockSoundGroup.STONE));
     }
     private static Block createDeepslateOre() {
         return new Block(FabricBlockSettings.create().instrument(Instrument.BASS).strength(4.5F,3.0F).requiresTool().sounds(BlockSoundGroup.DEEPSLATE));

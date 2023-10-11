@@ -10,6 +10,8 @@ import net.minecraft.util.Identifier;
 public class UEnchantments {
     private static final EquipmentSlot[] ALL_ARMOR = new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET};
 
+    public static final PoisonEnchantment POISONING = registerEnchantment(new Identifier(UAdd.MOD_ID, "poisoning"),
+            new PoisonEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
     public static final NaturalMendingEnchantment NATURAL_MENDING = registerEnchantment(new Identifier(UAdd.MOD_ID, "natural_mending"),
             new NaturalMendingEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.values()));
     public static final AutoSmeltEnchantment AUTO_SMELT = registerEnchantment(new Identifier(UAdd.MOD_ID, "auto_smelt"),
