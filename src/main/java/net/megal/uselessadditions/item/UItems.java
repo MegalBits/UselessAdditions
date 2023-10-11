@@ -3,7 +3,6 @@ package net.megal.uselessadditions.item;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.megal.uselessadditions.UAdd;
-import net.megal.uselessadditions.block.Sprinkler;
 import net.megal.uselessadditions.item.base.*;
 import net.megal.uselessadditions.item.bundles.*;
 import net.minecraft.entity.EntityType;
@@ -200,17 +199,20 @@ public class UItems {
     public static final Item EMPTY_DISC = registerItem(new Identifier(UAdd.MOD_ID, "empty_disc"), createItem());
     public static final DamageableItem BUNDLED_FLOWERS = registerItem(new Identifier(UAdd.MOD_ID, "bundled_flowers"), new DamageableItem(new FabricItemSettings().maxCount(1).maxDamage(16)));
     public static final TooltipItem BEE_STINGER = registerItem(new Identifier(UAdd.MOD_ID, "bee_stinger"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
+    public static final Item ENDER_PEARL_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "ender_pearl_shard"), createItem());
     public static final MagicBook MAGIC_BOOK = registerItem(new Identifier(UAdd.MOD_ID, "magic_book"), new MagicBook(new FabricItemSettings().maxCount(1).maxDamage(3).rarity(Rarity.EPIC), Formatting.GRAY));
     public static final Item IRON_BUNDLE_UPGRADE = registerItem(new Identifier(UAdd.MOD_ID, "iron_bundle_upgrade"), createItem());
     public static final Item DIAMOND_BUNDLE_UPGRADE = registerItem(new Identifier(UAdd.MOD_ID, "diamond_bundle_upgrade"), createItem());
     // -- Dusts
     public static final Item DIRT_PILE = registerItem(new Identifier(UAdd.MOD_ID, "dirt_pile"), createItem());
+    public static final Item SAND_PILE = registerItem(new Identifier(UAdd.MOD_ID, "sand_pile"), createItem());
+    public static final Item RED_SAND_PILE = registerItem(new Identifier(UAdd.MOD_ID, "red_sand_pile"), createItem());
+    public static final Item FLINT_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "flint_shard"), createItem());
     public static final Item ROCK = registerItem(new Identifier(UAdd.MOD_ID, "rock"), createItem());
     public static final Item DEEPSLATE_ROCK = registerItem(new Identifier(UAdd.MOD_ID, "deepslate_rock"), createItem());
     public static final Item EXOTIC_DUST = registerItem(new Identifier(UAdd.MOD_ID, "exotic_dust"), new Item(new FabricItemSettings().rarity(Rarity.UNCOMMON)));
     // -- Nuggets
     public static final TooltipItem FORTRESS_NUGGET = registerItem(new Identifier(UAdd.MOD_ID, "fortress_nugget"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
-    public static final Item ENDER_PEARL_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "ender_pearl_shard"), createItem());
     public static final Item NETHERITE_NUGGET = registerItem(new Identifier(UAdd.MOD_ID, "netherite_nugget"), new Item(new FabricItemSettings().fireproof()));
     // -- Ingots
     public static final Item MAGIC_INGOT = registerItem(new Identifier(UAdd.MOD_ID, "magic_ingot"), createItem());
@@ -220,6 +222,7 @@ public class UItems {
     // -- Tool Components
     public static final Item NETHERITE_STICK = registerItem(new Identifier(UAdd.MOD_ID, "netherite_stick"), new Item(new FabricItemSettings().fireproof()));
     //Hammer
+    public static final DamageableItem MAKESHIFT_HAMMER = registerItem(new Identifier(UAdd.MOD_ID, "makeshift_hammer"), new DamageableItem(new FabricItemSettings().maxCount(1).maxDamage(16)));
     public static final DamageableItem HAMMER = registerItem(new Identifier(UAdd.MOD_ID, "hammer"), new DamageableItem(new FabricItemSettings().maxCount(1).maxDamage(64)));
     public static final DamageableGlintItem ENCHANTED_HAMMER = registerItem(new Identifier(UAdd.MOD_ID, "enchanted_hammer"), new DamageableGlintItem(new FabricItemSettings().maxCount(1).maxDamage(4096)));
     //Tools
@@ -266,8 +269,6 @@ public class UItems {
     }
     public static void itemTabs() {
         ItemGroupEvents.modifyEntriesEvent(UGroups.UAddTab).register(entries -> {
-            //Farming stuff
-            entries.add(SPRINKLER.asItem().getDefaultStack());
             //Ores
             entries.add(ALLAY_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_ALLAY_ORE.asItem().getDefaultStack());
@@ -561,17 +562,20 @@ public class UItems {
             entries.add(EMPTY_DISC.getDefaultStack());
             entries.add(BUNDLED_FLOWERS.getDefaultStack());
             entries.add(BEE_STINGER.getDefaultStack());
+            entries.add(ENDER_PEARL_SHARD.getDefaultStack());
             entries.add(MAGIC_BOOK.getDefaultStack());
             entries.add(IRON_BUNDLE_UPGRADE.getDefaultStack());
             entries.add(DIAMOND_BUNDLE_UPGRADE.getDefaultStack());
-            entries.add(FORTRESS_NUGGET.getDefaultStack());
-            entries.add(ENDER_PEARL_SHARD.getDefaultStack());
             // -- Dusts
             entries.add(DIRT_PILE.getDefaultStack());
+            entries.add(SAND_PILE.getDefaultStack());
+            entries.add(RED_SAND_PILE.getDefaultStack());
+            entries.add(FLINT_SHARD.getDefaultStack());
             entries.add(ROCK.getDefaultStack());
             entries.add(DEEPSLATE_ROCK.getDefaultStack());
             entries.add(EXOTIC_DUST.getDefaultStack());
             // -- Nuggets
+            entries.add(FORTRESS_NUGGET.getDefaultStack());
             entries.add(NETHERITE_NUGGET.getDefaultStack());
             // -- Ingots
             entries.add(MAGIC_INGOT.getDefaultStack());
@@ -581,6 +585,7 @@ public class UItems {
             // -- Tool Components
             entries.add(NETHERITE_STICK.getDefaultStack());
             // Hammer
+            entries.add(MAKESHIFT_HAMMER.getDefaultStack());
             entries.add(HAMMER.getDefaultStack());
             entries.add(ENCHANTED_HAMMER.getDefaultStack());
             // Tools

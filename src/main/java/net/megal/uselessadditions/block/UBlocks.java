@@ -8,9 +8,11 @@ import net.minecraft.block.enums.Instrument;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.Registries;
+import org.jetbrains.annotations.Nullable;
 
 public class UBlocks {
     //Ores
@@ -124,12 +126,17 @@ public class UBlocks {
     public static final Block DEEPSLATE_WOLF_ORE = register(new Identifier(UAdd.MOD_ID, "deepslate_wolf_ore"), createDeepslateOre(), new FabricItemSettings());
     public static final Block ZOMBIE_ORE = register(new Identifier(UAdd.MOD_ID, "zombie_ore"), createOre(), new FabricItemSettings());
     public static final Block DEEPSLATE_ZOMBIE_ORE = register(new Identifier(UAdd.MOD_ID, "deepslate_zombie_ore"), createDeepslateOre(), new FabricItemSettings());
-    // Farming blocks
-    public static final Sprinkler SPRINKLER = register(new Identifier(UAdd.MOD_ID, "sprinkler"), new Sprinkler(FabricBlockSettings.create().strength(1.25F, 1.0F).requiresTool().noCollision().breakInstantly().nonOpaque()), new FabricItemSettings());
+
     //Registers blocks as well as a block item
     private static <T extends Block> T register(Identifier id, T block, FabricItemSettings settings) {
         registerBlockItem(id, block, settings);
         return Registry.register(Registries.BLOCK, id, block);
+    }
+    private static <T extends Block> T register(Identifier id, T block) {
+        return Registry.register(Registries.BLOCK, id, block);
+    }
+    private static <T extends BlockItem> void registerBlockItem(Identifier id, T item) {
+        Registry.register(Registries.ITEM, id, item);
     }
     private static void registerBlockItem(Identifier id, Block block, FabricItemSettings settings) {
         Registry.register(Registries.ITEM, id, new BlockItem(block, settings));

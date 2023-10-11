@@ -20,7 +20,6 @@ public abstract class CraftingOutput {
     @ModifyReturnValue(at = @At("RETURN"),
             method = "outputFromJson(Lcom/google/gson/JsonObject;)Lnet/minecraft/item/ItemStack;")
     private static ItemStack outputWithEnchantment(ItemStack stack) {
-
         if (naturalMendingItems.contains(stack.getItem())) {
             stack.addEnchantment(UEnchantments.NATURAL_MENDING, 1);
         }

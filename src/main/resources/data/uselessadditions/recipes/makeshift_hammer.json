@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "32 ",
+    " 12",
+    "1  "
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:stick"
+    },
+    "2": {
+      "tag": "minecraft:planks"
+    },
+    "3": [
+      {
+        "item": "uselessadditions:rock"
+      },
+      {
+        "item": "uselessadditions:deepslate_rock"
+      }
+    ]
+  },
+  "result": {
+    "item": "uselessadditions:makeshift_hammer",
+    "count": 1
+  }
+}

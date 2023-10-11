@@ -1,6 +1,4 @@
 {
-  "block.uselessadditions.sprinkler": "Sprinkler",
-
   "block.uselessadditions.allay_ore": "Allay Ore",
   "block.uselessadditions.deepslate_allay_ore": "Deepslate Allay Ore",
   "block.uselessadditions.axolotl_ore": "Axolotl Ore",
@@ -297,6 +295,9 @@
   "item.uselessadditions.fortress_nugget.tooltip": "Spawns in fortress chests",
   "item.uselessadditions.ender_pearl_shard": "Ender Pearl Shard",
   "item.uselessadditions.dirt_pile": "Dirt Pile",
+  "item.uselessadditions.sand_pile": "Sand Pile",
+  "item.uselessadditions.red_sand_pile": "Red Sand Pile",
+  "item.uselessadditions.flint_shard": "Flint Shard",
   "item.uselessadditions.rock": "Rock",
   "item.uselessadditions.deepslate_rock": "Deepslate Rock",
   "item.uselessadditions.exotic_dust": "Exotic Dust",
@@ -330,6 +331,7 @@
   "item.uselessadditions.netherite_bundle": "Netherite Bundle",
   "item.uselessadditions.dragon_bundle": "Dragon Bundle",
 
+  "item.uselessadditions.makeshift_hammer": "Makeshift Hammer",
   "item.uselessadditions.hammer": "Smithing Hammer",
   "item.uselessadditions.enchanted_hammer": "Enchanted Smithing Hammer",
   "item.uselessadditions.amethyst_sword": "Amethyst Sword",

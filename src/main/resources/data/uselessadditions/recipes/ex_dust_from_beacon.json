@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "tag": "c:smithing_hammers"
+  },
+  "base": {
+    "item": "minecraft:beacon"
+  },
+  "addition": {
+    "item": "minecraft:cobblestone"
+  },
+  "result": {
+    "item": "uselessadditions:exotic_dust"
+  }
+}

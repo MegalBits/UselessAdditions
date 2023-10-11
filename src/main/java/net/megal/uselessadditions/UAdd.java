@@ -6,7 +6,6 @@ import net.megal.uselessadditions.block.UBlocks;
 import net.megal.uselessadditions.enchantment.UEnchantments;
 import net.megal.uselessadditions.item.UGroups;
 import net.megal.uselessadditions.item.UItems;
-import net.minecraft.block.ComposterBlock;
 import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;

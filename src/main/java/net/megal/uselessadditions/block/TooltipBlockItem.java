@@ -1,20 +1,19 @@
-package net.megal.uselessadditions.item;
+package net.megal.uselessadditions.block;
 
-import net.megal.uselessadditions.item.base.UAllItems;
+import net.minecraft.block.Block;
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.item.Item;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class TooltipItem extends Item {
+public class TooltipBlockItem extends BlockItem {
     private final Formatting formatting;
-    public TooltipItem(Settings settings, Formatting formatting) {
-        super(settings);
+    public TooltipBlockItem(Block block, Settings settings, Formatting formatting) {
+        super(block, settings);
         this.formatting = formatting;
     }
     @Override

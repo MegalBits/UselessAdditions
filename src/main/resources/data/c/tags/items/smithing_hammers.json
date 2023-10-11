@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "uselessadditions:makeshift_hammer",
     "uselessadditions:hammer",
     "uselessadditions:enchanted_hammer"
   ]
