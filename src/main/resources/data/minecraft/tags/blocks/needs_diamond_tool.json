@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "uselessadditions:enhancement_table",
     "uselessadditions:blaze_ore",
     "uselessadditions:deepslate_blaze_ore",
     "uselessadditions:creeper_ore",

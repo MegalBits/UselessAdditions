@@ -9,7 +9,8 @@
 		"CraftingOutput",
 		"SmithingOutput",
 		"SmithingDamageTemplate",
-		"ComposterOutput"
+		"ComposterOutput",
+		"NoGlintForCurses"
 	],
 	"injectors": {
 		"defaultRequire": 1

@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:smithing_transform",
+  "type": "uselessadditions:smithing_no_nbt_transform",
   "template": {
     "item": "uselessadditions:magic_book"
   },

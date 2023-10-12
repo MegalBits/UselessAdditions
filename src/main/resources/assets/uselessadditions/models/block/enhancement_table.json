@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "uselessadditions:block/enhancement_table_bottom",
+    "east": "uselessadditions:block/enhancement_table_side",
+    "north": "uselessadditions:block/enhancement_table_side",
+    "particle": "uselessadditions:block/enhancement_table_side",
+    "south": "uselessadditions:block/enhancement_table_side",
+    "up": "uselessadditions:block/enhancement_table_top",
+    "west": "uselessadditions:block/enhancement_table_side"
+  }
+}

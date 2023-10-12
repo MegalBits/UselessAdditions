@@ -2,6 +2,7 @@ package net.megal.uselessadditions.screen;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.megal.uselessadditions.UAdd;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.CyclingSlotIcon;
 import net.minecraft.client.gui.screen.ingame.ForgingScreen;
@@ -27,12 +28,11 @@ import java.util.Optional;
 
 @Environment(value= EnvType.CLIENT)
 public class EnhancementScreen extends ForgingScreen<EnhancementScreenHandler> {
-    private static final Identifier TEXTURE = new Identifier("textures/gui/container/smithing.png");
-    private static final Identifier EMPTY_SLOT_SMITHING_TEMPLATE_ARMOR_TRIM_TEXTURE = new Identifier("item/empty_slot_smithing_template_armor_trim");
-    private static final Identifier EMPTY_SLOT_SMITHING_TEMPLATE_NETHERITE_UPGRADE_TEXTURE = new Identifier("item/empty_slot_smithing_template_netherite_upgrade");
-    private static final Text MISSING_TEMPLATE_TOOLTIP = Text.translatable((String)"container.upgrade.missing_template_tooltip");
-    private static final Text ERROR_TOOLTIP = Text.translatable((String)"container.upgrade.error_tooltip");
-    private static final List<Identifier> EMPTY_SLOT_TEXTURES = List.of(EMPTY_SLOT_SMITHING_TEMPLATE_ARMOR_TRIM_TEXTURE, EMPTY_SLOT_SMITHING_TEMPLATE_NETHERITE_UPGRADE_TEXTURE);
+    private static final Identifier TEXTURE = new Identifier(UAdd.MOD_ID, "textures/gui/container/enhancement.png");
+    private static final Identifier EMPTY_SLOT_SMITHING_TEMPLATE_ARMOR_TRIM_TEXTURE = new Identifier(UAdd.MOD_ID, "item/hammer_template");
+    private static final Text MISSING_TEMPLATE_TOOLTIP = Text.translatable((String)"container.uselessadditions.no_hammer_tooltip");
+    private static final Text ERROR_TOOLTIP = Text.translatable((String)"container.uselessadditions.upgrade.maxed_tooltip");
+    private static final List<Identifier> EMPTY_SLOT_TEXTURES = List.of(EMPTY_SLOT_SMITHING_TEMPLATE_ARMOR_TRIM_TEXTURE);
     private static final int field_42057 = 44;
     private static final int field_42058 = 15;
     private static final int field_42059 = 28;

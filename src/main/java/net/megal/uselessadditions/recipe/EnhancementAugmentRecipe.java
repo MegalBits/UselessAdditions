@@ -8,6 +8,7 @@ import com.google.gson.JsonParseException;
 import com.google.gson.JsonSyntaxException;
 import net.megal.uselessadditions.enchantment.UEnchantments;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -22,6 +23,7 @@ import net.minecraft.util.JsonHelper;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Map;
 import java.util.stream.Stream;
 
 import static net.megal.uselessadditions.UAdd.autoSmeltItems;
@@ -44,7 +46,13 @@ public class EnhancementAugmentRecipe implements EnhancementRecipe {
 
     @Override
     public boolean matches(Inventory inventory, World world) {
-        return this.template.test(inventory.getStack(0)) && this.base.test(inventory.getStack(1)) && this.addition.test(inventory.getStack(2));
+        boolean isMaxed = false;
+        @Nullable Enchantment enchantment = Registries.ENCHANTMENT.get(modifier);
+        if (enchantment != null) {
+            int level = EnchantmentHelper.getLevel(enchantment, inventory.getStack(1));
+            isMaxed = level >= enchantment.getMaxLevel();
+        }
+        return !isMaxed && this.template.test(inventory.getStack(0)) && this.base.test(inventory.getStack(1)) && this.addition.test(inventory.getStack(2));
     }
 
     @Override
@@ -53,7 +61,15 @@ public class EnhancementAugmentRecipe implements EnhancementRecipe {
         NbtCompound nbtCompound = inventory.getStack(1).getNbt();
         if (nbtCompound != null) stack.setNbt(nbtCompound.copy());
         @Nullable Enchantment enchantment = Registries.ENCHANTMENT.get(modifier);
-        if (modifier != null) stack.addEnchantment(enchantment, 1);
+        if (enchantment != null) {
+            int level = EnchantmentHelper.getLevel(enchantment, stack);
+            Map<Enchantment, Integer> map = EnchantmentHelper.get(stack);
+            if (level <= 0) stack.addEnchantment(enchantment, 1);
+            else if (level < enchantment.getMaxLevel()) {
+                map.replace(enchantment, EnchantmentHelper.getLevel(enchantment, stack) + 1);
+                EnchantmentHelper.set(map, stack);
+            }
+        }
 
         if (naturalMendingItems.contains(stack.getItem())) {
             stack.addEnchantment(UEnchantments.NATURAL_MENDING, 1);
@@ -147,17 +163,6 @@ public class EnhancementAugmentRecipe implements EnhancementRecipe {
             enhancementAugmentRecipe.addition.write(packetByteBuf);
             packetByteBuf.writeIdentifier(enhancementAugmentRecipe.modifier);
         }
-
-
-//        @Override
-//        public /* synthetic */ Recipe read(Identifier id, PacketByteBuf buf) {
-//            return this.read(id, buf);
-//        }
-//
-//        @Override
-//        public /* synthetic */ Recipe read(Identifier id, JsonObject json) {
-//            return this.read(id, json);
-//        }
     }
 }
 

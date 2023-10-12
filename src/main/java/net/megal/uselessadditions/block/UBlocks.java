@@ -123,7 +123,7 @@ public class UBlocks {
     public static final Block DEEPSLATE_WOLF_ORE = register(new Identifier(UAdd.MOD_ID, "deepslate_wolf_ore"), createDeepslateOre(), new FabricItemSettings());
     public static final Block ZOMBIE_ORE = register(new Identifier(UAdd.MOD_ID, "zombie_ore"), createOre(), new FabricItemSettings());
     public static final Block DEEPSLATE_ZOMBIE_ORE = register(new Identifier(UAdd.MOD_ID, "deepslate_zombie_ore"), createDeepslateOre(), new FabricItemSettings());
-    public static final EnhancementTable ENHANCEMENT_TABLE = register(new Identifier(UAdd.MOD_ID, "enhancement_table"), new EnhancementTable(FabricBlockSettings.create().instrument(Instrument.BASS).strength(2.5F).requiresTool().sounds(BlockSoundGroup.WOOD).burnable()), new FabricItemSettings());
+    public static final EnhancementTable ENHANCEMENT_TABLE = register(new Identifier(UAdd.MOD_ID, "enhancement_table"), new EnhancementTable(FabricBlockSettings.create().instrument(Instrument.BASEDRUM).strength(7.5f, 1200.0f).requiresTool().sounds(BlockSoundGroup.STONE).requiresTool()), new FabricItemSettings());
     //Registers blocks as well as a block item
     private static <T extends Block> T register(Identifier id, T block, FabricItemSettings settings) {
         registerBlockItem(id, block, settings);
@@ -140,10 +140,10 @@ public class UBlocks {
     }
     //Some default block types so that I don't have to do as much copy/pasting
     private static Block createOre() {
-        return new Block(FabricBlockSettings.create().instrument(Instrument.BASS).strength(3.0F).requiresTool().sounds(BlockSoundGroup.STONE));
+        return new Block(FabricBlockSettings.create().instrument(Instrument.BASEDRUM).strength(3.0F).requiresTool().sounds(BlockSoundGroup.STONE));
     }
     private static Block createDeepslateOre() {
-        return new Block(FabricBlockSettings.create().instrument(Instrument.BASS).strength(4.5F,3.0F).requiresTool().sounds(BlockSoundGroup.DEEPSLATE));
+        return new Block(FabricBlockSettings.create().instrument(Instrument.BASEDRUM).strength(4.5F,3.0F).requiresTool().sounds(BlockSoundGroup.DEEPSLATE));
     }
     public static void blockLoad() {}
 }

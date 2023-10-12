@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:smithing_transform",
+  "type": "uselessadditions:smithing_no_nbt_transform",
   "template": {
     "tag": "c:smithing_hammers"
   },
@@ -10,6 +10,7 @@
     "item": "minecraft:cobblestone"
   },
   "result": {
-    "item": "uselessadditions:flint_shard"
+    "item": "uselessadditions:flint_shard",
+    "count": 3
   }
 }

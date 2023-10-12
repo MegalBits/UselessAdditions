@@ -12,6 +12,8 @@ public class UEnchantments {
 
     public static final PoisonEnchantment POISONING = registerEnchantment(new Identifier(UAdd.MOD_ID, "poisoning"),
             new PoisonEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
+    public static final WitherEnchantment WITHERING = registerEnchantment(new Identifier(UAdd.MOD_ID, "withering"),
+            new WitherEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
     public static final NaturalMendingEnchantment NATURAL_MENDING = registerEnchantment(new Identifier(UAdd.MOD_ID, "natural_mending"),
             new NaturalMendingEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.values()));
     public static final AutoSmeltEnchantment AUTO_SMELT = registerEnchantment(new Identifier(UAdd.MOD_ID, "auto_smelt"),

@@ -1,4 +1,6 @@
 {
+  "block.uselessadditions.enhancement_table": "Enhancement Table",
+
   "block.uselessadditions.allay_ore": "Allay Ore",
   "block.uselessadditions.deepslate_allay_ore": "Deepslate Allay Ore",
   "block.uselessadditions.axolotl_ore": "Axolotl Ore",
@@ -300,6 +302,7 @@
   "item.uselessadditions.flint_shard": "Flint Shard",
   "item.uselessadditions.rock": "Rock",
   "item.uselessadditions.deepslate_rock": "Deepslate Rock",
+  "item.uselessadditions.ash": "Ash",
   "item.uselessadditions.exotic_dust": "Exotic Dust",
   "item.uselessadditions.exotic_ingot": "Exotic Ingot",
   "item.uselessadditions.netherite_nugget": "Netherite Nugget",
@@ -352,10 +355,16 @@
 
   "itemgroup.uadd": "Useless Additions",
 
+  "container.uselessadditions.enhancement": "Enhancement Table",
+  "container.uselessadditions.no_hammer_tooltip": "Add Smithing Hammer",
+  "container.uselessadditions.upgrade.maxed_tooltip": "Item cannot be upgraded further",
+
   "enchantment.uselessadditions.auto_smelt": "Auto Smelting",
   "enchantment.uselessadditions.auto_smelt.description": "Automatically smelts any blocks mined.",
   "enchantment.uselessadditions.natural_mending": "Crystalized Mending",
   "enchantment.uselessadditions.natural_mending.description": "Repairs the durability of armor and tools with XP.",
   "enchantment.uselessadditions.poisoning": "Poisoning",
-  "enchantment.uselessadditions.poisoning.description": "Poisons entities hit."
+  "enchantment.uselessadditions.poisoning.description": "Applies poison to hit enemies.",
+  "enchantment.uselessadditions.withering": "Withering",
+  "enchantment.uselessadditions.withering.description": "Applies wither to hit enemies."
 }

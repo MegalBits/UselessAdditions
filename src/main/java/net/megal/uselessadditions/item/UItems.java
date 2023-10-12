@@ -210,6 +210,7 @@ public class UItems {
     public static final Item FLINT_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "flint_shard"), createItem());
     public static final Item ROCK = registerItem(new Identifier(UAdd.MOD_ID, "rock"), createItem());
     public static final Item DEEPSLATE_ROCK = registerItem(new Identifier(UAdd.MOD_ID, "deepslate_rock"), createItem());
+    public static final Item ASH = registerItem(new Identifier(UAdd.MOD_ID, "ash"), createItem());
     public static final Item EXOTIC_DUST = registerItem(new Identifier(UAdd.MOD_ID, "exotic_dust"), new Item(new FabricItemSettings().rarity(Rarity.UNCOMMON)));
     // -- Nuggets
     public static final TooltipItem FORTRESS_NUGGET = registerItem(new Identifier(UAdd.MOD_ID, "fortress_nugget"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
@@ -573,6 +574,7 @@ public class UItems {
             entries.add(FLINT_SHARD.getDefaultStack());
             entries.add(ROCK.getDefaultStack());
             entries.add(DEEPSLATE_ROCK.getDefaultStack());
+            entries.add(ASH.getDefaultStack());
             entries.add(EXOTIC_DUST.getDefaultStack());
             // -- Nuggets
             entries.add(FORTRESS_NUGGET.getDefaultStack());

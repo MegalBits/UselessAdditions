@@ -17,7 +17,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class EnhancementTable extends CraftingTableBlock {
-    private static final Text SCREEN_TITLE = Text.translatable("container.enhancement");
+    private static final Text SCREEN_TITLE = Text.translatable("container.uselessadditions.enhancement");
 
     public EnhancementTable(AbstractBlock.Settings settings) {
         super(settings);

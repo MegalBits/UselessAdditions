@@ -1,0 +1,15 @@
+{
+  "type": "uselessadditions:enhancement_augment",
+  "template": {
+    "tag": "c:smithing_hammers"
+  },
+  "base": {
+    "tag": "minecraft:tools"
+  },
+  "addition": {
+    "item": "minecraft:wither_skeleton_skull"
+  },
+  "modifier": {
+    "enchantment": "uselessadditions:withering"
+  }
+}

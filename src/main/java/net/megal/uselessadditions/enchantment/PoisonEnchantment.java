@@ -22,12 +22,18 @@ public class PoisonEnchantment extends Enchantment {
     }
     @Override
     public int getMinPower(int level) {
-        return 5;
+        return 1;
     }
     @Override
     public int getMaxPower(int level) {
-        return 40;
+        return 1;
     }
+
+    @Override
+    public int getMaxLevel() {
+        return 3;
+    }
+
     @Override
     public boolean isAvailableForEnchantedBookOffer() {
         return false;
@@ -50,7 +56,7 @@ public class PoisonEnchantment extends Enchantment {
     }
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
-        int duration = level * 40 + 60;
+        int duration = (level-1) * 50 + 100;
         if (target instanceof LivingEntity) ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, duration, 0));
     }
     @Override

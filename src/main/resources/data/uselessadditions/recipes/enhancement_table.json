@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "333",
+    "212",
+    "111"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:obsidian"
+    },
+    "2": {
+      "item": "minecraft:diamond"
+    },
+    "3": {
+      "item": "minecraft:leather"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:enhancement_table",
+    "count": 1
+  }
+}
