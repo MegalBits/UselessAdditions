@@ -18,6 +18,8 @@ import net.minecraft.recipe.*;
 import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.world.World;
@@ -31,9 +33,9 @@ import static net.megal.uselessadditions.UAdd.naturalMendingItems;
 
 public class EnhancementAugmentRecipe implements EnhancementRecipe {
     private final Identifier id;
-    final Ingredient template;
-    final Ingredient base;
-    final Ingredient addition;
+    public final Ingredient template;
+    public final Ingredient base;
+    public final Ingredient addition;
     final Identifier modifier;
 
     public EnhancementAugmentRecipe(Identifier id, Ingredient template, Ingredient base, Ingredient addition, Identifier modifier) {
@@ -82,10 +84,11 @@ public class EnhancementAugmentRecipe implements EnhancementRecipe {
 
     @Override
     public ItemStack getOutput(DynamicRegistryManager registryManager) {
-//        for (ItemStack stack : base.getMatchingStacks()) {
-//            return stack;
-//        }
-        return new ItemStack(Items.BARRIER);
+        ItemStack stack = new ItemStack(Items.ENCHANTED_BOOK);
+        @Nullable Enchantment enchantment = Registries.ENCHANTMENT.get(modifier);
+        if (enchantment != null) stack.addEnchantment(enchantment, enchantment.getMaxLevel());
+        stack.setCustomName(Text.translatable("item.uselessadditions.augment_book").formatted(Formatting.WHITE));
+        return stack;
     }
 
     @Override

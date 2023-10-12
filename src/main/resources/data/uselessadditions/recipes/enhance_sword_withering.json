@@ -7,7 +7,7 @@
     "tag": "minecraft:tools"
   },
   "addition": {
-    "item": "minecraft:wither_skeleton_skull"
+    "item": "minecraft:wither_rose"
   },
   "modifier": {
     "enchantment": "uselessadditions:withering"

@@ -10,6 +10,7 @@
     "item": "uselessadditions:flint_shard"
   },
   "result": {
-    "item": "uselessadditions:red_sand_pile"
+    "item": "uselessadditions:red_sand_pile",
+    "count": 4
   }
 }

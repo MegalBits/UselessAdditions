@@ -25,9 +25,9 @@ import static net.megal.uselessadditions.UAdd.naturalMendingItems;
 
 public class SmithingNoNbtRecipe implements SmithingRecipe {
     private final Identifier id;
-    final Ingredient template;
-    final Ingredient base;
-    final Ingredient addition;
+    public final Ingredient template;
+    public final Ingredient base;
+    public final Ingredient addition;
     final ItemStack result;
 
     public SmithingNoNbtRecipe(Identifier id, Ingredient template, Ingredient base, Ingredient addition, ItemStack result) {

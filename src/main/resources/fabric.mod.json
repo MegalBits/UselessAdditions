@@ -18,6 +18,12 @@
 		],
 		"client": [
 			"net.megal.uselessadditions.UAddClient"
+		],
+		"rei_server": [
+			"net.megal.uselessadditions.plugins.rei.UAddREIServerPlugin"
+		],
+		"rei_client": [
+			"net.megal.uselessadditions.plugins.rei.UAddREIClientPlugin"
 		]
 	},
 	"mixins": [

@@ -7,14 +7,14 @@
   ],
   "key": {
     "1": {
-      "tag": "c:coal"
+      "item": "uselessadditions:blaze_shard"
     },
     "2": {
       "item": "uselessadditions:ash"
     }
   },
   "result": {
-    "item": "minecraft:gunpowder",
-    "count": 3
+    "item": "minecraft:blaze_powder",
+    "count": 1
   }
 }

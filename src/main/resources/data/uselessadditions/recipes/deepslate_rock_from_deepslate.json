@@ -10,6 +10,7 @@
     "item": "minecraft:flint"
   },
   "result": {
-    "item": "uselessadditions:deepslate_rock"
+    "item": "uselessadditions:deepslate_rock",
+    "count": 2
   }
 }

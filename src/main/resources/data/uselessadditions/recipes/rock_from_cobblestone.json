@@ -10,6 +10,7 @@
     "item": "minecraft:flint"
   },
   "result": {
-    "item": "uselessadditions:rock"
+    "item": "uselessadditions:rock",
+    "count": 2
   }
 }

@@ -353,6 +353,8 @@
   "item.uselessadditions.blaze_metal_axe": "Blaze-Metal Axe",
   "item.uselessadditions.blaze_metal_hoe": "Blaze-Metal Hoe",
 
+  "item.uselessadditions.augment_book": "Augment Item",
+
   "itemgroup.uadd": "Useless Additions",
 
   "container.uselessadditions.enhancement": "Enhancement Table",
@@ -366,5 +368,8 @@
   "enchantment.uselessadditions.poisoning": "Poisoning",
   "enchantment.uselessadditions.poisoning.description": "Applies poison to hit enemies.",
   "enchantment.uselessadditions.withering": "Withering",
-  "enchantment.uselessadditions.withering.description": "Applies wither to hit enemies."
+  "enchantment.uselessadditions.withering.description": "Applies wither to hit enemies.",
+
+  "category.uselessadditions.no_nbt_smithing": "Non NBT Smithing",
+  "category.uselessadditions.enhancement": "Enhancement"
 }

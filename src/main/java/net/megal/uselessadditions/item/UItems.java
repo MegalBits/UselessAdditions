@@ -257,7 +257,7 @@ public class UItems {
     public static final Item LESSER_GOLDEN_CARROT = registerItem(new Identifier(UAdd.MOD_ID, "lesser_golden_carrot"), new Item(new FabricItemSettings().food(UFoodComponents.LESSER_GOLDEN_CARROT)));
     public static final GlintItem ENCHANTED_GOLDEN_CARROT = registerItem(new Identifier(UAdd.MOD_ID, "enchanted_golden_carrot"), new GlintItem(new FabricItemSettings().food(UFoodComponents.ENCHANTED_GOLDEN_CARROT).rarity(Rarity.RARE)));
     public static final GlintItem MAGIC_CARROT = registerItem(new Identifier(UAdd.MOD_ID, "magic_carrot"), new GlintItem(new FabricItemSettings().food(UFoodComponents.MAGIC_CARROT).rarity(Rarity.EPIC)));
-    public static final Item LESSER_GOLDEN_APPLE = registerItem(new Identifier(UAdd.MOD_ID, "lesser_golden_apple"), new Item(new FabricItemSettings().food(UFoodComponents.LESSER_GOLDEN_APPLE).rarity(Rarity.UNCOMMON)));
+    public static final Item LESSER_GOLDEN_APPLE = registerItem(new Identifier(UAdd.MOD_ID, "lesser_golden_apple"), new Item(new FabricItemSettings().food(UFoodComponents.LESSER_GOLDEN_APPLE)));
     public static final GlintItem MAGIC_APPLE = registerItem(new Identifier(UAdd.MOD_ID, "magic_apple"), new GlintItem(new FabricItemSettings().food(UFoodComponents.MAGIC_APPLE).rarity(Rarity.EPIC)));
     private static Item createItem() {
         return new Item(new FabricItemSettings());
