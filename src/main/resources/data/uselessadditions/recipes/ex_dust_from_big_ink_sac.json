@@ -4,13 +4,12 @@
     "tag": "c:smithing_hammers"
   },
   "base": {
-    "item": "minecraft:grass_block"
+    "item": "uselessadditions:big_ink_sac"
   },
   "addition": {
     "item": "minecraft:cobblestone"
   },
   "result": {
-    "item": "uselessadditions:dirt_pile",
-    "count": 3
+    "item": "uselessadditions:exotic_dust"
   }
 }

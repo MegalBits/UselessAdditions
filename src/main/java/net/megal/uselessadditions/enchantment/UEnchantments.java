@@ -10,6 +10,26 @@ import net.minecraft.util.Identifier;
 public class UEnchantments {
     private static final EquipmentSlot[] ALL_ARMOR = new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET};
 
+    public static final SplinteredEnchantment SPLINTERED = registerEnchantment(new Identifier(UAdd.MOD_ID, "splintered"),
+            new SplinteredEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
+    public static final RepairingEnchantment REPAIRING = registerEnchantment(new Identifier(UAdd.MOD_ID, "repairing"),
+            new RepairingEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
+    public static final GlowingEnchantment LUMINESCENCE = registerEnchantment(new Identifier(UAdd.MOD_ID, "luminescence"),
+            new GlowingEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
+    public static final BlindnessEnchantment BLINDING = registerEnchantment(new Identifier(UAdd.MOD_ID, "blinding"),
+            new BlindnessEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
+    public static final SpeedEnchantment QUICKENING = registerEnchantment(new Identifier(UAdd.MOD_ID, "quickening"),
+            new SpeedEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
+    public static final FireEnchantment BURNING = registerEnchantment(new Identifier(UAdd.MOD_ID, "burning"),
+            new FireEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
+    public static final WaterBreathingEnchantment AQUATIC = registerEnchantment(new Identifier(UAdd.MOD_ID, "aquatic"),
+            new WaterBreathingEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
+    public static final SlowfallingEnchantment SLOWED_FALLING = registerEnchantment(new Identifier(UAdd.MOD_ID, "slowed_falling"),
+            new SlowfallingEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
+    public static final HungerEnchantment HUNGERING = registerEnchantment(new Identifier(UAdd.MOD_ID, "starving"),
+            new HungerEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
+    public static final SlownessEnchantment SLOWING = registerEnchantment(new Identifier(UAdd.MOD_ID, "slowing"),
+            new SlownessEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
     public static final PoisonEnchantment POISONING = registerEnchantment(new Identifier(UAdd.MOD_ID, "poisoning"),
             new PoisonEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
     public static final WitherEnchantment WITHERING = registerEnchantment(new Identifier(UAdd.MOD_ID, "withering"),

@@ -6,9 +6,14 @@
   "base": {
     "tag": "minecraft:tools"
   },
-  "addition": {
-    "item": "uselessadditions:bee_stinger"
-  },
+  "addition": [
+    {
+      "item": "uselessadditions:poison_gland"
+    },
+    {
+      "item": "uselessadditions:bee_stinger"
+    }
+  ],
   "modifier": {
     "enchantment": "uselessadditions:poisoning"
   }

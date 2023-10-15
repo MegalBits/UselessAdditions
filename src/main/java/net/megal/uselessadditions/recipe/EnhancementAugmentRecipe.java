@@ -6,6 +6,7 @@ package net.megal.uselessadditions.recipe;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonSyntaxException;
+import net.megal.uselessadditions.enchantment.AugmentEnchantment;
 import net.megal.uselessadditions.enchantment.UEnchantments;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -48,11 +49,17 @@ public class EnhancementAugmentRecipe implements EnhancementRecipe {
 
     @Override
     public boolean matches(Inventory inventory, World world) {
+        ItemStack stack = inventory.getStack(1);
         boolean isMaxed = false;
         @Nullable Enchantment enchantment = Registries.ENCHANTMENT.get(modifier);
         if (enchantment != null) {
-            int level = EnchantmentHelper.getLevel(enchantment, inventory.getStack(1));
+            int level = EnchantmentHelper.getLevel(enchantment, stack);
             isMaxed = level >= enchantment.getMaxLevel();
+            if (stack.hasEnchantments()) {
+                for (Enchantment ench : EnchantmentHelper.get(stack).keySet()) {
+                    if (!(ench instanceof AugmentEnchantment)) return false;
+                }
+            }
         }
         return !isMaxed && this.template.test(inventory.getStack(0)) && this.base.test(inventory.getStack(1)) && this.addition.test(inventory.getStack(2));
     }
@@ -87,7 +94,7 @@ public class EnhancementAugmentRecipe implements EnhancementRecipe {
         ItemStack stack = new ItemStack(Items.ENCHANTED_BOOK);
         @Nullable Enchantment enchantment = Registries.ENCHANTMENT.get(modifier);
         if (enchantment != null) stack.addEnchantment(enchantment, enchantment.getMaxLevel());
-        stack.setCustomName(Text.translatable("item.uselessadditions.augment_book").formatted(Formatting.WHITE));
+        //stack.setCustomName(Text.translatable("item.uselessadditions.augment_book").formatted(Formatting.WHITE));
         return stack;
     }
 

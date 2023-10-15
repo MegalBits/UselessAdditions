@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "122",
+    "232",
+    "221"
+  ],
+  "key": {
+    "1": {
+      "item": "uselessadditions:small_axolotl_shard"
+    },
+    "2": {
+      "item": "uselessadditions:axolotl_shard"
+    },
+    "3": {
+      "item": "uselessadditions:exotic_dust"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:axolotl_tail",
+    "count": 1
+  }
+}

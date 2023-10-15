@@ -3,6 +3,7 @@ package net.megal.uselessadditions;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.megal.uselessadditions.block.UBlocks;
+import net.megal.uselessadditions.effects.UStatusEffects;
 import net.megal.uselessadditions.enchantment.UEnchantments;
 import net.megal.uselessadditions.item.UGroups;
 import net.megal.uselessadditions.item.UItems;
@@ -48,9 +49,12 @@ public class UAdd implements ModInitializer {
         compostableItem(UItems.LESSER_GOLDEN_APPLE, ComposterRarities.HIGH);
         compostableItem(UItems.LESSER_GOLDEN_CARROT, ComposterRarities.HIGH);
         compostableItem(UItems.BUNDLED_FLOWERS, ComposterRarities.HIGH);
+        compostableItem(UItems.ASH, ComposterRarities.HIGH);
     }
     @Override
     public void onInitialize() {
+        UStatusEffects.effLoad();
+
         //Loads enchantments
         UEnchantments.enchLoad();
 

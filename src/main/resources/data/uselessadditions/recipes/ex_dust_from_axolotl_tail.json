@@ -4,13 +4,12 @@
     "tag": "c:smithing_hammers"
   },
   "base": {
-    "item": "minecraft:mycelium"
+    "item": "uselessadditions:axolotl_tail"
   },
   "addition": {
     "item": "minecraft:cobblestone"
   },
   "result": {
-    "item": "uselessadditions:dirt_pile",
-    "count": 3
+    "item": "uselessadditions:exotic_dust"
   }
 }

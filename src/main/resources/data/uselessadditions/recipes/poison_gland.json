@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "14 ",
+    "232",
+    "211"
+  ],
+  "key": {
+    "1": [
+      {
+        "item": "uselessadditions:small_spider_shard"
+      },
+      {
+        "item": "uselessadditions:small_cave_spider_shard"
+      }
+    ],
+    "2": [
+      {
+        "item": "uselessadditions:spider_shard"
+      },
+      {
+        "item": "uselessadditions:cave_spider_shard"
+      }
+    ],
+    "3": {
+      "item": "minecraft:fermented_spider_eye"
+    },
+    "4": {
+      "item": "uselessadditions:exotic_dust"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:poison_gland",
+    "count": 1
+  }
+}

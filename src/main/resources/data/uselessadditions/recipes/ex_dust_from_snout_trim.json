@@ -10,6 +10,7 @@
     "item": "minecraft:cobblestone"
   },
   "result": {
-    "item": "uselessadditions:exotic_dust"
+    "item": "uselessadditions:exotic_dust",
+    "count": 2
   }
 }

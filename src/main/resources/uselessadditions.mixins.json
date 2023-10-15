@@ -10,7 +10,7 @@
 		"SmithingOutput",
 		"SmithingDamageTemplate",
 		"ComposterOutput",
-		"NoGlintForCurses"
+		"AugmentChanges"
 	],
 	"injectors": {
 		"defaultRequire": 1

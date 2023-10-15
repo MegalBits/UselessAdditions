@@ -198,8 +198,17 @@ public class UItems {
     // -- Misc
     public static final Item EMPTY_DISC = registerItem(new Identifier(UAdd.MOD_ID, "empty_disc"), createItem());
     public static final DamageableItem BUNDLED_FLOWERS = registerItem(new Identifier(UAdd.MOD_ID, "bundled_flowers"), new DamageableItem(new FabricItemSettings().maxCount(1).maxDamage(16)));
+    public static final TooltipItem AXOLOTL_TAIL = registerItem(new Identifier(UAdd.MOD_ID, "axolotl_tail"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
     public static final TooltipItem BEE_STINGER = registerItem(new Identifier(UAdd.MOD_ID, "bee_stinger"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
+    public static final TooltipItem TOY_FISH = registerItem(new Identifier(UAdd.MOD_ID, "toy_fish"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
+    public static final TooltipItem BIG_INK_SAC = registerItem(new Identifier(UAdd.MOD_ID, "big_ink_sac"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
+    public static final TooltipItem BIG_GLOW_INK_SAC = registerItem(new Identifier(UAdd.MOD_ID, "big_glow_ink_sac"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
+    public static final TooltipItem POSION_GLAND = registerItem(new Identifier(UAdd.MOD_ID, "poison_gland"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
+    public static final TooltipItem ARID_CLOTH = registerItem(new Identifier(UAdd.MOD_ID, "arid_cloth"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
+    public static final TooltipItem FRIGID_CLOTH = registerItem(new Identifier(UAdd.MOD_ID, "frigid_cloth"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
+    public static final TooltipItem PHANTOM_HEART = registerItem(new Identifier(UAdd.MOD_ID, "phantom_heart"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
     public static final Item ENDER_PEARL_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "ender_pearl_shard"), createItem());
+    public static final Item ANCIENT_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "ancient_shards"), new Item(new FabricItemSettings().fireproof()));
     public static final MagicBook MAGIC_BOOK = registerItem(new Identifier(UAdd.MOD_ID, "magic_book"), new MagicBook(new FabricItemSettings().maxCount(1).maxDamage(3).rarity(Rarity.EPIC), Formatting.GRAY));
     public static final Item IRON_BUNDLE_UPGRADE = registerItem(new Identifier(UAdd.MOD_ID, "iron_bundle_upgrade"), createItem());
     public static final Item DIAMOND_BUNDLE_UPGRADE = registerItem(new Identifier(UAdd.MOD_ID, "diamond_bundle_upgrade"), createItem());
@@ -213,9 +222,10 @@ public class UItems {
     public static final Item ASH = registerItem(new Identifier(UAdd.MOD_ID, "ash"), createItem());
     public static final Item EXOTIC_DUST = registerItem(new Identifier(UAdd.MOD_ID, "exotic_dust"), new Item(new FabricItemSettings().rarity(Rarity.UNCOMMON)));
     // -- Nuggets
-    public static final TooltipItem FORTRESS_NUGGET = registerItem(new Identifier(UAdd.MOD_ID, "fortress_nugget"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
+    public static final Item FORTRESS_NUGGET = registerItem(new Identifier(UAdd.MOD_ID, "fortress_nugget"), createItem());
     public static final Item NETHERITE_NUGGET = registerItem(new Identifier(UAdd.MOD_ID, "netherite_nugget"), new Item(new FabricItemSettings().fireproof()));
     // -- Ingots
+    public static final TooltipItem EMPOWERED_EMERALD = registerItem(new Identifier(UAdd.MOD_ID, "empowered_emerald"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
     public static final Item MAGIC_INGOT = registerItem(new Identifier(UAdd.MOD_ID, "magic_ingot"), createItem());
     public static final GlintItem ENCHANTED_MAGIC_INGOT = registerItem(new Identifier(UAdd.MOD_ID, "enchanted_magic_ingot"), new GlintItem(new FabricItemSettings().rarity(Rarity.RARE)));
     public static final TooltipItem BLAZE_METAL = registerItem(new Identifier(UAdd.MOD_ID, "blaze_metal"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
@@ -562,8 +572,17 @@ public class UItems {
             // -- Misc
             entries.add(EMPTY_DISC.getDefaultStack());
             entries.add(BUNDLED_FLOWERS.getDefaultStack());
+            entries.add(AXOLOTL_TAIL.getDefaultStack());
             entries.add(BEE_STINGER.getDefaultStack());
+            entries.add(TOY_FISH.getDefaultStack());
+            entries.add(BIG_INK_SAC.getDefaultStack());
+            entries.add(BIG_GLOW_INK_SAC.getDefaultStack());
+            entries.add(POSION_GLAND.getDefaultStack());
+            entries.add(ARID_CLOTH.getDefaultStack());
+            entries.add(FRIGID_CLOTH.getDefaultStack());
+            entries.add(PHANTOM_HEART.getDefaultStack());
             entries.add(ENDER_PEARL_SHARD.getDefaultStack());
+            entries.add(ANCIENT_SHARD.getDefaultStack());
             entries.add(MAGIC_BOOK.getDefaultStack());
             entries.add(IRON_BUNDLE_UPGRADE.getDefaultStack());
             entries.add(DIAMOND_BUNDLE_UPGRADE.getDefaultStack());
@@ -580,6 +599,7 @@ public class UItems {
             entries.add(FORTRESS_NUGGET.getDefaultStack());
             entries.add(NETHERITE_NUGGET.getDefaultStack());
             // -- Ingots
+            entries.add(EMPOWERED_EMERALD.getDefaultStack());
             entries.add(MAGIC_INGOT.getDefaultStack());
             entries.add(ENCHANTED_MAGIC_INGOT.getDefaultStack());
             entries.add(BLAZE_METAL.getDefaultStack());

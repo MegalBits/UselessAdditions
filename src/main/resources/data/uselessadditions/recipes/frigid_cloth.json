@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "114",
+    "122",
+    "433"
+  ],
+  "key": {
+    "1": {
+      "item": "uselessadditions:skeleton_shard"
+    },
+    "2": {
+      "item": "minecraft:leather"
+    },
+    "3": {
+      "item": "minecraft:snow_block"
+    },
+    "4": {
+      "item": "uselessadditions:exotic_dust"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:frigid_cloth",
+    "count": 1
+  }
+}

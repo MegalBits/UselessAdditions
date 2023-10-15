@@ -4,7 +4,7 @@
     "tag": "c:smithing_hammers"
   },
   "base": {
-    "item": "minecraft:name_tag"
+    "item": "uselessadditions:arid_cloth"
   },
   "addition": {
     "item": "minecraft:cobblestone"

@@ -4,7 +4,7 @@
     "tag": "c:smithing_hammers"
   },
   "base": {
-    "item": "minecraft:dirt"
+    "tag": "minecraft:dirt"
   },
   "addition": {
     "item": "minecraft:cobblestone"

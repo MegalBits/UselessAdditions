@@ -13,7 +13,7 @@ import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 
-public class WitherEnchantment extends Enchantment {
+public class WitherEnchantment extends AugmentEnchantment {
     public WitherEnchantment(Rarity weight, EquipmentSlot ... slotTypes) {
         super(weight, EnchantmentTarget.BREAKABLE, slotTypes);
     }
@@ -60,7 +60,7 @@ public class WitherEnchantment extends Enchantment {
     public Text getName(int level) {
         MutableText mutableText = Text.translatable(this.getTranslationKey());
         if (this.isCursed()) {
-            mutableText.formatted(Formatting.DARK_GRAY);
+            mutableText.styled(style -> style.withColor(7561558));
         } else {
             mutableText.formatted(Formatting.GRAY);
         }

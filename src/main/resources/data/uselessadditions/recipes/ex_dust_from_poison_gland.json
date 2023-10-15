@@ -4,13 +4,12 @@
     "tag": "c:smithing_hammers"
   },
   "base": {
-    "item": "minecraft:podzol"
+    "item": "uselessadditions:poison_gland"
   },
   "addition": {
     "item": "minecraft:cobblestone"
   },
   "result": {
-    "item": "uselessadditions:dirt_pile",
-    "count": 3
+    "item": "uselessadditions:exotic_dust"
   }
 }

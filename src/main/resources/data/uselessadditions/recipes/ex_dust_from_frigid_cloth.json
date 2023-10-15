@@ -4,13 +4,12 @@
     "tag": "c:smithing_hammers"
   },
   "base": {
-    "item": "minecraft:coarse_dirt"
+    "item": "uselessadditions:frigid_cloth"
   },
   "addition": {
     "item": "minecraft:cobblestone"
   },
   "result": {
-    "item": "uselessadditions:dirt_pile",
-    "count": 3
+    "item": "uselessadditions:exotic_dust"
   }
 }

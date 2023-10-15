@@ -82,7 +82,7 @@ public class SmithingNoNbtRecipe implements SmithingRecipe {
 
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return RecipeSerializer.SMITHING_TRANSFORM;
+        return URecipes.SMITHING_NO_NBT_RECIPE;
     }
 
     @Override

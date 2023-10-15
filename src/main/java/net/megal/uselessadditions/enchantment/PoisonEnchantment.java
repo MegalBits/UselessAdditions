@@ -16,7 +16,7 @@ import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 
-public class PoisonEnchantment extends Enchantment {
+public class PoisonEnchantment extends AugmentEnchantment {
     public PoisonEnchantment(Rarity weight, EquipmentSlot ... slotTypes) {
         super(weight, EnchantmentTarget.BREAKABLE, slotTypes);
     }
@@ -63,7 +63,7 @@ public class PoisonEnchantment extends Enchantment {
     public Text getName(int level) {
         MutableText mutableText = Text.translatable(this.getTranslationKey());
         if (this.isCursed()) {
-            mutableText.formatted(Formatting.GREEN);
+            mutableText.styled(style -> style.withColor(8889187));
         } else {
             mutableText.formatted(Formatting.GRAY);
         }

@@ -4,13 +4,12 @@
     "tag": "c:smithing_hammers"
   },
   "base": {
-    "item": "minecraft:dirt_path"
+    "item": "uselessadditions:big_glow_ink_sac"
   },
   "addition": {
     "item": "minecraft:cobblestone"
   },
   "result": {
-    "item": "uselessadditions:dirt_pile",
-    "count": 3
+    "item": "uselessadditions:exotic_dust"
   }
 }
