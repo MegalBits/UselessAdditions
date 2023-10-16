@@ -305,6 +305,7 @@
   "item.uselessadditions.exotic_dust": "Exotic Dust",
   "item.uselessadditions.exotic_ingot": "Exotic Ingot",
   "item.uselessadditions.netherite_nugget": "Netherite Nugget",
+  "item.uselessadditions.ruby": "Ruby",
   "item.uselessadditions.magic_ingot": "Magic Ingot",
   "item.uselessadditions.enchanted_magic_ingot": "Enchanted Magic Ingot",
   "item.uselessadditions.mysterious_bark": "Mysterious Bark",
@@ -372,7 +373,7 @@
   "item.uselessadditions.blaze_metal_axe": "Blaze-Metal Axe",
   "item.uselessadditions.blaze_metal_hoe": "Blaze-Metal Hoe",
 
-  "item.uselessadditions.augment_book": "Augment Item",
+  "item.uselessadditions.augment": "Augment",
 
   "itemgroup.uadd": "Useless Additions",
 
@@ -408,6 +409,8 @@
   "enchantment.uselessadditions.repairing.description": "Repairs tools over time when not held.",
   "enchantment.uselessadditions.splintered": "Splintered",
   "enchantment.uselessadditions.splintered.description": "Applies splinters to hit enemies.",
+  "enchantment.uselessadditions.subterranean": "Subterranean",
+  "enchantment.uselessadditions.subterranean.description": "Increases mining speed based on depth while below sea level.",
 
   "effect.uselessadditions.splinters": "Splinters",
 

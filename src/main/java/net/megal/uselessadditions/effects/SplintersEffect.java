@@ -44,7 +44,7 @@ public class SplintersEffect extends StatusEffect {
                 }
             }
             if (vel > maxSpeed) {
-                entity.damage(entity.getDamageSources().magic(), Math.max(amplifier+1 * ((float)vel-maxSpeed),1));
+                entity.damage(entity.getDamageSources().magic(), amplifier+1);
             }
         }
     }

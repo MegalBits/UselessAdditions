@@ -208,7 +208,8 @@ public class UItems {
     public static final TooltipItem FRIGID_CLOTH = registerItem(new Identifier(UAdd.MOD_ID, "frigid_cloth"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
     public static final TooltipItem PHANTOM_HEART = registerItem(new Identifier(UAdd.MOD_ID, "phantom_heart"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
     public static final Item ENDER_PEARL_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "ender_pearl_shard"), createItem());
-    public static final Item ANCIENT_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "ancient_shards"), new Item(new FabricItemSettings().fireproof()));
+    public static final Item ANCIENT_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "ancient_shard"), new Item(new FabricItemSettings().fireproof()));
+    public static final Item MYSTERIOUS_BARK = registerItem(new Identifier(UAdd.MOD_ID, "mysterious_bark"), createItem());
     public static final MagicBook MAGIC_BOOK = registerItem(new Identifier(UAdd.MOD_ID, "magic_book"), new MagicBook(new FabricItemSettings().maxCount(1).maxDamage(3).rarity(Rarity.EPIC), Formatting.GRAY));
     public static final Item IRON_BUNDLE_UPGRADE = registerItem(new Identifier(UAdd.MOD_ID, "iron_bundle_upgrade"), createItem());
     public static final Item DIAMOND_BUNDLE_UPGRADE = registerItem(new Identifier(UAdd.MOD_ID, "diamond_bundle_upgrade"), createItem());
@@ -226,6 +227,7 @@ public class UItems {
     public static final Item NETHERITE_NUGGET = registerItem(new Identifier(UAdd.MOD_ID, "netherite_nugget"), new Item(new FabricItemSettings().fireproof()));
     // -- Ingots
     public static final TooltipItem EMPOWERED_EMERALD = registerItem(new Identifier(UAdd.MOD_ID, "empowered_emerald"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
+    public static final Item RUBY = registerItem(new Identifier(UAdd.MOD_ID, "ruby"), createItem());
     public static final Item MAGIC_INGOT = registerItem(new Identifier(UAdd.MOD_ID, "magic_ingot"), createItem());
     public static final GlintItem ENCHANTED_MAGIC_INGOT = registerItem(new Identifier(UAdd.MOD_ID, "enchanted_magic_ingot"), new GlintItem(new FabricItemSettings().rarity(Rarity.RARE)));
     public static final TooltipItem BLAZE_METAL = registerItem(new Identifier(UAdd.MOD_ID, "blaze_metal"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
@@ -269,6 +271,9 @@ public class UItems {
     public static final GlintItem MAGIC_CARROT = registerItem(new Identifier(UAdd.MOD_ID, "magic_carrot"), new GlintItem(new FabricItemSettings().food(UFoodComponents.MAGIC_CARROT).rarity(Rarity.EPIC)));
     public static final Item LESSER_GOLDEN_APPLE = registerItem(new Identifier(UAdd.MOD_ID, "lesser_golden_apple"), new Item(new FabricItemSettings().food(UFoodComponents.LESSER_GOLDEN_APPLE)));
     public static final GlintItem MAGIC_APPLE = registerItem(new Identifier(UAdd.MOD_ID, "magic_apple"), new GlintItem(new FabricItemSettings().food(UFoodComponents.MAGIC_APPLE).rarity(Rarity.EPIC)));
+    //Unobtainable
+    public static final Item AUGMENT = registerItem(new Identifier(UAdd.MOD_ID, "augment"), createItem());
+
     private static Item createItem() {
         return new Item(new FabricItemSettings());
     }
@@ -583,6 +588,7 @@ public class UItems {
             entries.add(PHANTOM_HEART.getDefaultStack());
             entries.add(ENDER_PEARL_SHARD.getDefaultStack());
             entries.add(ANCIENT_SHARD.getDefaultStack());
+            entries.add(MYSTERIOUS_BARK.getDefaultStack());
             entries.add(MAGIC_BOOK.getDefaultStack());
             entries.add(IRON_BUNDLE_UPGRADE.getDefaultStack());
             entries.add(DIAMOND_BUNDLE_UPGRADE.getDefaultStack());

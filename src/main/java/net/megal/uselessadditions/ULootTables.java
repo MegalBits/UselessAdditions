@@ -36,6 +36,10 @@ public class ULootTables {
                     .with(ItemEntry.builder(UItems.ANCIENT_SHARD).weight(1).apply(uniformNumberBuilder(1,2)))
                     .with(ItemEntry.builder(Items.AIR).weight(4))
             );
+            lootBuilder(id, LootTables.ABANDONED_MINESHAFT_CHEST, tableBuilder, source, LootPool.builder()
+                            .with(ItemEntry.builder(UItems.RUBY).weight(1))
+                            .with(ItemEntry.builder(Items.AIR).weight(6))
+            );
             lootBuilder(id, LootTables.NETHER_BRIDGE_CHEST, tableBuilder, source, LootPool.builder()
                     .with(ItemEntry.builder(UItems.FORTRESS_NUGGET).weight(1).apply(uniformNumberBuilder(1,4)))
                     .with(ItemEntry.builder(Items.AIR).weight(4))

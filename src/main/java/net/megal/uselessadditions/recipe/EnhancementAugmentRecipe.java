@@ -8,6 +8,7 @@ import com.google.gson.JsonParseException;
 import com.google.gson.JsonSyntaxException;
 import net.megal.uselessadditions.enchantment.AugmentEnchantment;
 import net.megal.uselessadditions.enchantment.UEnchantments;
+import net.megal.uselessadditions.item.UItems;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.inventory.Inventory;
@@ -91,7 +92,7 @@ public class EnhancementAugmentRecipe implements EnhancementRecipe {
 
     @Override
     public ItemStack getOutput(DynamicRegistryManager registryManager) {
-        ItemStack stack = new ItemStack(Items.ENCHANTED_BOOK);
+        ItemStack stack = new ItemStack(UItems.AUGMENT);
         @Nullable Enchantment enchantment = Registries.ENCHANTMENT.get(modifier);
         if (enchantment != null) stack.addEnchantment(enchantment, enchantment.getMaxLevel());
         //stack.setCustomName(Text.translatable("item.uselessadditions.augment_book").formatted(Formatting.WHITE));

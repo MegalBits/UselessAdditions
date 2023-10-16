@@ -10,7 +10,8 @@
 		"SmithingOutput",
 		"SmithingDamageTemplate",
 		"ComposterOutput",
-		"AugmentChanges"
+		"AugmentChanges",
+		"EarthenMinesFaster"
 	],
 	"injectors": {
 		"defaultRequire": 1

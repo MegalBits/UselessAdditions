@@ -10,6 +10,8 @@ import net.minecraft.util.Identifier;
 public class UEnchantments {
     private static final EquipmentSlot[] ALL_ARMOR = new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET};
 
+    public static final SubterraneanEnchantment SUBTERRANEAN = registerEnchantment(new Identifier(UAdd.MOD_ID, "subterranean"),
+            new SubterraneanEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
     public static final SplinteredEnchantment SPLINTERED = registerEnchantment(new Identifier(UAdd.MOD_ID, "splintered"),
             new SplinteredEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
     public static final RepairingEnchantment REPAIRING = registerEnchantment(new Identifier(UAdd.MOD_ID, "repairing"),

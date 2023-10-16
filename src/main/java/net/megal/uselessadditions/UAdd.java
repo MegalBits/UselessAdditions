@@ -1,6 +1,8 @@
 package net.megal.uselessadditions;
 
+import dev.architectury.event.events.client.ClientTooltipEvent;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.megal.uselessadditions.block.UBlocks;
 import net.megal.uselessadditions.effects.UStatusEffects;
@@ -10,9 +12,13 @@ import net.megal.uselessadditions.item.UItems;
 import net.megal.uselessadditions.recipe.URecipes;
 import net.megal.uselessadditions.screen.UScreens;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
+import net.minecraft.village.TradeOffer;
+import net.minecraft.village.VillagerProfession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -44,15 +50,29 @@ public class UAdd implements ModInitializer {
         autoSmeltItems.add(UItems.BLAZE_METAL_AXE);
         autoSmeltItems.add(UItems.BLAZE_METAL_HOE);
     }
-    private void AddCompostable() {
+    private void addCompostable() {
         compostableItem(UItems.DIRT_PILE, ComposterRarities.EXTREMELY_LOW);
         compostableItem(UItems.LESSER_GOLDEN_APPLE, ComposterRarities.HIGH);
         compostableItem(UItems.LESSER_GOLDEN_CARROT, ComposterRarities.HIGH);
         compostableItem(UItems.BUNDLED_FLOWERS, ComposterRarities.HIGH);
         compostableItem(UItems.ASH, ComposterRarities.HIGH);
     }
+
+    private static void addTrades() {
+        TradeOfferHelper.registerWanderingTraderOffers(1, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new ItemStack(Items.EMERALD, 52), new ItemStack(Items.LAVA_BUCKET, 1), 1, 1, 0f
+            ));
+        });
+        TradeOfferHelper.registerVillagerOffers(VillagerProfession.TOOLSMITH, 4, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new ItemStack(Items.EMERALD, 24), new ItemStack(Items.LAVA_BUCKET, 1), 1, 15, 0.2f
+            ));
+        });
+    }
     @Override
     public void onInitialize() {
+        //Loads status effects
         UStatusEffects.effLoad();
 
         //Loads enchantments
@@ -68,7 +88,10 @@ public class UAdd implements ModInitializer {
         UItems.itemTabs();
 
         //Makes items compostable
-        AddCompostable();
+        addCompostable();
+
+        //Adds custom trades
+        addTrades();
 
         //Loads screens so that they work
         UScreens.loadStuff();
