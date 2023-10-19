@@ -210,6 +210,10 @@ public class UItems {
     public static final Item ENDER_PEARL_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "ender_pearl_shard"), createItem());
     public static final Item ANCIENT_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "ancient_shard"), new Item(new FabricItemSettings().fireproof()));
     public static final Item MYSTERIOUS_BARK = registerItem(new Identifier(UAdd.MOD_ID, "mysterious_bark"), createItem());
+    public static final Item ESSENCE_OF_UNDERGROUND = registerItem(new Identifier(UAdd.MOD_ID, "essence_of_underground"), createItem());
+    public static final Item TESLA_COIL = registerItem(new Identifier(UAdd.MOD_ID, "tesla_coil"), createItem());
+    public static final Item ESSENCE_OF_IRON = registerItem(new Identifier(UAdd.MOD_ID, "essence_of_iron"), createItem());
+    public static final Item ESSENCE_OF_GOLD = registerItem(new Identifier(UAdd.MOD_ID, "essence_of_gold"), createItem());
     public static final MagicBook MAGIC_BOOK = registerItem(new Identifier(UAdd.MOD_ID, "magic_book"), new MagicBook(new FabricItemSettings().maxCount(1).maxDamage(3).rarity(Rarity.EPIC), Formatting.GRAY));
     public static final Item IRON_BUNDLE_UPGRADE = registerItem(new Identifier(UAdd.MOD_ID, "iron_bundle_upgrade"), createItem());
     public static final Item DIAMOND_BUNDLE_UPGRADE = registerItem(new Identifier(UAdd.MOD_ID, "diamond_bundle_upgrade"), createItem());
@@ -226,8 +230,8 @@ public class UItems {
     public static final Item FORTRESS_NUGGET = registerItem(new Identifier(UAdd.MOD_ID, "fortress_nugget"), createItem());
     public static final Item NETHERITE_NUGGET = registerItem(new Identifier(UAdd.MOD_ID, "netherite_nugget"), new Item(new FabricItemSettings().fireproof()));
     // -- Ingots
-    public static final TooltipItem EMPOWERED_EMERALD = registerItem(new Identifier(UAdd.MOD_ID, "empowered_emerald"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
     public static final Item RUBY = registerItem(new Identifier(UAdd.MOD_ID, "ruby"), createItem());
+    public static final TooltipItem EMPOWERED_EMERALD = registerItem(new Identifier(UAdd.MOD_ID, "empowered_emerald"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
     public static final Item MAGIC_INGOT = registerItem(new Identifier(UAdd.MOD_ID, "magic_ingot"), createItem());
     public static final GlintItem ENCHANTED_MAGIC_INGOT = registerItem(new Identifier(UAdd.MOD_ID, "enchanted_magic_ingot"), new GlintItem(new FabricItemSettings().rarity(Rarity.RARE)));
     public static final TooltipItem BLAZE_METAL = registerItem(new Identifier(UAdd.MOD_ID, "blaze_metal"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
@@ -589,6 +593,10 @@ public class UItems {
             entries.add(ENDER_PEARL_SHARD.getDefaultStack());
             entries.add(ANCIENT_SHARD.getDefaultStack());
             entries.add(MYSTERIOUS_BARK.getDefaultStack());
+            entries.add(ESSENCE_OF_UNDERGROUND.getDefaultStack());
+            entries.add(TESLA_COIL.getDefaultStack());
+            entries.add(ESSENCE_OF_IRON.getDefaultStack());
+            entries.add(ESSENCE_OF_GOLD.getDefaultStack());
             entries.add(MAGIC_BOOK.getDefaultStack());
             entries.add(IRON_BUNDLE_UPGRADE.getDefaultStack());
             entries.add(DIAMOND_BUNDLE_UPGRADE.getDefaultStack());
@@ -605,6 +613,7 @@ public class UItems {
             entries.add(FORTRESS_NUGGET.getDefaultStack());
             entries.add(NETHERITE_NUGGET.getDefaultStack());
             // -- Ingots
+            entries.add(RUBY.getDefaultStack());
             entries.add(EMPOWERED_EMERALD.getDefaultStack());
             entries.add(MAGIC_INGOT.getDefaultStack());
             entries.add(ENCHANTED_MAGIC_INGOT.getDefaultStack());

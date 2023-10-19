@@ -53,11 +53,18 @@ public class SlowfallingEnchantment extends AugmentEnchantment {
     }
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
+        if (target instanceof LivingEntity) ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, getStatusDuration(level), getAmplifier(level)));
+    }
+    @Override
+    public int getStatusDuration(int level) {
+        return (level-1) * 40 + 100;
+    }
+    @Override
+    public int getAmplifier(int level) {
         int amplifier = 0;
         if (level >= 3) amplifier++;
         if (level >= 5) amplifier++;
-        int duration = (level-1) * 40 + 100;
-        if (target instanceof LivingEntity) ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, duration, amplifier));
+        return amplifier;
     }
     @Override
     public Text getName(int level) {
@@ -72,4 +79,5 @@ public class SlowfallingEnchantment extends AugmentEnchantment {
         }
         return mutableText;
     }
+    
 }

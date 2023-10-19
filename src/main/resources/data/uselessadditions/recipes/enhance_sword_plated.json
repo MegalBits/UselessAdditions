@@ -7,9 +7,9 @@
     "tag": "minecraft:tools"
   },
   "addition": {
-    "item": "uselessadditions:essence_of_underground"
+    "item": "uselessadditions:essence_of_iron"
   },
   "modifier": {
-    "enchantment": "uselessadditions:subterranean"
+    "enchantment": "uselessadditions:plated"
   }
 }

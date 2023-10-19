@@ -11,7 +11,9 @@
 		"SmithingDamageTemplate",
 		"ComposterOutput",
 		"AugmentChanges",
-		"EarthenMinesFaster"
+		"EarthenMinesFaster",
+		"EnchantmentTooltips",
+		"ExtendedDurability"
 	],
 	"injectors": {
 		"defaultRequire": 1

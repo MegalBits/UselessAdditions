@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "121",
+    "232",
+    "121"
+  ],
+  "key": {
+    "1": {
+      "item": "uselessadditions:ancient_shard"
+    },
+    "2": {
+      "item": "minecraft:gold_ingot"
+    },
+    "3": {
+      "item": "minecraft:gold_block"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:essence_of_gold",
+    "count": 1
+  }
+}

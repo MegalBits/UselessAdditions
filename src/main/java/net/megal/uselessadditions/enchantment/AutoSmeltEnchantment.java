@@ -11,9 +11,14 @@ import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 
-public class AutoSmeltEnchantment extends Enchantment {
+public class AutoSmeltEnchantment extends UEnchantment {
+
     public AutoSmeltEnchantment(Rarity weight, EquipmentSlot ... slotTypes) {
         super(weight, EnchantmentTarget.DIGGER, slotTypes);
+    }
+    @Override
+    public boolean secondLineTooltip() {
+        return true;
     }
     @Override
     public int getMinPower(int level) {
@@ -48,7 +53,7 @@ public class AutoSmeltEnchantment extends Enchantment {
     }
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
-        int duration = level * 20 + 20;
+        int duration = (level-1) * 20 + 20;
         if (target.getFireTicks() < duration) target.setFireTicks(duration);
     }
     @Override

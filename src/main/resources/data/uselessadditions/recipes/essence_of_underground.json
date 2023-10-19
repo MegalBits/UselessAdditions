@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "121",
+    "232",
+    "121"
+  ],
+  "key": {
+    "1": {
+      "item": "uselessadditions:ancient_shard"
+    },
+    "2": {
+      "tag": "c:stones"
+    },
+    "3": {
+      "item": "uselessadditions:ruby"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:essence_of_underground",
+    "count": 1
+  }
+}

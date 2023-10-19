@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "121",
+    "131",
+    "434"
+  ],
+  "key": {
+    "1": {
+      "item": "uselessadditions:ancient_shard"
+    },
+    "2": {
+      "item": "minecraft:lightning_rod"
+    },
+    "3": {
+      "item": "minecraft:copper_block"
+    },
+    "4": {
+      "item": "minecraft:copper_ingot"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:tesla_coil",
+    "count": 1
+  }
+}

@@ -53,8 +53,11 @@ public class FireEnchantment extends AugmentEnchantment {
     }
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
-        int duration = (level-1) * 20 + 20;
-        if (target.getFireTicks() < duration) target.setFireTicks(duration);
+        if (target.getFireTicks() < getStatusDuration(level)) target.setFireTicks(getStatusDuration(level));
+    }
+    @Override
+    public int getStatusDuration(int level) {
+        return (level-1) * 20 + 20;
     }
     @Override
     public Text getName(int level) {

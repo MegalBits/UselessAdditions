@@ -10,14 +10,14 @@
       "item": "uselessadditions:ancient_shard"
     },
     "2": {
-      "tag": "minecraft:base_stone_overworld"
+      "item": "minecraft:iron_ingot"
     },
     "3": {
-      "item": "uselessadditions:ruby"
+      "item": "minecraft:iron_block"
     }
   },
   "result": {
-    "item": "uselessadditions:mysterious_geode",
+    "item": "uselessadditions:essence_of_iron",
     "count": 1
   }
 }

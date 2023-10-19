@@ -51,7 +51,7 @@ public class SubterraneanEnchantment extends AugmentEnchantment {
     public Text getName(int level) {
         MutableText mutableText = Text.translatable(this.getTranslationKey());
         if (this.isCursed()) {
-            mutableText.styled(style -> style.withColor(0x3b3127));
+            mutableText.styled(style -> style.withColor(0x7d564f));
         } else {
             mutableText.formatted(Formatting.GRAY);
         }

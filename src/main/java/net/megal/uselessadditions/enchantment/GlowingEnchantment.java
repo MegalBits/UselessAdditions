@@ -53,8 +53,15 @@ public class GlowingEnchantment extends AugmentEnchantment {
     }
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
-        int duration = (level-1) * 100 + 100;
-        if (target instanceof LivingEntity) ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, duration, 0));
+        if (target instanceof LivingEntity) ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, getStatusDuration(level), 0));
+    }
+    @Override
+    public int getStatusDuration(int level) {
+        return (level-1) * 100 + 100;
+    }
+    @Override
+    public int getAmplifier(int level) {
+        return 0;
     }
     @Override
     public Text getName(int level) {
@@ -69,4 +76,5 @@ public class GlowingEnchantment extends AugmentEnchantment {
         }
         return mutableText;
     }
+    
 }
