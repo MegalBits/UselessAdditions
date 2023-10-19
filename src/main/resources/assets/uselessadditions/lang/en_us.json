@@ -479,7 +479,8 @@
   "enchantment.uselessadditions.soiled.desc": "Decreases damage",
   "enchantment.uselessadditions.soiled.desc2": "Increases durability",
 
-  "enchantment.tooltip.description": "< Press shift to expand descriptions >",
+  "enchantment.tooltip.description": "< Press ",
+  "enchantment.tooltip.description2": " to expand description >",
   "enchantment.tooltip.duration": "Duration",
   "enchantment.tooltip.amplifier": "Level",
   "enchantment.tooltip.repair_frequency": "Repairs every",

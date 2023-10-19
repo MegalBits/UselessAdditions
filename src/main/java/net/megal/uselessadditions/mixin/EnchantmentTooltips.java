@@ -1,38 +1,27 @@
 package net.megal.uselessadditions.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
+import me.shedaniel.rei.api.client.registry.screen.ScreenRegistry;
 import net.megal.uselessadditions.UAdd;
+import net.megal.uselessadditions.UAddClient;
 import net.megal.uselessadditions.enchantment.*;
+import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.enchantment.*;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityGroup;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.registry.Registries;
-import net.minecraft.registry.tag.DamageTypeTags;
-import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.MutableText;
-import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
-import net.minecraft.util.math.random.Random;
-import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 @Mixin(ItemStack.class)
 public abstract class EnchantmentTooltips {
@@ -52,7 +41,7 @@ public abstract class EnchantmentTooltips {
             Registries.ENCHANTMENT.getOrEmpty(EnchantmentHelper.getIdFromNbt(nbtCompound)).ifPresent(e -> {
                 int level = EnchantmentHelper.getLevelFromNbt(nbtCompound);
                 tooltip.add(e.getName(level));
-                if (UAdd.temp) {
+                if (UAdd.expandDescriptions) {
                     tooltip.add(PREFIX.copy().append(Text.translatable(e.getTranslationKey() + ".desc")).formatted(Formatting.DARK_GRAY, Formatting.ITALIC));
                     if (doubleDesc.contains(e) || (e instanceof UEnchantment ue && ue.secondLineTooltip()))
                         tooltip.add(PREFIX_2.copy().append(Text.translatable(e.getTranslationKey() + ".desc2")).formatted(Formatting.DARK_GRAY, Formatting.ITALIC));
@@ -120,8 +109,8 @@ public abstract class EnchantmentTooltips {
     }
     @ModifyReturnValue(at = @At("RETURN"),
             method = "getTooltip(Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/client/item/TooltipContext;)Ljava/util/List;")
-    private List<Text> getTooltip(List<Text> l) {
-        if (!UAdd.temp) l.add(Text.translatable("enchantment.tooltip.description").formatted(Formatting.GRAY));
+    private List<Text> getTooltip(List<Text> l, PlayerEntity player, TooltipContext context) {
+        if (!UAdd.expandDescriptions && ((ItemStack)(Object)this).hasEnchantments()) l.add(Text.translatable("enchantment.tooltip.description").append(UAddClient.EXPAND_TOOLTIP.getBoundKeyLocalizedText()).append(Text.translatable("enchantment.tooltip.description2")).formatted(Formatting.GRAY));
         return l;
     }
     private static float getPower(int level) {

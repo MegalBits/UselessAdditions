@@ -13,7 +13,8 @@
 		"AugmentChanges",
 		"EarthenMinesFaster",
 		"EnchantmentTooltips",
-		"ExtendedDurability"
+		"ExtendedDurability",
+		"ExpandDescriptionsInScreen"
 	],
 	"injectors": {
 		"defaultRequire": 1

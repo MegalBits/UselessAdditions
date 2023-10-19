@@ -1,7 +1,9 @@
 package net.megal.uselessadditions;
 
-import dev.architectury.event.events.client.ClientTooltipEvent;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.megal.uselessadditions.block.UBlocks;
@@ -24,7 +26,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 
 public class UAdd implements ModInitializer {
@@ -38,7 +39,7 @@ public class UAdd implements ModInitializer {
     public static final TagKey<Item> SMALL_MOB_SHARDS = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "small_mob_shards"));
     public static final List<Item> naturalMendingItems = new ArrayList<>();
     public static final List<Item> autoSmeltItems = new ArrayList<>();
-    public static boolean temp = false;
+    public static boolean expandDescriptions = true;
 
     static {
         naturalMendingItems.add(UItems.ENCHANTED_HAMMER);
@@ -75,6 +76,17 @@ public class UAdd implements ModInitializer {
     }
     @Override
     public void onInitialize() {
+        ServerPlayNetworking.registerGlobalReceiver(new Identifier(MOD_ID, "expanded_descriptions"), (server, player, handler, buf, responseSender) -> {
+            boolean b = buf.readBoolean();
+            server.execute(() -> {
+                expandDescriptions = b;
+            });
+        });
+
+        ServerTickEvents.END_SERVER_TICK.register(server -> {
+
+        });
+
         //Loads status effects
         UStatusEffects.effLoad();
 
