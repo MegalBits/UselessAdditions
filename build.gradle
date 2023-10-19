@@ -15,29 +15,6 @@ repositories {
 	maven { url = "https://maven.shedaniel.me/" }
 }
 
-loom {
-    splitEnvironmentSourceSets()
-
-	mods {
-		"uselessadditions" {
-			sourceSet sourceSets.main
-			sourceSet sourceSets.client
-		}
-	}
-
-}
-
-sourceSets {
-	main {
-		resources {
-			srcDirs += [
-					'src/main/generated'
-			]
-		}
-	}
-}
-
-
 dependencies {
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
