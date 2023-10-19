@@ -4,6 +4,7 @@ import net.megal.uselessadditions.UAdd;
 import net.megal.uselessadditions.UAddClient;
 import net.megal.uselessadditions.enchantment.AugmentEnchantment;
 import net.megal.uselessadditions.enchantment.UEnchantments;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -21,7 +22,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(HandledScreen.class)
+@Mixin(Screen.class)
 public abstract class ExpandDescriptionsInScreen {
     private int i = 0;
 
@@ -33,9 +34,9 @@ public abstract class ExpandDescriptionsInScreen {
         else UAdd.expandDescriptions = false;
     }
     @Inject(at = @At("HEAD"),
-            method = "handleHotbarKeyPressed(II)Z",
+            method = "keyPressed(III)Z",
             cancellable = false)
-    private void handleHotbarKeyPressed(int keyCode, int scanCode, CallbackInfoReturnable<Boolean> cir) {
+    private void handleHotbarKeyPressed(int keyCode, int scanCode, int modifiers, CallbackInfoReturnable<Boolean> cir) {
         if (UAddClient.EXPAND_TOOLTIP.matchesKey(keyCode, scanCode)) {
             UAdd.expandDescriptions = true;
             i = i > 0 ? 2 : 5;
