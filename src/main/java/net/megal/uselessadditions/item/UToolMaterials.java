@@ -1,6 +1,5 @@
 package net.megal.uselessadditions.item;
 
-import net.fabricmc.yarn.constants.MiningLevels;
 import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
@@ -8,7 +7,7 @@ import net.minecraft.util.Lazy;
 
 import java.util.function.Supplier;
 
-public enum UMaterials implements ToolMaterial {
+public enum UToolMaterials implements ToolMaterial {
     AMETHYST(2, 832, 11.0F, 2.5F, 52, () -> Ingredient.ofItems(UItems.MAGIC_INGOT)),
     AMETHYST_P5(AMETHYST.miningLevel, AMETHYST.itemDurability, AMETHYST.miningSpeed, AMETHYST.attackDamage-.5f, AMETHYST.enchantability, () -> AMETHYST.repairIngredient),
     EMERALD(3, 625, 8.5F, 3.0F, 21, () -> Ingredient.ofItems(Items.EMERALD)),
@@ -23,7 +22,7 @@ public enum UMaterials implements ToolMaterial {
     private final int enchantability;
     private final Lazy<Ingredient> repairIngredient;
 
-    private UMaterials(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier repairIngredient) {
+    private UToolMaterials(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier repairIngredient) {
         this.miningLevel = miningLevel;
         this.itemDurability = itemDurability;
         this.miningSpeed = miningSpeed;

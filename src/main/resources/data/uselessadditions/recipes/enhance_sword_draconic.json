@@ -7,9 +7,9 @@
     "tag": "minecraft:tools"
   },
   "addition": {
-    "item": "uselessadditions:essence_of_iron"
+    "item": "uselessadditions:dragon_heart"
   },
   "modifier": {
-    "enchantment": "uselessadditions:plated"
+    "enchantment": "uselessadditions:draconic"
   }
 }

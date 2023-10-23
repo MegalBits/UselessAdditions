@@ -14,7 +14,12 @@
 		"EarthenMinesFaster",
 		"EnchantmentTooltips",
 		"ExtendedDurability",
-		"ExpandDescriptionsInScreen"
+		"ExpandDescriptionsInScreen",
+		"CantCombineAugment",
+		"ExtraExperienceOnKill",
+		"FireproofViaEnchant",
+		"EnderdragonDropsStuff",
+		"ItemEntityCanMerge"
 	],
 	"injectors": {
 		"defaultRequire": 1

@@ -21,6 +21,12 @@ public class AugmentEnchantment extends UEnchantment {
     public int getDurability(int level) {
         return 0;
     }
+    public int getAugmentSlots(int level) {return 0;}
+    public int getExperience(int level) {return 0;}
+    public float getExperienceMultiplier(int level) {return 1;}
+    public boolean isFireproof() {
+        return false;
+    }
     //Used exclusively for tooltips
     public float getDamage(int level) {
         return 0f;

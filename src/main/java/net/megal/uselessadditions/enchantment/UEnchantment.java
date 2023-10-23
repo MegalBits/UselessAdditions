@@ -8,7 +8,7 @@ public class UEnchantment extends Enchantment {
     protected UEnchantment(Rarity weight, EnchantmentTarget target, EquipmentSlot ... slotTypes) {
         super(weight, target, slotTypes);
     }
-    public boolean secondLineTooltip() {
-        return false;
+    public int tooltipCount() {
+        return 1;
     }
 }

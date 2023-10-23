@@ -50,7 +50,7 @@ public class NaturalMendingEnchantment extends UEnchantment {
     public Text getName(int level) {
         MutableText mutableText = Text.translatable(this.getTranslationKey());
         if (this.isCursed()) {
-            mutableText.formatted(Formatting.LIGHT_PURPLE);
+            mutableText.styled(style -> style.withColor(0xcfa0f3));
         } else {
             mutableText.formatted(Formatting.GRAY);
         }

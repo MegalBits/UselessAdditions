@@ -15,8 +15,8 @@ public class DirtEnchantment extends AugmentEnchantment {
         super(weight, EnchantmentTarget.BREAKABLE, slotTypes);
     }
     @Override
-    public boolean secondLineTooltip() {
-        return true;
+    public int tooltipCount() {
+        return 2;
     }
     @Override
     public int getMinPower(int level) {
@@ -28,7 +28,7 @@ public class DirtEnchantment extends AugmentEnchantment {
     }
     @Override
     public int getMaxLevel() {
-        return 20;
+        return 1;
     }
     @Override
     public boolean isAvailableForEnchantedBookOffer() {
@@ -52,15 +52,15 @@ public class DirtEnchantment extends AugmentEnchantment {
     }
     @Override
     public float getAttackDamage(int level, EntityGroup group) {
-        return level*-.05f;
+        return level*-.1f;
     }
     @Override
     public float getDamage(int level) {
-        return level*-.05f;
+        return level*-.1f;
     }
     @Override
     public int getDurability(int level) {
-        return level;
+        return level*5;
     }
     @Override
     public Text getName(int level) {

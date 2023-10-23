@@ -17,8 +17,8 @@ public class IronEnchantment extends AugmentEnchantment {
         super(weight, EnchantmentTarget.BREAKABLE, slotTypes);
     }
     @Override
-    public boolean secondLineTooltip() {
-        return true;
+    public int tooltipCount() {
+        return 2;
     }
     @Override
     public int getMinPower(int level) {

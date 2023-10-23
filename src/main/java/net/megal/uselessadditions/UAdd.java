@@ -13,12 +13,18 @@ import net.megal.uselessadditions.item.UGroups;
 import net.megal.uselessadditions.item.UItems;
 import net.megal.uselessadditions.recipe.URecipes;
 import net.megal.uselessadditions.screen.UScreens;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentLevelEntry;
+import net.minecraft.item.EnchantedBookItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.VillagerProfession;
 import org.slf4j.Logger;
@@ -26,6 +32,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class UAdd implements ModInitializer {
@@ -61,16 +68,23 @@ public class UAdd implements ModInitializer {
         compostableItem(UItems.BUNDLED_FLOWERS, ComposterRarities.HIGH);
         compostableItem(UItems.ASH, ComposterRarities.HIGH);
     }
-
     private static void addTrades() {
         TradeOfferHelper.registerWanderingTraderOffers(1, factories -> {
             factories.add((entity, random) -> new TradeOffer(
-                    new ItemStack(Items.EMERALD, 52), new ItemStack(Items.LAVA_BUCKET, 1), 1, 1, 0f
+                    new ItemStack(Items.EMERALD, 36), new ItemStack(Items.LAVA_BUCKET, 1), 1, 1, 0f
             ));
         });
-        TradeOfferHelper.registerVillagerOffers(VillagerProfession.TOOLSMITH, 4, factories -> {
+        TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER, 1, factories -> {
             factories.add((entity, random) -> new TradeOffer(
-                    new ItemStack(Items.EMERALD, 24), new ItemStack(Items.LAVA_BUCKET, 1), 1, 15, 0.2f
+                    new ItemStack(Items.EMERALD, 1), new ItemStack(Items.BONE_MEAL, 2), 16, 3, 0.07f
+            ));
+        });
+        TradeOfferHelper.registerVillagerOffers(VillagerProfession.LIBRARIAN, 5, factories -> {
+            factories.add((entity, random) -> enchantedBookTrade(random.nextBetween(2,4), 15));
+        });
+        TradeOfferHelper.registerVillagerOffers(VillagerProfession.TOOLSMITH, 3, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new ItemStack(Items.EMERALD, 18), new ItemStack(Items.LAVA_BUCKET, 1), 3, 15, 0.2f
             ));
         });
     }
@@ -119,6 +133,43 @@ public class UAdd implements ModInitializer {
 
         //Adds stuff to loot tables
         ULootTables.modifyLootTables();
+    }
+    private static TradeOffer enchantedBookTrade(int enchantCount, int xp) {
+        Random random = Random.create();
+        List<Enchantment> list = new ArrayList<>(Registries.ENCHANTMENT.stream().filter(Enchantment::isAvailableForEnchantedBookOffer).toList());
+        List<Enchantment> itemEnchantments = new ArrayList<>();
+        ItemStack stack = new ItemStack(Items.ENCHANTED_BOOK);
+        float cost = 0;
+        for (int i = 0; i < enchantCount; i++) {
+            int index = random.nextInt(list.size());
+            Enchantment enchantment = list.get(index);
+            boolean isCompat = false;
+            int ii = 0;
+            while (!isCompat && ii < 5) {
+                isCompat = checkEnchantCompat(enchantment, itemEnchantments);
+                ii++;
+            }
+            if (isCompat) {
+                itemEnchantments.add(list.get(index));
+                int lv = MathHelper.nextInt(random, enchantment.getMinLevel(), enchantment.getMaxLevel());
+                stack.addEnchantment(enchantment, lv);
+                int eCost = 2 + random.nextInt(5 + lv * 10) + 3 * lv;
+                if (enchantment.isTreasure()) {
+                    eCost *= 2;
+                }
+                cost += eCost;
+            }
+            list.remove(index);
+        }
+        cost *= Math.max(Math.max((1f-((enchantCount-1)/5f)), .5f),1);
+
+        return new TradeOffer(new ItemStack(cost/9f > 7.5f ? Items.EMERALD_BLOCK : Items.EMERALD, cost/9f > 7.5f ? Math.max(Math.round(cost/9f), 1) : (int) cost), new ItemStack(Items.BOOK), stack, 6, xp, cost/9f > 7.5f ? 0.1f : 0.2f);
+    }
+    private static boolean checkEnchantCompat(Enchantment enchantment, List<Enchantment> list) {
+        for (Enchantment other : list) {
+            if (!enchantment.canCombine(other)) return false;
+        }
+        return true;
     }
     private void compostableItem(Item item, ComposterRarities rarity) {
         CompostingChanceRegistry.INSTANCE.add(item, rarity.getRarity());

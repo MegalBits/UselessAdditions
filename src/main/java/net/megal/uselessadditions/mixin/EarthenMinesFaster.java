@@ -36,7 +36,7 @@ public abstract class EarthenMinesFaster {
                 && player.getMainHandStack().isSuitableFor(block) && player.getWorld().getDimensionKey() == DimensionTypes.OVERWORLD) {
             double distance = player.getWorld().getSeaLevel() - player.getPos().getY();
             distance = Math.sqrt(distance * distance);
-            s += speedModifiers(player, (float)distance / 28f);
+            s += speedModifiers(player, (float)distance / 24f);
         }
         return s;
     }

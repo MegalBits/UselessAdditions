@@ -39,7 +39,7 @@ public abstract class ExpandDescriptionsInScreen {
     private void handleHotbarKeyPressed(int keyCode, int scanCode, int modifiers, CallbackInfoReturnable<Boolean> cir) {
         if (UAddClient.EXPAND_TOOLTIP.matchesKey(keyCode, scanCode)) {
             UAdd.expandDescriptions = true;
-            i = i > 0 ? 2 : 5;
+            i = Math.max(i > 0 ? 2 : 8, i);
         }
     }
 

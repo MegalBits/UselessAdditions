@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "121",
+    "232",
+    "121"
+  ],
+  "key": {
+    "1": {
+      "tag": "uselessadditions:augment_ingredient"
+    },
+    "2": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "3": {
+      "item": "minecraft:amethyst_block"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:essence_of_amethyst",
+    "count": 1
+  }
+}

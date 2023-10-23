@@ -1,0 +1,15 @@
+{
+  "type": "uselessadditions:enhancement_augment",
+  "template": {
+    "tag": "c:smithing_hammers"
+  },
+  "base": {
+    "tag": "minecraft:tools"
+  },
+  "addition": {
+    "item": "uselessadditions:essence_of_emerald"
+  },
+  "modifier": {
+    "enchantment": "uselessadditions:encrusted"
+  }
+}

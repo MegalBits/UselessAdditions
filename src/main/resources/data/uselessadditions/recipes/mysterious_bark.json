@@ -10,7 +10,7 @@
       "tag": "minecraft:logs"
     },
     "2": {
-      "item": "uselessadditions:ancient_shard"
+      "tag": "uselessadditions:augment_ingredient"
     }
   },
   "result": {

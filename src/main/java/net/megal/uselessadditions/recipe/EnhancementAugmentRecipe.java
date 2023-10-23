@@ -6,6 +6,7 @@ package net.megal.uselessadditions.recipe;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonSyntaxException;
+import net.megal.uselessadditions.UAdd;
 import net.megal.uselessadditions.enchantment.AugmentEnchantment;
 import net.megal.uselessadditions.enchantment.UEnchantments;
 import net.megal.uselessadditions.item.UItems;
@@ -57,9 +58,17 @@ public class EnhancementAugmentRecipe implements EnhancementRecipe {
             int level = EnchantmentHelper.getLevel(enchantment, stack);
             isMaxed = level >= enchantment.getMaxLevel();
             if (stack.hasEnchantments()) {
-                for (Enchantment ench : EnchantmentHelper.get(stack).keySet()) {
-                    if (!(ench instanceof AugmentEnchantment)) return false;
+                Map<Enchantment, Integer> enchantments = EnchantmentHelper.get(stack);
+                int augCap = 8;
+                int i = 0;
+                for (Enchantment ench : enchantments.keySet()) {
+                    if (ench instanceof AugmentEnchantment aug) {
+                        i++;
+                        augCap += aug.getAugmentSlots(enchantments.get(ench));
+                    }
+                    else return false;
                 }
+                if (i >= augCap && !(level > 0)) return false;
             }
         }
         return !isMaxed && this.template.test(inventory.getStack(0)) && this.base.test(inventory.getStack(1)) && this.addition.test(inventory.getStack(2));

@@ -1,0 +1,20 @@
+{
+  "type": "uselessadditions:enhancement_augment",
+  "template": {
+    "tag": "c:smithing_hammers"
+  },
+  "base": [
+    {
+      "tag": "minecraft:tools"
+    },
+    {
+      "tag": "c:armors"
+    }
+  ],
+  "addition": {
+    "item": "uselessadditions:essence_of_amethyst"
+  },
+  "modifier": {
+    "enchantment": "uselessadditions:crystalline"
+  }
+}

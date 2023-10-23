@@ -207,13 +207,20 @@ public class UItems {
     public static final TooltipItem ARID_CLOTH = registerItem(new Identifier(UAdd.MOD_ID, "arid_cloth"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
     public static final TooltipItem FRIGID_CLOTH = registerItem(new Identifier(UAdd.MOD_ID, "frigid_cloth"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
     public static final TooltipItem PHANTOM_HEART = registerItem(new Identifier(UAdd.MOD_ID, "phantom_heart"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
-    public static final Item ENDER_PEARL_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "ender_pearl_shard"), createItem());
+    public static final Item DRAGON_SCALE = registerItem(new Identifier(UAdd.MOD_ID, "dragon_scale"), new Item(new FabricItemSettings().fireproof().rarity(Rarity.UNCOMMON)));
+    public static final Item DRAGON_HEART = registerItem(new Identifier(UAdd.MOD_ID, "dragon_heart"), new Item(new FabricItemSettings().fireproof().rarity(Rarity.EPIC)));
+    public static final Item WEATHERED_SCRAP = registerItem(new Identifier(UAdd.MOD_ID, "weathered_scrap"), new Item(new FabricItemSettings()));
     public static final Item ANCIENT_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "ancient_shard"), new Item(new FabricItemSettings().fireproof()));
+    public static final Item ENDER_PEARL_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "ender_pearl_shard"), createItem());
     public static final Item MYSTERIOUS_BARK = registerItem(new Identifier(UAdd.MOD_ID, "mysterious_bark"), createItem());
     public static final Item ESSENCE_OF_UNDERGROUND = registerItem(new Identifier(UAdd.MOD_ID, "essence_of_underground"), createItem());
+    public static final Item ESSENCE_OF_AMETHYST = registerItem(new Identifier(UAdd.MOD_ID, "essence_of_amethyst"), createItem());
     public static final Item TESLA_COIL = registerItem(new Identifier(UAdd.MOD_ID, "tesla_coil"), createItem());
     public static final Item ESSENCE_OF_IRON = registerItem(new Identifier(UAdd.MOD_ID, "essence_of_iron"), createItem());
     public static final Item ESSENCE_OF_GOLD = registerItem(new Identifier(UAdd.MOD_ID, "essence_of_gold"), createItem());
+    public static final Item ESSENCE_OF_DIAMOND = registerItem(new Identifier(UAdd.MOD_ID, "essence_of_diamond"), createItem());
+    public static final Item ESSENCE_OF_EMERALD = registerItem(new Identifier(UAdd.MOD_ID, "essence_of_emerald"), createItem());
+    public static final Item ESSENCE_OF_NETHERITE = registerItem(new Identifier(UAdd.MOD_ID, "essence_of_netherite"), new Item(new FabricItemSettings().fireproof()));
     public static final MagicBook MAGIC_BOOK = registerItem(new Identifier(UAdd.MOD_ID, "magic_book"), new MagicBook(new FabricItemSettings().maxCount(1).maxDamage(3).rarity(Rarity.EPIC), Formatting.GRAY));
     public static final Item IRON_BUNDLE_UPGRADE = registerItem(new Identifier(UAdd.MOD_ID, "iron_bundle_upgrade"), createItem());
     public static final Item DIAMOND_BUNDLE_UPGRADE = registerItem(new Identifier(UAdd.MOD_ID, "diamond_bundle_upgrade"), createItem());
@@ -243,21 +250,26 @@ public class UItems {
     public static final DamageableItem HAMMER = registerItem(new Identifier(UAdd.MOD_ID, "hammer"), new DamageableItem(new FabricItemSettings().maxCount(1).maxDamage(64)));
     public static final DamageableGlintItem ENCHANTED_HAMMER = registerItem(new Identifier(UAdd.MOD_ID, "enchanted_hammer"), new DamageableGlintItem(new FabricItemSettings().maxCount(1).maxDamage(4096)));
     //Tools
-    public static final USwordItem AMETHYST_SWORD = registerItem(new Identifier(UAdd.MOD_ID, "amethyst_sword"), new USwordItem(UMaterials.AMETHYST, 3, -2.4F, new FabricItemSettings()));
-    public static final UShovelItem AMETHYST_SHOVEL = registerItem(new Identifier(UAdd.MOD_ID, "amethyst_shovel"), new UShovelItem(UMaterials.AMETHYST, 1.5F, -3.0F, new FabricItemSettings()));
-    public static final UPickaxeItem AMETHYST_PICKAXE = registerItem(new Identifier(UAdd.MOD_ID, "amethyst_pickaxe"), new UPickaxeItem(UMaterials.AMETHYST, 1, -2.8F, new FabricItemSettings()));
-    public static final UAxeItem AMETHYST_AXE = registerItem(new Identifier(UAdd.MOD_ID, "amethyst_axe"), new UAxeItem(UMaterials.AMETHYST, 5.0F, -3F, new FabricItemSettings()));
-    public static final UHoeItem AMETHYST_HOE = registerItem(new Identifier(UAdd.MOD_ID, "amethyst_hoe"), new UHoeItem(UMaterials.AMETHYST_P5, -2, 0.0F, new FabricItemSettings()));
-    public static final USwordItem EMERALD_SWORD = registerItem(new Identifier(UAdd.MOD_ID, "emerald_sword"), new USwordItem(UMaterials.EMERALD, 3, -2.4F, new FabricItemSettings()));
-    public static final UShovelItem EMERALD_SHOVEL = registerItem(new Identifier(UAdd.MOD_ID, "emerald_shovel"), new UShovelItem(UMaterials.EMERALD, 1.5F, -3.0F, new FabricItemSettings()));
-    public static final UPickaxeItem EMERALD_PICKAXE = registerItem(new Identifier(UAdd.MOD_ID, "emerald_pickaxe"), new UPickaxeItem(UMaterials.EMERALD, 1, -2.8F, new FabricItemSettings()));
-    public static final UAxeItem EMERALD_AXE = registerItem(new Identifier(UAdd.MOD_ID, "emerald_axe"), new UAxeItem(UMaterials.EMERALD, 5.0F, -3.0F, new FabricItemSettings()));
-    public static final UHoeItem EMERALD_HOE = registerItem(new Identifier(UAdd.MOD_ID, "emerald_hoe"), new UHoeItem(UMaterials.EMERALD, -3, 0.0F, new FabricItemSettings()));
-    public static final USwordItem BLAZE_METAL_SWORD = registerItem(new Identifier(UAdd.MOD_ID, "blaze_metal_sword"), new USwordItem(UMaterials.BLAZE_METAL, 3, -2.4F, new FabricItemSettings()));
-    public static final UShovelItem BLAZE_METAL_SHOVEL = registerItem(new Identifier(UAdd.MOD_ID, "blaze_metal_shovel"), new UShovelItem(UMaterials.BLAZE_METAL, 1.5F, -3.0F, new FabricItemSettings()));
-    public static final UPickaxeItem BLAZE_METAL_PICKAXE = registerItem(new Identifier(UAdd.MOD_ID, "blaze_metal_pickaxe"), new UPickaxeItem(UMaterials.BLAZE_METAL, 1, -2.8F, new FabricItemSettings()));
-    public static final UAxeItem BLAZE_METAL_AXE = registerItem(new Identifier(UAdd.MOD_ID, "blaze_metal_axe"), new UAxeItem(UMaterials.BLAZE_METAL, 5.0F, -3.0F, new FabricItemSettings()));
-    public static final UHoeItem BLAZE_METAL_HOE = registerItem(new Identifier(UAdd.MOD_ID, "blaze_metal_hoe"), new UHoeItem(UMaterials.BLAZE_METAL_P5, -3, 0.0F, new FabricItemSettings()));
+    public static final USwordItem AMETHYST_SWORD = registerItem(new Identifier(UAdd.MOD_ID, "amethyst_sword"), new USwordItem(UToolMaterials.AMETHYST, 3, -2.4F, new FabricItemSettings()));
+    public static final UShovelItem AMETHYST_SHOVEL = registerItem(new Identifier(UAdd.MOD_ID, "amethyst_shovel"), new UShovelItem(UToolMaterials.AMETHYST, 1.5F, -3.0F, new FabricItemSettings()));
+    public static final UPickaxeItem AMETHYST_PICKAXE = registerItem(new Identifier(UAdd.MOD_ID, "amethyst_pickaxe"), new UPickaxeItem(UToolMaterials.AMETHYST, 1, -2.8F, new FabricItemSettings()));
+    public static final UAxeItem AMETHYST_AXE = registerItem(new Identifier(UAdd.MOD_ID, "amethyst_axe"), new UAxeItem(UToolMaterials.AMETHYST, 5.0F, -3F, new FabricItemSettings()));
+    public static final UHoeItem AMETHYST_HOE = registerItem(new Identifier(UAdd.MOD_ID, "amethyst_hoe"), new UHoeItem(UToolMaterials.AMETHYST_P5, -2, 0.0F, new FabricItemSettings()));
+    public static final USwordItem EMERALD_SWORD = registerItem(new Identifier(UAdd.MOD_ID, "emerald_sword"), new USwordItem(UToolMaterials.EMERALD, 3, -2.4F, new FabricItemSettings()));
+    public static final UShovelItem EMERALD_SHOVEL = registerItem(new Identifier(UAdd.MOD_ID, "emerald_shovel"), new UShovelItem(UToolMaterials.EMERALD, 1.5F, -3.0F, new FabricItemSettings()));
+    public static final UPickaxeItem EMERALD_PICKAXE = registerItem(new Identifier(UAdd.MOD_ID, "emerald_pickaxe"), new UPickaxeItem(UToolMaterials.EMERALD, 1, -2.8F, new FabricItemSettings()));
+    public static final UAxeItem EMERALD_AXE = registerItem(new Identifier(UAdd.MOD_ID, "emerald_axe"), new UAxeItem(UToolMaterials.EMERALD, 5.0F, -3.0F, new FabricItemSettings()));
+    public static final UHoeItem EMERALD_HOE = registerItem(new Identifier(UAdd.MOD_ID, "emerald_hoe"), new UHoeItem(UToolMaterials.EMERALD, -3, 0.0F, new FabricItemSettings()));
+    public static final USwordItem BLAZE_METAL_SWORD = registerItem(new Identifier(UAdd.MOD_ID, "blaze_metal_sword"), new USwordItem(UToolMaterials.BLAZE_METAL, 3, -2.4F, new FabricItemSettings()));
+    public static final UShovelItem BLAZE_METAL_SHOVEL = registerItem(new Identifier(UAdd.MOD_ID, "blaze_metal_shovel"), new UShovelItem(UToolMaterials.BLAZE_METAL, 1.5F, -3.0F, new FabricItemSettings()));
+    public static final UPickaxeItem BLAZE_METAL_PICKAXE = registerItem(new Identifier(UAdd.MOD_ID, "blaze_metal_pickaxe"), new UPickaxeItem(UToolMaterials.BLAZE_METAL, 1, -2.8F, new FabricItemSettings()));
+    public static final UAxeItem BLAZE_METAL_AXE = registerItem(new Identifier(UAdd.MOD_ID, "blaze_metal_axe"), new UAxeItem(UToolMaterials.BLAZE_METAL, 5.0F, -3.0F, new FabricItemSettings()));
+    public static final UHoeItem BLAZE_METAL_HOE = registerItem(new Identifier(UAdd.MOD_ID, "blaze_metal_hoe"), new UHoeItem(UToolMaterials.BLAZE_METAL_P5, -3, 0.0F, new FabricItemSettings()));
+    //Armors
+    public static final ArmorItem DRAGON_SCALE_HELMET = registerItem(new Identifier(UAdd.MOD_ID, "dragon_scale_helmet"), new ArmorItem(UArmorMaterials.DRAGON_SCALE, ArmorItem.Type.HELMET, new FabricItemSettings().fireproof()));
+    public static final ArmorItem DRAGON_SCALE_CHESTPLATE = registerItem(new Identifier(UAdd.MOD_ID, "dragon_scale_chestplate"), new ArmorItem(UArmorMaterials.DRAGON_SCALE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().fireproof()));
+    public static final ArmorItem DRAGON_SCALE_LEGGINGS = registerItem(new Identifier(UAdd.MOD_ID, "dragon_scale_leggings"), new ArmorItem(UArmorMaterials.DRAGON_SCALE, ArmorItem.Type.LEGGINGS, new FabricItemSettings().fireproof()));
+    public static final ArmorItem DRAGON_SCALE_BOOTS = registerItem(new Identifier(UAdd.MOD_ID, "dragon_scale_boots"), new ArmorItem(UArmorMaterials.DRAGON_SCALE, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof()));
     //Utility
     public static final Bundle BUNDLE = registerItem(new Identifier(UAdd.MOD_ID, "bundle"), new Bundle(new FabricItemSettings().maxCount(1)));
     public static final IronBundle IRON_BUNDLE = registerItem(new Identifier(UAdd.MOD_ID, "iron_bundle"), new IronBundle(new FabricItemSettings().maxCount(1)));
@@ -270,6 +282,7 @@ public class UItems {
     public static final Item BAT_WING = registerItem(new Identifier(UAdd.MOD_ID, "bat_wing"), new Item(new FabricItemSettings().recipeRemainder(BONELESS_BAT_WING))); //Position only swapped with boneless ver due to using it as a recipe remainder
     public static final Item RAW_AXOLOTL = registerItem(new Identifier(UAdd.MOD_ID, "raw_axolotl"), new Item(new FabricItemSettings().food(UFoodComponents.RAW_AXOLOTL)));
     public static final Item COOKED_AXOLOTL = registerItem(new Identifier(UAdd.MOD_ID, "cooked_axolotl"), new Item(new FabricItemSettings().food(UFoodComponents.COOKED_AXOLOTL)));
+    public static final Item DRAGON_FLESH = registerItem(new Identifier(UAdd.MOD_ID, "dragon_flesh"), new Item(new FabricItemSettings().food(UFoodComponents.DRAGON_FLESH).fireproof()));
     public static final Item LESSER_GOLDEN_CARROT = registerItem(new Identifier(UAdd.MOD_ID, "lesser_golden_carrot"), new Item(new FabricItemSettings().food(UFoodComponents.LESSER_GOLDEN_CARROT)));
     public static final GlintItem ENCHANTED_GOLDEN_CARROT = registerItem(new Identifier(UAdd.MOD_ID, "enchanted_golden_carrot"), new GlintItem(new FabricItemSettings().food(UFoodComponents.ENCHANTED_GOLDEN_CARROT).rarity(Rarity.RARE)));
     public static final GlintItem MAGIC_CARROT = registerItem(new Identifier(UAdd.MOD_ID, "magic_carrot"), new GlintItem(new FabricItemSettings().food(UFoodComponents.MAGIC_CARROT).rarity(Rarity.EPIC)));
@@ -479,13 +492,20 @@ public class UItems {
             entries.add(ARID_CLOTH.getDefaultStack());
             entries.add(FRIGID_CLOTH.getDefaultStack());
             entries.add(PHANTOM_HEART.getDefaultStack());
-            entries.add(ENDER_PEARL_SHARD.getDefaultStack());
+            entries.add(DRAGON_SCALE.getDefaultStack());
+            entries.add(DRAGON_HEART.getDefaultStack());
+            entries.add(WEATHERED_SCRAP.getDefaultStack());
             entries.add(ANCIENT_SHARD.getDefaultStack());
+            entries.add(ENDER_PEARL_SHARD.getDefaultStack());
             entries.add(MYSTERIOUS_BARK.getDefaultStack());
             entries.add(ESSENCE_OF_UNDERGROUND.getDefaultStack());
+            entries.add(ESSENCE_OF_AMETHYST.getDefaultStack());
             entries.add(TESLA_COIL.getDefaultStack());
             entries.add(ESSENCE_OF_IRON.getDefaultStack());
             entries.add(ESSENCE_OF_GOLD.getDefaultStack());
+            entries.add(ESSENCE_OF_DIAMOND.getDefaultStack());
+            entries.add(ESSENCE_OF_EMERALD.getDefaultStack());
+            entries.add(ESSENCE_OF_NETHERITE.getDefaultStack());
             entries.add(MAGIC_BOOK.getDefaultStack());
             entries.add(IRON_BUNDLE_UPGRADE.getDefaultStack());
             entries.add(DIAMOND_BUNDLE_UPGRADE.getDefaultStack());
@@ -530,18 +550,24 @@ public class UItems {
             entries.add(BLAZE_METAL_PICKAXE.getDefaultStack());
             entries.add(BLAZE_METAL_AXE.getDefaultStack());
             entries.add(BLAZE_METAL_HOE.getDefaultStack());
-            //Utility
+            // Armor
+            entries.add(DRAGON_SCALE_HELMET.getDefaultStack());
+            entries.add(DRAGON_SCALE_CHESTPLATE.getDefaultStack());
+            entries.add(DRAGON_SCALE_LEGGINGS.getDefaultStack());
+            entries.add(DRAGON_SCALE_BOOTS.getDefaultStack());
+            // Utility
             entries.add(BUNDLE.getDefaultStack());
             entries.add(IRON_BUNDLE.getDefaultStack());
             entries.add(DIAMOND_BUNDLE.getDefaultStack());
             entries.add(NETHERITE_BUNDLE.getDefaultStack());
             entries.add(DRAGON_BUNDLE.getDefaultStack());
-            //Food
+            // Food
             entries.add(ALLAY_COOKIE.getDefaultStack());
             entries.add(RAW_AXOLOTL.getDefaultStack());
             entries.add(COOKED_AXOLOTL.getDefaultStack());
             entries.add(BAT_WING.getDefaultStack());
             entries.add(BONELESS_BAT_WING.getDefaultStack());
+            entries.add(DRAGON_FLESH.getDefaultStack());
             entries.add(LESSER_GOLDEN_CARROT.getDefaultStack());
             entries.add(ENCHANTED_GOLDEN_CARROT.getDefaultStack());
             entries.add(MAGIC_CARROT.getDefaultStack());
@@ -549,7 +575,7 @@ public class UItems {
             entries.add(MAGIC_APPLE.getDefaultStack());
             // Enhancement Table
             entries.add(ENHANCEMENT_TABLE.asItem().getDefaultStack());
-            //Ores
+            // Ores
             entries.add(ALLAY_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_ALLAY_ORE.asItem().getDefaultStack());
             entries.add(AXOLOTL_ORE.asItem().getDefaultStack());

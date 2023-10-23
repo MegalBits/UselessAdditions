@@ -35,7 +35,7 @@ public abstract class ExtendedDurability {
                 }
             }
         }
-        if (f > 0) cir.setReturnValue(stack.getItem().getMaxDamage() + f);
+        if (f > 0) cir.setReturnValue(Math.max(stack.getItem().getMaxDamage() + f, 1));
     }
 
     @Inject(at = @At("HEAD"),

@@ -3,9 +3,14 @@
   "template": {
     "tag": "c:smithing_hammers"
   },
-  "base": {
-    "tag": "minecraft:tools"
-  },
+  "base": [
+    {
+      "tag": "minecraft:tools"
+    },
+    {
+      "tag": "c:armors"
+    }
+  ],
   "addition": {
     "item": "uselessadditions:empowered_emerald"
   },

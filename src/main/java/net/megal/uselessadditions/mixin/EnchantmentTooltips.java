@@ -2,26 +2,33 @@ package net.megal.uselessadditions.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import me.shedaniel.rei.api.client.registry.screen.ScreenRegistry;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.megal.uselessadditions.UAdd;
 import net.megal.uselessadditions.UAddClient;
 import net.megal.uselessadditions.enchantment.*;
+import net.megal.uselessadditions.item.UItems;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.enchantment.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.registry.Registries;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.math.MathHelper;
+import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.injection.At;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 @Mixin(ItemStack.class)
 public abstract class EnchantmentTooltips {
@@ -43,8 +50,10 @@ public abstract class EnchantmentTooltips {
                 tooltip.add(e.getName(level));
                 if (UAdd.expandDescriptions) {
                     tooltip.add(PREFIX.copy().append(Text.translatable(e.getTranslationKey() + ".desc")).formatted(Formatting.DARK_GRAY, Formatting.ITALIC));
-                    if (doubleDesc.contains(e) || (e instanceof UEnchantment ue && ue.secondLineTooltip()))
+                    if (doubleDesc.contains(e) || (e instanceof UEnchantment ue && ue.tooltipCount() >= 2))
                         tooltip.add(PREFIX_2.copy().append(Text.translatable(e.getTranslationKey() + ".desc2")).formatted(Formatting.DARK_GRAY, Formatting.ITALIC));
+                    if (e instanceof UEnchantment ue && ue.tooltipCount() >= 3)
+                        tooltip.add(PREFIX_2.copy().append(Text.translatable(e.getTranslationKey() + ".desc3")).formatted(Formatting.DARK_GRAY, Formatting.ITALIC));
 
                     if (e instanceof AugmentEnchantment aug) {
                         if (aug instanceof RepairingEnchantment) {
@@ -61,6 +70,14 @@ public abstract class EnchantmentTooltips {
                         if (aug.getStatusDuration(level) > 0) {
                             tooltip.add(TAB.copy().append(Text.translatable("enchantment.tooltip.duration").append(Text.literal(SPACE + aug.getStatusDuration(level) / 20f + "s"))).formatted(Formatting.ITALIC).styled(style -> style.withColor(STAT_COLOR)));
                             tooltip.add(TAB.copy().append(Text.translatable("enchantment.tooltip.amplifier").append(Text.literal(SPACE + (aug.getAmplifier(level) + 1)))).formatted(Formatting.ITALIC).styled(style -> style.withColor(STAT_COLOR)));
+                        }
+                        if (aug.getAugmentSlots(level) != 0) {
+                            int ii = aug.getAugmentSlots(level);
+                            tooltip.add(TAB.copy().append(Text.translatable("enchantment.tooltip.slots").append(Text.literal(SPACE + (ii >= 0 ? ADD : SUBTRACT) + ii))).formatted(Formatting.ITALIC).styled(style -> style.withColor(STAT_COLOR)));
+                        }
+                        if (aug.getExperience(level) != 0) {
+                            int ii = aug.getExperience(level);
+                            tooltip.add(TAB.copy().append(Text.translatable("enchantment.tooltip.experience").append(Text.literal(SPACE + (ii >= 0 ? ADD : SUBTRACT) + ii))).formatted(Formatting.ITALIC).styled(style -> style.withColor(STAT_COLOR)));
                         }
                     } else {
                         if (e instanceof DamageEnchantment dmg) {
@@ -83,7 +100,7 @@ public abstract class EnchantmentTooltips {
                         }
                         if (e instanceof LureEnchantment) {
                             float f = lureDecrease(level);
-                            tooltip.add(TAB.copy().append(Text.translatable("enchantment.tooltip.lure").append(Text.literal(SPACE + (f >= 0 ? SUBTRACT : ADD) + (f / 20)))).formatted(Formatting.ITALIC).styled(style -> style.withColor(STAT_COLOR)));
+                            tooltip.add(TAB.copy().append(Text.translatable("enchantment.tooltip.lure").append(Text.literal(SPACE + (f >= 0 ? SUBTRACT : ADD) + (-f / 20)))).formatted(Formatting.ITALIC).styled(style -> style.withColor(STAT_COLOR)));
                         }
                         if (e instanceof PowerEnchantment) {
                             float f = getPower(level);
@@ -107,10 +124,27 @@ public abstract class EnchantmentTooltips {
             });
         }
     }
+    @Environment(EnvType.CLIENT)
     @ModifyReturnValue(at = @At("RETURN"),
             method = "getTooltip(Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/client/item/TooltipContext;)Ljava/util/List;")
-    private List<Text> getTooltip(List<Text> l, PlayerEntity player, TooltipContext context) {
-        if (!UAdd.expandDescriptions && ((ItemStack)(Object)this).hasEnchantments()) l.add(Text.translatable("enchantment.tooltip.description").append(UAddClient.EXPAND_TOOLTIP.getBoundKeyLocalizedText()).append(Text.translatable("enchantment.tooltip.description2")).formatted(Formatting.GRAY));
+    public List<Text> getTooltip(List<Text> l, @Nullable PlayerEntity player, TooltipContext context) {
+        ItemStack stack = ((ItemStack)(Object)this);
+        if (stack.hasEnchantments()) {
+            int augCap = 8;
+            int i = 0;
+            Map<Enchantment, Integer> enchantments = EnchantmentHelper.get(stack);
+            for (Enchantment ench : enchantments.keySet()) {
+                if (ench instanceof AugmentEnchantment aug) {
+                    i++;
+                    augCap += aug.getAugmentSlots(enchantments.get(ench));
+                }
+            }
+            if (i > 0 && !(stack.isOf(UItems.AUGMENT) || stack.isOf(Items.ENCHANTED_BOOK))) {
+                float f = Math.max(0.0F, ((float)augCap - (float)i) / (float)augCap);
+                l.add(Text.literal(i+"/"+augCap+SPACE).append(Text.translatable("enchantment.tooltip.augments")).styled(style -> style.withColor(MathHelper.hsvToRgb(f / 3f, 1.0f, 1.0f))));
+            }
+            if (!UAdd.expandDescriptions) l.add(Text.translatable("enchantment.tooltip.description").append(UAddClient.EXPAND_TOOLTIP.getBoundKeyLocalizedText()).append(Text.translatable("enchantment.tooltip.description2")).formatted(Formatting.GRAY));
+        }
         return l;
     }
     private static float getPower(int level) {

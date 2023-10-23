@@ -2,6 +2,7 @@ package net.megal.uselessadditions.mixin;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
+import dev.architectury.event.events.common.TickEvent;
 import net.megal.uselessadditions.UAdd;
 import net.megal.uselessadditions.enchantment.AugmentEnchantment;
 import net.megal.uselessadditions.enchantment.UEnchantments;
@@ -60,7 +61,17 @@ public abstract class AugmentChanges {
             method = "inventoryTick(Lnet/minecraft/item/ItemStack;Lnet/minecraft/world/World;Lnet/minecraft/entity/Entity;IZ)V",
             cancellable = false)
     private void repairItemTick(ItemStack stack, World world, Entity entity, int slot, boolean selected, CallbackInfo ci) {
-        if (entity instanceof ServerPlayerEntity player && !selected) {
+        boolean isEquippedArmor = false;
+        if (entity instanceof PlayerEntity player) {
+            for (ItemStack itemStack : player.getArmorItems()) {
+                if (itemStack == stack) {
+                    isEquippedArmor = true;
+                    break;
+                }
+            }
+
+        }
+        if (entity instanceof ServerPlayerEntity player && !selected && !isEquippedArmor) {
             int repairingLevel = EnchantmentHelper.getLevel(UEnchantments.REPAIRING, stack);
             if (EnchantmentHelper.getLevel(UEnchantments.REPAIRING, stack) > 0) {
                 NbtCompound nbt = stack.getOrCreateNbt();

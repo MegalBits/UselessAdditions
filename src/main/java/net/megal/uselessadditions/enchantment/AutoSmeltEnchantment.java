@@ -17,8 +17,8 @@ public class AutoSmeltEnchantment extends UEnchantment {
         super(weight, EnchantmentTarget.DIGGER, slotTypes);
     }
     @Override
-    public boolean secondLineTooltip() {
-        return true;
+    public int tooltipCount() {
+        return 2;
     }
     @Override
     public int getMinPower(int level) {
@@ -60,7 +60,7 @@ public class AutoSmeltEnchantment extends UEnchantment {
     public Text getName(int level) {
         MutableText mutableText = Text.translatable(this.getTranslationKey());
         if (this.isCursed()) {
-            mutableText.formatted(Formatting.GOLD);
+            mutableText.styled(style -> style.withColor(0xFF9900));
         } else {
             mutableText.formatted(Formatting.GRAY);
         }
