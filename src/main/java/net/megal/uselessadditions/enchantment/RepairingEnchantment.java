@@ -48,6 +48,8 @@ public class RepairingEnchantment extends AugmentEnchantment {
         return super.canAccept(other);
     }
     @Override
+    public int getAugmentSlots(int level) {return -3;}
+    @Override
     public Text getName(int level) {
         MutableText mutableText = Text.translatable(this.getTranslationKey());
         if (this.isCursed()) {
