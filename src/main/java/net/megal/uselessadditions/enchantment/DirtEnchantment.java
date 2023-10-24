@@ -51,16 +51,12 @@ public class DirtEnchantment extends AugmentEnchantment {
         return super.canAccept(other);
     }
     @Override
-    public float getAttackDamage(int level, EntityGroup group) {
-        return level*-.1f;
-    }
-    @Override
-    public float getDamage(int level) {
-        return level*-.1f;
-    }
-    @Override
     public int getDurability(int level) {
-        return level*5;
+        return level*25;
+    }
+    @Override
+    public int getAugmentSlots(int level) {
+        return -1;
     }
     @Override
     public Text getName(int level) {
