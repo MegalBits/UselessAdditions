@@ -10,6 +10,7 @@ public class URecipes {
     public static final RecipeType<EnhancementRecipe> ENHANCEMENT = registerType("enhancement");
     public static final RecipeSerializer<EnhancementAugmentRecipe> ENHANCMENT_AUGMENT_RECIPE = registerSerializer("enhancement_augment", new EnhancementAugmentRecipe.Serializer());
     public static final RecipeSerializer<SmithingNoNbtRecipe> SMITHING_NO_NBT_RECIPE = registerSerializer("smithing_no_nbt_transform", new SmithingNoNbtRecipe.Serializer());
+    public static final RecipeSerializer<SpawnerRecipe> SPAWNER_RECIPE = registerSerializer("spawner_recipe", new SpecialRecipeSerializer<SpawnerRecipe>(SpawnerRecipe::new));
     public static <T extends Recipe<?>> RecipeType<T> registerType(final String id) {
         return Registry.register(Registries.RECIPE_TYPE, new Identifier(UAdd.MOD_ID, id), new RecipeType<T>(){
             @Override

@@ -12,7 +12,7 @@ import java.util.EnumMap;
 import java.util.function.Supplier;
 
 public enum UArmorMaterials implements ArmorMaterial {
-    DRAGON_SCALE("dragon_scale", 52, Util.make(new EnumMap<ArmorItem.Type, Integer>(ArmorItem.Type.class), (map) -> {
+    DRAGON_SCALE("dragon_scale", 86, Util.make(new EnumMap<ArmorItem.Type, Integer>(ArmorItem.Type.class), (map) -> {
         map.put(ArmorItem.Type.BOOTS, 4);
         map.put(ArmorItem.Type.LEGGINGS, 7);
         map.put(ArmorItem.Type.CHESTPLATE, 8);

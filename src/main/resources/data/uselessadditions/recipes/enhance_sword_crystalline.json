@@ -3,14 +3,9 @@
   "template": {
     "tag": "c:smithing_hammers"
   },
-  "base": [
-    {
-      "tag": "minecraft:tools"
-    },
-    {
-      "tag": "c:armors"
-    }
-  ],
+  "base": {
+    "tag": "uselessadditions:augmentable"
+  },
   "addition": {
     "item": "uselessadditions:essence_of_amethyst"
   },

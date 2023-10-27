@@ -9,7 +9,10 @@ import net.minecraft.util.Identifier;
 
 public class UEnchantments {
     private static final EquipmentSlot[] ALL_ARMOR = new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET};
-
+    public static final UndeadEnchantment UNDEAD = registerEnchantment(new Identifier(UAdd.MOD_ID, "undead"),
+            new UndeadEnchantment(Enchantment.Rarity.VERY_RARE, EquipmentSlot.CHEST));
+    public static final AntiCactusEnchantment CACTUS_LINING = registerEnchantment(new Identifier(UAdd.MOD_ID, "cactus_lining"),
+            new AntiCactusEnchantment(Enchantment.Rarity.VERY_RARE, EquipmentSlot.values()));
     public static final DraconicEnchantment DRACONIC = registerEnchantment(new Identifier(UAdd.MOD_ID, "draconic"),
             new DraconicEnchantment(Enchantment.Rarity.VERY_RARE, EquipmentSlot.MAINHAND));
     public static final NetheriteEnchantment NETHERITE_PLATED = registerEnchantment(new Identifier(UAdd.MOD_ID, "netherite_plated"),
@@ -25,15 +28,15 @@ public class UEnchantments {
     public static final StunnedEnchantment ELECTRIFIED = registerEnchantment(new Identifier(UAdd.MOD_ID, "electrified"),
             new StunnedEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
     public static final AmethystEnchantment CRYSTALLINE = registerEnchantment(new Identifier(UAdd.MOD_ID, "crystalline"),
-            new AmethystEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
+            new AmethystEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.values()));
     public static final SubterraneanEnchantment SUBTERRANEAN = registerEnchantment(new Identifier(UAdd.MOD_ID, "subterranean"),
             new SubterraneanEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
     public static final SplinteredEnchantment SPLINTERED = registerEnchantment(new Identifier(UAdd.MOD_ID, "splintered"),
             new SplinteredEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
     public static final DirtEnchantment SOILED = registerEnchantment(new Identifier(UAdd.MOD_ID, "soiled"),
-            new DirtEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
+            new DirtEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.values()));
     public static final RepairingEnchantment REPAIRING = registerEnchantment(new Identifier(UAdd.MOD_ID, "repairing"),
-            new RepairingEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
+            new RepairingEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.values()));
     public static final GlowingEnchantment LUMINESCENCE = registerEnchantment(new Identifier(UAdd.MOD_ID, "luminescence"),
             new GlowingEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
     public static final BlindnessEnchantment BLINDING = registerEnchantment(new Identifier(UAdd.MOD_ID, "blinding"),

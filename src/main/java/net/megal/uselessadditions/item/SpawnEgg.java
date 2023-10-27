@@ -35,12 +35,14 @@ import java.util.List;
 import java.util.Objects;
 
 public class SpawnEgg extends Item {
-    private final EntityType<? extends MobEntity> type;
+    private final EntityType<?> type;
     public SpawnEgg(Settings settings, EntityType<? extends MobEntity> type) {
         super(settings);
         this.type = type;
     }
-
+    public EntityType<?> getEntityType() {
+        return type;
+    }
     @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
         World world = context.getWorld();

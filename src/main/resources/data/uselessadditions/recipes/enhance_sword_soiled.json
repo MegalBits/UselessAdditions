@@ -4,7 +4,7 @@
     "tag": "c:smithing_hammers"
   },
   "base": {
-    "tag": "minecraft:tools"
+    "tag": "uselessadditions:augmentable"
   },
   "addition": {
     "tag": "minecraft:dirt"

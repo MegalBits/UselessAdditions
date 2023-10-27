@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "#c:smithing_hammers",
+    "#minecraft:tools",
+    "#c:spears",
+    "#c:bows",
+    "#c:armors",
+    "#c:shields",
+    "#c:shears",
+    "#c:fishing_rods",
+    "#c:on_a_sticks",
+    "#c:flint_and_steels"
+  ]
+}

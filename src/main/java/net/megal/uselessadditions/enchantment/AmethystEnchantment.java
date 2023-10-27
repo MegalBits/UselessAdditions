@@ -29,18 +29,7 @@ public class AmethystEnchantment extends AugmentEnchantment {
     public int getMaxLevel() {
         return 5;
     }
-    @Override
-    public boolean isAvailableForEnchantedBookOffer() {
-        return false;
-    }
-    @Override
-    public boolean isAvailableForRandomSelection() {
-        return false;
-    }
-    @Override
-    public boolean isCursed() {
-        return true;
-    }
+
     @Override
     public boolean isAcceptableItem(ItemStack stack) {
         return false;

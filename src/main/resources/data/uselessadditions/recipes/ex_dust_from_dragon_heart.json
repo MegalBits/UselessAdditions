@@ -1,0 +1,16 @@
+{
+  "type": "uselessadditions:smithing_no_nbt_transform",
+  "template": {
+    "tag": "c:smithing_hammers"
+  },
+  "base": {
+    "item": "uselessadditions:dragon_heart"
+  },
+  "addition": {
+    "item": "minecraft:obsidian"
+  },
+  "result": {
+    "item": "uselessadditions:exotic_dust",
+    "count": 4
+  }
+}

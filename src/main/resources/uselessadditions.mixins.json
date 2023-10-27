@@ -17,7 +17,7 @@
 		"ExpandDescriptionsInScreen",
 		"CantCombineAugment",
 		"ExtraExperienceOnKill",
-		"FireproofViaEnchant",
+		"ItemEntityDamageViaEnchant",
 		"EnderdragonDropsStuff",
 		"ItemEntityCanMerge"
 	],

@@ -3,15 +3,33 @@ package net.megal.uselessadditions.enchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.effect.StatusEffect;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class AugmentEnchantment extends UEnchantment {
     protected AugmentEnchantment(Rarity weight, EnchantmentTarget target, EquipmentSlot[] slotTypes) {
         super(weight, target, slotTypes);
     }
+
     @Override
     protected boolean canAccept(Enchantment other) {
         return other instanceof AugmentEnchantment;
     }
+    @Override
+    public boolean isAvailableForEnchantedBookOffer() {
+        return false;
+    }
+    @Override
+    public boolean isAvailableForRandomSelection() {
+        return false;
+    }
+    @Override
+    public boolean isCursed() {
+        return true;
+    }
+
     public int getStatusDuration(int level) {
         return 0;
     }
@@ -26,6 +44,9 @@ public class AugmentEnchantment extends UEnchantment {
     public float getExperienceMultiplier(int level) {return 1;}
     public boolean isFireproof() {
         return false;
+    }
+    public @Nullable List<StatusEffect> immuneEffects() {
+        return null;
     }
     //Used exclusively for tooltips
     public float getDamage(int level) {

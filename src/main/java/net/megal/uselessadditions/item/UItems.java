@@ -6,17 +6,25 @@ import net.megal.uselessadditions.UAdd;
 import net.megal.uselessadditions.item.base.*;
 import net.megal.uselessadditions.item.bundles.*;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.Registries;
+import net.minecraft.registry.tag.EntityTypeTags;
+import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static net.megal.uselessadditions.block.UBlocks.*;
 
 public class UItems {
+    private static final List<SpawnEgg> spawnEggs = new ArrayList<>();
+
     //Mob Ore Shards
     public static final Item ALLAY_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "allay_shard"), createItem());
     public static final Item AXOLOTL_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "axolotl_shard"), createItem());
@@ -198,15 +206,16 @@ public class UItems {
     // -- Misc
     public static final Item EMPTY_DISC = registerItem(new Identifier(UAdd.MOD_ID, "empty_disc"), createItem());
     public static final DamageableItem BUNDLED_FLOWERS = registerItem(new Identifier(UAdd.MOD_ID, "bundled_flowers"), new DamageableItem(new FabricItemSettings().maxCount(1).maxDamage(16)));
-    public static final TooltipItem AXOLOTL_TAIL = registerItem(new Identifier(UAdd.MOD_ID, "axolotl_tail"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
-    public static final TooltipItem BEE_STINGER = registerItem(new Identifier(UAdd.MOD_ID, "bee_stinger"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
-    public static final TooltipItem TOY_FISH = registerItem(new Identifier(UAdd.MOD_ID, "toy_fish"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
-    public static final TooltipItem BIG_INK_SAC = registerItem(new Identifier(UAdd.MOD_ID, "big_ink_sac"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
-    public static final TooltipItem BIG_GLOW_INK_SAC = registerItem(new Identifier(UAdd.MOD_ID, "big_glow_ink_sac"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
-    public static final TooltipItem POSION_GLAND = registerItem(new Identifier(UAdd.MOD_ID, "poison_gland"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
-    public static final TooltipItem ARID_CLOTH = registerItem(new Identifier(UAdd.MOD_ID, "arid_cloth"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
-    public static final TooltipItem FRIGID_CLOTH = registerItem(new Identifier(UAdd.MOD_ID, "frigid_cloth"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
-    public static final TooltipItem PHANTOM_HEART = registerItem(new Identifier(UAdd.MOD_ID, "phantom_heart"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
+    public static final Item CACTUS_LINING = registerItem(new Identifier(UAdd.MOD_ID, "cactus_lining"), createItem());
+    public static final TooltipItem AXOLOTL_TAIL = registerItem(new Identifier(UAdd.MOD_ID, "axolotl_tail"), createTooltipItem());
+    public static final TooltipItem BEE_STINGER = registerItem(new Identifier(UAdd.MOD_ID, "bee_stinger"), createTooltipItem());
+    public static final TooltipItem TOY_FISH = registerItem(new Identifier(UAdd.MOD_ID, "toy_fish"), createTooltipItem());
+    public static final TooltipItem BIG_INK_SAC = registerItem(new Identifier(UAdd.MOD_ID, "big_ink_sac"), createTooltipItem());
+    public static final TooltipItem BIG_GLOW_INK_SAC = registerItem(new Identifier(UAdd.MOD_ID, "big_glow_ink_sac"), createTooltipItem());
+    public static final TooltipItem POSION_GLAND = registerItem(new Identifier(UAdd.MOD_ID, "poison_gland"), createTooltipItem());
+    public static final TooltipItem ARID_CLOTH = registerItem(new Identifier(UAdd.MOD_ID, "arid_cloth"), createTooltipItem());
+    public static final TooltipItem FRIGID_CLOTH = registerItem(new Identifier(UAdd.MOD_ID, "frigid_cloth"), createTooltipItem());
+    public static final TooltipItem PHANTOM_HEART = registerItem(new Identifier(UAdd.MOD_ID, "phantom_heart"), createTooltipItem());
     public static final Item DRAGON_SCALE = registerItem(new Identifier(UAdd.MOD_ID, "dragon_scale"), new Item(new FabricItemSettings().fireproof().rarity(Rarity.UNCOMMON)));
     public static final Item DRAGON_HEART = registerItem(new Identifier(UAdd.MOD_ID, "dragon_heart"), new Item(new FabricItemSettings().fireproof().rarity(Rarity.EPIC)));
     public static final Item WEATHERED_SCRAP = registerItem(new Identifier(UAdd.MOD_ID, "weathered_scrap"), new Item(new FabricItemSettings()));
@@ -221,6 +230,7 @@ public class UItems {
     public static final Item ESSENCE_OF_DIAMOND = registerItem(new Identifier(UAdd.MOD_ID, "essence_of_diamond"), createItem());
     public static final Item ESSENCE_OF_EMERALD = registerItem(new Identifier(UAdd.MOD_ID, "essence_of_emerald"), createItem());
     public static final Item ESSENCE_OF_NETHERITE = registerItem(new Identifier(UAdd.MOD_ID, "essence_of_netherite"), new Item(new FabricItemSettings().fireproof()));
+    public static final TooltipItem ESSENCE_OF_UNDEAD = registerItem(new Identifier(UAdd.MOD_ID, "essence_of_undead"), createTooltipItem());
     public static final MagicBook MAGIC_BOOK = registerItem(new Identifier(UAdd.MOD_ID, "magic_book"), new MagicBook(new FabricItemSettings().maxCount(1).maxDamage(3).rarity(Rarity.EPIC), Formatting.GRAY));
     public static final Item IRON_BUNDLE_UPGRADE = registerItem(new Identifier(UAdd.MOD_ID, "iron_bundle_upgrade"), createItem());
     public static final Item DIAMOND_BUNDLE_UPGRADE = registerItem(new Identifier(UAdd.MOD_ID, "diamond_bundle_upgrade"), createItem());
@@ -238,13 +248,16 @@ public class UItems {
     public static final Item NETHERITE_NUGGET = registerItem(new Identifier(UAdd.MOD_ID, "netherite_nugget"), new Item(new FabricItemSettings().fireproof()));
     // -- Ingots
     public static final Item RUBY = registerItem(new Identifier(UAdd.MOD_ID, "ruby"), createItem());
-    public static final TooltipItem EMPOWERED_EMERALD = registerItem(new Identifier(UAdd.MOD_ID, "empowered_emerald"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
+    public static final TooltipItem EMPOWERED_EMERALD = registerItem(new Identifier(UAdd.MOD_ID, "empowered_emerald"), createTooltipItem());
     public static final Item MAGIC_INGOT = registerItem(new Identifier(UAdd.MOD_ID, "magic_ingot"), createItem());
     public static final GlintItem ENCHANTED_MAGIC_INGOT = registerItem(new Identifier(UAdd.MOD_ID, "enchanted_magic_ingot"), new GlintItem(new FabricItemSettings().rarity(Rarity.RARE)));
-    public static final TooltipItem BLAZE_METAL = registerItem(new Identifier(UAdd.MOD_ID, "blaze_metal"), new TooltipItem(new FabricItemSettings(), Formatting.GRAY));
+    public static final TooltipItem BLAZE_METAL = registerItem(new Identifier(UAdd.MOD_ID, "blaze_metal"), createTooltipItem());
     public static final Item EXOTIC_INGOT = registerItem(new Identifier(UAdd.MOD_ID, "exotic_ingot"), new Item(new FabricItemSettings().rarity(Rarity.UNCOMMON)));
     // -- Tool Components
     public static final Item NETHERITE_STICK = registerItem(new Identifier(UAdd.MOD_ID, "netherite_stick"), new Item(new FabricItemSettings().fireproof()));
+    public static final Item NETHER_UPGRADE_FRAGMENT = registerItem(new Identifier(UAdd.MOD_ID, "nether_upgrade_fragment"), createItem());
+    public static final Item END_UPGRADE_FRAGMENT = registerItem(new Identifier(UAdd.MOD_ID, "end_upgrade_fragment"), createItem());
+    public static final Item END_UPGRADE = registerItem(new Identifier(UAdd.MOD_ID, "end_upgrade"), createItem());
     //Hammer
     public static final DamageableItem MAKESHIFT_HAMMER = registerItem(new Identifier(UAdd.MOD_ID, "makeshift_hammer"), new DamageableItem(new FabricItemSettings().maxCount(1).maxDamage(16)));
     public static final DamageableItem HAMMER = registerItem(new Identifier(UAdd.MOD_ID, "hammer"), new DamageableItem(new FabricItemSettings().maxCount(1).maxDamage(64)));
@@ -290,9 +303,33 @@ public class UItems {
     public static final GlintItem MAGIC_APPLE = registerItem(new Identifier(UAdd.MOD_ID, "magic_apple"), new GlintItem(new FabricItemSettings().food(UFoodComponents.MAGIC_APPLE).rarity(Rarity.EPIC)));
     //Unobtainable
     public static final Item AUGMENT = registerItem(new Identifier(UAdd.MOD_ID, "augment"), createItem());
-
     private static Item createItem() {
         return new Item(new FabricItemSettings());
+    }
+    private static TooltipItem createTooltipItem() {
+        return new TooltipItem(new FabricItemSettings(), Formatting.GRAY);
+    }
+    private static SmithingTemplateItem createSmithingTemplate(String name) {
+        List<Identifier> emptyBaseSlotTextures = List.of(
+                new Identifier("item/empty_armor_slot_helmet"),
+                new Identifier("item/empty_slot_sword"),
+                new Identifier("item/empty_armor_slot_chestplate"),
+                new Identifier("item/empty_slot_pickaxe"),
+                new Identifier("item/empty_armor_slot_leggings"),
+                new Identifier("item/empty_slot_axe"),
+                new Identifier("item/empty_armor_slot_boots"),
+                new Identifier("item/empty_slot_hoe"),
+                new Identifier("item/empty_slot_shovel"));
+        List<Identifier> emptyAdditionSlotTextures = List.of(
+                new Identifier("item/empty_slot_ingot"));
+        return new SmithingTemplateItem(
+                Text.translatable("smithing_template.uselessadditions."+name+".applies_to").formatted(Formatting.BLUE),
+                Text.translatable("smithing_template.uselessadditions."+name+".ingredients").formatted(Formatting.BLUE),
+                Text.translatable("smithing_template.uselessadditions."+name).formatted(Formatting.GRAY),
+                Text.translatable("smithing_template.uselessadditions."+name+".base_slot_description"),
+                Text.translatable("smithing_template.uselessadditions."+name+".additions_slot_description"),
+                emptyBaseSlotTextures,
+                emptyAdditionSlotTextures);
     }
     private static SpawnEgg createSpawnEgg(EntityType<? extends MobEntity> type) {
         return new SpawnEgg(new FabricItemSettings(), type);
@@ -483,6 +520,8 @@ public class UItems {
             // -- Misc
             entries.add(EMPTY_DISC.getDefaultStack());
             entries.add(BUNDLED_FLOWERS.getDefaultStack());
+            entries.add(CACTUS_LINING.getDefaultStack());
+            //
             entries.add(AXOLOTL_TAIL.getDefaultStack());
             entries.add(BEE_STINGER.getDefaultStack());
             entries.add(TOY_FISH.getDefaultStack());
@@ -506,6 +545,7 @@ public class UItems {
             entries.add(ESSENCE_OF_DIAMOND.getDefaultStack());
             entries.add(ESSENCE_OF_EMERALD.getDefaultStack());
             entries.add(ESSENCE_OF_NETHERITE.getDefaultStack());
+            entries.add(ESSENCE_OF_UNDEAD.getDefaultStack());
             entries.add(MAGIC_BOOK.getDefaultStack());
             entries.add(IRON_BUNDLE_UPGRADE.getDefaultStack());
             entries.add(DIAMOND_BUNDLE_UPGRADE.getDefaultStack());
@@ -530,6 +570,9 @@ public class UItems {
             entries.add(EXOTIC_INGOT.getDefaultStack());
             // -- Tool Components
             entries.add(NETHERITE_STICK.getDefaultStack());
+            entries.add(NETHER_UPGRADE_FRAGMENT.getDefaultStack());
+            entries.add(END_UPGRADE_FRAGMENT.getDefaultStack());
+            entries.add(END_UPGRADE.getDefaultStack());
             // Hammer
             entries.add(MAKESHIFT_HAMMER.getDefaultStack());
             entries.add(HAMMER.getDefaultStack());
@@ -686,6 +729,14 @@ public class UItems {
             entries.add(DEEPSLATE_WOLF_ORE.asItem().getDefaultStack());
             entries.add(ZOMBIE_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_ZOMBIE_ORE.asItem().getDefaultStack());
+        });
+        ItemGroupEvents.modifyEntriesEvent(UGroups.SpawnersTab).register(entries -> {
+            for (EntityType<?> entity : Registries.ENTITY_TYPE.stream().toList()) {
+                if (entity == EntityType.PLAYER) continue;
+                ItemStack spawner = new ItemStack(SURVIVAL_SPAWNER.asItem());
+                spawner.getOrCreateNbt().putString("EntityStored",Registries.ENTITY_TYPE.getId(entity).toString());
+                entries.add(spawner);
+            }
         });
     }
 }

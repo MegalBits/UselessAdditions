@@ -1,6 +1,8 @@
 {
   "block.uselessadditions.enhancement_table": "Enhancement Table",
 
+  "block.uselessadditions.survival_spawner": "Monster Spawner",
+
   "block.uselessadditions.allay_ore": "Allay Ore",
   "block.uselessadditions.deepslate_allay_ore": "Deepslate Allay Ore",
   "block.uselessadditions.axolotl_ore": "Axolotl Ore",
@@ -293,6 +295,7 @@
   "item.uselessadditions.iron_bundle_upgrade": "Iron Bundle Upgrade",
   "item.uselessadditions.diamond_bundle_upgrade": "Diamond Bundle Upgrade",
   "item.uselessadditions.bundled_flowers": "Bundled Flowers",
+  "item.uselessadditions.cactus_lining": "Cactus Lining",
   "item.uselessadditions.fortress_nugget": "Nether Nugget",
   "item.uselessadditions.ender_pearl_shard": "Ender Pearl Shard",
   "item.uselessadditions.dirt_pile": "Dirt Pile",
@@ -327,6 +330,9 @@
   "item.uselessadditions.blaze_metal": "Blaze-Metal",
   "item.uselessadditions.blaze_metal.tooltip": "Rare blaze drop",
   "item.uselessadditions.netherite_stick": "Netherite Stick",
+  "item.uselessadditions.end_upgrade": "End Smithing Template",
+  "item.uselessadditions.end_upgrade_fragment": "End Smithing Template Fragment",
+  "item.uselessadditions.nether_upgrade_fragment": "Nether Smithing Template Fragment",
   "item.uselessadditions.frigid_cloth": "Frigid Cloth",
   "item.uselessadditions.frigid_cloth.tooltip": "Rare stray drop",
   "item.uselessadditions.arid_cloth": "Arid Cloth",
@@ -345,6 +351,8 @@
   "item.uselessadditions.big_glow_ink_sac.tooltip": "Rare glow squid drop",
   "item.uselessadditions.empowered_emerald": "Empowered Emerald",
   "item.uselessadditions.empowered_emerald.tooltip": "Rare evoker drop",
+  "item.uselessadditions.essence_of_undead": "Essence of Undead",
+  "item.uselessadditions.essence_of_undead.tooltip": "Rare undead drop",
 
   "item.uselessadditions.allay_cookie": "Allay Cookie",
   "item.uselessadditions.allay_cookie.tooltip": "Rare allay drop",
@@ -385,14 +393,15 @@
   "item.uselessadditions.blaze_metal_axe": "Blaze-Metal Axe",
   "item.uselessadditions.blaze_metal_hoe": "Blaze-Metal Hoe",
 
-  "item.uselessadditions.dragon_scale_helmet": "Dragon Scale-mail Helmet",
-  "item.uselessadditions.dragon_scale_chestplate": "Dragon Scale-mail Chestplate",
-  "item.uselessadditions.dragon_scale_leggings": "Dragon Scale-mail Leggings",
-  "item.uselessadditions.dragon_scale_boots": "Dragon Scale-mail Boots",
+  "item.uselessadditions.dragon_scale_helmet": "Dragon Scalemail Helmet",
+  "item.uselessadditions.dragon_scale_chestplate": "Dragon Scalemail Chestplate",
+  "item.uselessadditions.dragon_scale_leggings": "Dragon Scalemail Leggings",
+  "item.uselessadditions.dragon_scale_boots": "Dragon Scalemail Boots",
 
   "item.uselessadditions.augment": "Augment",
 
   "itemgroup.uadd": "Useless Additions",
+  "itemgroup.spawners": "Mob Spawners",
 
   "container.uselessadditions.enhancement": "Enhancement Table",
   "container.uselessadditions.no_hammer_tooltip": "Add Smithing Hammer",
@@ -488,14 +497,14 @@
   "enchantment.uselessadditions.iron_plated": "Iron Plated",
   "enchantment.uselessadditions.iron_plated.desc": "Increases damage",
   "enchantment.uselessadditions.iron_plated.desc2": "Increases durability",
-  "enchantment.uselessadditions.soiled": "Soil",
-  "enchantment.uselessadditions.soiled.desc": "Decreases damage",
-  "enchantment.uselessadditions.soiled.desc2": "Increases durability",
+  "enchantment.uselessadditions.soiled": "Soiled",
+  "enchantment.uselessadditions.soiled.desc": "Increases durability",
+  "enchantment.uselessadditions.soiled.desc2": "Decreases augment slots",
   "enchantment.uselessadditions.gilded": "Gilded",
   "enchantment.uselessadditions.gilded.desc": "Increases experience gained from mobs",
   "enchantment.uselessadditions.bejeweled": "Bejeweled",
-  "enchantment.uselessadditions.bejeweled.desc": "Increases augment slots",
-  "enchantment.uselessadditions.bejeweled.desc2": "Increases durability",
+  "enchantment.uselessadditions.bejeweled.desc": "Increases durability",
+  "enchantment.uselessadditions.bejeweled.desc2": "Increases augment slots",
   "enchantment.uselessadditions.encrusted": "Encrusted",
   "enchantment.uselessadditions.encrusted.desc": "Increases damage dealt to illager mobs",
   "enchantment.uselessadditions.draconic": "Draconic",
@@ -508,6 +517,10 @@
   "enchantment.uselessadditions.netherite_plated.desc3": "Increases durability",
   "enchantment.uselessadditions.crystalline": "Crystalline",
   "enchantment.uselessadditions.crystalline.desc": "Increases augment slots",
+  "enchantment.uselessadditions.cactus_lining": "Cactus Lining",
+  "enchantment.uselessadditions.cactus_lining.desc": "Prevents items from being destroyed by cactus blocks",
+  "enchantment.uselessadditions.undead": "Undead",
+  "enchantment.uselessadditions.undead.desc": "Stops the wearer from receiving the poison and hunger effects",
 
   "enchantment.tooltip.description": "< Hold ",
   "enchantment.tooltip.description2": " to expand description >",
@@ -527,6 +540,8 @@
   "enchantment.tooltip.experience": "Experience on kill",
 
   "enchantment.tooltip.suffix.blocks": "blocks",
+
+  "spawner.uselessadditions.desc": "Spawns: ",
 
   "effect.uselessadditions.splinters": "Splinters",
   "effect.uselessadditions.stunned": "Stunned",

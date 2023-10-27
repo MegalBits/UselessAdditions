@@ -1,5 +1,6 @@
 package net.megal.uselessadditions.mixin;
 
+import net.megal.uselessadditions.enchantment.AntiCactusEnchantment;
 import net.megal.uselessadditions.enchantment.AugmentEnchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -15,19 +16,31 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.Map;
 
 @Mixin(ItemEntity.class)
-public abstract class FireproofViaEnchant {
+public abstract class ItemEntityDamageViaEnchant {
     @Inject(at = @At("HEAD"),
             method = "damage(Lnet/minecraft/entity/damage/DamageSource;F)Z",
             cancellable = true)
     private void damage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         ItemEntity itemEntity = ((ItemEntity) (Object) this);
         ItemStack stack = itemEntity.getStack();
-        if (source.isIn(DamageTypeTags.IS_FIRE) && stack.hasEnchantments()) {
+        if (stack.hasEnchantments()) {
+            boolean fireProof = false;
+            boolean noCactus = false;
             Map<Enchantment, Integer> enchantments = EnchantmentHelper.get(stack);
             for (Enchantment ench : enchantments.keySet()) {
-                if (ench instanceof AugmentEnchantment aug && aug.isFireproof()) cir.setReturnValue(true);
+                if (ench instanceof AugmentEnchantment aug) {
+                    if (aug.isFireproof()) fireProof = true;
+                    if (aug instanceof AntiCactusEnchantment) noCactus = true;
+                }
+            }
+            if (source.isIn(DamageTypeTags.IS_FIRE) && fireProof) {
+                cir.setReturnValue(true);
+            }
+            if (!itemEntity.getWorld().isClient() && source == itemEntity.getWorld().getDamageSources().cactus() && noCactus) {
+                cir.setReturnValue(true);
             }
         }
+
     }
     @Inject(at = @At("HEAD"),
             method = "isFireImmune()Z",

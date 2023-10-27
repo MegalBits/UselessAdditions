@@ -19,7 +19,7 @@ import net.minecraft.world.World;
 public class EnhancementTable extends CraftingTableBlock {
     private static final Text SCREEN_TITLE = Text.translatable("container.uselessadditions.enhancement");
 
-    public EnhancementTable(AbstractBlock.Settings settings) {
+    public EnhancementTable(Settings settings) {
         super(settings);
     }
 

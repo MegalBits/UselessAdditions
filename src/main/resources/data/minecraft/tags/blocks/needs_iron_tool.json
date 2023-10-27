@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "uselessadditions:survival_spawner",
     "uselessadditions:cave_spider_ore",
     "uselessadditions:deepslate_cave_spider_ore",
     "uselessadditions:endermite_ore",

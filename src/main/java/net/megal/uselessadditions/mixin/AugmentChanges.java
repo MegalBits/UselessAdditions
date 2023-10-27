@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
 import dev.architectury.event.events.common.TickEvent;
 import net.megal.uselessadditions.UAdd;
+import net.megal.uselessadditions.enchantment.AntiCactusEnchantment;
 import net.megal.uselessadditions.enchantment.AugmentEnchantment;
 import net.megal.uselessadditions.enchantment.UEnchantments;
 import net.minecraft.client.item.TooltipContext;
@@ -12,9 +13,11 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityGroup;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.FilledMapItem;
 import net.minecraft.item.Item;
@@ -69,21 +72,36 @@ public abstract class AugmentChanges {
                     break;
                 }
             }
-
         }
-        if (entity instanceof ServerPlayerEntity player && !selected && !isEquippedArmor) {
-            int repairingLevel = EnchantmentHelper.getLevel(UEnchantments.REPAIRING, stack);
-            if (EnchantmentHelper.getLevel(UEnchantments.REPAIRING, stack) > 0) {
-                NbtCompound nbt = stack.getOrCreateNbt();
-                int repTicks = 0;
-                if (nbt.contains("RepairTicks")) {
-                    repTicks = nbt.getInt("RepairTicks") + 1;
-                    if (repTicks >= 600 / Math.max(repairingLevel, 1)) {
-                        stack.damage(-1, Random.create(), player);
-                        repTicks = 0;
+        if (entity instanceof LivingEntity livingEntity) {
+            if (stack.hasEnchantments() && isEquippedArmor) {
+                Map<Enchantment, Integer> enchantments = EnchantmentHelper.get(stack);
+                for (Enchantment ench : enchantments.keySet()) {
+                    if (ench instanceof AugmentEnchantment aug) {
+                        if (aug.immuneEffects() != null) {
+                            for (StatusEffect effect : aug.immuneEffects()) {
+                                livingEntity.removeStatusEffect(effect);
+                            }
+                        }
                     }
                 }
-                nbt.putInt("RepairTicks", repTicks);
+            }
+        }
+        if (entity instanceof ServerPlayerEntity player) {
+            if (!selected && !isEquippedArmor) {
+                int repairingLevel = EnchantmentHelper.getLevel(UEnchantments.REPAIRING, stack);
+                if (EnchantmentHelper.getLevel(UEnchantments.REPAIRING, stack) > 0) {
+                    NbtCompound nbt = stack.getOrCreateNbt();
+                    int repTicks = 0;
+                    if (nbt.contains("RepairTicks")) {
+                        repTicks = nbt.getInt("RepairTicks") + 1;
+                        if (repTicks >= 600 / Math.max(repairingLevel, 1)) {
+                            stack.damage(-1, Random.create(), player);
+                            repTicks = 0;
+                        }
+                    }
+                    nbt.putInt("RepairTicks", repTicks);
+                }
             }
         }
     }

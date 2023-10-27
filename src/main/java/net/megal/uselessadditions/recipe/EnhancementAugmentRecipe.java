@@ -63,10 +63,14 @@ public class EnhancementAugmentRecipe implements EnhancementRecipe {
                 int i = 0;
                 for (Enchantment ench : enchantments.keySet()) {
                     if (ench instanceof AugmentEnchantment aug) {
+                        int extraAugSlots = aug.getAugmentSlots(enchantments.get(ench));
                         i++;
-                        augCap += aug.getAugmentSlots(enchantments.get(ench));
+                        augCap += extraAugSlots;
                     }
                     else return false;
+                }
+                if (enchantment instanceof AugmentEnchantment aug) {
+                    augCap += aug.getAugmentSlots(level);
                 }
                 if (i >= augCap && !(level > 0)) return false;
             }

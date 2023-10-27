@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "uselessadditions:end_upgrade"
+  },
+  "base": {
+    "item": "minecraft:chainmail_leggings"
+  },
+  "addition": {
+    "item": "uselessadditions:dragon_scale"
+  },
+  "result": {
+    "item": "uselessadditions:dragon_scale_leggings"
+  }
+}

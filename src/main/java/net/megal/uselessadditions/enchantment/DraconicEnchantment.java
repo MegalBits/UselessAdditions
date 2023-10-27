@@ -16,7 +16,7 @@ public class DraconicEnchantment extends AugmentEnchantment {
     }
     @Override
     public int tooltipCount() {
-        return 2;
+        return 3;
     }
     @Override
     public int getMinPower(int level) {
@@ -30,18 +30,7 @@ public class DraconicEnchantment extends AugmentEnchantment {
     public int getMaxLevel() {
         return 1;
     }
-    @Override
-    public boolean isAvailableForEnchantedBookOffer() {
-        return false;
-    }
-    @Override
-    public boolean isAvailableForRandomSelection() {
-        return false;
-    }
-    @Override
-    public boolean isCursed() {
-        return true;
-    }
+
     @Override
     public boolean isAcceptableItem(ItemStack stack) {
         return false;

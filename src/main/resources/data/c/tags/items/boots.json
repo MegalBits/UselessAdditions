@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "uselessadditions:dragon_scale_boots",
+    "minecraft:netherite_boots",
+    "minecraft:diamond_boots",
+    "minecraft:golden_boots",
+    "minecraft:iron_boots",
+    "minecraft:chainmail_boots",
+    "minecraft:leather_boots"
+  ]
+}

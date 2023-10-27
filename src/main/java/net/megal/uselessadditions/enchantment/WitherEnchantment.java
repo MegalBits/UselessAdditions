@@ -31,18 +31,7 @@ public class WitherEnchantment extends AugmentEnchantment {
         return 3;
     }
 
-    @Override
-    public boolean isAvailableForEnchantedBookOffer() {
-        return false;
-    }
-    @Override
-    public boolean isAvailableForRandomSelection() {
-        return false;
-    }
-    @Override
-    public boolean isCursed() {
-        return true;
-    }
+
     @Override
     public boolean isAcceptableItem(ItemStack stack) {
         return false;

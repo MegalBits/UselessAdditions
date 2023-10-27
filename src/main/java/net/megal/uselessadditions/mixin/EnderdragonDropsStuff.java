@@ -32,18 +32,18 @@ public abstract class EnderdragonDropsStuff {
             BlockPos portalPos = world.getTopPosition(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, EndPortalFeature.offsetOrigin(fightOrigin));
             BlockPos dragonPos = dragon.getBlockPos();
             for (int i = 0; i < random.nextBetween(4, 12); i++) {
-                ItemEntity scale = new ItemEntity(world, dragonPos.getX(), dragonPos.getY(), dragonPos.getZ(), new ItemStack(UItems.DRAGON_SCALE), (double) random.nextBetween(-6,6)/10d, (double) random.nextBetween(4,7)/4d, (double) random.nextBetween(-3,3)/10d);
+                ItemEntity scale = new ItemEntity(world, dragonPos.getX(), dragonPos.getY(), dragonPos.getZ(), new ItemStack(UItems.DRAGON_SCALE), (double) random.nextBetween(-8,8)/10d, (double) random.nextBetween(4,7)/4d, (double) random.nextBetween(-8,8)/10d);
                 scale.setPickupDelay(80);
                 world.spawnEntity(scale);
             }
 
             for (int i = 0; i < random.nextBetween(32, 96); i++) {
-                ItemEntity flesh = new ItemEntity(world, dragonPos.getX(), dragonPos.getY(), dragonPos.getZ(), new ItemStack(UItems.DRAGON_FLESH), (double) random.nextBetween(-6,6)/10d, (double) random.nextBetween(-5,9)/4d, (double) random.nextBetween(-3,3)/10d);
+                ItemEntity flesh = new ItemEntity(world, dragonPos.getX(), dragonPos.getY(), dragonPos.getZ(), new ItemStack(UItems.DRAGON_FLESH), (double) random.nextBetween(-8,8)/10d, (double) random.nextBetween(-2,9)/4d, (double) random.nextBetween(-8,8)/10d);
                 flesh.setPickupDelay(80);
                 world.spawnEntity(flesh);
             }
 
-            ItemEntity heart = new ItemEntity(world, dragonPos.getX(), dragonPos.getY(), dragonPos.getZ(), new ItemStack(UItems.DRAGON_HEART), (double) random.nextBetween(-6,6)/10d, (double) random.nextBetween(4,7)/4d, (double) random.nextBetween(-3,3)/10d);
+            ItemEntity heart = new ItemEntity(world, dragonPos.getX(), dragonPos.getY(), dragonPos.getZ(), new ItemStack(UItems.DRAGON_HEART), (double) random.nextBetween(-8,8)/10d, (double) random.nextBetween(4,7)/4d, (double) random.nextBetween(-8,8)/10d);
             heart.setPickupDelay(80);
             world.spawnEntity(heart);
         }
@@ -53,26 +53,34 @@ public abstract class EnderdragonDropsStuff {
             cancellable = false)
     private void updatePostDeath(CallbackInfo ci) {
         EnderDragonEntity dragon = ((EnderDragonEntity)(Object)this);
-        if (!dragon.getWorld().isClient() && dragon.ticksSinceDeath == 200 && dragon.getWorld().getGameRules().getBoolean(GameRules.DO_MOB_LOOT)) {
+        if (!dragon.getWorld().isClient() && dragon.getWorld().getGameRules().getBoolean(GameRules.DO_MOB_LOOT)) {
             Random random = Random.create();
             World world = dragon.getWorld();
             BlockPos portalPos = world.getTopPosition(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, EndPortalFeature.offsetOrigin(fightOrigin));
             BlockPos dragonPos = dragon.getBlockPos();
-            for (int i = 0; i < random.nextBetween(4, 12); i++) {
-                ItemEntity scale = new ItemEntity(world, dragonPos.getX(), dragonPos.getY(), dragonPos.getZ(), new ItemStack(UItems.DRAGON_SCALE), (double) random.nextBetween(-6,6)/10d, (double) random.nextBetween(4,7)/4d, (double) random.nextBetween(-3,3)/10d);
-                scale.setPickupDelay(80);
-                world.spawnEntity(scale);
+            if (random.nextBetween(0, 3) == 0) {
+                ItemEntity fleshBit = new ItemEntity(world, dragonPos.getX(), dragonPos.getY(), dragonPos.getZ(), new ItemStack(UItems.DRAGON_FLESH), (double) random.nextBetween(-5,5)/10d, (double) random.nextBetween(-3,7)/4d, (double) random.nextBetween(-5,5)/10d);
+                fleshBit.setPickupDelay(80);
+                world.spawnEntity(fleshBit);
             }
 
-            for (int i = 0; i < random.nextBetween(32, 96); i++) {
-                ItemEntity flesh = new ItemEntity(world, dragonPos.getX(), dragonPos.getY(), dragonPos.getZ(), new ItemStack(UItems.DRAGON_FLESH), (double) random.nextBetween(-6,6)/10d, (double) random.nextBetween(-5,9)/4d, (double) random.nextBetween(-3,3)/10d);
-                flesh.setPickupDelay(80);
-                world.spawnEntity(flesh);
-            }
+            if (dragon.ticksSinceDeath == 200) {
+                for (int i = 0; i < random.nextBetween(4, 12); i++) {
+                    ItemEntity scale = new ItemEntity(world, dragonPos.getX(), dragonPos.getY(), dragonPos.getZ(), new ItemStack(UItems.DRAGON_SCALE), (double) random.nextBetween(-8,8)/10d, (double) random.nextBetween(4,7)/4d, (double) random.nextBetween(-8,8)/10d);
+                    scale.setPickupDelay(80);
+                    world.spawnEntity(scale);
+                }
 
-            ItemEntity heart = new ItemEntity(world, dragonPos.getX(), dragonPos.getY(), dragonPos.getZ(), new ItemStack(UItems.DRAGON_HEART), (double) random.nextBetween(-6,6)/10d, (double) random.nextBetween(4,7)/4d, (double) random.nextBetween(-3,3)/10d);
-            heart.setPickupDelay(80);
-            world.spawnEntity(heart);
+                for (int i = 0; i < random.nextBetween(32, 96); i++) {
+                    ItemEntity flesh = new ItemEntity(world, dragonPos.getX(), dragonPos.getY(), dragonPos.getZ(), new ItemStack(UItems.DRAGON_FLESH), (double) random.nextBetween(-8,8)/10d, (double) random.nextBetween(-2,9)/4d, (double) random.nextBetween(-8,8)/10d);
+                    flesh.setPickupDelay(80);
+                    world.spawnEntity(flesh);
+                }
+
+                ItemEntity heart = new ItemEntity(world, dragonPos.getX(), dragonPos.getY(), dragonPos.getZ(), new ItemStack(UItems.DRAGON_HEART), (double) random.nextBetween(-8,8)/10d, (double) random.nextBetween(4,7)/4d, (double) random.nextBetween(-8,8)/10d);
+                heart.setPickupDelay(80);
+                world.spawnEntity(heart);
+            }
         }
     }
 }

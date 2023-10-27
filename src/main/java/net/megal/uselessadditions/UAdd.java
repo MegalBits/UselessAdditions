@@ -1,7 +1,7 @@
 package net.megal.uselessadditions;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
@@ -14,8 +14,7 @@ import net.megal.uselessadditions.item.UItems;
 import net.megal.uselessadditions.recipe.URecipes;
 import net.megal.uselessadditions.screen.UScreens;
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentLevelEntry;
-import net.minecraft.item.EnchantedBookItem;
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -32,7 +31,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 
 public class UAdd implements ModInitializer {
@@ -42,6 +40,7 @@ public class UAdd implements ModInitializer {
     public static final TagKey<Item> HAMMERS = TagKey.of(RegistryKeys.ITEM, new Identifier("c", "smithing_hammers"));
     public static final TagKey<Item> NATURAL_MENDING = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "natural_mending"));
     public static final TagKey<Item> AUTO_SMELT = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "auto_smelt"));
+    public static final TagKey<Item> MOB_EGGS = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "mob_eggs"));
     public static final TagKey<Item> MOB_SHARDS = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "mob_shards"));
     public static final TagKey<Item> SMALL_MOB_SHARDS = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "small_mob_shards"));
     public static final List<Item> naturalMendingItems = new ArrayList<>();

@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "uselessadditions:dragon_scale_leggings",
+    "minecraft:netherite_leggings",
+    "minecraft:diamond_leggings",
+    "minecraft:golden_leggings",
+    "minecraft:iron_leggings",
+    "minecraft:chainmail_leggings",
+    "minecraft:leather_leggings"
+  ]
+}

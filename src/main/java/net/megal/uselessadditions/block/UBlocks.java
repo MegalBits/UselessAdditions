@@ -2,9 +2,13 @@ package net.megal.uselessadditions.block;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.megal.uselessadditions.UAdd;
 import net.minecraft.block.Block;
+import net.minecraft.block.MapColor;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.enums.Instrument;
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
@@ -12,6 +16,8 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.Registries;
 
 public class UBlocks {
+    //Enhancement table
+    public static final EnhancementTable ENHANCEMENT_TABLE = register(new Identifier(UAdd.MOD_ID, "enhancement_table"), new EnhancementTable(FabricBlockSettings.create().mapColor(MapColor.RED).instrument(Instrument.BASEDRUM).strength(7.5f, 1200.0f).requiresTool().sounds(BlockSoundGroup.STONE).requiresTool()), new FabricItemSettings());
     //Ores
     public static final Block ALLAY_ORE = register(new Identifier(UAdd.MOD_ID, "allay_ore"), createOre(), new FabricItemSettings());
     public static final Block DEEPSLATE_ALLAY_ORE = register(new Identifier(UAdd.MOD_ID, "deepslate_allay_ore"), createDeepslateOre(), new FabricItemSettings());
@@ -123,7 +129,11 @@ public class UBlocks {
     public static final Block DEEPSLATE_WOLF_ORE = register(new Identifier(UAdd.MOD_ID, "deepslate_wolf_ore"), createDeepslateOre(), new FabricItemSettings());
     public static final Block ZOMBIE_ORE = register(new Identifier(UAdd.MOD_ID, "zombie_ore"), createOre(), new FabricItemSettings());
     public static final Block DEEPSLATE_ZOMBIE_ORE = register(new Identifier(UAdd.MOD_ID, "deepslate_zombie_ore"), createDeepslateOre(), new FabricItemSettings());
-    public static final EnhancementTable ENHANCEMENT_TABLE = register(new Identifier(UAdd.MOD_ID, "enhancement_table"), new EnhancementTable(FabricBlockSettings.create().instrument(Instrument.BASEDRUM).strength(7.5f, 1200.0f).requiresTool().sounds(BlockSoundGroup.STONE).requiresTool()), new FabricItemSettings());
+    //Spawners
+    public static final Block EMPTY_SPAWNER = register(new Identifier(UAdd.MOD_ID, "survival_spawner"), new SurvivalSpawner(FabricBlockSettings.create().mapColor(MapColor.STONE_GRAY).instrument(Instrument.BASEDRUM).requiresTool().strength(5.0F).sounds(BlockSoundGroup.METAL).nonOpaque()), new FabricItemSettings());
+    public static final SurvivalSpawner SURVIVAL_SPAWNER = register(new Identifier(UAdd.MOD_ID, "survival_spawner"), new SurvivalSpawner(FabricBlockSettings.create().mapColor(MapColor.STONE_GRAY).instrument(Instrument.BASEDRUM).requiresTool().strength(5.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    private static final SpawnerBlockItem SPAWNER_ITEM = registerBlockItem(new Identifier(UAdd.MOD_ID, "survival_spawner"), new SpawnerBlockItem(SURVIVAL_SPAWNER, new FabricItemSettings()));
+    public static final BlockEntityType<SurvivalSpawnerEntity> SURVIVAL_SPAWNER_ENTITY = registerEntity(new Identifier(UAdd.MOD_ID, "survival_spawner"), FabricBlockEntityTypeBuilder.create(SurvivalSpawnerEntity::new, UBlocks.SURVIVAL_SPAWNER).build());
     //Registers blocks as well as a block item
     private static <T extends Block> T register(Identifier id, T block, FabricItemSettings settings) {
         registerBlockItem(id, block, settings);
@@ -132,18 +142,21 @@ public class UBlocks {
     private static <T extends Block> T register(Identifier id, T block) {
         return Registry.register(Registries.BLOCK, id, block);
     }
-    private static <T extends BlockItem> void registerBlockItem(Identifier id, T item) {
-        Registry.register(Registries.ITEM, id, item);
+    private static <T extends BlockEntityType<?>> T registerEntity(Identifier id, T blockEntity) {
+        return Registry.register(Registries.BLOCK_ENTITY_TYPE, id, blockEntity);
+    }
+    private static <T extends BlockItem> T registerBlockItem(Identifier id, T item) {
+        return Registry.register(Registries.ITEM, id, item);
     }
     private static void registerBlockItem(Identifier id, Block block, FabricItemSettings settings) {
         Registry.register(Registries.ITEM, id, new BlockItem(block, settings));
     }
     //Some default block types so that I don't have to do as much copy/pasting
     private static Block createOre() {
-        return new Block(FabricBlockSettings.create().instrument(Instrument.BASEDRUM).strength(3.0F).requiresTool().sounds(BlockSoundGroup.STONE));
+        return new Block(FabricBlockSettings.create().mapColor(MapColor.STONE_GRAY).instrument(Instrument.BASEDRUM).strength(3.0F).requiresTool().sounds(BlockSoundGroup.STONE));
     }
     private static Block createDeepslateOre() {
-        return new Block(FabricBlockSettings.create().instrument(Instrument.BASEDRUM).strength(4.5F,3.0F).requiresTool().sounds(BlockSoundGroup.DEEPSLATE));
+        return new Block(FabricBlockSettings.create().mapColor(MapColor.DEEPSLATE_GRAY).instrument(Instrument.BASEDRUM).strength(4.5F,3.0F).requiresTool().sounds(BlockSoundGroup.DEEPSLATE));
     }
     public static void blockLoad() {}
 }
