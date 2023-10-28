@@ -7,7 +7,7 @@
     "item": "uselessadditions:magic_ingot"
   },
   "addition": {
-    "item": "minecraft:lapis_lazuli"
+    "item": "minecraft:diamond"
   },
   "result": {
     "item": "uselessadditions:enchanted_magic_ingot"

@@ -11,6 +11,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.SpawnRestriction;
 import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.entity.mob.WardenEntity;
 import net.minecraft.nbt.*;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.Packet;
@@ -36,9 +37,10 @@ import java.util.function.Function;
 public class SurvivalSpawnerEntity extends BlockEntity {
     private Entity renderedEntity;
     private EntityType<?> entity;
-    private int spawnDelay = 20;
-    private int minSpawnDelay = 200;
-    private int maxSpawnDelay = 800;
+    private int timeRemaining = 0;
+    private int spawnDelay = 2;
+    private int minSpawnDelay = 400;
+    private int maxSpawnDelay = 1200;
     private int spawnCount = 4;
     private double rotation;
     private double lastRotation;
@@ -63,48 +65,58 @@ public class SurvivalSpawnerEntity extends BlockEntity {
     }
 
     public void clientTick(World world, BlockPos pos) {
-        if (!this.isPlayerInRange(world, pos)) {
-            this.lastRotation = this.rotation;
-        } else if (this.entity != null) {
+        if (!isPlayerInRange(world, pos)) {
+            lastRotation = rotation;
+        } else if (entity != null) {
             Random random = world.getRandom();
             double d = (double)pos.getX() + random.nextDouble();
             double e = (double)pos.getY() + random.nextDouble();
             double f = (double)pos.getZ() + random.nextDouble();
             //world.addParticle(ParticleTypes.SMOKE, d, e, f, 0.0, 0.0, 0.0);
-
-            world.addParticle(ParticleTypes.INSTANT_EFFECT, d, e, f, 0.0, 0.0, 0.0);
-            if (this.spawnDelay > 0) {
-                --this.spawnDelay;
+            if (timeRemaining > 0) world.addParticle(ParticleTypes.INSTANT_EFFECT, d, e, f, 0.0, 0.0, 0.0);
+            else world.addParticle(ParticleTypes.SMOKE, d, e, f, 0.0, 0.0, 0.0);
+            if (timeRemaining > 0) {
+                timeRemaining--;
+                if (spawnDelay > 0) {
+                    spawnDelay--;
+                }
             }
-            this.lastRotation = this.rotation;
-            this.rotation = (this.rotation + (double)(1000.0F / ((float)this.spawnDelay + 200.0F))) % 360.0;
+            lastRotation = rotation;
+            rotation = (rotation + (double)((1000.0F / ((float)spawnDelay + 200.0F))/ timeRemaining > 0 ? 1 : 4)) % 360.0;
         }
     }
     public static void serverTick(World world, BlockPos pos, BlockState state, SurvivalSpawnerEntity blockEntity) {
         blockEntity.serverTick((ServerWorld) world, pos);
     }
     public void serverTick(ServerWorld world, BlockPos pos) {
-        if (spawnDelay > 0) {
-            spawnDelay--;
-        }
-        else {
-            Random random = world.getRandom();
-            if (entity != null && entity != EntityType.PLAYER) {
-                for (int i = 0; i < this.spawnCount; ++i) {
-                    double sX = (double)pos.getX() + (random.nextDouble() - random.nextDouble()) * (double)this.spawnRange + 0.5;
-                    double sY = pos.getY() + random.nextInt(3) - 1;
-                    double sZ = (double)pos.getZ() + (random.nextDouble() - random.nextDouble()) * (double)this.spawnRange + 0.5;
-                    if (!world.isSpaceEmpty(entity.createSimpleBoundingBox(sX, sY, sZ))) continue;
-                    BlockPos blockPos = BlockPos.ofFloored(sX, sY, sZ);
-                    if (!entity.getSpawnGroup().isPeaceful() && world.getDifficulty() == Difficulty.PEACEFUL || !SpawnRestriction.canSpawn(entity, world, SpawnReason.SPAWNER, blockPos, random)) continue;
-                    Entity spawnedEntity = EntityType.loadEntityWithPassengers(getEntityAsNbt("id"), world, entity -> {
-                        entity.refreshPositionAndAngles(sX, sY, sZ, entity.getYaw(), entity.getPitch());
-                        return entity;
-                    });
-                    world.spawnEntity(spawnedEntity);
-                }
+        if (timeRemaining > 0) {
+            timeRemaining--;
+            if (spawnDelay > 0) {
+                spawnDelay--;
             }
-            spawnDelay = world.random.nextBetween(minSpawnDelay, maxSpawnDelay);
+            else {
+                Random random = world.getRandom();
+                if (entity != null && entity != EntityType.PLAYER) {
+                    for (int i = 0; i < spawnCount; ++i) {
+                        double sX = (double) pos.getX() + (random.nextDouble() - random.nextDouble()) * (double) spawnRange + 0.5;
+                        double sY = pos.getY() + random.nextInt(3) - 1;
+                        double sZ = (double) pos.getZ() + (random.nextDouble() - random.nextDouble()) * (double) spawnRange + 0.5;
+                        if (!world.isSpaceEmpty(entity.createSimpleBoundingBox(sX, sY, sZ))) continue;
+                        BlockPos blockPos = BlockPos.ofFloored(sX, sY, sZ);
+                        if (!entity.getSpawnGroup().isPeaceful() && world.getDifficulty() == Difficulty.PEACEFUL || !SpawnRestriction.canSpawn(entity, world, SpawnReason.SPAWNER, blockPos, random))
+                            continue;
+                        Entity spawnedEntity = EntityType.loadEntityWithPassengers(getEntityAsNbt("id"), world, entity -> {
+                            entity.refreshPositionAndAngles(sX, sY, sZ, entity.getYaw(), entity.getPitch());
+                            return entity;
+                        });
+                        world.spawnEntity(spawnedEntity);
+                        if (spawnedEntity instanceof MobEntity mob) {
+                            mob.playSpawnEffects();
+                        }
+                    }
+                }
+                spawnDelay = world.random.nextBetween(minSpawnDelay, maxSpawnDelay);
+            }
         }
     }
     @Nullable
