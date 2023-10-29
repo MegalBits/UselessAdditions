@@ -17,15 +17,13 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class EnhancementTable extends CraftingTableBlock {
-    private static final Text SCREEN_TITLE = Text.translatable("container.uselessadditions.enhancement");
-
     public EnhancementTable(Settings settings) {
         super(settings);
     }
 
     @Override
     public NamedScreenHandlerFactory createScreenHandlerFactory(BlockState state, World world, BlockPos pos) {
-        return new SimpleNamedScreenHandlerFactory((syncId, inventory, player) -> new EnhancementScreenHandler(syncId, inventory, ScreenHandlerContext.create(world, pos)), SCREEN_TITLE);
+        return new SimpleNamedScreenHandlerFactory((syncId, inventory, player) -> new EnhancementScreenHandler(syncId, inventory, ScreenHandlerContext.create(world, pos)), Text.translatable("container.uselessadditions.enhancement"));
     }
 
     @Override
@@ -34,7 +32,7 @@ public class EnhancementTable extends CraftingTableBlock {
             return ActionResult.SUCCESS;
         }
         player.openHandledScreen(state.createScreenHandlerFactory(world, pos));
-        player.incrementStat(Stats.INTERACT_WITH_SMITHING_TABLE);
+        //player.incrementStat(Stats.INTERACT_WITH_SMITHING_TABLE);
         return ActionResult.CONSUME;
     }
 }

@@ -6,6 +6,7 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.megal.uselessadditions.UAdd;
 import net.megal.uselessadditions.UAddClient;
+import net.megal.uselessadditions.block.UBlocks;
 import net.megal.uselessadditions.enchantment.*;
 import net.megal.uselessadditions.item.UItems;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
@@ -30,16 +31,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import static net.megal.uselessadditions.TooltipStuff.*;
+
 @Mixin(ItemStack.class)
 public abstract class EnchantmentTooltips {
-    private static final MutableText PREFIX = Text.literal("◆ ");
-    private static final MutableText PREFIX_2 = Text.literal("◇ ");
-    private static final MutableText TAB = Text.literal("       ");
-    private static final String SPACE = " ";
-    private static final String ADD = "+";
-    private static final String SUBTRACT = "";
-    private static final int STAT_COLOR = 0x384258;
-
     private static final List<Enchantment> doubleDesc = Arrays.asList(Enchantments.FIRE_PROTECTION, Enchantments.BLAST_PROTECTION, Enchantments.RESPIRATION);
     @Overwrite
     public static void appendEnchantments(List<Text> tooltip, NbtList enchantments) {
@@ -129,7 +124,9 @@ public abstract class EnchantmentTooltips {
             method = "getTooltip(Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/client/item/TooltipContext;)Ljava/util/List;")
     public List<Text> getTooltip(List<Text> l, @Nullable PlayerEntity player, TooltipContext context) {
         ItemStack stack = ((ItemStack)(Object)this);
+        boolean hasExpandTooltip = false;
         if (stack.hasEnchantments()) {
+            hasExpandTooltip = true;
             int augCap = 8;
             int i = 0;
             Map<Enchantment, Integer> enchantments = EnchantmentHelper.get(stack);
@@ -140,11 +137,12 @@ public abstract class EnchantmentTooltips {
                 }
             }
             if (i > 0 && !(stack.isOf(UItems.AUGMENT) || stack.isOf(Items.ENCHANTED_BOOK))) {
-                float f = Math.max(0.0F, ((float)augCap - (float)i) / (float)augCap);
-                l.add(Text.literal(i+"/"+augCap+SPACE).append(Text.translatable("enchantment.tooltip.augments")).styled(style -> style.withColor(MathHelper.hsvToRgb(f / 3f, 1.0f, 1.0f))));
+                float f = Math.max(0.0F, ((float) augCap - (float) i) / (float) augCap);
+                l.add(Text.literal(i + "/" + augCap + SPACE).append(Text.translatable("enchantment.tooltip.augments")).styled(style -> style.withColor(MathHelper.hsvToRgb(f / 3f, 1.0f, 1.0f))));
             }
-            if (!UAdd.expandDescriptions) l.add(Text.translatable("enchantment.tooltip.description").append(UAddClient.EXPAND_TOOLTIP.getBoundKeyLocalizedText()).append(Text.translatable("enchantment.tooltip.description2")).formatted(Formatting.GRAY));
         }
+        if (stack.isOf(UBlocks.SURVIVAL_SPAWNER.asItem())) hasExpandTooltip = true;
+        if (!UAdd.expandDescriptions && hasExpandTooltip) l.add(Text.translatable("enchantment.tooltip.description").append(UAddClient.EXPAND_TOOLTIP.getBoundKeyLocalizedText()).append(Text.translatable("enchantment.tooltip.description2")).formatted(Formatting.GRAY));
         return l;
     }
     private static float getPower(int level) {

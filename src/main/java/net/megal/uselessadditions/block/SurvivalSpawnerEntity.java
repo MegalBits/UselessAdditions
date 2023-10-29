@@ -2,16 +2,20 @@ package net.megal.uselessadditions.block;
 
 import net.megal.uselessadditions.UAdd;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.entity.BeehiveBlockEntity;
-import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.block.entity.*;
 import net.minecraft.client.particle.Particle;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.SpawnRestriction;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.mob.WardenEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.Inventories;
+import net.minecraft.inventory.Inventory;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.*;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.Packet;
@@ -19,10 +23,14 @@ import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.Registries;
+import net.minecraft.screen.NamedScreenHandlerFactory;
+import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Nameable;
 import net.minecraft.util.collection.DataPool;
+import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.collection.Weighted;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
@@ -52,16 +60,31 @@ public class SurvivalSpawnerEntity extends BlockEntity {
     private boolean isPlayerInRange(World world, BlockPos pos) {
         return world.isPlayerInRange((double)pos.getX() + 0.5, (double)pos.getY() + 0.5, (double)pos.getZ() + 0.5, (double)this.requiredPlayerRange);
     }
-    public static void clientTick(World world, BlockPos pos, BlockState state, SurvivalSpawnerEntity blockEntity) {
-        blockEntity.clientTick(world, pos);
+    public void setTimeRemaining(int ticks) {
+        timeRemaining = ticks;
     }
-
+    public void setTimeRemaining(int ticks, int particleCount, World world, BlockPos pos) {
+        timeRemaining = ticks;
+        if (world.isClient()) {
+            Random random = world.getRandom();
+            for (int i = 0; i < Math.max(8,particleCount); i++) {
+                world.addParticle(ParticleTypes.END_ROD, pos.getX()+.5d, pos.getY()+.5d, pos.getZ()+.5d, (random.nextDouble() - random.nextDouble())/3d, (random.nextDouble() - random.nextDouble())/3d, (random.nextDouble() - random.nextDouble())/3d);
+            }
+        }
+    }
+    public int getTimeRemaining() {
+        return timeRemaining;
+    }
     @Override
     public NbtCompound toInitialChunkDataNbt() {
         NbtCompound nbt = new NbtCompound();
         if (entity != null) nbt.putString("EntityStored", getIdFromEntity(entity));
-        else UAdd.LOGGER.info("Entity was null in spawner");
+        else UAdd.LOGGER.warn("Entity was null in spawner");
+        nbt.putInt("TimeActive", timeRemaining);
         return nbt;
+    }
+    public static void clientTick(World world, BlockPos pos, BlockState state, SurvivalSpawnerEntity blockEntity) {
+        blockEntity.clientTick(world, pos);
     }
 
     public void clientTick(World world, BlockPos pos) {
@@ -82,7 +105,7 @@ public class SurvivalSpawnerEntity extends BlockEntity {
                 }
             }
             lastRotation = rotation;
-            rotation = (rotation + (double)((1000.0F / ((float)spawnDelay + 200.0F))/ timeRemaining > 0 ? 1 : 4)) % 360.0;
+            rotation = (rotation + (double)((1000.0F / ((float)spawnDelay + 200.0F)) / (timeRemaining > 0 ? 1 : 20))) % 360.0;
         }
     }
     public static void serverTick(World world, BlockPos pos, BlockState state, SurvivalSpawnerEntity blockEntity) {
@@ -138,7 +161,6 @@ public class SurvivalSpawnerEntity extends BlockEntity {
     public double getLastRotation() {
         return this.lastRotation;
     }
-
     @Override
     public Packet<ClientPlayPacketListener> toUpdatePacket() {
         return BlockEntityUpdateS2CPacket.create(this);
@@ -147,11 +169,13 @@ public class SurvivalSpawnerEntity extends BlockEntity {
     public void readNbt(NbtCompound nbt) {
         super.readNbt(nbt);
         setEntityFromNbt(nbt);
+        setTimeRemaining(nbt.getInt("TimeActive"));
     }
     @Override
     protected void writeNbt(NbtCompound nbt) {
         super.writeNbt(nbt);
         nbt.putString("EntityStored", getIdFromEntity(entity));
+        nbt.putInt("TimeActive", timeRemaining);
     }
     public void setEntityFromNbt(NbtCompound nbt) {
         if (nbt.contains("EntityStored")) {

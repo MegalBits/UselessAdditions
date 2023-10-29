@@ -3,6 +3,7 @@ package net.megal.uselessadditions.item;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.megal.uselessadditions.UAdd;
+import net.megal.uselessadditions.block.UBlocks;
 import net.megal.uselessadditions.item.base.*;
 import net.megal.uselessadditions.item.bundles.*;
 import net.minecraft.entity.EntityType;
@@ -731,6 +732,7 @@ public class UItems {
             entries.add(DEEPSLATE_ZOMBIE_ORE.asItem().getDefaultStack());
         });
         ItemGroupEvents.modifyEntriesEvent(UGroups.SpawnersTab).register(entries -> {
+            entries.add(EMPTY_SPAWNER.asItem().getDefaultStack());
             for (EntityType<?> entity : Registries.ENTITY_TYPE.stream().toList()) {
                 if (entity == EntityType.PLAYER) continue;
                 ItemStack spawner = new ItemStack(SURVIVAL_SPAWNER.asItem());

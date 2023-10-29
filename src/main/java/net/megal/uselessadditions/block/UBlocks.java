@@ -130,7 +130,7 @@ public class UBlocks {
     public static final Block ZOMBIE_ORE = register(new Identifier(UAdd.MOD_ID, "zombie_ore"), createOre(), new FabricItemSettings());
     public static final Block DEEPSLATE_ZOMBIE_ORE = register(new Identifier(UAdd.MOD_ID, "deepslate_zombie_ore"), createDeepslateOre(), new FabricItemSettings());
     //Spawners
-    public static final Block EMPTY_SPAWNER = register(new Identifier(UAdd.MOD_ID, "empty_spawner"), new SurvivalSpawner(FabricBlockSettings.create().mapColor(MapColor.STONE_GRAY).instrument(Instrument.BASEDRUM).requiresTool().strength(5.0F).sounds(BlockSoundGroup.METAL).nonOpaque()), new FabricItemSettings());
+    public static final Block EMPTY_SPAWNER = register(new Identifier(UAdd.MOD_ID, "empty_spawner"), new Block(FabricBlockSettings.create().mapColor(MapColor.STONE_GRAY).instrument(Instrument.BASEDRUM).requiresTool().strength(5.0F).sounds(BlockSoundGroup.METAL).nonOpaque()), new FabricItemSettings());
     public static final SurvivalSpawner SURVIVAL_SPAWNER = register(new Identifier(UAdd.MOD_ID, "survival_spawner"), new SurvivalSpawner(FabricBlockSettings.create().mapColor(MapColor.STONE_GRAY).instrument(Instrument.BASEDRUM).requiresTool().strength(5.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
     private static final SpawnerBlockItem SPAWNER_ITEM = registerBlockItem(new Identifier(UAdd.MOD_ID, "survival_spawner"), new SpawnerBlockItem(SURVIVAL_SPAWNER, new FabricItemSettings()));
     public static final BlockEntityType<SurvivalSpawnerEntity> SURVIVAL_SPAWNER_ENTITY = registerEntity(new Identifier(UAdd.MOD_ID, "survival_spawner"), FabricBlockEntityTypeBuilder.create(SurvivalSpawnerEntity::new, UBlocks.SURVIVAL_SPAWNER).build());

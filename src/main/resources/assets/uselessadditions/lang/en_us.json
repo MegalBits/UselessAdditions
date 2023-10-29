@@ -2,6 +2,7 @@
   "block.uselessadditions.enhancement_table": "Enhancement Table",
 
   "block.uselessadditions.survival_spawner": "Monster Spawner",
+  "block.uselessadditions.empty_spawner": "Empty Monster Spawner",
 
   "block.uselessadditions.allay_ore": "Allay Ore",
   "block.uselessadditions.deepslate_allay_ore": "Deepslate Allay Ore",
@@ -521,6 +522,8 @@
   "enchantment.uselessadditions.cactus_lining.desc": "Prevents items from being destroyed by cactus blocks",
   "enchantment.uselessadditions.undead": "Undead",
   "enchantment.uselessadditions.undead.desc": "Stops the wearer from receiving the poison and hunger effects",
+  "enchantment.uselessadditions.shattering": "Shattering",
+  "enchantment.uselessadditions.shattering.desc": "Causes mobs to drop more fragmented shards",
 
   "enchantment.tooltip.description": "< Hold ",
   "enchantment.tooltip.description2": " to expand description >",
@@ -542,6 +545,8 @@
   "enchantment.tooltip.suffix.blocks": "blocks",
 
   "spawner.uselessadditions.desc": "Spawns: ",
+  "spawner.uselessadditions.stats": "Stats",
+  "spawner.uselessadditions.recharge": "Recharges ",
 
   "effect.uselessadditions.splinters": "Splinters",
   "effect.uselessadditions.stunned": "Stunned",
@@ -550,5 +555,13 @@
 
   "category.uselessadditions.no_nbt_smithing": "Non NBT Smithing",
   "category.uselessadditions.enhancement": "Enhancement",
-  "category.uselessadditions.keys": "Useless Additions"
+  "category.uselessadditions.keys": "Useless Additions",
+
+  "text.uselessadditions.per": " per ",
+  "text.uselessadditions.and": " and ",
+  "text.uselessadditions.or": " or ",
+  "text.uselessadditions.of": " of ",
+  "text.uselessadditions.second": "s",
+  "text.uselessadditions.minute": "m",
+  "text.uselessadditions.hour": "h"
 }

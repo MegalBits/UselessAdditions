@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "111",
+    "121",
+    "111"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:chain"
+    },
+    "2": {
+      "item": "uselessadditions:enchanted_magic_ingot"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:empty_spawner",
+    "count": 1
+  }
+}

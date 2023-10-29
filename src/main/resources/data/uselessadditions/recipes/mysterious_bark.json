@@ -1,15 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "222",
+    "323",
     "212",
-    "222"
+    "323"
   ],
   "key": {
     "1": {
       "tag": "minecraft:logs"
     },
     "2": {
+      "tag": "minecraft:planks"
+    },
+    "3": {
       "tag": "uselessadditions:augment_ingredient"
     }
   },

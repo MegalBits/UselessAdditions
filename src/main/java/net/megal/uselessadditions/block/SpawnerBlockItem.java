@@ -1,12 +1,16 @@
 package net.megal.uselessadditions.block;
 
+import net.megal.uselessadditions.UAdd;
 import net.minecraft.block.Block;
+import net.minecraft.block.SpawnerBlock;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.registry.Registries;
+import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
@@ -14,7 +18,13 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
+import static net.megal.uselessadditions.TooltipStuff.*;
+
 public class SpawnerBlockItem extends BlockItem {
+    private MutableText s = Text.translatable("text.uselessadditions.second");
+    private MutableText m = Text.translatable("text.uselessadditions.minute");
+    private MutableText h = Text.translatable("text.uselessadditions.hour");
+
     public SpawnerBlockItem(Block block, Settings settings) {
         super(block, settings);
     }
@@ -34,5 +44,32 @@ public class SpawnerBlockItem extends BlockItem {
             }, () -> {
             });
         }
+        if (UAdd.expandDescriptions) {
+            tooltip.add(Text.empty());
+            tooltip.add(PREFIX.copy().append(Text.translatable("spawner.uselessadditions.stats")).formatted(Formatting.GRAY));
+            tooltip.add(rechargeText(SurvivalSpawner.EMERALD, SurvivalSpawner.EMERALD_TIME));
+            tooltip.add(rechargeText(SurvivalSpawner.DIAMOND, SurvivalSpawner.DIAMOND_TIME));
+            tooltip.add(rechargeText(SurvivalSpawner.NETHERITE, SurvivalSpawner.NETHERITE_TIME));
+        }
+    }
+
+    private MutableText rechargeText(Item item, int time) {
+        time /= 20;
+        MutableText timeType = s.copy();
+        int displayTime = time;
+        if (time >= 60) {
+            displayTime /= 60;
+            timeType = m.copy();
+        }
+        if (time/60 >= 60) {
+            displayTime /= 60;
+            timeType = h.copy();
+        }
+        return TAB.copy().append(
+            Text.translatable("spawner.uselessadditions.recharge").append(
+            Text.literal(String.valueOf(displayTime)).styled(style -> style.withColor(STAT_COLOR)).append(
+            timeType.styled(style -> style.withColor(STAT_COLOR))).append(
+            Text.translatable("text.uselessadditions.per").formatted(Formatting.DARK_GRAY).append(
+            item.getName().copy().styled(style -> style.withColor(STAT_COLOR)))))).formatted(Formatting.DARK_GRAY);
     }
 }
