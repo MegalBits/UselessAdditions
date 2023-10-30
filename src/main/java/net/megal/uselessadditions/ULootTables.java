@@ -48,29 +48,9 @@ public class ULootTables {
                     .with(ItemEntry.builder(UItems.ANCIENT_SHARD).weight(1).apply(uniformNumberBuilder(1,3)))
                     .with(ItemEntry.builder(Items.AIR).weight(4))
             );
-            lootBuilder(id, LootTables.BASTION_BRIDGE_CHEST, tableBuilder, source, LootPool.builder()
-                    .with(ItemEntry.builder(UItems.NETHER_UPGRADE_FRAGMENT).weight(1).apply(uniformNumberBuilder(1,3)))
-                    .with(ItemEntry.builder(Items.AIR).weight(5))
-            );
-            lootBuilder(id, LootTables.BASTION_HOGLIN_STABLE_CHEST, tableBuilder, source, LootPool.builder()
-                    .with(ItemEntry.builder(UItems.NETHER_UPGRADE_FRAGMENT).weight(1).apply(uniformNumberBuilder(1,3)))
-                    .with(ItemEntry.builder(Items.AIR).weight(5))
-            );
-            lootBuilder(id, LootTables.BASTION_OTHER_CHEST, tableBuilder, source, LootPool.builder()
-                    .with(ItemEntry.builder(UItems.NETHER_UPGRADE_FRAGMENT).weight(1).apply(uniformNumberBuilder(1,3)))
-                    .with(ItemEntry.builder(Items.AIR).weight(5))
-            );
-            lootBuilder(id, LootTables.BASTION_TREASURE_CHEST, tableBuilder, source, LootPool.builder()
-                    .with(ItemEntry.builder(UItems.NETHER_UPGRADE_FRAGMENT).apply(uniformNumberBuilder(2,6)))
-            );
             lootBuilder(id, LootTables.BURIED_TREASURE_CHEST, tableBuilder, source, LootPool.builder()
-                    .with(ItemEntry.builder(UItems.WEATHERED_SCRAP).weight(1).apply(uniformNumberBuilder(1,2)))
-                    .with(ItemEntry.builder(Items.AIR).weight(3))
-            );
-            lootBuilder(id, LootTables.END_CITY_TREASURE_CHEST, tableBuilder, source, LootPool.builder()
-                    .with(ItemEntry.builder(UItems.END_UPGRADE_FRAGMENT).weight(5).apply(uniformNumberBuilder(1,2)))
-                    .with(ItemEntry.builder(UItems.END_UPGRADE).weight(1))
-                    .with(ItemEntry.builder(Items.AIR).weight(14))
+                    .with(ItemEntry.builder(UItems.WEATHERED_SCRAP).weight(1).apply(uniformNumberBuilder(1,5)))
+                    .with(ItemEntry.builder(Items.AIR).weight(2))
             );
             lootBuilder(id, LootTables.END_CITY_TREASURE_CHEST, tableBuilder, source, LootPool.builder()
                     .with(ItemEntry.builder(UItems.DRAGON_SCALE).weight(1))
@@ -87,10 +67,6 @@ public class ULootTables {
             lootBuilder(id, LootTables.NETHER_BRIDGE_CHEST, tableBuilder, source, LootPool.builder()
                     .with(ItemEntry.builder(UItems.FORTRESS_NUGGET).weight(1).apply(uniformNumberBuilder(1,3)))
                     .with(ItemEntry.builder(Items.AIR).weight(4))
-            );
-            lootBuilder(id, LootTables.NETHER_BRIDGE_CHEST, tableBuilder, source, LootPool.builder()
-                    .with(ItemEntry.builder(UItems.NETHER_UPGRADE_FRAGMENT).weight(1).apply(uniformNumberBuilder(1,2)))
-                    .with(ItemEntry.builder(Items.AIR).weight(7))
             );
             lootBuilder(id, LootTables.SIMPLE_DUNGEON_CHEST, tableBuilder, source, LootPool.builder()
                     .with(ItemEntry.builder(UItems.RUBY).weight(1))

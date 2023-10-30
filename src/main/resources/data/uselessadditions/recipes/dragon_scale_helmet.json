@@ -1,15 +1,19 @@
 {
-  "type": "minecraft:smithing_transform",
-  "template": {
-    "item": "uselessadditions:end_upgrade"
-  },
-  "base": {
-    "item": "minecraft:chainmail_helmet"
-  },
-  "addition": {
-    "item": "uselessadditions:dragon_scale"
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "111",
+    "121"
+  ],
+  "key": {
+    "1": {
+      "item": "uselessadditions:dragon_scale"
+    },
+    "2": {
+      "item": "minecraft:chainmail_helmet"
+    }
   },
   "result": {
-    "item": "uselessadditions:dragon_scale_helmet"
+    "item": "uselessadditions:dragon_scale_helmet",
+    "count": 1
   }
 }

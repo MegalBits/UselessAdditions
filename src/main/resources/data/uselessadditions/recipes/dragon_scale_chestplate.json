@@ -1,15 +1,20 @@
 {
-  "type": "minecraft:smithing_transform",
-  "template": {
-    "item": "uselessadditions:end_upgrade"
-  },
-  "base": {
-    "item": "minecraft:chainmail_chestplate"
-  },
-  "addition": {
-    "item": "uselessadditions:dragon_scale"
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "121",
+    "111",
+    "111"
+  ],
+  "key": {
+    "1": {
+      "item": "uselessadditions:dragon_scale"
+    },
+    "2": {
+      "item": "minecraft:chainmail_chestplate"
+    }
   },
   "result": {
-    "item": "uselessadditions:dragon_scale_chestplate"
+    "item": "uselessadditions:dragon_scale_chestplate",
+    "count": 1
   }
 }

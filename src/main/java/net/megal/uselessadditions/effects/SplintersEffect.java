@@ -30,7 +30,7 @@ public class SplintersEffect extends StatusEffect {
         if (!entity.getWorld().isClient) {
             UUID uuid = entity.getUuid();
             Vec3d pos = entity.getPos();
-            float maxSpeed = 3.5f;
+            float maxSpeed = 2.5f;
             double vel = 0;
             if (entity instanceof PlayerEntity) {
                 if (pos != playerLastPos.getOrDefault(uuid, defaultPos)) {

@@ -1,15 +1,19 @@
 {
-  "type": "minecraft:smithing_transform",
-  "template": {
-    "item": "uselessadditions:end_upgrade"
-  },
-  "base": {
-    "item": "minecraft:chainmail_boots"
-  },
-  "addition": {
-    "item": "uselessadditions:dragon_scale"
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "1 1",
+    "121"
+  ],
+  "key": {
+    "1": {
+      "item": "uselessadditions:dragon_scale"
+    },
+    "2": {
+      "item": "minecraft:chainmail_boots"
+    }
   },
   "result": {
-    "item": "uselessadditions:dragon_scale_boots"
+    "item": "uselessadditions:dragon_scale_boots",
+    "count": 1
   }
 }

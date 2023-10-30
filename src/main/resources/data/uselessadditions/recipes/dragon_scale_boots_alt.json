@@ -1,7 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "111",
     "121",
     "1 1"
   ],
@@ -10,11 +9,11 @@
       "item": "uselessadditions:dragon_scale"
     },
     "2": {
-      "item": "minecraft:chainmail_leggings"
+      "item": "minecraft:chainmail_boots"
     }
   },
   "result": {
-    "item": "uselessadditions:dragon_scale_leggings",
+    "item": "uselessadditions:dragon_scale_boots",
     "count": 1
   }
 }

@@ -256,9 +256,6 @@ public class UItems {
     public static final Item EXOTIC_INGOT = registerItem(new Identifier(UAdd.MOD_ID, "exotic_ingot"), new Item(new FabricItemSettings().rarity(Rarity.UNCOMMON)));
     // -- Tool Components
     public static final Item NETHERITE_STICK = registerItem(new Identifier(UAdd.MOD_ID, "netherite_stick"), new Item(new FabricItemSettings().fireproof()));
-    public static final Item NETHER_UPGRADE_FRAGMENT = registerItem(new Identifier(UAdd.MOD_ID, "nether_upgrade_fragment"), createItem());
-    public static final Item END_UPGRADE_FRAGMENT = registerItem(new Identifier(UAdd.MOD_ID, "end_upgrade_fragment"), createItem());
-    public static final Item END_UPGRADE = registerItem(new Identifier(UAdd.MOD_ID, "end_upgrade"), createItem());
     //Hammer
     public static final DamageableItem MAKESHIFT_HAMMER = registerItem(new Identifier(UAdd.MOD_ID, "makeshift_hammer"), new DamageableItem(new FabricItemSettings().maxCount(1).maxDamage(16)));
     public static final DamageableItem HAMMER = registerItem(new Identifier(UAdd.MOD_ID, "hammer"), new DamageableItem(new FabricItemSettings().maxCount(1).maxDamage(64)));
@@ -571,9 +568,6 @@ public class UItems {
             entries.add(EXOTIC_INGOT.getDefaultStack());
             // -- Tool Components
             entries.add(NETHERITE_STICK.getDefaultStack());
-            entries.add(NETHER_UPGRADE_FRAGMENT.getDefaultStack());
-            entries.add(END_UPGRADE_FRAGMENT.getDefaultStack());
-            entries.add(END_UPGRADE.getDefaultStack());
             // Hammer
             entries.add(MAKESHIFT_HAMMER.getDefaultStack());
             entries.add(HAMMER.getDefaultStack());
