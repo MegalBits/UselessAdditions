@@ -14,8 +14,10 @@ import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.text.TextColor;
 import net.minecraft.util.Formatting;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.text.AttributeSet;
+import java.util.function.UnaryOperator;
 
 public class HungerEnchantment extends AugmentEnchantment {
     public HungerEnchantment(Rarity weight, EquipmentSlot ... slotTypes) {
@@ -57,17 +59,8 @@ public class HungerEnchantment extends AugmentEnchantment {
         return level >= 4 ? 1 : 0;
     }
     @Override
-    public Text getName(int level) {
-        MutableText mutableText = Text.translatable(this.getTranslationKey());
-        if (this.isCursed()) {
-            mutableText.styled(style -> style.withColor(5797459));
-        } else {
-            mutableText.formatted(Formatting.GRAY);
-        }
-        if (level != 1 || this.getMaxLevel() != 1) {
-            mutableText.append(ScreenTexts.SPACE).append(Text.translatable("enchantment.level." + level));
-        }
-        return mutableText;
+    public @Nullable UnaryOperator<Style> getColor() {
+        return style -> style.withColor(5797459);
     }
     
 }

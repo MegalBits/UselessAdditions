@@ -10,8 +10,12 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ScreenTexts;
 import net.minecraft.text.MutableText;
+import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.function.UnaryOperator;
 
 public class BlindnessEnchantment extends AugmentEnchantment {
     public BlindnessEnchantment(Rarity weight, EquipmentSlot ... slotTypes) {
@@ -25,13 +29,10 @@ public class BlindnessEnchantment extends AugmentEnchantment {
     public int getMaxPower(int level) {
         return 1;
     }
-
     @Override
     public int getMaxLevel() {
         return 4;
     }
-
-
     @Override
     public boolean isAcceptableItem(ItemStack stack) {
         return false;
@@ -53,16 +54,7 @@ public class BlindnessEnchantment extends AugmentEnchantment {
         return 0;
     }
     @Override
-    public Text getName(int level) {
-        MutableText mutableText = Text.translatable(this.getTranslationKey());
-        if (this.isCursed()) {
-            mutableText.styled(style -> style.withColor(2039587));
-        } else {
-            mutableText.formatted(Formatting.GRAY);
-        }
-        if (level != 1 || this.getMaxLevel() != 1) {
-            mutableText.append(ScreenTexts.SPACE).append(Text.translatable("enchantment.level." + level));
-        }
-        return mutableText;
+    public @Nullable UnaryOperator<Style> getColor() {
+        return style -> style.withColor(2039587);
     }
 }
