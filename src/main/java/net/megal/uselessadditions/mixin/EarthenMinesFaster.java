@@ -41,4 +41,9 @@ public abstract class EarthenMinesFaster {
         }
         return f;
     }
+    @ModifyReturnValue(at = @At("RETURN"),
+            method = "getBlockBreakingSpeed(Lnet/minecraft/block/BlockState;)F")
+    public float getBlockBreakingSpeed(float f) {
+        return f;
+    }
 }
