@@ -1,19 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "12",
-    "21"
+    "##",
+    "##"
   ],
   "key": {
-    "1": {
-      "tag": "c:coal"
-    },
-    "2": {
-      "item": "uselessadditions:ash"
+    "#": {
+      "item": "uselessadditions:small_creeper_shard"
     }
   },
   "result": {
     "item": "minecraft:gunpowder",
-    "count": 3
+    "count": 1
   }
 }

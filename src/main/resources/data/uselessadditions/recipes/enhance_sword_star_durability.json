@@ -1,0 +1,15 @@
+{
+  "type": "uselessadditions:enhancement_augment",
+  "template": {
+    "tag": "c:smithing_hammers"
+  },
+  "base": {
+    "tag": "uselessadditions:augmentable"
+  },
+  "addition": {
+    "item": "uselessadditions:star_durability"
+  },
+  "modifier": {
+    "enchantment": "uselessadditions:star_durability"
+  }
+}

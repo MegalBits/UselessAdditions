@@ -10,8 +10,8 @@
 		"SmithingOutput",
 		"SmithingDamageTemplate",
 		"ComposterOutput",
-		"AugmentChanges",
-		"EarthenMinesFaster",
+		"ItemAugmentChanges",
+		"MiningSpeedModifier",
 		"EnchantmentTooltips",
 		"ExtendedDurability",
 		"ExpandDescriptionsInScreen",
@@ -19,7 +19,8 @@
 		"ExtraExperienceOnKill",
 		"ItemEntityDamageViaEnchant",
 		"EnderdragonDropsStuff",
-		"ItemEntityCanMerge"
+		"ItemEntityCanMerge",
+		"EffectsOnFall"
 	],
 	"injectors": {
 		"defaultRequire": 1

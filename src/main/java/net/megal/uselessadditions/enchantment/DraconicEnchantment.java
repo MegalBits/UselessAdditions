@@ -32,9 +32,8 @@ public class DraconicEnchantment extends AugmentEnchantment {
     }
     @Override
     public int getMaxLevel() {
-        return 1;
+        return 3;
     }
-
     @Override
     public boolean isAcceptableItem(ItemStack stack) {
         return false;
@@ -45,19 +44,19 @@ public class DraconicEnchantment extends AugmentEnchantment {
     }
     @Override
     public int getDurability(int level) {
-        return level * 1800;
+        return level * 400 + 800;
     }
     @Override
     public float getAttackDamage(int level, EntityGroup group) {
-        return level * 8f;
+        return level * 2f + 4f;
     }
     @Override
-    public float getDamage(int level) {
-        return level * 11f;
+    public float getDamageTooltip(int level) {
+        return level * 2f + 4f;
     }
     @Override
     public int getAugmentSlots(int level) {
-        return level * 14 + 1;
+        return level * 2 + 6;
     }
     @Override
     public @Nullable UnaryOperator<Style> getColor() {

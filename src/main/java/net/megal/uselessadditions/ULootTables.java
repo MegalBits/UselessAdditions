@@ -113,6 +113,8 @@ public class ULootTables {
                     0.01F);
             shardLootBuilder(id, EntityType.CHICKEN, UItems.SMALL_CHICKEN_SHARD, tableBuilder, source,
                     2);
+            rareItemLootBuilder(id, EntityType.CHICKEN, UItems.MAGIC_FEATHER, tableBuilder, source,
+                    0.005F);
             shardLootBuilder(id, EntityType.COD, UItems.SMALL_COD_SHARD, tableBuilder, source,
                     2);
             shardLootBuilder(id, EntityType.COW, UItems.SMALL_COW_SHARD, tableBuilder, source,
@@ -125,6 +127,8 @@ public class ULootTables {
                     ));
             shardLootBuilder(id, EntityType.DOLPHIN, UItems.SMALL_DOLPHIN_SHARD, tableBuilder, source,
                     2);
+            rareItemLootBuilder(id, EntityType.DOLPHIN, UItems.DOLPHIN_FIN, tableBuilder, source,
+                    0.01F);
             shardLootBuilder(id, EntityType.DONKEY, UItems.SMALL_DONKEY_SHARD, tableBuilder, source,
                     2);
             shardLootBuilder(id, EntityType.DROWNED, UItems.SMALL_ZOMBIE_SHARD, tableBuilder, source,
@@ -147,6 +151,8 @@ public class ULootTables {
                     2);
             shardLootBuilder(id, EntityType.FROG, UItems.SMALL_FROG_SHARD, tableBuilder, source,
                     2);
+            rareItemLootBuilder(id, EntityType.FROG, UItems.FROG_LEG, tableBuilder, source,
+                    0.02F);
             shardLootBuilder(id, EntityType.GHAST, UItems.SMALL_GHAST_SHARD, tableBuilder, source,
                     2);
             entityLootBuilder(id, EntityType.GHAST, tableBuilder, source, LootPool.builder()
@@ -207,6 +213,8 @@ public class ULootTables {
                     2);
             shardLootBuilder(id, EntityType.PUFFERFISH, UItems.SMALL_PUFFERFISH_SHARD, tableBuilder, source,
                     2);
+            rareItemLootBuilder(id, EntityType.PUFFERFISH, UItems.PUFFERFISH_SPINE, tableBuilder, source,
+                    0.0175F);
             shardLootBuilder(id, EntityType.RABBIT, UItems.SMALL_RABBIT_SHARD, tableBuilder, source,
                     2);
             shardLootBuilder(id, EntityType.RAVAGER, UItems.SMALL_RAVAGER_SHARD, tableBuilder, source,
@@ -259,6 +267,8 @@ public class ULootTables {
                     2);
             shardLootBuilder(id, EntityType.WANDERING_TRADER, UItems.SMALL_VILLAGER_SHARD, tableBuilder, source,
                     2);
+            rareItemLootBuilder(id, EntityType.WANDERING_TRADER, UItems.TRADER_SATCHEL, tableBuilder, source,
+                    0.0005F);
             shardLootBuilder(id, EntityType.WARDEN, UItems.SMALL_WARDEN_SHARD, tableBuilder, source,
                     2);
             entityLootBuilder(id, EntityType.WARDEN, tableBuilder, source, LootPool.builder()

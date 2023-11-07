@@ -51,7 +51,7 @@ public class IronEnchantment extends AugmentEnchantment {
     }
 
     @Override
-    public float getDamage(int level) {
+    public float getDamageTooltip(int level) {
         return level;
     }
 

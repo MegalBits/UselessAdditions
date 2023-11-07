@@ -44,8 +44,7 @@ public class SurvivalSpawner extends BlockWithEntity {
             wasItemUsed = itemUsedToRecharge(handItem, blockEntity, world, pos);
         }
         if (world.isClient) {
-            if (wasItemUsed) return ActionResult.SUCCESS;
-            return ActionResult.FAIL;
+            return ActionResult.SUCCESS;
         }
         if (wasItemUsed && !player.isCreative()) player.getStackInHand(hand).decrement(1);
         return ActionResult.CONSUME;

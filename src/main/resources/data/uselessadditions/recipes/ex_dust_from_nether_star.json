@@ -7,7 +7,7 @@
     "item": "minecraft:nether_star"
   },
   "addition": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:obsidian"
   },
   "result": {
     "item": "uselessadditions:exotic_dust",

@@ -52,7 +52,7 @@ public class NetheriteEnchantment extends AugmentEnchantment {
         return level * 5.25f + 1.5f;
     }
     @Override
-    public float getDamage(int level) {
+    public float getDamageTooltip(int level) {
         return level * 5.25f + 1.5f;
     }
     @Override

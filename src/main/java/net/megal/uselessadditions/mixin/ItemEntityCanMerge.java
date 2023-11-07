@@ -18,6 +18,6 @@ public abstract class ItemEntityCanMerge {
             cancellable = true)
     private void canMerge(CallbackInfoReturnable<Boolean> cir) {
         ItemEntity item = ((ItemEntity)(Object)this);
-        if (pickupDelay - 10 > 0) cir.setReturnValue(false);
+        if (pickupDelay - 15 > 0) cir.setReturnValue(false);
     }
 }

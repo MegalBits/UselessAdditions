@@ -10,5 +10,7 @@ public class TooltipStuff {
     public static final String SPACE = " ";
     public static final String ADD = "+";
     public static final String SUBTRACT = "";
+    public static final String MULTIPLY = "×";
+    public static final String DIVISION = "÷";
     public static final int STAT_COLOR = 0x384258;
 }

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "uselessadditions:empty_spawner",
     "uselessadditions:survival_spawner",
     "uselessadditions:cave_spider_ore",
     "uselessadditions:deepslate_cave_spider_ore",
@@ -25,6 +26,30 @@
     "uselessadditions:strider_ore",
     "uselessadditions:deepslate_strider_ore",
     "uselessadditions:zombie_ore",
-    "uselessadditions:deepslate_zombie_ore"
+    "uselessadditions:deepslate_zombie_ore",
+    "uselessadditions:nether_cave_spider_ore",
+    "uselessadditions:end_cave_spider_ore",
+    "uselessadditions:nether_endermite_ore",
+    "uselessadditions:end_endermite_ore",
+    "uselessadditions:nether_guardian_ore",
+    "uselessadditions:end_guardian_ore",
+    "uselessadditions:nether_hoglin_ore",
+    "uselessadditions:end_hoglin_ore",
+    "uselessadditions:nether_magma_cube_ore",
+    "uselessadditions:end_magma_cube_ore",
+    "uselessadditions:nether_silverfish_ore",
+    "uselessadditions:end_silverfish_ore",
+    "uselessadditions:nether_skeleton_ore",
+    "uselessadditions:end_skeleton_ore",
+    "uselessadditions:nether_slime_ore",
+    "uselessadditions:end_slime_ore",
+    "uselessadditions:nether_snow_golem_ore",
+    "uselessadditions:end_snow_golem_ore",
+    "uselessadditions:nether_spider_ore",
+    "uselessadditions:end_spider_ore",
+    "uselessadditions:nether_strider_ore",
+    "uselessadditions:end_strider_ore",
+    "uselessadditions:nether_zombie_ore",
+    "uselessadditions:end_zombie_ore"
   ]
 }

@@ -6,6 +6,12 @@
     "uselessadditions:wither_skeleton_ore",
     "uselessadditions:deepslate_wither_skeleton_ore",
     "uselessadditions:warden_ore",
-    "uselessadditions:deepslate_warden_ore"
+    "uselessadditions:deepslate_warden_ore",
+    "uselessadditions:nether_ravager_ore",
+    "uselessadditions:end_ravager_ore",
+    "uselessadditions:nether_wither_skeleton_ore",
+    "uselessadditions:end_wither_skeleton_ore",
+    "uselessadditions:nether_warden_ore",
+    "uselessadditions:end_warden_ore"
   ]
 }

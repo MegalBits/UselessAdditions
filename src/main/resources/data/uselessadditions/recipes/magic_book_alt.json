@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "123",
+    "433",
+    "566"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:book"
+    },
+    "2": {
+      "item": "minecraft:dragon_breath"
+    },
+    "3": {
+      "item": "minecraft:lapis_block"
+    },
+    "4": {
+      "item": "minecraft:diamond_block"
+    },
+    "5": {
+      "item": "uselessadditions:enchanted_magic_ingot"
+    },
+    "6": {
+      "item": "uselessadditions:magic_ingot"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:magic_book",
+    "count": 1
+  }
+}

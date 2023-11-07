@@ -34,7 +34,6 @@ public class DirtEnchantment extends AugmentEnchantment {
     public int getMaxLevel() {
         return 1;
     }
-
     @Override
     public boolean isAcceptableItem(ItemStack stack) {
         return false;

@@ -45,7 +45,7 @@ public class EmeraldEnchantment extends AugmentEnchantment {
     }
 
     @Override
-    public float getDamage(int level) {
+    public float getDamageTooltip(int level) {
         return level * 2.5f;
     }
     @Override

@@ -43,9 +43,9 @@ public class SpawnerBlockItem extends BlockItem {
                 tooltip.add(Text.translatable("spawner.uselessadditions.desc").append(Text.translatable(e.getTranslationKey()).formatted(Formatting.BLUE)).formatted(Formatting.GRAY));
             }, () -> {
             });
+            if (UAdd.expandDescriptions) tooltip.add(Text.empty());
         }
         if (UAdd.expandDescriptions) {
-            tooltip.add(Text.empty());
             tooltip.add(PREFIX.copy().append(Text.translatable("spawner.uselessadditions.stats")).formatted(Formatting.GRAY));
             tooltip.add(rechargeText(SurvivalSpawner.EMERALD, SurvivalSpawner.EMERALD_TIME));
             tooltip.add(rechargeText(SurvivalSpawner.DIAMOND, SurvivalSpawner.DIAMOND_TIME));

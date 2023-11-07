@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "133",
+    "232",
+    "321"
+  ],
+  "key": {
+    "1": {
+      "item": "uselessadditions:exotic_dust"
+    },
+    "2": {
+      "item": "uselessadditions:small_frog_shard"
+    },
+    "3": {
+      "item": "uselessadditions:frog_shard"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:frog_leg",
+    "count": 1
+  }
+}

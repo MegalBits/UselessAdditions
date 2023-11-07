@@ -8,6 +8,7 @@ import com.google.gson.JsonParseException;
 import com.google.gson.JsonSyntaxException;
 import net.megal.uselessadditions.UAdd;
 import net.megal.uselessadditions.enchantment.AugmentEnchantment;
+import net.megal.uselessadditions.enchantment.TurtleEnchantment;
 import net.megal.uselessadditions.enchantment.UEnchantments;
 import net.megal.uselessadditions.item.UItems;
 import net.minecraft.enchantment.Enchantment;
@@ -55,6 +56,8 @@ public class EnhancementAugmentRecipe implements EnhancementRecipe {
         boolean isMaxed = false;
         @Nullable Enchantment enchantment = Registries.ENCHANTMENT.get(modifier);
         if (enchantment != null) {
+            if (enchantment instanceof TurtleEnchantment && stack.isOf(Items.TURTLE_HELMET)) return false;
+            
             int level = EnchantmentHelper.getLevel(enchantment, stack);
             isMaxed = level >= enchantment.getMaxLevel();
             if (stack.hasEnchantments()) {

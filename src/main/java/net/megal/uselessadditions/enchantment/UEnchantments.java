@@ -9,6 +9,20 @@ import net.minecraft.util.Identifier;
 
 public class UEnchantments {
     private static final EquipmentSlot[] ALL_ARMOR = new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET};
+    public static final ObsidianSmashingEnchantment OBSIDIAN_SMASHING = registerEnchantment(new Identifier(UAdd.MOD_ID, "obsidian_smashing"),
+            new ObsidianSmashingEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
+    public static final StarDurabilityEnchantment STAR_DURABILITY = registerEnchantment(new Identifier(UAdd.MOD_ID, "star_durability"),
+            new StarDurabilityEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.values()));
+    public static final StarDamageEnchantment STAR_DAMAGE = registerEnchantment(new Identifier(UAdd.MOD_ID, "star_damage"),
+            new StarDamageEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
+    public static final StarMiningEnchantment STAR_EFFICIENCY = registerEnchantment(new Identifier(UAdd.MOD_ID, "star_mining"),
+            new StarMiningEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
+    public static final StarProtectionEnchantment STAR_PROTECTION = registerEnchantment(new Identifier(UAdd.MOD_ID, "star_protection"),
+            new StarProtectionEnchantment(Enchantment.Rarity.RARE, ALL_ARMOR));
+    public static final ParachuteEnchantment PARACHUTE = registerEnchantment(new Identifier(UAdd.MOD_ID, "parachute"),
+            new ParachuteEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.HEAD));
+    public static final TurtleEnchantment TURTLE = registerEnchantment(new Identifier(UAdd.MOD_ID, "turtle"),
+            new TurtleEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.HEAD));
     public static final ShatteringEnchantment SHATTERING = registerEnchantment(new Identifier(UAdd.MOD_ID, "shattering"),
             new ShatteringEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
     public static final UndeadEnchantment UNDEAD = registerEnchantment(new Identifier(UAdd.MOD_ID, "undead"),

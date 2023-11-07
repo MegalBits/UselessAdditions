@@ -3,29 +3,27 @@ package net.megal.uselessadditions.item;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.megal.uselessadditions.UAdd;
-import net.megal.uselessadditions.block.UBlocks;
 import net.megal.uselessadditions.item.base.*;
 import net.megal.uselessadditions.item.bundles.*;
+import net.megal.uselessadditions.magic.Spell;
+import net.megal.uselessadditions.magic.USpells;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.item.*;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtList;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.Registries;
-import net.minecraft.registry.tag.EntityTypeTags;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static net.megal.uselessadditions.block.UBlocks.*;
 
 public class UItems {
-    private static final List<SpawnEgg> spawnEggs = new ArrayList<>();
-
     //Mob Ore Shards
     public static final Item ALLAY_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "allay_shard"), createItem());
     public static final Item AXOLOTL_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "axolotl_shard"), createItem());
@@ -210,13 +208,17 @@ public class UItems {
     public static final Item CACTUS_LINING = registerItem(new Identifier(UAdd.MOD_ID, "cactus_lining"), createItem());
     public static final TooltipItem AXOLOTL_TAIL = registerItem(new Identifier(UAdd.MOD_ID, "axolotl_tail"), createTooltipItem());
     public static final TooltipItem BEE_STINGER = registerItem(new Identifier(UAdd.MOD_ID, "bee_stinger"), createTooltipItem());
+    public static final TooltipItem PUFFERFISH_SPINE = registerItem(new Identifier(UAdd.MOD_ID, "pufferfish_spine"), createTooltipItem());
     public static final TooltipItem TOY_FISH = registerItem(new Identifier(UAdd.MOD_ID, "toy_fish"), createTooltipItem());
+    public static final TooltipItem FROG_LEG = registerItem(new Identifier(UAdd.MOD_ID, "frog_leg"), createTooltipItem());
+    public static final TooltipItem DOLPHIN_FIN = registerItem(new Identifier(UAdd.MOD_ID, "dolphin_fin"), createTooltipItem());
     public static final TooltipItem BIG_INK_SAC = registerItem(new Identifier(UAdd.MOD_ID, "big_ink_sac"), createTooltipItem());
     public static final TooltipItem BIG_GLOW_INK_SAC = registerItem(new Identifier(UAdd.MOD_ID, "big_glow_ink_sac"), createTooltipItem());
     public static final TooltipItem POSION_GLAND = registerItem(new Identifier(UAdd.MOD_ID, "poison_gland"), createTooltipItem());
     public static final TooltipItem ARID_CLOTH = registerItem(new Identifier(UAdd.MOD_ID, "arid_cloth"), createTooltipItem());
     public static final TooltipItem FRIGID_CLOTH = registerItem(new Identifier(UAdd.MOD_ID, "frigid_cloth"), createTooltipItem());
     public static final TooltipItem PHANTOM_HEART = registerItem(new Identifier(UAdd.MOD_ID, "phantom_heart"), createTooltipItem());
+    public static final GlintItem MAGIC_FEATHER = registerItem(new Identifier(UAdd.MOD_ID, "magic_feather"), new GlintItem(new FabricItemSettings().rarity(Rarity.RARE)));
     public static final Item DRAGON_SCALE = registerItem(new Identifier(UAdd.MOD_ID, "dragon_scale"), new Item(new FabricItemSettings().fireproof().rarity(Rarity.UNCOMMON)));
     public static final Item DRAGON_HEART = registerItem(new Identifier(UAdd.MOD_ID, "dragon_heart"), new Item(new FabricItemSettings().fireproof().rarity(Rarity.EPIC)));
     public static final Item WEATHERED_SCRAP = registerItem(new Identifier(UAdd.MOD_ID, "weathered_scrap"), new Item(new FabricItemSettings()));
@@ -232,6 +234,10 @@ public class UItems {
     public static final Item ESSENCE_OF_EMERALD = registerItem(new Identifier(UAdd.MOD_ID, "essence_of_emerald"), createItem());
     public static final Item ESSENCE_OF_NETHERITE = registerItem(new Identifier(UAdd.MOD_ID, "essence_of_netherite"), new Item(new FabricItemSettings().fireproof()));
     public static final TooltipItem ESSENCE_OF_UNDEAD = registerItem(new Identifier(UAdd.MOD_ID, "essence_of_undead"), createTooltipItem());
+    public static final GlintItem STAR_DAMAGE = registerItem(new Identifier(UAdd.MOD_ID, "star_damage"), new GlintItem(new FabricItemSettings().rarity(Rarity.UNCOMMON)));
+    public static final GlintItem STAR_MINING = registerItem(new Identifier(UAdd.MOD_ID, "star_mining"), new GlintItem(new FabricItemSettings().rarity(Rarity.UNCOMMON)));
+    public static final GlintItem STAR_ARMOR = registerItem(new Identifier(UAdd.MOD_ID, "star_armor"), new GlintItem(new FabricItemSettings().rarity(Rarity.UNCOMMON)));
+    public static final GlintItem STAR_DURABILITY = registerItem(new Identifier(UAdd.MOD_ID, "star_durability"), new GlintItem(new FabricItemSettings().rarity(Rarity.UNCOMMON)));
     public static final MagicBook MAGIC_BOOK = registerItem(new Identifier(UAdd.MOD_ID, "magic_book"), new MagicBook(new FabricItemSettings().maxCount(1).maxDamage(3).rarity(Rarity.EPIC), Formatting.GRAY));
     public static final Item IRON_BUNDLE_UPGRADE = registerItem(new Identifier(UAdd.MOD_ID, "iron_bundle_upgrade"), createItem());
     public static final Item DIAMOND_BUNDLE_UPGRADE = registerItem(new Identifier(UAdd.MOD_ID, "diamond_bundle_upgrade"), createItem());
@@ -276,6 +282,9 @@ public class UItems {
     public static final UPickaxeItem BLAZE_METAL_PICKAXE = registerItem(new Identifier(UAdd.MOD_ID, "blaze_metal_pickaxe"), new UPickaxeItem(UToolMaterials.BLAZE_METAL, 1, -2.8F, new FabricItemSettings()));
     public static final UAxeItem BLAZE_METAL_AXE = registerItem(new Identifier(UAdd.MOD_ID, "blaze_metal_axe"), new UAxeItem(UToolMaterials.BLAZE_METAL, 5.0F, -3.0F, new FabricItemSettings()));
     public static final UHoeItem BLAZE_METAL_HOE = registerItem(new Identifier(UAdd.MOD_ID, "blaze_metal_hoe"), new UHoeItem(UToolMaterials.BLAZE_METAL_P5, -3, 0.0F, new FabricItemSettings()));
+    //Magic Stuff
+    public static final SpellBook SPELL_BOOK = registerItem(new Identifier(UAdd.MOD_ID, "spell_book"), new SpellBook(new FabricItemSettings().maxCount(1)));
+    public static final SpellTome SPELL_TOME = registerItem(new Identifier(UAdd.MOD_ID, "spell_tome"), new SpellTome(new FabricItemSettings().maxCount(1)));
     //Armors
     public static final ArmorItem DRAGON_SCALE_HELMET = registerItem(new Identifier(UAdd.MOD_ID, "dragon_scale_helmet"), new ArmorItem(UArmorMaterials.DRAGON_SCALE, ArmorItem.Type.HELMET, new FabricItemSettings().fireproof()));
     public static final ArmorItem DRAGON_SCALE_CHESTPLATE = registerItem(new Identifier(UAdd.MOD_ID, "dragon_scale_chestplate"), new ArmorItem(UArmorMaterials.DRAGON_SCALE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().fireproof()));
@@ -287,6 +296,7 @@ public class UItems {
     public static final DiamondBundle DIAMOND_BUNDLE = registerItem(new Identifier(UAdd.MOD_ID, "diamond_bundle"), new DiamondBundle(new FabricItemSettings().maxCount(1)));
     public static final NetheriteBundle NETHERITE_BUNDLE = registerItem(new Identifier(UAdd.MOD_ID, "netherite_bundle"), new NetheriteBundle(new FabricItemSettings().maxCount(1).fireproof()));
     public static final DragonBundle DRAGON_BUNDLE = registerItem(new Identifier(UAdd.MOD_ID, "dragon_bundle"), new DragonBundle(new FabricItemSettings().maxCount(1).fireproof().rarity(Rarity.EPIC)));
+    public static final TraderSatchel TRADER_SATCHEL = registerItem(new Identifier(UAdd.MOD_ID, "trader_satchel"), new TraderSatchel(new FabricItemSettings().maxCount(1).rarity(Rarity.UNCOMMON)));
     //Food
     public static final AllayCookie ALLAY_COOKIE = registerItem(new Identifier(UAdd.MOD_ID, "allay_cookie"), new AllayCookie(new FabricItemSettings().food(UFoodComponents.ALLAY_COOKIE), Formatting.GRAY));
     public static final Item BONELESS_BAT_WING = registerItem(new Identifier(UAdd.MOD_ID, "boneless_bat_wing"), new Item(new FabricItemSettings().food(UFoodComponents.BAT_WING)));
@@ -306,6 +316,9 @@ public class UItems {
     }
     private static TooltipItem createTooltipItem() {
         return new TooltipItem(new FabricItemSettings(), Formatting.GRAY);
+    }
+    private static TooltipGlintItem createTooltipGlintItem() {
+        return new TooltipGlintItem(new FabricItemSettings(), Formatting.GRAY);
     }
     private static SmithingTemplateItem createSmithingTemplate(String name) {
         List<Identifier> emptyBaseSlotTextures = List.of(
@@ -334,6 +347,17 @@ public class UItems {
     }
     private static <T extends Item> T registerItem(Identifier id, T item) {
         return Registry.register(Registries.ITEM, id, item);
+    }
+    public static ItemStack createSpellBookWithSpells(List<Spell> spells) {
+        ItemStack stack = SPELL_BOOK.getDefaultStack();
+        NbtCompound nbt = new NbtCompound();
+        NbtList nbtList = new NbtList();
+        for (Spell spell : spells) {
+            nbtList.add(spell.writeToNbt());
+        }
+        nbt.put("Spells", nbtList);
+        stack.setNbt(nbt);
+        return stack;
     }
     public static void itemTabs() {
         ItemGroupEvents.modifyEntriesEvent(UGroups.UAddTab).register(entries -> {
@@ -522,13 +546,17 @@ public class UItems {
             //
             entries.add(AXOLOTL_TAIL.getDefaultStack());
             entries.add(BEE_STINGER.getDefaultStack());
+            entries.add(PUFFERFISH_SPINE.getDefaultStack());
             entries.add(TOY_FISH.getDefaultStack());
+            entries.add(FROG_LEG.getDefaultStack());
+            entries.add(DOLPHIN_FIN.getDefaultStack());
             entries.add(BIG_INK_SAC.getDefaultStack());
             entries.add(BIG_GLOW_INK_SAC.getDefaultStack());
             entries.add(POSION_GLAND.getDefaultStack());
             entries.add(ARID_CLOTH.getDefaultStack());
             entries.add(FRIGID_CLOTH.getDefaultStack());
             entries.add(PHANTOM_HEART.getDefaultStack());
+            entries.add(MAGIC_FEATHER.getDefaultStack());
             entries.add(DRAGON_SCALE.getDefaultStack());
             entries.add(DRAGON_HEART.getDefaultStack());
             entries.add(WEATHERED_SCRAP.getDefaultStack());
@@ -544,6 +572,10 @@ public class UItems {
             entries.add(ESSENCE_OF_EMERALD.getDefaultStack());
             entries.add(ESSENCE_OF_NETHERITE.getDefaultStack());
             entries.add(ESSENCE_OF_UNDEAD.getDefaultStack());
+            entries.add(STAR_DAMAGE.getDefaultStack());
+            entries.add(STAR_MINING.getDefaultStack());
+            entries.add(STAR_ARMOR.getDefaultStack());
+            entries.add(STAR_DURABILITY.getDefaultStack());
             entries.add(MAGIC_BOOK.getDefaultStack());
             entries.add(IRON_BUNDLE_UPGRADE.getDefaultStack());
             entries.add(DIAMOND_BUNDLE_UPGRADE.getDefaultStack());
@@ -588,6 +620,12 @@ public class UItems {
             entries.add(BLAZE_METAL_PICKAXE.getDefaultStack());
             entries.add(BLAZE_METAL_AXE.getDefaultStack());
             entries.add(BLAZE_METAL_HOE.getDefaultStack());
+            // Spell Books
+            entries.add(SPELL_BOOK.getDefaultStack());
+            entries.add(createSpellBookWithSpells(List.of(USpells.BASIC_ARROW)));
+            entries.add(createSpellBookWithSpells(List.of(USpells.FAST_ARROW)));
+            entries.add(createSpellBookWithSpells(List.of(USpells.BASIC_DAMAGE)));
+            entries.add(createSpellBookWithSpells(List.of(USpells.HIGH_DAMAGE)));
             // Armor
             entries.add(DRAGON_SCALE_HELMET.getDefaultStack());
             entries.add(DRAGON_SCALE_CHESTPLATE.getDefaultStack());
@@ -599,6 +637,7 @@ public class UItems {
             entries.add(DIAMOND_BUNDLE.getDefaultStack());
             entries.add(NETHERITE_BUNDLE.getDefaultStack());
             entries.add(DRAGON_BUNDLE.getDefaultStack());
+            entries.add(TRADER_SATCHEL.getDefaultStack());
             // Food
             entries.add(ALLAY_COOKIE.getDefaultStack());
             entries.add(RAW_AXOLOTL.getDefaultStack());
@@ -616,114 +655,225 @@ public class UItems {
             // Ores
             entries.add(ALLAY_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_ALLAY_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_ALLAY_ORE.asItem().getDefaultStack());
+            entries.add(END_ALLAY_ORE.asItem().getDefaultStack());
             entries.add(AXOLOTL_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_AXOLOTL_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_AXOLOTL_ORE.asItem().getDefaultStack());
+            entries.add(END_AXOLOTL_ORE.asItem().getDefaultStack());
             entries.add(BAT_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_BAT_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_BAT_ORE.asItem().getDefaultStack());
+            entries.add(END_BAT_ORE.asItem().getDefaultStack());
             entries.add(BEE_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_BEE_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_BEE_ORE.asItem().getDefaultStack());
+            entries.add(END_BEE_ORE.asItem().getDefaultStack());
             entries.add(BLAZE_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_BLAZE_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_BLAZE_ORE.asItem().getDefaultStack());
+            entries.add(END_BLAZE_ORE.asItem().getDefaultStack());
             entries.add(CAT_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_CAT_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_CAT_ORE.asItem().getDefaultStack());
+            entries.add(END_CAT_ORE.asItem().getDefaultStack());
             entries.add(CAVE_SPIDER_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_CAVE_SPIDER_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_CAVE_SPIDER_ORE.asItem().getDefaultStack());
+            entries.add(END_CAVE_SPIDER_ORE.asItem().getDefaultStack());
             entries.add(CHICKEN_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_CHICKEN_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_CHICKEN_ORE.asItem().getDefaultStack());
+            entries.add(END_CHICKEN_ORE.asItem().getDefaultStack());
             entries.add(COD_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_COD_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_COD_ORE.asItem().getDefaultStack());
+            entries.add(END_COD_ORE.asItem().getDefaultStack());
             entries.add(COW_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_COW_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_COW_ORE.asItem().getDefaultStack());
+            entries.add(END_COW_ORE.asItem().getDefaultStack());
             entries.add(CREEPER_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_CREEPER_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_CREEPER_ORE.asItem().getDefaultStack());
+            entries.add(END_CREEPER_ORE.asItem().getDefaultStack());
             entries.add(DOLPHIN_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_DOLPHIN_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_DOLPHIN_ORE.asItem().getDefaultStack());
+            entries.add(END_DOLPHIN_ORE.asItem().getDefaultStack());
             entries.add(DONKEY_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_DONKEY_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_DONKEY_ORE.asItem().getDefaultStack());
+            entries.add(END_DONKEY_ORE.asItem().getDefaultStack());
             entries.add(ENDERMAN_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_ENDERMAN_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_ENDERMAN_ORE.asItem().getDefaultStack());
+            entries.add(END_ENDERMAN_ORE.asItem().getDefaultStack());
             entries.add(ENDERMITE_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_ENDERMITE_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_ENDERMITE_ORE.asItem().getDefaultStack());
+            entries.add(END_ENDERMITE_ORE.asItem().getDefaultStack());
+            entries.add(END_ENDERMITE_ORE.asItem().getDefaultStack());
             entries.add(FOX_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_FOX_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_FOX_ORE.asItem().getDefaultStack());
+            entries.add(END_FOX_ORE.asItem().getDefaultStack());
             entries.add(FROG_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_FROG_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_FROG_ORE.asItem().getDefaultStack());
+            entries.add(END_FROG_ORE.asItem().getDefaultStack());
             entries.add(GHAST_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_GHAST_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_GHAST_ORE.asItem().getDefaultStack());
+            entries.add(END_GHAST_ORE.asItem().getDefaultStack());
             entries.add(GLOW_SQUID_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_GLOW_SQUID_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_GLOW_SQUID_ORE.asItem().getDefaultStack());
+            entries.add(END_GLOW_SQUID_ORE.asItem().getDefaultStack());
             entries.add(GOAT_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_GOAT_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_GOAT_ORE.asItem().getDefaultStack());
+            entries.add(END_GOAT_ORE.asItem().getDefaultStack());
             entries.add(GUARDIAN_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_GUARDIAN_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_GUARDIAN_ORE.asItem().getDefaultStack());
+            entries.add(END_GUARDIAN_ORE.asItem().getDefaultStack());
             entries.add(HOGLIN_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_HOGLIN_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_HOGLIN_ORE.asItem().getDefaultStack());
+            entries.add(END_HOGLIN_ORE.asItem().getDefaultStack());
             entries.add(HORSE_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_HORSE_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_HORSE_ORE.asItem().getDefaultStack());
+            entries.add(END_HORSE_ORE.asItem().getDefaultStack());
             entries.add(ILLAGER_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_ILLAGER_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_ILLAGER_ORE.asItem().getDefaultStack());
+            entries.add(END_ILLAGER_ORE.asItem().getDefaultStack());
             entries.add(IRON_GOLEM_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_IRON_GOLEM_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_IRON_GOLEM_ORE.asItem().getDefaultStack());
+            entries.add(END_IRON_GOLEM_ORE.asItem().getDefaultStack());
             entries.add(LLAMA_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_LLAMA_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_LLAMA_ORE.asItem().getDefaultStack());
+            entries.add(END_LLAMA_ORE.asItem().getDefaultStack());
             entries.add(MAGMA_CUBE_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_MAGMA_CUBE_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_MAGMA_CUBE_ORE.asItem().getDefaultStack());
+            entries.add(END_MAGMA_CUBE_ORE.asItem().getDefaultStack());
             entries.add(OCELOT_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_OCELOT_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_OCELOT_ORE.asItem().getDefaultStack());
+            entries.add(END_OCELOT_ORE.asItem().getDefaultStack());
             entries.add(PANDA_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_PANDA_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_PANDA_ORE.asItem().getDefaultStack());
+            entries.add(END_PANDA_ORE.asItem().getDefaultStack());
             entries.add(PARROT_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_PARROT_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_PARROT_ORE.asItem().getDefaultStack());
+            entries.add(END_PARROT_ORE.asItem().getDefaultStack());
             entries.add(PHANTOM_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_PHANTOM_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_PHANTOM_ORE.asItem().getDefaultStack());
+            entries.add(END_PHANTOM_ORE.asItem().getDefaultStack());
             entries.add(PIG_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_PIG_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_PIG_ORE.asItem().getDefaultStack());
+            entries.add(END_PIG_ORE.asItem().getDefaultStack());
             entries.add(PIGLIN_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_PIGLIN_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_PIGLIN_ORE.asItem().getDefaultStack());
+            entries.add(END_PIGLIN_ORE.asItem().getDefaultStack());
             entries.add(POLAR_BEAR_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_POLAR_BEAR_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_POLAR_BEAR_ORE.asItem().getDefaultStack());
+            entries.add(END_POLAR_BEAR_ORE.asItem().getDefaultStack());
             entries.add(PUFFERFISH_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_PUFFERFISH_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_PUFFERFISH_ORE.asItem().getDefaultStack());
+            entries.add(END_PUFFERFISH_ORE.asItem().getDefaultStack());
             entries.add(RABBIT_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_RABBIT_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_RABBIT_ORE.asItem().getDefaultStack());
+            entries.add(END_RABBIT_ORE.asItem().getDefaultStack());
             entries.add(RAVAGER_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_RAVAGER_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_RAVAGER_ORE.asItem().getDefaultStack());
+            entries.add(END_RAVAGER_ORE.asItem().getDefaultStack());
             entries.add(SALMON_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_SALMON_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_SALMON_ORE.asItem().getDefaultStack());
+            entries.add(END_SALMON_ORE.asItem().getDefaultStack());
             entries.add(SHEEP_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_SHEEP_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_SHEEP_ORE.asItem().getDefaultStack());
+            entries.add(END_SHEEP_ORE.asItem().getDefaultStack());
             entries.add(SHULKER_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_SHULKER_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_SHULKER_ORE.asItem().getDefaultStack());
+            entries.add(END_SHULKER_ORE.asItem().getDefaultStack());
             entries.add(SILVERFISH_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_SILVERFISH_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_SILVERFISH_ORE.asItem().getDefaultStack());
+            entries.add(END_SILVERFISH_ORE.asItem().getDefaultStack());
             entries.add(SKELETON_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_SKELETON_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_SKELETON_ORE.asItem().getDefaultStack());
+            entries.add(END_SKELETON_ORE.asItem().getDefaultStack());
             entries.add(SLIME_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_SLIME_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_SLIME_ORE.asItem().getDefaultStack());
+            entries.add(END_SLIME_ORE.asItem().getDefaultStack());
             entries.add(SNOW_GOLEM_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_SNOW_GOLEM_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_SNOW_GOLEM_ORE.asItem().getDefaultStack());
+            entries.add(END_SNOW_GOLEM_ORE.asItem().getDefaultStack());
             entries.add(SPIDER_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_SPIDER_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_SPIDER_ORE.asItem().getDefaultStack());
+            entries.add(END_SPIDER_ORE.asItem().getDefaultStack());
             entries.add(SQUID_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_SQUID_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_SQUID_ORE.asItem().getDefaultStack());
+            entries.add(END_SQUID_ORE.asItem().getDefaultStack());
             entries.add(STRIDER_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_STRIDER_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_STRIDER_ORE.asItem().getDefaultStack());
+            entries.add(END_STRIDER_ORE.asItem().getDefaultStack());
             entries.add(TROPICAL_FISH_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_TROPICAL_FISH_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_TROPICAL_FISH_ORE.asItem().getDefaultStack());
+            entries.add(END_TROPICAL_FISH_ORE.asItem().getDefaultStack());
             entries.add(TURTLE_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_TURTLE_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_TURTLE_ORE.asItem().getDefaultStack());
+            entries.add(END_TURTLE_ORE.asItem().getDefaultStack());
             entries.add(VEX_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_VEX_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_VEX_ORE.asItem().getDefaultStack());
+            entries.add(END_VEX_ORE.asItem().getDefaultStack());
             entries.add(VILLAGER_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_VILLAGER_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_VILLAGER_ORE.asItem().getDefaultStack());
+            entries.add(END_VILLAGER_ORE.asItem().getDefaultStack());
             entries.add(WARDEN_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_WARDEN_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_WARDEN_ORE.asItem().getDefaultStack());
+            entries.add(END_WARDEN_ORE.asItem().getDefaultStack());
             entries.add(WITHER_SKELETON_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_WITHER_SKELETON_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_WITHER_SKELETON_ORE.asItem().getDefaultStack());
+            entries.add(END_WITHER_SKELETON_ORE.asItem().getDefaultStack());
             entries.add(WOLF_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_WOLF_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_WOLF_ORE.asItem().getDefaultStack());
+            entries.add(END_WOLF_ORE.asItem().getDefaultStack());
             entries.add(ZOMBIE_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_ZOMBIE_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_ZOMBIE_ORE.asItem().getDefaultStack());
+            entries.add(END_ZOMBIE_ORE.asItem().getDefaultStack());
         });
         ItemGroupEvents.modifyEntriesEvent(UGroups.SpawnersTab).register(entries -> {
             entries.add(EMPTY_SPAWNER.asItem().getDefaultStack());

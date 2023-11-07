@@ -5,6 +5,7 @@ import net.megal.uselessadditions.item.DamageableItem;
 import net.megal.uselessadditions.item.UItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ComposterBlock;
+import net.minecraft.block.entity.HopperBlockEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerInventory;

@@ -1,7 +1,6 @@
 package net.megal.uselessadditions.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
-import me.shedaniel.rei.api.client.registry.screen.ScreenRegistry;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.megal.uselessadditions.UAdd;
@@ -9,16 +8,19 @@ import net.megal.uselessadditions.UAddClient;
 import net.megal.uselessadditions.block.UBlocks;
 import net.megal.uselessadditions.enchantment.*;
 import net.megal.uselessadditions.item.UItems;
-import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.enchantment.*;
+import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.damage.DamageSources;
+import net.minecraft.entity.damage.DamageTypes;
+import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.registry.Registries;
-import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.math.MathHelper;
@@ -54,13 +56,33 @@ public abstract class EnchantmentTooltips {
                         if (aug instanceof RepairingEnchantment) {
                             tooltip.add(TAB.copy().append(Text.translatable("enchantment.tooltip.repair_frequency").append(Text.literal(SPACE + (30 / level) + "s"))).formatted(Formatting.ITALIC).styled(style -> style.withColor(STAT_COLOR)));
                         }
-                        if (aug.getDamage(level) != 0) {
-                            float f = aug.getDamage(level);
+                        if (aug.getDamageTooltip(level) != 0) {
+                            float f = aug.getDamageTooltip(level);
                             tooltip.add(TAB.copy().append(Text.translatable("enchantment.tooltip.damage").append(Text.literal(SPACE + (f >= 0 ? ADD : SUBTRACT) + f))).formatted(Formatting.ITALIC).styled(style -> style.withColor(STAT_COLOR)));
+                        }
+                        if (aug.getMiningSpeed(level, null) != 0) {
+                            float f = aug.getMiningSpeed(level, null);
+                            tooltip.add(TAB.copy().append(Text.translatable("enchantment.tooltip.efficiency").append(Text.literal(SPACE + (f >= 0 ? ADD : SUBTRACT) + f))).formatted(Formatting.ITALIC).styled(style -> style.withColor(STAT_COLOR)));
+                        }
+                        if (aug.getMiningMultiplierTooltip(level) != 1) {
+                            float f = aug.getMiningMultiplierTooltip(level);
+                            tooltip.add(TAB.copy().append(Text.translatable("enchantment.tooltip.efficiency").append(Text.literal(SPACE + MULTIPLY + f))).formatted(Formatting.ITALIC).styled(style -> style.withColor(STAT_COLOR)));
                         }
                         if (aug.getDurability(level) != 0) {
                             int ii = aug.getDurability(level);
                             tooltip.add(TAB.copy().append(Text.translatable("enchantment.tooltip.durability").append(Text.literal(SPACE + (ii >= 0 ? ADD : SUBTRACT) + ii))).formatted(Formatting.ITALIC).styled(style -> style.withColor(STAT_COLOR)));
+                        }
+                        if (aug.getProtectionTooltip(level) != 0) {
+                            float f = aug.getProtectionTooltip(level);
+                            tooltip.add(TAB.copy().append(Text.translatable("enchantment.tooltip.protection").append(Text.literal(SPACE + (f >= 0 ? ADD : SUBTRACT) + f))).formatted(Formatting.ITALIC).styled(style -> style.withColor(STAT_COLOR)));
+                        }
+                        if (aug.tickEffects(level) != null) {
+                            for (StatusEffectInstance effect : aug.tickEffects(level)) {
+                                StatusEffect type = effect.getEffectType();
+                                tooltip.add(TAB.copy().append(Text.translatable(type.getTranslationKey())).formatted(Formatting.ITALIC).styled(style -> style.withColor(STAT_COLOR)));
+                                tooltip.add(TAB.copy().append(TAB.copy().append(Text.translatable("enchantment.tooltip.duration").append(Text.literal(SPACE + effect.getDuration() / 20f + "s"))).formatted(Formatting.ITALIC).styled(style -> style.withColor(STAT_COLOR))));
+                                tooltip.add(TAB.copy().append(TAB.copy().append(Text.translatable("enchantment.tooltip.amplifier").append(Text.literal(SPACE + (effect.getAmplifier() + 1)))).formatted(Formatting.ITALIC).styled(style -> style.withColor(STAT_COLOR))));
+                            }
                         }
                         if (aug.getStatusDuration(level) > 0) {
                             tooltip.add(TAB.copy().append(Text.translatable("enchantment.tooltip.duration").append(Text.literal(SPACE + aug.getStatusDuration(level) / 20f + "s"))).formatted(Formatting.ITALIC).styled(style -> style.withColor(STAT_COLOR)));

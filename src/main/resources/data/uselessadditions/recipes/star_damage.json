@@ -1,0 +1,16 @@
+{
+  "type": "uselessadditions:smithing_no_nbt_transform",
+  "template": {
+    "tag": "c:smithing_hammers"
+  },
+  "base": {
+    "item": "minecraft:nether_star"
+  },
+  "addition": {
+    "item": "minecraft:diamond_sword"
+  },
+  "result": {
+    "item": "uselessadditions:star_damage",
+    "count": 1
+  }
+}

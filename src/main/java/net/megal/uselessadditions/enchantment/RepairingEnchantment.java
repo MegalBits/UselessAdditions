@@ -25,13 +25,10 @@ public class RepairingEnchantment extends AugmentEnchantment {
     public int getMaxPower(int level) {
         return 1;
     }
-
     @Override
     public int getMaxLevel() {
         return 2;
     }
-
-
     @Override
     public boolean isAcceptableItem(ItemStack stack) {
         return false;

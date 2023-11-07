@@ -21,6 +21,24 @@
           "predicate_type": "minecraft:tag_match",
           "tag": "minecraft:deepslate_ore_replaceables"
         }
+      },
+      {
+        "state": {
+          "Name": "uselessadditions:nether_dolphin_ore"
+        },
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "minecraft:base_stone_nether"
+        }
+      },
+      {
+        "state": {
+          "Name": "uselessadditions:end_dolphin_ore"
+        },
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "c:end_stones"
+        }
       }
     ]
   }
