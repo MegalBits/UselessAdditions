@@ -257,12 +257,16 @@ public class ULootTables {
                     2);
             shardLootBuilder(id, EntityType.VINDICATOR, UItems.SMALL_ILLAGER_SHARD, tableBuilder, source,
                     2);
+            shardLootBuilder(id, EntityType.WANDERING_TRADER, UItems.SMALL_VILLAGER_SHARD, tableBuilder, source,
+                    2);
             shardLootBuilder(id, EntityType.WARDEN, UItems.SMALL_WARDEN_SHARD, tableBuilder, source,
                     2);
             entityLootBuilder(id, EntityType.WARDEN, tableBuilder, source, LootPool.builder()
                     .conditionally(KilledByPlayerLootCondition.builder())
                     .with(ItemEntry.builder(UItems.ANCIENT_SHARD).apply(uniformNumberBuilder(4,16))
                     ));
+            shardLootBuilder(id, EntityType.WITCH, UItems.SMALL_ILLAGER_SHARD, tableBuilder, source,
+                    2);
             shardLootBuilder(id, EntityType.WITHER_SKELETON, UItems.SMALL_WITHER_SKELETON_SHARD, tableBuilder, source,
                     2);
             entityLootBuilder(id, EntityType.WITHER_SKELETON, tableBuilder, source, LootPool.builder()
