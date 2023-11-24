@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 32",
+    "321",
+    "21 "
+  ],
+  "key": {
+    "1": {
+      "item": "uselessadditions:exotic_dust"
+    },
+    "2": {
+      "item": "uselessadditions:ghast_shard"
+    },
+    "3": {
+      "item": "uselessadditions:small_ghast_shard"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:fireball_gland",
+    "count": 1
+  }
+}

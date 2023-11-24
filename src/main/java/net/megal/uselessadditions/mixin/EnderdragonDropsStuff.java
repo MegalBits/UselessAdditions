@@ -2,7 +2,9 @@ package net.megal.uselessadditions.mixin;
 
 import net.megal.uselessadditions.UAdd;
 import net.megal.uselessadditions.item.UItems;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ItemEntity;
+import net.minecraft.entity.LightningEntity;
 import net.minecraft.entity.boss.dragon.EnderDragonEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;

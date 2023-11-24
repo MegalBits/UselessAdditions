@@ -96,13 +96,6 @@ public class EnhancementAugmentRecipe implements EnhancementRecipe {
                 EnchantmentHelper.set(map, stack);
             }
         }
-
-        if (naturalMendingItems.contains(stack.getItem())) {
-            stack.addEnchantment(UEnchantments.NATURAL_MENDING, 1);
-        }
-        if (autoSmeltItems.contains(stack.getItem())) {
-            stack.addEnchantment(UEnchantments.AUTO_SMELT, 1);
-        }
         return stack;
     }
 

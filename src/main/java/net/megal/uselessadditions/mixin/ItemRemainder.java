@@ -10,6 +10,4 @@ public interface ItemRemainder {
     @Accessor("recipeRemainder")
     @Mutable
     public void setRecipeRemainder(Item recipeRemainder);
-
-
 }

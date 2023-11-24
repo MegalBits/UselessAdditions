@@ -8,27 +8,19 @@ import me.shedaniel.rei.api.client.registry.display.DisplayRegistry;
 import me.shedaniel.rei.api.client.registry.entry.EntryRegistry;
 import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 import me.shedaniel.rei.api.common.entry.EntryIngredient;
-import me.shedaniel.rei.api.common.plugins.REIPlugin;
 import me.shedaniel.rei.api.common.util.EntryIngredients;
 import me.shedaniel.rei.api.common.util.EntryStacks;
 import me.shedaniel.rei.plugin.common.displays.crafting.DefaultCustomDisplay;
 import net.megal.uselessadditions.UAdd;
 import net.megal.uselessadditions.block.UBlocks;
 import net.megal.uselessadditions.item.SpawnEgg;
-import net.megal.uselessadditions.item.UItems;
 import net.megal.uselessadditions.recipe.EnhancementAugmentRecipe;
 import net.megal.uselessadditions.recipe.SmithingNoNbtRecipe;
-import net.megal.uselessadditions.recipe.URecipes;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionUtil;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.registry.Registries;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.tag.TagKey;
-import net.minecraft.util.Identifier;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -38,7 +30,6 @@ public class UAddREIClientPlugin implements REIClientPlugin {
 
     public static final CategoryIdentifier<SmithingNoNbtDisplay> SMITHING_NO_NBT = CategoryIdentifier.of(UAdd.MOD_ID, "smithing_no_nbt");
     public static final CategoryIdentifier<EnhancementDisplay> ENHANCEMENT = CategoryIdentifier.of(UAdd.MOD_ID, "enhancement");
-    public static final CategoryIdentifier<EnhancementDisplay> SPAWNER_RECIPE = CategoryIdentifier.of(UAdd.MOD_ID, "spawner_recipe");
     @Override
     public void registerCategories(CategoryRegistry registry) {
         registry.add(new SmithingNoNbtCategory());

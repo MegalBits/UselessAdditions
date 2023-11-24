@@ -67,6 +67,9 @@ public class AugmentEnchantment extends UEnchantment {
     public @Nullable List<StatusEffectInstance> tickEffects(int level) {
         return null;
     }
+    public boolean tickEffectCondition(LivingEntity user, ItemStack stack, int level) {
+        return true;
+    }
     public void equippedTick(LivingEntity user, ItemStack stack, int level) {}
     //Used exclusively for tooltips
     public float getDamageTooltip(int level) {

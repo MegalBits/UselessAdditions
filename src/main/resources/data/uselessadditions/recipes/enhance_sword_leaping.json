@@ -1,0 +1,15 @@
+{
+  "type": "uselessadditions:enhancement_augment",
+  "template": {
+    "tag": "c:smithing_hammers"
+  },
+  "base": {
+    "tag": "c:boots"
+  },
+  "addition": {
+    "item": "uselessadditions:frog_leg"
+  },
+  "modifier": {
+    "enchantment": "uselessadditions:leaping"
+  }
+}

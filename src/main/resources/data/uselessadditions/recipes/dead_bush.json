@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "111",
+    "121",
+    "111"
+  ],
+  "key": {
+    "1": {
+      "tag": "minecraft:saplings"
+    },
+    "2": {
+      "tag": "uselessadditions:undead_essence"
+    }
+  },
+  "result": {
+    "item": "minecraft:dead_bush",
+    "count": 8
+  }
+}

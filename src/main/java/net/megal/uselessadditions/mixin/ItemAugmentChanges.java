@@ -73,7 +73,7 @@ public abstract class ItemAugmentChanges {
                                 ignoredEffects.add(effect);
                             }
                         }
-                        if (aug.tickEffects(level) != null) {
+                        if (aug.tickEffects(level) != null && aug.tickEffectCondition(livingEntity, stack, level)) {
                             for (StatusEffectInstance effect : aug.tickEffects(level)) {
                                 StatusEffect type = effect.getEffectType();
                                 if (ignoredEffects.contains(type)) continue;

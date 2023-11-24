@@ -44,7 +44,7 @@ public class WaterBreathingEnchantment extends AugmentEnchantment {
     }
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
-        if (target instanceof LivingEntity) ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.WATER_BREATHING, getStatusDuration(level), 0));
+        if (target instanceof LivingEntity) ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.WATER_BREATHING, getStatusDuration(level), getAmplifier(level)));
     }
     @Override
     public int getStatusDuration(int level) {

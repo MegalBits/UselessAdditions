@@ -3,6 +3,7 @@ package net.megal.uselessadditions.enchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -37,12 +38,16 @@ public class TurtleEnchantment extends AugmentEnchantment {
     public boolean canAccept(Enchantment other) {
         return super.canAccept(other);
     }
-
     @Override
     public @Nullable List<StatusEffectInstance> tickEffects(int level) {
         return List.of(
                 new StatusEffectInstance(StatusEffects.WATER_BREATHING, level * 40 + 20, 0, true, true, true)
         );
+    }
+
+    @Override
+    public boolean tickEffectCondition(LivingEntity user, ItemStack stack, int level) {
+        return user.isSubmergedInWater();
     }
 
     @Override

@@ -1,7 +1,6 @@
 package net.megal.uselessadditions;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
@@ -15,7 +14,8 @@ import net.megal.uselessadditions.recipe.URecipes;
 import net.megal.uselessadditions.screen.UScreens;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -24,6 +24,7 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.VillagerProfession;
@@ -31,7 +32,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.UUID;
 
 
 public class UAdd implements ModInitializer {
@@ -62,6 +65,41 @@ public class UAdd implements ModInitializer {
         autoSmeltItems.add(UItems.BLAZE_METAL_AXE);
         autoSmeltItems.add(UItems.BLAZE_METAL_HOE);
     }
+    private record VelocityCalculationValue(Vec3d pos, float movementTime, double velocity, float lastMove, float f) {}
+    private static final HashMap<UUID, VelocityCalculationValue> playerLastPos = new HashMap<>();
+    private static final HashMap<UUID, VelocityCalculationValue> mobLastPos = new HashMap<>();
+
+    public static List<?> calculateVelocity(LivingEntity entity) {
+        UUID uuid = entity.getUuid();
+        Vec3d pos = entity.getPos();
+        double vel = 0;
+        float movementTime = 0;
+        float lastMove = 0;
+        if (entity instanceof PlayerEntity) {
+            if (playerLastPos.containsKey(uuid)) {
+                VelocityCalculationValue calc = playerLastPos.get(uuid);
+                if (pos != playerLastPos.get(uuid).pos) {
+                    vel = pos.distanceTo(calc.pos)*20;
+                }
+                movementTime = calc.movementTime;
+                lastMove = calc.lastMove;
+            }
+            playerLastPos.put(uuid, new VelocityCalculationValue(pos, movementTime, vel, lastMove, 20f));
+        }
+        else {
+            if (mobLastPos.containsKey(uuid)) {
+                VelocityCalculationValue calc = mobLastPos.get(uuid);
+                if (pos != mobLastPos.get(uuid).pos) {
+                    vel = pos.distanceTo(calc.pos)*20;
+                }
+                movementTime = calc.movementTime;
+                lastMove = calc.lastMove;
+            }
+            mobLastPos.put(uuid, new VelocityCalculationValue(pos, movementTime, vel, lastMove, 20f));
+        }
+        return List.of(vel, movementTime, lastMove);
+    }
+
     private void addCompostable() {
         compostableItem(UItems.DIRT_PILE, ComposterRarities.EXTREMELY_LOW);
         compostableItem(UItems.LESSER_GOLDEN_APPLE, ComposterRarities.HIGH);
@@ -113,7 +151,26 @@ public class UAdd implements ModInitializer {
         });
 
         ServerTickEvents.END_SERVER_TICK.register(server -> {
-
+            for (UUID uuid : playerLastPos.keySet()) {
+                VelocityCalculationValue calc = playerLastPos.get(uuid);
+                Vec3d pos = calc.pos;
+                float movementTime = calc.movementTime;
+                double velocity = calc.velocity;
+                float lastMove = calc.lastMove;
+                float f = calc.f;
+                if (f-1 < 30) playerLastPos.put(uuid, new VelocityCalculationValue(pos, velocity > 0 ? movementTime+1 : 0, velocity, velocity == 0 ? lastMove+1 : 0, f-1));
+                else playerLastPos.remove(uuid);
+            }
+            for (UUID uuid : mobLastPos.keySet()) {
+                VelocityCalculationValue calc = mobLastPos.get(uuid);
+                Vec3d pos = calc.pos;
+                float movementTime = calc.movementTime;
+                double velocity = calc.velocity;
+                float lastMove = calc.lastMove;
+                float f = calc.f;
+                if (f-1 < 30) mobLastPos.put(uuid, new VelocityCalculationValue(pos, velocity > 0 ? movementTime+1 : 0, velocity, lastMove+1, f-1));
+                else mobLastPos.remove(uuid);
+            }
         });
 
         //Loads status effects

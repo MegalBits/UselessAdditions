@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "333",
+    "343",
     "212",
     "111"
   ],
@@ -14,6 +14,9 @@
     },
     "3": {
       "item": "minecraft:leather"
+    },
+    "4": {
+      "item": "uselessadditions:ruby"
     }
   },
   "result": {

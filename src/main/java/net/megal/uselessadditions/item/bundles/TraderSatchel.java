@@ -31,7 +31,7 @@ import java.util.stream.Stream;
 public class TraderSatchel extends Item {
 
     private static final String ITEMS_KEY = "Items";
-    public static int MAX_STORAGE = 64;
+    public static int MAX_STORAGE = 9;
     public static final int BUNDLE_ITEM_OCCUPANCY = 4;
     public TraderSatchel(Settings settings) {
         super(settings);
@@ -49,7 +49,7 @@ public class TraderSatchel extends Item {
         if (itemStack.isEmpty()) {
             this.playRemoveOneSound(player);
             TraderSatchel.removeFirstStack(stack).ifPresent(removedStack -> TraderSatchel.addToBundle(stack, slot.insertStack((ItemStack)removedStack)));
-        } else if (itemStack.getItem().canBeNested()) {
+        } else if (itemStack.getItem().canBeNested() && itemStack.getItem().getMaxCount() == 1) {
             int i = (MAX_STORAGE - TraderSatchel.getBundleOccupancy(stack)) / TraderSatchel.getItemOccupancy(itemStack);
             int j = TraderSatchel.addToBundle(stack, slot.takeStackRange(itemStack.getCount(), i, player));
             if (j > 0) {

@@ -7,7 +7,7 @@
     "tag": "minecraft:pickaxes"
   },
   "addition": {
-    "item": "minecraft:end_crystal"
+    "item": "uselessadditions:fireball_gland"
   },
   "modifier": {
     "enchantment": "uselessadditions:obsidian_smashing"

@@ -5,13 +5,9 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.megal.uselessadditions.UAdd;
 import net.megal.uselessadditions.item.base.*;
 import net.megal.uselessadditions.item.bundles.*;
-import net.megal.uselessadditions.magic.Spell;
-import net.megal.uselessadditions.magic.USpells;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.item.*;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.nbt.NbtList;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.Registries;
 import net.minecraft.text.Text;
@@ -40,6 +36,7 @@ public class UItems {
     public static final Item DONKEY_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "donkey_shard"), createItem());
     public static final Item ENDERMAN_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "enderman_shard"), createItem());
     public static final Item ENDERMITE_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "endermite_shard"), createItem());
+    public static final Item EVOKER_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "evoker_shard"), createItem());
     public static final Item FOX_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "fox_shard"), createItem());
     public static final Item FROG_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "frog_shard"), createItem());
     public static final Item GHAST_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "ghast_shard"), createItem());
@@ -48,7 +45,6 @@ public class UItems {
     public static final Item GUARDIAN_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "guardian_shard"), createItem());
     public static final Item HOGLIN_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "hoglin_shard"), createItem());
     public static final Item HORSE_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "horse_shard"), createItem());
-    public static final Item ILLAGER_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "illager_shard"), createItem());
     public static final Item IRON_GOLEM_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "iron_golem_shard"), createItem());
     public static final Item LLAMA_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "llama_shard"), createItem());
     public static final Item MAGMA_CUBE_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "magma_cube_shard"), createItem());
@@ -58,6 +54,7 @@ public class UItems {
     public static final Item PHANTOM_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "phantom_shard"), createItem());
     public static final Item PIG_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "pig_shard"), createItem());
     public static final Item PIGLIN_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "piglin_shard"), createItem());
+    public static final Item PILLAGER_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "pillager_shard"), createItem());
     public static final Item POLAR_BEAR_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "polar_bear_shard"), createItem());
     public static final Item PUFFERFISH_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "pufferfish_shard"), createItem());
     public static final Item RABBIT_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "rabbit_shard"), createItem());
@@ -76,6 +73,7 @@ public class UItems {
     public static final Item TURTLE_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "turtle_shard"), createItem());
     public static final Item VEX_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "vex_shard"), createItem());
     public static final Item VILLAGER_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "villager_shard"), createItem());
+    public static final Item VINDICATOR_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "vindicator_shard"), createItem());
     public static final Item WARDEN_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "warden_shard"), createItem());
     public static final Item WITHER_SKELETON_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "wither_skeleton_shard"), createItem());
     public static final Item WOLF_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "wolf_shard"), createItem());
@@ -95,6 +93,7 @@ public class UItems {
     public static final Item SMALL_DONKEY_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_donkey_shard"), createItem());
     public static final Item SMALL_ENDERMAN_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_enderman_shard"), createItem());
     public static final Item SMALL_ENDERMITE_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_endermite_shard"), createItem());
+    public static final Item SMALL_EVOKER_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_evoker_shard"), createItem());
     public static final Item SMALL_FOX_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_fox_shard"), createItem());
     public static final Item SMALL_FROG_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_frog_shard"), createItem());
     public static final Item SMALL_GHAST_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_ghast_shard"), createItem());
@@ -103,7 +102,6 @@ public class UItems {
     public static final Item SMALL_GUARDIAN_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_guardian_shard"), createItem());
     public static final Item SMALL_HOGLIN_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_hoglin_shard"), createItem());
     public static final Item SMALL_HORSE_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_horse_shard"), createItem());
-    public static final Item SMALL_ILLAGER_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_illager_shard"), createItem());
     public static final Item SMALL_IRON_GOLEM_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_iron_golem_shard"), createItem());
     public static final Item SMALL_LLAMA_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_llama_shard"), createItem());
     public static final Item SMALL_MAGMA_CUBE_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_magma_cube_shard"), createItem());
@@ -113,6 +111,7 @@ public class UItems {
     public static final Item SMALL_PHANTOM_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_phantom_shard"), createItem());
     public static final Item SMALL_PIG_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_pig_shard"), createItem());
     public static final Item SMALL_PIGLIN_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_piglin_shard"), createItem());
+    public static final Item SMALL_PILLAGER_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_pillager_shard"), createItem());
     public static final Item SMALL_POLAR_BEAR_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_polar_bear_shard"), createItem());
     public static final Item SMALL_PUFFERFISH_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_pufferfish_shard"), createItem());
     public static final Item SMALL_RABBIT_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_rabbit_shard"), createItem());
@@ -131,6 +130,7 @@ public class UItems {
     public static final Item SMALL_TURTLE_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_turtle_shard"), createItem());
     public static final Item SMALL_VEX_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_vex_shard"), createItem());
     public static final Item SMALL_VILLAGER_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_villager_shard"), createItem());
+    public static final Item SMALL_VINDICATOR_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_vindicator_shard"), createItem());
     public static final Item SMALL_WARDEN_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_warden_shard"), createItem());
     public static final Item SMALL_WITHER_SKELETON_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_wither_skeleton_shard"), createItem());
     public static final Item SMALL_WOLF_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_wolf_shard"), createItem());
@@ -210,7 +210,6 @@ public class UItems {
     public static final TooltipItem BEE_STINGER = registerItem(new Identifier(UAdd.MOD_ID, "bee_stinger"), createTooltipItem());
     public static final TooltipItem PUFFERFISH_SPINE = registerItem(new Identifier(UAdd.MOD_ID, "pufferfish_spine"), createTooltipItem());
     public static final TooltipItem TOY_FISH = registerItem(new Identifier(UAdd.MOD_ID, "toy_fish"), createTooltipItem());
-    public static final TooltipItem FROG_LEG = registerItem(new Identifier(UAdd.MOD_ID, "frog_leg"), createTooltipItem());
     public static final TooltipItem DOLPHIN_FIN = registerItem(new Identifier(UAdd.MOD_ID, "dolphin_fin"), createTooltipItem());
     public static final TooltipItem BIG_INK_SAC = registerItem(new Identifier(UAdd.MOD_ID, "big_ink_sac"), createTooltipItem());
     public static final TooltipItem BIG_GLOW_INK_SAC = registerItem(new Identifier(UAdd.MOD_ID, "big_glow_ink_sac"), createTooltipItem());
@@ -218,6 +217,7 @@ public class UItems {
     public static final TooltipItem ARID_CLOTH = registerItem(new Identifier(UAdd.MOD_ID, "arid_cloth"), createTooltipItem());
     public static final TooltipItem FRIGID_CLOTH = registerItem(new Identifier(UAdd.MOD_ID, "frigid_cloth"), createTooltipItem());
     public static final TooltipItem PHANTOM_HEART = registerItem(new Identifier(UAdd.MOD_ID, "phantom_heart"), createTooltipItem());
+    public static final TooltipItem FIREBALL_GLAND = registerItem(new Identifier(UAdd.MOD_ID, "fireball_gland"), createTooltipItem());
     public static final GlintItem MAGIC_FEATHER = registerItem(new Identifier(UAdd.MOD_ID, "magic_feather"), new GlintItem(new FabricItemSettings().rarity(Rarity.RARE)));
     public static final Item DRAGON_SCALE = registerItem(new Identifier(UAdd.MOD_ID, "dragon_scale"), new Item(new FabricItemSettings().fireproof().rarity(Rarity.UNCOMMON)));
     public static final Item DRAGON_HEART = registerItem(new Identifier(UAdd.MOD_ID, "dragon_heart"), new Item(new FabricItemSettings().fireproof().rarity(Rarity.EPIC)));
@@ -282,9 +282,11 @@ public class UItems {
     public static final UPickaxeItem BLAZE_METAL_PICKAXE = registerItem(new Identifier(UAdd.MOD_ID, "blaze_metal_pickaxe"), new UPickaxeItem(UToolMaterials.BLAZE_METAL, 1, -2.8F, new FabricItemSettings()));
     public static final UAxeItem BLAZE_METAL_AXE = registerItem(new Identifier(UAdd.MOD_ID, "blaze_metal_axe"), new UAxeItem(UToolMaterials.BLAZE_METAL, 5.0F, -3.0F, new FabricItemSettings()));
     public static final UHoeItem BLAZE_METAL_HOE = registerItem(new Identifier(UAdd.MOD_ID, "blaze_metal_hoe"), new UHoeItem(UToolMaterials.BLAZE_METAL_P5, -3, 0.0F, new FabricItemSettings()));
-    //Magic Stuff
-    public static final SpellBook SPELL_BOOK = registerItem(new Identifier(UAdd.MOD_ID, "spell_book"), new SpellBook(new FabricItemSettings().maxCount(1)));
-    public static final SpellTome SPELL_TOME = registerItem(new Identifier(UAdd.MOD_ID, "spell_tome"), new SpellTome(new FabricItemSettings().maxCount(1)));
+    public static final USwordItem DRAGON_SCALE_SWORD = registerItem(new Identifier(UAdd.MOD_ID, "dragon_scale_sword"), new USwordItem(UToolMaterials.DRAGON_SCALE, 3, -2.4F, new FabricItemSettings()));
+    public static final UShovelItem DRAGON_SCALE_SHOVEL = registerItem(new Identifier(UAdd.MOD_ID, "dragon_scale_shovel"), new UShovelItem(UToolMaterials.DRAGON_SCALE, 1.5F, -3.0F, new FabricItemSettings()));
+    public static final UPickaxeItem DRAGON_SCALE_PICKAXE = registerItem(new Identifier(UAdd.MOD_ID, "dragon_scale_pickaxe"), new UPickaxeItem(UToolMaterials.DRAGON_SCALE, 1, -2.8F, new FabricItemSettings()));
+    public static final UAxeItem DRAGON_SCALE_AXE = registerItem(new Identifier(UAdd.MOD_ID, "dragon_scale_axe"), new UAxeItem(UToolMaterials.DRAGON_SCALE, 5.0F, -3.0F, new FabricItemSettings()));
+    public static final UHoeItem DRAGON_SCALE_HOE = registerItem(new Identifier(UAdd.MOD_ID, "dragon_scale_hoe"), new UHoeItem(UToolMaterials.DRAGON_SCALE, -4, 0.0F, new FabricItemSettings()));
     //Armors
     public static final ArmorItem DRAGON_SCALE_HELMET = registerItem(new Identifier(UAdd.MOD_ID, "dragon_scale_helmet"), new ArmorItem(UArmorMaterials.DRAGON_SCALE, ArmorItem.Type.HELMET, new FabricItemSettings().fireproof()));
     public static final ArmorItem DRAGON_SCALE_CHESTPLATE = registerItem(new Identifier(UAdd.MOD_ID, "dragon_scale_chestplate"), new ArmorItem(UArmorMaterials.DRAGON_SCALE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().fireproof()));
@@ -300,7 +302,9 @@ public class UItems {
     //Food
     public static final AllayCookie ALLAY_COOKIE = registerItem(new Identifier(UAdd.MOD_ID, "allay_cookie"), new AllayCookie(new FabricItemSettings().food(UFoodComponents.ALLAY_COOKIE), Formatting.GRAY));
     public static final Item BONELESS_BAT_WING = registerItem(new Identifier(UAdd.MOD_ID, "boneless_bat_wing"), new Item(new FabricItemSettings().food(UFoodComponents.BAT_WING)));
-    public static final Item BAT_WING = registerItem(new Identifier(UAdd.MOD_ID, "bat_wing"), new Item(new FabricItemSettings().recipeRemainder(BONELESS_BAT_WING))); //Position only swapped with boneless ver due to using it as a recipe remainder
+    public static final Item BAT_WING = registerItem(new Identifier(UAdd.MOD_ID, "bat_wing"), new Item(new FabricItemSettings().recipeRemainder(BONELESS_BAT_WING)));
+    public static final TooltipItem FROG_LEG = registerItem(new Identifier(UAdd.MOD_ID, "frog_leg"), new TooltipItem(new FabricItemSettings().food(UFoodComponents.FROG_LEG), Formatting.GRAY));
+    public static final StewItem FROG_LEG_STEW = registerItem(new Identifier(UAdd.MOD_ID, "frog_leg_stew"), new StewItem(new FabricItemSettings().food(UFoodComponents.FROG_LEG_STEW)));
     public static final Item RAW_AXOLOTL = registerItem(new Identifier(UAdd.MOD_ID, "raw_axolotl"), new Item(new FabricItemSettings().food(UFoodComponents.RAW_AXOLOTL)));
     public static final Item COOKED_AXOLOTL = registerItem(new Identifier(UAdd.MOD_ID, "cooked_axolotl"), new Item(new FabricItemSettings().food(UFoodComponents.COOKED_AXOLOTL)));
     public static final Item DRAGON_FLESH = registerItem(new Identifier(UAdd.MOD_ID, "dragon_flesh"), new Item(new FabricItemSettings().food(UFoodComponents.DRAGON_FLESH).fireproof()));
@@ -348,17 +352,6 @@ public class UItems {
     private static <T extends Item> T registerItem(Identifier id, T item) {
         return Registry.register(Registries.ITEM, id, item);
     }
-    public static ItemStack createSpellBookWithSpells(List<Spell> spells) {
-        ItemStack stack = SPELL_BOOK.getDefaultStack();
-        NbtCompound nbt = new NbtCompound();
-        NbtList nbtList = new NbtList();
-        for (Spell spell : spells) {
-            nbtList.add(spell.writeToNbt());
-        }
-        nbt.put("Spells", nbtList);
-        stack.setNbt(nbt);
-        return stack;
-    }
     public static void itemTabs() {
         ItemGroupEvents.modifyEntriesEvent(UGroups.UAddTab).register(entries -> {
             // Mob Ore Shards
@@ -377,6 +370,7 @@ public class UItems {
             entries.add(DONKEY_SHARD.getDefaultStack());
             entries.add(ENDERMAN_SHARD.getDefaultStack());
             entries.add(ENDERMITE_SHARD.getDefaultStack());
+            entries.add(EVOKER_SHARD.getDefaultStack());
             entries.add(FOX_SHARD.getDefaultStack());
             entries.add(FROG_SHARD.getDefaultStack());
             entries.add(GHAST_SHARD.getDefaultStack());
@@ -385,7 +379,6 @@ public class UItems {
             entries.add(GUARDIAN_SHARD.getDefaultStack());
             entries.add(HOGLIN_SHARD.getDefaultStack());
             entries.add(HORSE_SHARD.getDefaultStack());
-            entries.add(ILLAGER_SHARD.getDefaultStack());
             entries.add(IRON_GOLEM_SHARD.getDefaultStack());
             entries.add(LLAMA_SHARD.getDefaultStack());
             entries.add(MAGMA_CUBE_SHARD.getDefaultStack());
@@ -395,6 +388,7 @@ public class UItems {
             entries.add(PHANTOM_SHARD.getDefaultStack());
             entries.add(PIG_SHARD.getDefaultStack());
             entries.add(PIGLIN_SHARD.getDefaultStack());
+            entries.add(PILLAGER_SHARD.getDefaultStack());
             entries.add(POLAR_BEAR_SHARD.getDefaultStack());
             entries.add(PUFFERFISH_SHARD.getDefaultStack());
             entries.add(RABBIT_SHARD.getDefaultStack());
@@ -413,6 +407,7 @@ public class UItems {
             entries.add(TURTLE_SHARD.getDefaultStack());
             entries.add(VEX_SHARD.getDefaultStack());
             entries.add(VILLAGER_SHARD.getDefaultStack());
+            entries.add(VINDICATOR_SHARD.getDefaultStack());
             entries.add(WARDEN_SHARD.getDefaultStack());
             entries.add(WITHER_SKELETON_SHARD.getDefaultStack());
             entries.add(WOLF_SHARD.getDefaultStack());
@@ -432,6 +427,7 @@ public class UItems {
             entries.add(SMALL_DONKEY_SHARD.getDefaultStack());
             entries.add(SMALL_ENDERMAN_SHARD.getDefaultStack());
             entries.add(SMALL_ENDERMITE_SHARD.getDefaultStack());
+            entries.add(SMALL_EVOKER_SHARD.getDefaultStack());
             entries.add(SMALL_FOX_SHARD.getDefaultStack());
             entries.add(SMALL_FROG_SHARD.getDefaultStack());
             entries.add(SMALL_GHAST_SHARD.getDefaultStack());
@@ -440,7 +436,6 @@ public class UItems {
             entries.add(SMALL_GUARDIAN_SHARD.getDefaultStack());
             entries.add(SMALL_HOGLIN_SHARD.getDefaultStack());
             entries.add(SMALL_HORSE_SHARD.getDefaultStack());
-            entries.add(SMALL_ILLAGER_SHARD.getDefaultStack());
             entries.add(SMALL_IRON_GOLEM_SHARD.getDefaultStack());
             entries.add(SMALL_LLAMA_SHARD.getDefaultStack());
             entries.add(SMALL_MAGMA_CUBE_SHARD.getDefaultStack());
@@ -450,6 +445,7 @@ public class UItems {
             entries.add(SMALL_PHANTOM_SHARD.getDefaultStack());
             entries.add(SMALL_PIG_SHARD.getDefaultStack());
             entries.add(SMALL_PIGLIN_SHARD.getDefaultStack());
+            entries.add(SMALL_PILLAGER_SHARD.getDefaultStack());
             entries.add(SMALL_POLAR_BEAR_SHARD.getDefaultStack());
             entries.add(SMALL_PUFFERFISH_SHARD.getDefaultStack());
             entries.add(SMALL_RABBIT_SHARD.getDefaultStack());
@@ -468,6 +464,7 @@ public class UItems {
             entries.add(SMALL_TURTLE_SHARD.getDefaultStack());
             entries.add(SMALL_VEX_SHARD.getDefaultStack());
             entries.add(SMALL_VILLAGER_SHARD.getDefaultStack());
+            entries.add(SMALL_VINDICATOR_SHARD.getDefaultStack());
             entries.add(SMALL_WARDEN_SHARD.getDefaultStack());
             entries.add(SMALL_WITHER_SKELETON_SHARD.getDefaultStack());
             entries.add(SMALL_WOLF_SHARD.getDefaultStack());
@@ -548,7 +545,6 @@ public class UItems {
             entries.add(BEE_STINGER.getDefaultStack());
             entries.add(PUFFERFISH_SPINE.getDefaultStack());
             entries.add(TOY_FISH.getDefaultStack());
-            entries.add(FROG_LEG.getDefaultStack());
             entries.add(DOLPHIN_FIN.getDefaultStack());
             entries.add(BIG_INK_SAC.getDefaultStack());
             entries.add(BIG_GLOW_INK_SAC.getDefaultStack());
@@ -556,6 +552,7 @@ public class UItems {
             entries.add(ARID_CLOTH.getDefaultStack());
             entries.add(FRIGID_CLOTH.getDefaultStack());
             entries.add(PHANTOM_HEART.getDefaultStack());
+            entries.add(FIREBALL_GLAND.getDefaultStack());
             entries.add(MAGIC_FEATHER.getDefaultStack());
             entries.add(DRAGON_SCALE.getDefaultStack());
             entries.add(DRAGON_HEART.getDefaultStack());
@@ -620,12 +617,11 @@ public class UItems {
             entries.add(BLAZE_METAL_PICKAXE.getDefaultStack());
             entries.add(BLAZE_METAL_AXE.getDefaultStack());
             entries.add(BLAZE_METAL_HOE.getDefaultStack());
-            // Spell Books
-            entries.add(SPELL_BOOK.getDefaultStack());
-            entries.add(createSpellBookWithSpells(List.of(USpells.BASIC_ARROW)));
-            entries.add(createSpellBookWithSpells(List.of(USpells.FAST_ARROW)));
-            entries.add(createSpellBookWithSpells(List.of(USpells.BASIC_DAMAGE)));
-            entries.add(createSpellBookWithSpells(List.of(USpells.HIGH_DAMAGE)));
+            entries.add(DRAGON_SCALE_SWORD.getDefaultStack());
+            entries.add(DRAGON_SCALE_SHOVEL.getDefaultStack());
+            entries.add(DRAGON_SCALE_PICKAXE.getDefaultStack());
+            entries.add(DRAGON_SCALE_AXE.getDefaultStack());
+            entries.add(DRAGON_SCALE_HOE.getDefaultStack());
             // Armor
             entries.add(DRAGON_SCALE_HELMET.getDefaultStack());
             entries.add(DRAGON_SCALE_CHESTPLATE.getDefaultStack());
@@ -644,13 +640,15 @@ public class UItems {
             entries.add(COOKED_AXOLOTL.getDefaultStack());
             entries.add(BAT_WING.getDefaultStack());
             entries.add(BONELESS_BAT_WING.getDefaultStack());
+            entries.add(FROG_LEG.getDefaultStack());
+            entries.add(FROG_LEG_STEW.getDefaultStack());
             entries.add(DRAGON_FLESH.getDefaultStack());
             entries.add(LESSER_GOLDEN_CARROT.getDefaultStack());
             entries.add(ENCHANTED_GOLDEN_CARROT.getDefaultStack());
             entries.add(MAGIC_CARROT.getDefaultStack());
             entries.add(LESSER_GOLDEN_APPLE.getDefaultStack());
             entries.add(MAGIC_APPLE.getDefaultStack());
-            // Enhancement Table
+            // Tables
             entries.add(ENHANCEMENT_TABLE.asItem().getDefaultStack());
             // Ores
             entries.add(ALLAY_ORE.asItem().getDefaultStack());
@@ -713,7 +711,10 @@ public class UItems {
             entries.add(DEEPSLATE_ENDERMITE_ORE.asItem().getDefaultStack());
             entries.add(NETHER_ENDERMITE_ORE.asItem().getDefaultStack());
             entries.add(END_ENDERMITE_ORE.asItem().getDefaultStack());
-            entries.add(END_ENDERMITE_ORE.asItem().getDefaultStack());
+            entries.add(EVOKER_ORE.asItem().getDefaultStack());
+            entries.add(DEEPSLATE_EVOKER_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_EVOKER_ORE.asItem().getDefaultStack());
+            entries.add(END_EVOKER_ORE.asItem().getDefaultStack());
             entries.add(FOX_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_FOX_ORE.asItem().getDefaultStack());
             entries.add(NETHER_FOX_ORE.asItem().getDefaultStack());
@@ -746,10 +747,6 @@ public class UItems {
             entries.add(DEEPSLATE_HORSE_ORE.asItem().getDefaultStack());
             entries.add(NETHER_HORSE_ORE.asItem().getDefaultStack());
             entries.add(END_HORSE_ORE.asItem().getDefaultStack());
-            entries.add(ILLAGER_ORE.asItem().getDefaultStack());
-            entries.add(DEEPSLATE_ILLAGER_ORE.asItem().getDefaultStack());
-            entries.add(NETHER_ILLAGER_ORE.asItem().getDefaultStack());
-            entries.add(END_ILLAGER_ORE.asItem().getDefaultStack());
             entries.add(IRON_GOLEM_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_IRON_GOLEM_ORE.asItem().getDefaultStack());
             entries.add(NETHER_IRON_GOLEM_ORE.asItem().getDefaultStack());
@@ -786,6 +783,10 @@ public class UItems {
             entries.add(DEEPSLATE_PIGLIN_ORE.asItem().getDefaultStack());
             entries.add(NETHER_PIGLIN_ORE.asItem().getDefaultStack());
             entries.add(END_PIGLIN_ORE.asItem().getDefaultStack());
+            entries.add(PILLAGER_ORE.asItem().getDefaultStack());
+            entries.add(DEEPSLATE_PILLAGER_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_PILLAGER_ORE.asItem().getDefaultStack());
+            entries.add(END_PILLAGER_ORE.asItem().getDefaultStack());
             entries.add(POLAR_BEAR_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_POLAR_BEAR_ORE.asItem().getDefaultStack());
             entries.add(NETHER_POLAR_BEAR_ORE.asItem().getDefaultStack());
@@ -858,6 +859,10 @@ public class UItems {
             entries.add(DEEPSLATE_VILLAGER_ORE.asItem().getDefaultStack());
             entries.add(NETHER_VILLAGER_ORE.asItem().getDefaultStack());
             entries.add(END_VILLAGER_ORE.asItem().getDefaultStack());
+            entries.add(VINDICATOR_ORE.asItem().getDefaultStack());
+            entries.add(DEEPSLATE_VINDICATOR_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_VINDICATOR_ORE.asItem().getDefaultStack());
+            entries.add(END_VINDICATOR_ORE.asItem().getDefaultStack());
             entries.add(WARDEN_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_WARDEN_ORE.asItem().getDefaultStack());
             entries.add(NETHER_WARDEN_ORE.asItem().getDefaultStack());

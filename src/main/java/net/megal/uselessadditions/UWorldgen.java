@@ -16,7 +16,7 @@ public class UWorldgen {
     public static final RegistryKey<PlacedFeature> AXOLOTL_ORE = register(new Identifier(UAdd.MOD_ID,"axolotl_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
     public static final RegistryKey<PlacedFeature> BAT_ORE = register(new Identifier(UAdd.MOD_ID,"bat_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
     public static final RegistryKey<PlacedFeature> BEE_ORE = register(new Identifier(UAdd.MOD_ID,"bee_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
-    public static final RegistryKey<PlacedFeature> BLAZE_ORE = register(new Identifier(UAdd.MOD_ID,"blaze_ore"), BiomeSelectors.foundInTheEnd(), GenerationStep.Feature.UNDERGROUND_ORES);
+    public static final RegistryKey<PlacedFeature> BLAZE_ORE = register(new Identifier(UAdd.MOD_ID,"blaze_ore"), BiomeSelectors.foundInTheNether(), GenerationStep.Feature.UNDERGROUND_ORES);
     public static final RegistryKey<PlacedFeature> CAT_ORE = register(new Identifier(UAdd.MOD_ID,"cat_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
     public static final RegistryKey<PlacedFeature> CAVE_SPIDER_ORE = register(new Identifier(UAdd.MOD_ID,"cave_spider_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
     public static final RegistryKey<PlacedFeature> CHICKEN_ORE = register(new Identifier(UAdd.MOD_ID,"chicken_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
@@ -27,6 +27,7 @@ public class UWorldgen {
     public static final RegistryKey<PlacedFeature> DONKEY_ORE = register(new Identifier(UAdd.MOD_ID,"donkey_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
     public static final RegistryKey<PlacedFeature> ENDERMAN_ORE = register(new Identifier(UAdd.MOD_ID,"enderman_ore"), BiomeSelectors.all(), GenerationStep.Feature.UNDERGROUND_ORES);
     public static final RegistryKey<PlacedFeature> ENDERMITE_ORE = register(new Identifier(UAdd.MOD_ID,"endermite_ore"), BiomeSelectors.foundInTheEnd(), GenerationStep.Feature.UNDERGROUND_ORES);
+    public static final RegistryKey<PlacedFeature> EVOKER_ORE = register(new Identifier(UAdd.MOD_ID,"evoker_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
     public static final RegistryKey<PlacedFeature> FOX_ORE = register(new Identifier(UAdd.MOD_ID,"fox_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
     public static final RegistryKey<PlacedFeature> FROG_ORE = register(new Identifier(UAdd.MOD_ID,"frog_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
     public static final RegistryKey<PlacedFeature> GHAST_ORE = register(new Identifier(UAdd.MOD_ID,"ghast_ore"), BiomeSelectors.foundInTheNether(), GenerationStep.Feature.UNDERGROUND_ORES);
@@ -35,7 +36,6 @@ public class UWorldgen {
     public static final RegistryKey<PlacedFeature> GUARDIAN_ORE = register(new Identifier(UAdd.MOD_ID,"guardian_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
     public static final RegistryKey<PlacedFeature> HOGLIN_ORE = register(new Identifier(UAdd.MOD_ID,"hoglin_ore"), BiomeSelectors.foundInTheNether(), GenerationStep.Feature.UNDERGROUND_ORES);
     public static final RegistryKey<PlacedFeature> HORSE_ORE = register(new Identifier(UAdd.MOD_ID,"horse_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
-    public static final RegistryKey<PlacedFeature> ILLAGER_ORE = register(new Identifier(UAdd.MOD_ID,"illager_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
     public static final RegistryKey<PlacedFeature> IRON_GOLEM_ORE = register(new Identifier(UAdd.MOD_ID,"iron_golem_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
     public static final RegistryKey<PlacedFeature> LLAMA_ORE = register(new Identifier(UAdd.MOD_ID,"llama_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
     public static final RegistryKey<PlacedFeature> MAGMA_CUBE_ORE = register(new Identifier(UAdd.MOD_ID,"magma_cube_ore"), BiomeSelectors.foundInTheNether(), GenerationStep.Feature.UNDERGROUND_ORES);
@@ -45,6 +45,7 @@ public class UWorldgen {
     public static final RegistryKey<PlacedFeature> PHANTOM_ORE = register(new Identifier(UAdd.MOD_ID,"phantom_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
     public static final RegistryKey<PlacedFeature> PIG_ORE = register(new Identifier(UAdd.MOD_ID,"pig_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
     public static final RegistryKey<PlacedFeature> PIGLIN_ORE = register(new Identifier(UAdd.MOD_ID,"piglin_ore"), BiomeSelectors.foundInTheNether(), GenerationStep.Feature.UNDERGROUND_ORES);
+    public static final RegistryKey<PlacedFeature> PILLAGER_ORE = register(new Identifier(UAdd.MOD_ID,"pillager_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
     public static final RegistryKey<PlacedFeature> POLAR_BEAR_ORE = register(new Identifier(UAdd.MOD_ID,"polar_bear_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
     public static final RegistryKey<PlacedFeature> PUFFERFISH_ORE = register(new Identifier(UAdd.MOD_ID,"pufferfish_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
     public static final RegistryKey<PlacedFeature> RABBIT_ORE = register(new Identifier(UAdd.MOD_ID,"rabbit_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
@@ -63,6 +64,7 @@ public class UWorldgen {
     public static final RegistryKey<PlacedFeature> TURTLE_ORE = register(new Identifier(UAdd.MOD_ID,"turtle_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
     public static final RegistryKey<PlacedFeature> VEX_ORE = register(new Identifier(UAdd.MOD_ID,"vex_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
     public static final RegistryKey<PlacedFeature> VILLAGER_ORE = register(new Identifier(UAdd.MOD_ID,"villager_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
+    public static final RegistryKey<PlacedFeature> VINDICATOR_ORE = register(new Identifier(UAdd.MOD_ID,"vindicator_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
     public static final RegistryKey<PlacedFeature> WARDEN_ORE = register(new Identifier(UAdd.MOD_ID,"warden_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
     public static final RegistryKey<PlacedFeature> WITHER_SKELETON_ORE = register(new Identifier(UAdd.MOD_ID,"wither_skeleton_ore"), BiomeSelectors.foundInTheNether(), GenerationStep.Feature.UNDERGROUND_ORES);
     public static final RegistryKey<PlacedFeature> WOLF_ORE = register(new Identifier(UAdd.MOD_ID,"wolf_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);

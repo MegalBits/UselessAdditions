@@ -15,9 +15,6 @@ import java.util.HashMap;
 import java.util.UUID;
 
 public class SplintersEffect extends StatusEffect {
-    HashMap<UUID, Vec3d> playerLastPos = new HashMap<>();
-    HashMap<UUID, Vec3d> mobLastPos = new HashMap<>();
-    Vec3d defaultPos = Vec3d.ZERO;
     protected SplintersEffect(StatusEffectCategory category, int color) {
         super(category, color);
     }
@@ -28,22 +25,7 @@ public class SplintersEffect extends StatusEffect {
     @Override
     public void applyUpdateEffect(LivingEntity entity, int amplifier) {
         if (!entity.getWorld().isClient) {
-            UUID uuid = entity.getUuid();
-            Vec3d pos = entity.getPos();
-            float maxSpeed = 2.5f;
-            double vel = 0;
-            if (entity instanceof PlayerEntity) {
-                if (pos != playerLastPos.getOrDefault(uuid, defaultPos)) {
-                    vel = pos.distanceTo(playerLastPos.getOrDefault(uuid, defaultPos))*20;
-                    playerLastPos.put(uuid, pos);
-                }
-            } else {
-                if (pos != mobLastPos.getOrDefault(uuid, defaultPos)) {
-                    vel = pos.distanceTo(mobLastPos.getOrDefault(uuid, defaultPos))*20;
-                    mobLastPos.put(uuid, pos);
-                }
-            }
-            if (vel > maxSpeed) {
+            if ((double)UAdd.calculateVelocity(entity).get(0) > 2.5d) {
                 entity.damage(entity.getDamageSources().magic(), amplifier+1);
             }
         }

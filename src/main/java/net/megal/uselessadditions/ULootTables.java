@@ -2,31 +2,19 @@ package net.megal.uselessadditions;
 
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.fabricmc.fabric.api.loot.v2.LootTableSource;
-import net.megal.uselessadditions.enchantment.UEnchantment;
 import net.megal.uselessadditions.enchantment.UEnchantments;
 import net.megal.uselessadditions.item.UItems;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.LootTables;
 import net.minecraft.loot.condition.*;
-import net.minecraft.loot.context.LootContextParameters;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.*;
 import net.minecraft.loot.provider.number.*;
-import net.minecraft.predicate.NbtPredicate;
-import net.minecraft.predicate.NumberRange;
-import net.minecraft.predicate.item.EnchantmentPredicate;
-import net.minecraft.predicate.item.ItemPredicate;
-import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
-
-import java.util.List;
 
 public class ULootTables {
     public static void modifyLootTables() {
@@ -98,6 +86,8 @@ public class ULootTables {
                     2);
             rareItemLootBuilder(id, EntityType.BLAZE, UItems.BLAZE_METAL, tableBuilder, source,
                     0.04F);
+            rareItemLootBuilder(id, EntityType.BLAZE, UItems.FIREBALL_GLAND, tableBuilder, source,
+                    0.0045F);
             entityLootBuilder(id, EntityType.BLAZE, tableBuilder, source, LootPool.builder()
                     .conditionally(RandomChanceLootCondition.builder(0.25F))
                     .conditionally(KilledByPlayerLootCondition.builder())
@@ -141,7 +131,7 @@ public class ULootTables {
                     2);
             shardLootBuilder(id, EntityType.ELDER_GUARDIAN, UItems.SMALL_GUARDIAN_SHARD, tableBuilder, source,
                     2);
-            shardLootBuilder(id, EntityType.EVOKER, UItems.SMALL_ILLAGER_SHARD, tableBuilder, source,
+            shardLootBuilder(id, EntityType.EVOKER, UItems.SMALL_EVOKER_SHARD, tableBuilder, source,
                     2);
             rareItemLootBuilder(id, EntityType.EVOKER, UItems.MAGIC_BOOK, tableBuilder, source,
                     0.04F);
@@ -155,6 +145,8 @@ public class ULootTables {
                     0.02F);
             shardLootBuilder(id, EntityType.GHAST, UItems.SMALL_GHAST_SHARD, tableBuilder, source,
                     2);
+            rareItemLootBuilder(id, EntityType.GHAST, UItems.FIREBALL_GLAND, tableBuilder, source,
+                    0.05F);
             entityLootBuilder(id, EntityType.GHAST, tableBuilder, source, LootPool.builder()
                     .conditionally(RandomChanceLootCondition.builder(0.65F))
                     .with(ItemEntry.builder(UItems.ASH)
@@ -207,7 +199,7 @@ public class ULootTables {
                     2);
             shardLootBuilder(id, EntityType.PIGLIN_BRUTE, UItems.SMALL_PIGLIN_SHARD, tableBuilder, source,
                     2);
-            shardLootBuilder(id, EntityType.PILLAGER, UItems.SMALL_ILLAGER_SHARD, tableBuilder, source,
+            shardLootBuilder(id, EntityType.PILLAGER, UItems.SMALL_PILLAGER_SHARD, tableBuilder, source,
                     2);
             shardLootBuilder(id, EntityType.POLAR_BEAR, UItems.SMALL_POLAR_BEAR_SHARD, tableBuilder, source,
                     2);
@@ -263,7 +255,7 @@ public class ULootTables {
                     2);
             shardLootBuilder(id, EntityType.VILLAGER, UItems.SMALL_VILLAGER_SHARD, tableBuilder, source,
                     2);
-            shardLootBuilder(id, EntityType.VINDICATOR, UItems.SMALL_ILLAGER_SHARD, tableBuilder, source,
+            shardLootBuilder(id, EntityType.VINDICATOR, UItems.SMALL_VINDICATOR_SHARD, tableBuilder, source,
                     2);
             shardLootBuilder(id, EntityType.WANDERING_TRADER, UItems.SMALL_VILLAGER_SHARD, tableBuilder, source,
                     2);
@@ -275,7 +267,7 @@ public class ULootTables {
                     .conditionally(KilledByPlayerLootCondition.builder())
                     .with(ItemEntry.builder(UItems.ANCIENT_SHARD).apply(uniformNumberBuilder(4,16))
                     ));
-            shardLootBuilder(id, EntityType.WITCH, UItems.SMALL_ILLAGER_SHARD, tableBuilder, source,
+            shardLootBuilder(id, EntityType.WITCH, UItems.SMALL_PILLAGER_SHARD, tableBuilder, source,
                     2);
             shardLootBuilder(id, EntityType.WITHER_SKELETON, UItems.SMALL_WITHER_SKELETON_SHARD, tableBuilder, source,
                     2);
@@ -319,10 +311,6 @@ public class ULootTables {
     }
     private static LootingEnchantLootFunction.Builder lootingFunction(int min, int max) {
         return LootingEnchantLootFunction.builder(uniformNumber(min,max));
-    }
-    private static ItemPredicate.Builder itemWithEnchantment(Enchantment enchantment) {
-        return ItemPredicate.Builder.create()
-                .enchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, NumberRange.IntRange.atLeast(1)));
     }
     private static ConditionalLootFunction.Builder<?> uniformNumberBuilder(int min, int max) {
         return SetCountLootFunction.builder(uniformNumber(min, max));
