@@ -6,7 +6,7 @@ import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.megal.uselessadditions.block.UBlocks;
-import net.megal.uselessadditions.effects.UStatusEffects;
+import net.megal.uselessadditions.effect.UStatusEffects;
 import net.megal.uselessadditions.enchantment.UEnchantments;
 import net.megal.uselessadditions.item.UGroups;
 import net.megal.uselessadditions.item.UItems;
@@ -14,6 +14,7 @@ import net.megal.uselessadditions.recipe.URecipes;
 import net.megal.uselessadditions.screen.UScreens;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -98,6 +99,10 @@ public class UAdd implements ModInitializer {
             mobLastPos.put(uuid, new VelocityCalculationValue(pos, movementTime, vel, lastMove, 20f));
         }
         return List.of(vel, movementTime, lastMove);
+    }
+
+    public static int calcCooldown(ItemStack stack, int cooldown) {
+        return (int)(cooldown * (1f - EnchantmentHelper.getLevel(UEnchantments.QUICKER_COOLDOWN, stack)*.05f));
     }
 
     private void addCompostable() {

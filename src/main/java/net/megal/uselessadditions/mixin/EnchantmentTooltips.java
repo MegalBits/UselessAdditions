@@ -56,6 +56,9 @@ public abstract class EnchantmentTooltips {
                         if (aug instanceof RepairingEnchantment) {
                             tooltip.add(TAB.copy().append(Text.translatable("enchantment.tooltip.repair_frequency").append(Text.literal(SPACE + (30 / level) + "s"))).formatted(Formatting.ITALIC).styled(style -> style.withColor(STAT_COLOR)));
                         }
+                        if (aug instanceof QuickerCooldownEnchantment) {
+                            tooltip.add(TAB.copy().append(Text.translatable("enchantment.tooltip.quicker_cooldown_percent").append(Text.literal(SPACE + (5 * level) + "%"))).formatted(Formatting.ITALIC).styled(style -> style.withColor(STAT_COLOR)));
+                        }
                         if (aug.getDamageTooltip(level) != 0) {
                             float f = aug.getDamageTooltip(level);
                             tooltip.add(TAB.copy().append(Text.translatable("enchantment.tooltip.damage").append(Text.literal(SPACE + (f >= 0 ? ADD : SUBTRACT) + f))).formatted(Formatting.ITALIC).styled(style -> style.withColor(STAT_COLOR)));

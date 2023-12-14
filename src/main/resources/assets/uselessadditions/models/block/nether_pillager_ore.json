@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "uselessadditions:block/netherrack_illager_ore"
+    "all": "uselessadditions:block/netherrack_pillager_ore"
   }
 }

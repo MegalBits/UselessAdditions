@@ -1,18 +1,9 @@
-package net.megal.uselessadditions.effects;
+package net.megal.uselessadditions.effect;
 
 import net.megal.uselessadditions.UAdd;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.damage.DamageSources;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.math.Vec3d;
-
-import java.util.HashMap;
-import java.util.UUID;
 
 public class SplintersEffect extends StatusEffect {
     protected SplintersEffect(StatusEffectCategory category, int color) {

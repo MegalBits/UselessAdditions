@@ -505,6 +505,11 @@
   "item.uselessadditions.lesser_golden_apple": "Lesser Golden Apple",
   "item.uselessadditions.magic_apple": "Magic Apple",
 
+  "item.uselessadditions.warp_pearl": "Warp Pearl",
+  "item.uselessadditions.warp_pearl.none": "No position set",
+  "item.uselessadditions.warp_pearl.teleport": "Teleports to: ",
+  "item.uselessadditions.warp_pearl.dimension": " in dimension: ",
+
   "item.uselessadditions.bundle": "Leather Bundle",
   "item.uselessadditions.iron_bundle": "Iron Bundle",
   "item.uselessadditions.diamond_bundle": "Diamond Bundle",
@@ -632,6 +637,8 @@
   "enchantment.uselessadditions.blinding.desc": "Applies blindness to hit enemies",
   "enchantment.uselessadditions.repairing": "Repairing",
   "enchantment.uselessadditions.repairing.desc": "Repairs tools and armor over time while not held",
+  "enchantment.uselessadditions.quicker_cooldown": "Quicker Cooldown",
+  "enchantment.uselessadditions.quicker_cooldown.desc": "Reduces cooldowns applied",
   "enchantment.uselessadditions.splintered": "Splintered",
   "enchantment.uselessadditions.splintered.desc": "Applies splinters to hit enemies",
   "enchantment.uselessadditions.subterranean": "Subterranean",
@@ -702,6 +709,7 @@
   "enchantment.tooltip.duration": "Duration",
   "enchantment.tooltip.amplifier": "Level",
   "enchantment.tooltip.repair_frequency": "Repairs every",
+  "enchantment.tooltip.quicker_cooldown_percent": "Reduces time by",
   "enchantment.tooltip.damage": "Damage",
   "enchantment.tooltip.efficiency": "Mining speed",
   "enchantment.tooltip.radius": "Radius",
@@ -731,6 +739,7 @@
   "text.uselessadditions.and": " and ",
   "text.uselessadditions.or": " or ",
   "text.uselessadditions.of": " of ",
+  "text.uselessadditions.in": " in ",
   "text.uselessadditions.second": "s",
   "text.uselessadditions.minute": "m",
   "text.uselessadditions.hour": "h"

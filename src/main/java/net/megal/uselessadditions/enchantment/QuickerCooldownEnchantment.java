@@ -1,20 +1,16 @@
 package net.megal.uselessadditions.enchantment;
 
-import net.megal.uselessadditions.effect.UStatusEffects;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Style;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.function.UnaryOperator;
 
-public class SplinteredEnchantment extends AugmentEnchantment {
-    public SplinteredEnchantment(Rarity weight, EquipmentSlot ... slotTypes) {
+public class QuickerCooldownEnchantment extends AugmentEnchantment {
+    public QuickerCooldownEnchantment(Rarity weight, EquipmentSlot ... slotTypes) {
         super(weight, EnchantmentTarget.BREAKABLE, slotTypes);
     }
     @Override
@@ -27,9 +23,8 @@ public class SplinteredEnchantment extends AugmentEnchantment {
     }
     @Override
     public int getMaxLevel() {
-        return 2;
+        return 5;
     }
-
     @Override
     public boolean isAcceptableItem(ItemStack stack) {
         return false;
@@ -39,20 +34,7 @@ public class SplinteredEnchantment extends AugmentEnchantment {
         return super.canAccept(other);
     }
     @Override
-    public void onTargetDamaged(LivingEntity user, Entity target, int level) {
-        if (target instanceof LivingEntity) ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(UStatusEffects.SPLINTERS, getStatusDuration(level), 0));
-    }
-    @Override
-    public int getStatusDuration(int level) {
-        return (level-1) * 200 + 200;
-    }
-    @Override
-    public int getAmplifier(int level) {
-        return 0;
-    }
-    @Override
     public @Nullable UnaryOperator<Style> getColor() {
-        return style -> style.withColor(0x67502c);
+        return style -> style.withColor(0x6af2ab);
     }
-    
 }

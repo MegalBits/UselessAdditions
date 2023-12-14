@@ -11,6 +11,7 @@
     "#c:shears",
     "#c:fishing_rods",
     "#c:on_a_sticks",
-    "#c:flint_and_steels"
+    "#c:flint_and_steels",
+    "#uselessadditions:cooldownable"
   ]
 }

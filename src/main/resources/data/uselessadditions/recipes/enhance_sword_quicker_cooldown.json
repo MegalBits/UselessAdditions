@@ -4,12 +4,12 @@
     "tag": "c:smithing_hammers"
   },
   "base": {
-    "tag": "uselessadditions:augmentable"
+    "tag": "uselessadditions:cooldownable"
   },
   "addition": {
-    "item": "uselessadditions:essence_of_diamond"
+    "item": "uselessadditions:toy_fish"
   },
   "modifier": {
-    "enchantment": "uselessadditions:bejeweled"
+    "enchantment": "uselessadditions:quicker_cooldown"
   }
 }

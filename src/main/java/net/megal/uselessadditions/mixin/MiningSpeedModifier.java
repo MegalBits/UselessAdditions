@@ -30,7 +30,7 @@ public abstract class MiningSpeedModifier {
                     && player.getWorld().getDimensionKey() == DimensionTypes.OVERWORLD) {
                 double distance = player.getWorld().getSeaLevel() - player.getPos().getY();
                 distance = Math.sqrt(distance * distance);
-                f += (float)distance / 24f;
+                f += (float)distance / 18f;
             }
             if (stack.hasEnchantments()) {
                 Map<Enchantment, Integer> enchantments = EnchantmentHelper.get(stack);

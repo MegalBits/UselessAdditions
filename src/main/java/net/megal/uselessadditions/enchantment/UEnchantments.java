@@ -9,6 +9,8 @@ import net.minecraft.util.Identifier;
 
 public class UEnchantments {
     private static final EquipmentSlot[] ALL_ARMOR = new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET};
+    public static final QuickerCooldownEnchantment QUICKER_COOLDOWN = registerEnchantment(new Identifier(UAdd.MOD_ID, "quicker_cooldown"),
+            new QuickerCooldownEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
     public static final ObsidianSmashingEnchantment OBSIDIAN_SMASHING = registerEnchantment(new Identifier(UAdd.MOD_ID, "obsidian_smashing"),
             new ObsidianSmashingEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
     public static final InflamedEnchantment INFLAMED = registerEnchantment(new Identifier(UAdd.MOD_ID, "inflamed"),

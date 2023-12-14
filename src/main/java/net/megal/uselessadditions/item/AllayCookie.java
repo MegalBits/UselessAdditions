@@ -1,5 +1,6 @@
 package net.megal.uselessadditions.item;
 
+import net.megal.uselessadditions.UAdd;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -31,7 +32,7 @@ public class AllayCookie extends TooltipItem {
                 if (spawnWorld == null) spawnWorld = (ServerWorld) world;
                 player.teleport(spawnWorld, spawnPoint.getX() + 0.5d, spawnPoint.getY(), spawnPoint.getZ() + 0.5d, player.getYaw(), player.getPitch());
             }
-            player.getItemCooldownManager().set(stack.getItem(), 200);
+            player.getItemCooldownManager().set(stack.getItem(), 300);
         }
         return super.finishUsing(stack, world, user);
     }
