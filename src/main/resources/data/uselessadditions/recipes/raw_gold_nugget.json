@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "uselessadditions:bat_wing"
+      "item": "minecraft:raw_gold"
     }
   ],
   "result": {
-    "item": "minecraft:bone_meal",
-    "count": 1
+    "item": "uselessadditions:raw_gold_nugget",
+    "count": 9
   }
 }

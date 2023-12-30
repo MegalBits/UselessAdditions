@@ -38,8 +38,9 @@ public abstract class ComposterOutput {
             cancellable = true)
     private static void dropExtraItems(Entity user, BlockState state, World world, BlockPos pos, CallbackInfoReturnable<BlockState> cir) {
         if (!world.isClient) {
-            dropItem(pos, world, UItems.DIRT_PILE);
-            if (Random.createLocal().nextBoolean()) dropItem(pos, world, UItems.DIRT_PILE);
+            for (int i = world.random.nextBetween(1,6); i > 0 ; i--) {
+                dropItem(pos, world, UItems.DIRT_PILE);
+            }
         }
     }
 

@@ -25,6 +25,8 @@
     "uselessadditions:deepslate_spider_ore",
     "uselessadditions:strider_ore",
     "uselessadditions:deepslate_strider_ore",
+    "uselessadditions:witch_ore",
+    "uselessadditions:deepslate_witch_ore",
     "uselessadditions:zombie_ore",
     "uselessadditions:deepslate_zombie_ore",
     "uselessadditions:nether_cave_spider_ore",
@@ -49,6 +51,8 @@
     "uselessadditions:end_spider_ore",
     "uselessadditions:nether_strider_ore",
     "uselessadditions:end_strider_ore",
+    "uselessadditions:nether_witch_ore",
+    "uselessadditions:end_witch_ore",
     "uselessadditions:nether_zombie_ore",
     "uselessadditions:end_zombie_ore"
   ]

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uselessadditions:raw_copper_nugget"
+    }
+  },
+  "result": {
+    "item": "minecraft:raw_copper",
+    "count": 1
+  }
+}

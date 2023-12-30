@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uselessadditions:plant_fibre"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:plant_mesh",
+    "count": 1
+  }
+}

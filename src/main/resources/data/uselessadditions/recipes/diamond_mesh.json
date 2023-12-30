@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "111",
+    "121",
+    "111"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:diamond"
+    },
+    "2": [
+      {
+        "item": "uselessadditions:iron_mesh"
+      },
+      {
+        "item": "uselessadditions:gold_mesh"
+      }
+    ]
+  },
+  "result": {
+    "item": "uselessadditions:diamond_mesh",
+    "count": 1
+  }
+}

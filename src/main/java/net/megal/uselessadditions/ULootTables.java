@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.fabricmc.fabric.api.loot.v2.LootTableSource;
 import net.megal.uselessadditions.enchantment.UEnchantments;
 import net.megal.uselessadditions.item.UItems;
+import net.minecraft.block.Block;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
@@ -16,13 +17,16 @@ import net.minecraft.loot.function.*;
 import net.minecraft.loot.provider.number.*;
 import net.minecraft.util.Identifier;
 
+import java.util.List;
+
+import static net.minecraft.block.Blocks.*;
+
 public class ULootTables {
     public static void modifyLootTables() {
         LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
             //Global
             globalItemLootBuilder(id, UItems.EXOTIC_DUST, tableBuilder, source, 0.005F, 1, 1);
             globalItemLootBuilder(id, UItems.EXOTIC_INGOT, tableBuilder, source, 0.00025F, 1, 1);
-            globalItemLootBuilder(id, UItems.MAGIC_BOOK, tableBuilder, source, 0.0001F, 1, 1);
 
             //Specifics
 
@@ -32,21 +36,56 @@ public class ULootTables {
                     .with(ItemEntry.builder(UItems.WEATHERED_SCRAP).weight(1))
                     .with(ItemEntry.builder(Items.AIR).weight(8))
             );
+            lootBuilder(id, LootTables.ABANDONED_MINESHAFT_CHEST, tableBuilder, source, LootPool.builder()
+                    .rolls(uniformNumber(1,3))
+                    .with(ItemEntry.builder(Items.IRON_NUGGET).weight(2).apply(uniformNumberBuilder(3,11)))
+                    .with(ItemEntry.builder(Items.GOLD_NUGGET).weight(2).apply(uniformNumberBuilder(2,8)))
+                    .with(ItemEntry.builder(UItems.DIAMOND_NUGGET).weight(1).apply(uniformNumberBuilder(1,4)))
+                    .with(ItemEntry.builder(Items.AIR).weight(9))
+            );
+            lootBuilder(id, LootTables.ABANDONED_MINESHAFT_CHEST, tableBuilder, source, LootPool.builder()
+                    .rolls(uniformNumber(1,3))
+                    .with(ItemEntry.builder(UItems.BONE_STEW).weight(2))
+                    .with(ItemEntry.builder(UItems.BAT_WING_STEW).weight(4))
+                    .with(ItemEntry.builder(Items.AIR).weight(12))
+            );
             lootBuilder(id, LootTables.ANCIENT_CITY_CHEST, tableBuilder, source, LootPool.builder()
                     .with(ItemEntry.builder(UItems.ANCIENT_SHARD).weight(1).apply(uniformNumberBuilder(1,3)))
                     .with(ItemEntry.builder(Items.AIR).weight(4))
             );
             lootBuilder(id, LootTables.BURIED_TREASURE_CHEST, tableBuilder, source, LootPool.builder()
-                    .with(ItemEntry.builder(UItems.WEATHERED_SCRAP).weight(1).apply(uniformNumberBuilder(1,5)))
-                    .with(ItemEntry.builder(Items.AIR).weight(2))
+                    .rolls(uniformNumber(1,4))
+                    .with(ItemEntry.builder(Items.IRON_NUGGET).weight(2).apply(uniformNumberBuilder(4,12)))
+                    .with(ItemEntry.builder(Items.GOLD_NUGGET).weight(2).apply(uniformNumberBuilder(3,7)))
+                    .with(ItemEntry.builder(UItems.DIAMOND_NUGGET).weight(1).apply(uniformNumberBuilder(1,5)))
+                    .with(ItemEntry.builder(UItems.EMERALD_NUGGET).weight(1).apply(uniformNumberBuilder(1,4)))
+                    .with(ItemEntry.builder(UItems.WEATHERED_SCRAP).weight(2).apply(uniformNumberBuilder(1,5)))
+                    .with(ItemEntry.builder(Items.AIR).weight(8))
             );
             lootBuilder(id, LootTables.END_CITY_TREASURE_CHEST, tableBuilder, source, LootPool.builder()
-                    .with(ItemEntry.builder(UItems.DRAGON_SCALE).weight(1))
-                    .with(ItemEntry.builder(Items.AIR).weight(19))
+                    .rolls(constantNumber(5))
+                    .with(ItemEntry.builder(UItems.DRAGON_HEART).weight(1))
+                    .with(ItemEntry.builder(UItems.DRAGON_SCALE).weight(28))
+                    .with(ItemEntry.builder(UItems.DRAGON_FLESH).weight(20))
+                    .with(ItemEntry.builder(Items.AIR).weight(1452))
+            );
+            lootBuilder(id, LootTables.END_CITY_TREASURE_CHEST, tableBuilder, source, LootPool.builder()
+                    .with(ItemEntry.builder(UItems.DRACONIC_STEW).weight(1))
+                    .with(ItemEntry.builder(Items.AIR).weight(499))
             );
             lootBuilder(id, LootTables.DESERT_PYRAMID_CHEST, tableBuilder, source, LootPool.builder()
                     .with(ItemEntry.builder(UItems.RUBY).weight(1))
-                    .with(ItemEntry.builder(Items.AIR).weight(3))
+                    .with(ItemEntry.builder(Items.AIR).weight(4))
+            );
+            lootBuilder(id, LootTables.DESERT_PYRAMID_CHEST, tableBuilder, source, LootPool.builder()
+                    .rolls(uniformNumber(1,2))
+                    .with(ItemEntry.builder(Items.IRON_NUGGET).weight(1).apply(uniformNumberBuilder(3,8)))
+                    .with(ItemEntry.builder(Items.GOLD_NUGGET).weight(2).apply(uniformNumberBuilder(3,8)))
+                    .with(ItemEntry.builder(Items.AIR).weight(7))
+            );
+            lootBuilder(id, LootTables.DESERT_PYRAMID_CHEST, tableBuilder, source, LootPool.builder()
+                    .with(ItemEntry.builder(UItems.BONE_STEW).weight(1))
+                    .with(ItemEntry.builder(Items.AIR).weight(5))
             );
             lootBuilder(id, LootTables.JUNGLE_TEMPLE_CHEST, tableBuilder, source, LootPool.builder()
                     .with(ItemEntry.builder(UItems.WEATHERED_SCRAP).weight(1))
@@ -57,12 +96,26 @@ public class ULootTables {
                     .with(ItemEntry.builder(Items.AIR).weight(4))
             );
             lootBuilder(id, LootTables.SIMPLE_DUNGEON_CHEST, tableBuilder, source, LootPool.builder()
-                    .with(ItemEntry.builder(UItems.RUBY).weight(1))
-                    .with(ItemEntry.builder(Items.AIR).weight(7))
+                    .with(ItemEntry.builder(UItems.RUBY).weight(2))
+                    .with(ItemEntry.builder(Items.AIR).weight(9))
+            );
+            lootBuilder(id, LootTables.SIMPLE_DUNGEON_CHEST, tableBuilder, source, LootPool.builder()
+                    .rolls(uniformNumber(1,3))
+                    .with(ItemEntry.builder(Items.IRON_NUGGET).weight(2).apply(uniformNumberBuilder(3,8)))
+                    .with(ItemEntry.builder(Items.GOLD_NUGGET).weight(2).apply(uniformNumberBuilder(2,6)))
+                    .with(ItemEntry.builder(UItems.DIAMOND_NUGGET).weight(1).apply(uniformNumberBuilder(1,3)))
+                    .with(ItemEntry.builder(Items.AIR).weight(14))
+            );
+            lootBuilder(id, LootTables.SIMPLE_DUNGEON_CHEST, tableBuilder, source, LootPool.builder()
+                    .rolls(uniformNumber(1,2))
+                    .with(ItemEntry.builder(Items.MUSHROOM_STEW).weight(2))
+                    .with(ItemEntry.builder(UItems.BONE_STEW).weight(2))
+                    .with(ItemEntry.builder(UItems.BAT_WING_STEW).weight(4))
+                    .with(ItemEntry.builder(Items.AIR).weight(18))
             );
             //  Mobs
             shardLootBuilder(id, EntityType.ALLAY, UItems.SMALL_ALLAY_SHARD, tableBuilder, source,
-                    2);
+                    3);
             rareItemLootBuilder(id, EntityType.ALLAY, UItems.ALLAY_COOKIE, tableBuilder, source,
                     0.085F);
             shardLootBuilder(id, EntityType.AXOLOTL, UItems.SMALL_AXOLOTL_SHARD, tableBuilder, source,
@@ -129,8 +182,12 @@ public class ULootTables {
                     2);
             shardLootBuilder(id, EntityType.ENDERMITE, UItems.SMALL_ENDERMITE_SHARD, tableBuilder, source,
                     2);
+            entityLootBuilder(id, EntityType.ENDERMITE, tableBuilder, source, LootPool.builder()
+                    .conditionally(RandomChanceWithLootingLootCondition.builder(0.10f, 0.12f))
+                    .with(ItemEntry.builder(UItems.ENDER_PEARL_SHARD)
+                    ));
             shardLootBuilder(id, EntityType.ELDER_GUARDIAN, UItems.SMALL_GUARDIAN_SHARD, tableBuilder, source,
-                    2);
+                    4);
             shardLootBuilder(id, EntityType.EVOKER, UItems.SMALL_EVOKER_SHARD, tableBuilder, source,
                     2);
             rareItemLootBuilder(id, EntityType.EVOKER, UItems.MAGIC_BOOK, tableBuilder, source,
@@ -144,7 +201,7 @@ public class ULootTables {
             rareItemLootBuilder(id, EntityType.FROG, UItems.FROG_LEG, tableBuilder, source,
                     0.02F);
             shardLootBuilder(id, EntityType.GHAST, UItems.SMALL_GHAST_SHARD, tableBuilder, source,
-                    2);
+                    3);
             rareItemLootBuilder(id, EntityType.GHAST, UItems.FIREBALL_GLAND, tableBuilder, source,
                     0.05F);
             entityLootBuilder(id, EntityType.GHAST, tableBuilder, source, LootPool.builder()
@@ -210,7 +267,7 @@ public class ULootTables {
             shardLootBuilder(id, EntityType.RABBIT, UItems.SMALL_RABBIT_SHARD, tableBuilder, source,
                     2);
             shardLootBuilder(id, EntityType.RAVAGER, UItems.SMALL_RAVAGER_SHARD, tableBuilder, source,
-                    2);
+                    3);
             shardLootBuilder(id, EntityType.SALMON, UItems.SMALL_SALMON_SHARD, tableBuilder, source,
                     2);
             shardLootBuilder(id, EntityType.SHEEP, UItems.SMALL_SHEEP_SHARD, tableBuilder, source,
@@ -222,6 +279,10 @@ public class ULootTables {
             shardLootBuilder(id, EntityType.SKELETON, UItems.SMALL_SKELETON_SHARD, tableBuilder, source,
                     2);
             rareItemLootBuilder(id, EntityType.SKELETON, UItems.ESSENCE_OF_UNDEAD, tableBuilder, source,
+                    0.005f);
+            shardLootBuilder(id, EntityType.SKELETON_HORSE, UItems.SMALL_SKELETON_SHARD, tableBuilder, source,
+                    2);
+            rareItemLootBuilder(id, EntityType.SKELETON_HORSE, UItems.ESSENCE_OF_UNDEAD, tableBuilder, source,
                     0.005f);
             shardLootBuilder(id, EntityType.SLIME, UItems.SMALL_SLIME_SHARD, tableBuilder, source,
                     2);
@@ -262,12 +323,12 @@ public class ULootTables {
             rareItemLootBuilder(id, EntityType.WANDERING_TRADER, UItems.TRADER_SATCHEL, tableBuilder, source,
                     0.0005F);
             shardLootBuilder(id, EntityType.WARDEN, UItems.SMALL_WARDEN_SHARD, tableBuilder, source,
-                    2);
+                    4);
             entityLootBuilder(id, EntityType.WARDEN, tableBuilder, source, LootPool.builder()
                     .conditionally(KilledByPlayerLootCondition.builder())
                     .with(ItemEntry.builder(UItems.ANCIENT_SHARD).apply(uniformNumberBuilder(4,16))
                     ));
-            shardLootBuilder(id, EntityType.WITCH, UItems.SMALL_PILLAGER_SHARD, tableBuilder, source,
+            shardLootBuilder(id, EntityType.WITCH, UItems.SMALL_WITCH_SHARD, tableBuilder, source,
                     2);
             shardLootBuilder(id, EntityType.WITHER_SKELETON, UItems.SMALL_WITHER_SKELETON_SHARD, tableBuilder, source,
                     2);
@@ -498,6 +559,19 @@ public class ULootTables {
     private static void lootBuilder(Identifier id, Identifier otherId, LootTable.Builder tableBuilder, LootTableSource source, LootPool.Builder builder) {
         if (source.isBuiltin() && otherId.equals(id)) {
             tableBuilder.pool(builder);
+        }
+    }
+    private static void blockLootBuilder(Identifier id, Block block, LootTable.Builder tableBuilder, LootTableSource source, LootPool.Builder builder) {
+        if (source.isBuiltin() && block.getLootTableId().equals(id)) {
+            tableBuilder.pool(builder);
+        }
+    }
+    private static void blockLootBuilder(Identifier id, List<Block> list, LootTable.Builder tableBuilder, LootTableSource source, LootPool.Builder builder) {
+        for (Block block : list) {
+            if (source.isBuiltin() && block.getLootTableId().equals(id)) {
+                tableBuilder.pool(builder);
+                break;
+            }
         }
     }
     private static void entityLootBuilder(Identifier id, EntityType<?> entity, LootTable.Builder tableBuilder, LootTableSource source, LootPool.Builder builder) {

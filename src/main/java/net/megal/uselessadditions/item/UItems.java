@@ -75,6 +75,7 @@ public class UItems {
     public static final Item VILLAGER_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "villager_shard"), createItem());
     public static final Item VINDICATOR_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "vindicator_shard"), createItem());
     public static final Item WARDEN_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "warden_shard"), createItem());
+    public static final Item WITCH_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "witch_shard"), createItem());
     public static final Item WITHER_SKELETON_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "wither_skeleton_shard"), createItem());
     public static final Item WOLF_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "wolf_shard"), createItem());
     public static final Item ZOMBIE_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "zombie_shard"), createItem());
@@ -132,6 +133,7 @@ public class UItems {
     public static final Item SMALL_VILLAGER_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_villager_shard"), createItem());
     public static final Item SMALL_VINDICATOR_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_vindicator_shard"), createItem());
     public static final Item SMALL_WARDEN_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_warden_shard"), createItem());
+    public static final Item SMALL_WITCH_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_witch_shard"), createItem());
     public static final Item SMALL_WITHER_SKELETON_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_wither_skeleton_shard"), createItem());
     public static final Item SMALL_WOLF_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_wolf_shard"), createItem());
     public static final Item SMALL_ZOMBIE_SHARD = registerItem(new Identifier(UAdd.MOD_ID, "small_zombie_shard"), createItem());
@@ -195,6 +197,7 @@ public class UItems {
     public static final SpawnEgg VILLAGER_SPAWN_EGG = registerItem(new Identifier(UAdd.MOD_ID, "villager_spawn_egg"), createSpawnEgg(EntityType.VILLAGER));
     public static final SpawnEgg VINDICATOR_SPAWN_EGG = registerItem(new Identifier(UAdd.MOD_ID, "vindicator_spawn_egg"), createSpawnEgg(EntityType.VINDICATOR));
     public static final SpawnEgg WARDEN_SPAWN_EGG = registerItem(new Identifier(UAdd.MOD_ID, "warden_spawn_egg"), createSpawnEgg(EntityType.WARDEN));
+    public static final SpawnEgg WITCH_SPAWN_EGG = registerItem(new Identifier(UAdd.MOD_ID, "witch_spawn_egg"), createSpawnEgg(EntityType.WITCH));
     public static final SpawnEgg WITHER_SKELETON_SPAWN_EGG = registerItem(new Identifier(UAdd.MOD_ID, "wither_skeleton_spawn_egg"), createSpawnEgg(EntityType.WITHER_SKELETON));
     public static final SpawnEgg WOLF_SPAWN_EGG = registerItem(new Identifier(UAdd.MOD_ID, "wolf_spawn_egg"), createSpawnEgg(EntityType.WOLF));
     public static final SpawnEgg ZOGLIN_SPAWN_EGG = registerItem(new Identifier(UAdd.MOD_ID, "zoglin_spawn_egg"), createSpawnEgg(EntityType.ZOGLIN));
@@ -204,6 +207,7 @@ public class UItems {
     //Materials
     // -- Misc
     public static final Item EMPTY_DISC = registerItem(new Identifier(UAdd.MOD_ID, "empty_disc"), createItem());
+    public static final Item PLANT_FIBRE = registerItem(new Identifier(UAdd.MOD_ID, "plant_fibre"), createItem());
     public static final DamageableItem BUNDLED_FLOWERS = registerItem(new Identifier(UAdd.MOD_ID, "bundled_flowers"), new DamageableItem(new FabricItemSettings().maxCount(1).maxDamage(16)));
     public static final Item CACTUS_LINING = registerItem(new Identifier(UAdd.MOD_ID, "cactus_lining"), createItem());
     public static final TooltipItem AXOLOTL_TAIL = registerItem(new Identifier(UAdd.MOD_ID, "axolotl_tail"), createTooltipItem());
@@ -241,6 +245,15 @@ public class UItems {
     public static final MagicBook MAGIC_BOOK = registerItem(new Identifier(UAdd.MOD_ID, "magic_book"), new MagicBook(new FabricItemSettings().maxCount(1).maxDamage(3).rarity(Rarity.EPIC), Formatting.GRAY));
     public static final Item IRON_BUNDLE_UPGRADE = registerItem(new Identifier(UAdd.MOD_ID, "iron_bundle_upgrade"), createItem());
     public static final Item DIAMOND_BUNDLE_UPGRADE = registerItem(new Identifier(UAdd.MOD_ID, "diamond_bundle_upgrade"), createItem());
+    // -- Meshes
+    public static final Mesh PLANT_MESH = registerItem(new Identifier(UAdd.MOD_ID, "plant_mesh"), new Mesh(MeshType.PLANT, new FabricItemSettings()));
+    public static final Mesh STRING_MESH = registerItem(new Identifier(UAdd.MOD_ID, "string_mesh"), new Mesh(MeshType.STRING, new FabricItemSettings()));
+    public static final Mesh FLINT_MESH = registerItem(new Identifier(UAdd.MOD_ID, "flint_mesh"), new Mesh(MeshType.FLINT, new FabricItemSettings()));
+    public static final Mesh IRON_MESH = registerItem(new Identifier(UAdd.MOD_ID, "iron_mesh"), new Mesh(MeshType.IRON, new FabricItemSettings()));
+    public static final Mesh GOLD_MESH = registerItem(new Identifier(UAdd.MOD_ID, "gold_mesh"), new Mesh(MeshType.GOLD, new FabricItemSettings()));
+    public static final Mesh DIAMOND_MESH = registerItem(new Identifier(UAdd.MOD_ID, "diamond_mesh"), new Mesh(MeshType.DIAMOND, new FabricItemSettings()));
+    public static final Mesh NETHERITE_MESH = registerItem(new Identifier(UAdd.MOD_ID, "netherite_mesh"), new Mesh(MeshType.NETHERITE, new FabricItemSettings()));
+    public static final Mesh DRAGON_MESH = registerItem(new Identifier(UAdd.MOD_ID, "dragon_mesh"), new Mesh(MeshType.DRAGON, new FabricItemSettings()));
     // -- Dusts
     public static final Item DIRT_PILE = registerItem(new Identifier(UAdd.MOD_ID, "dirt_pile"), createItem());
     public static final Item SAND_PILE = registerItem(new Identifier(UAdd.MOD_ID, "sand_pile"), createItem());
@@ -251,8 +264,14 @@ public class UItems {
     public static final Item ASH = registerItem(new Identifier(UAdd.MOD_ID, "ash"), createItem());
     public static final Item EXOTIC_DUST = registerItem(new Identifier(UAdd.MOD_ID, "exotic_dust"), new Item(new FabricItemSettings().rarity(Rarity.UNCOMMON)));
     // -- Nuggets
-    public static final Item FORTRESS_NUGGET = registerItem(new Identifier(UAdd.MOD_ID, "fortress_nugget"), createItem());
+    public static final Item RAW_COPPER_NUGGET = registerItem(new Identifier(UAdd.MOD_ID, "raw_copper_nugget"), createItem());
+    public static final Item RAW_IRON_NUGGET = registerItem(new Identifier(UAdd.MOD_ID, "raw_iron_nugget"), createItem());
+    public static final Item RAW_GOLD_NUGGET = registerItem(new Identifier(UAdd.MOD_ID, "raw_gold_nugget"), createItem());
+    public static final Item COPPER_NUGGET = registerItem(new Identifier(UAdd.MOD_ID, "copper_nugget"), createItem());
+    public static final Item EMERALD_NUGGET = registerItem(new Identifier(UAdd.MOD_ID, "emerald_nugget"), createItem());
+    public static final Item DIAMOND_NUGGET = registerItem(new Identifier(UAdd.MOD_ID, "diamond_nugget"), createItem());
     public static final Item NETHERITE_NUGGET = registerItem(new Identifier(UAdd.MOD_ID, "netherite_nugget"), new Item(new FabricItemSettings().fireproof()));
+    public static final Item FORTRESS_NUGGET = registerItem(new Identifier(UAdd.MOD_ID, "fortress_nugget"), createItem());
     // -- Ingots
     public static final Item RUBY = registerItem(new Identifier(UAdd.MOD_ID, "ruby"), createItem());
     public static final TooltipItem EMPOWERED_EMERALD = registerItem(new Identifier(UAdd.MOD_ID, "empowered_emerald"), createTooltipItem());
@@ -263,9 +282,9 @@ public class UItems {
     // -- Tool Components
     public static final Item NETHERITE_STICK = registerItem(new Identifier(UAdd.MOD_ID, "netherite_stick"), new Item(new FabricItemSettings().fireproof()));
     //Hammer
-    public static final DamageableItem MAKESHIFT_HAMMER = registerItem(new Identifier(UAdd.MOD_ID, "makeshift_hammer"), new DamageableItem(new FabricItemSettings().maxCount(1).maxDamage(16)));
-    public static final DamageableItem HAMMER = registerItem(new Identifier(UAdd.MOD_ID, "hammer"), new DamageableItem(new FabricItemSettings().maxCount(1).maxDamage(64)));
-    public static final DamageableGlintItem ENCHANTED_HAMMER = registerItem(new Identifier(UAdd.MOD_ID, "enchanted_hammer"), new DamageableGlintItem(new FabricItemSettings().maxCount(1).maxDamage(4096)));
+    public static final Hammer MAKESHIFT_HAMMER = registerItem(new Identifier(UAdd.MOD_ID, "makeshift_hammer"), new Hammer(UToolMaterials.WOODEN_HAMMER, 1, -3.2F, new FabricItemSettings()));
+    public static final Hammer HAMMER = registerItem(new Identifier(UAdd.MOD_ID, "hammer"), new Hammer(UToolMaterials.IRON_HAMMER, 1, -3.2F, new FabricItemSettings()));
+    public static final EnchantedHammer ENCHANTED_HAMMER = registerItem(new Identifier(UAdd.MOD_ID, "enchanted_hammer"), new EnchantedHammer(UToolMaterials.AMETHYST_HAMMER, 1, -3.2F, new FabricItemSettings()));
     //Tools
     public static final USwordItem AMETHYST_SWORD = registerItem(new Identifier(UAdd.MOD_ID, "amethyst_sword"), new USwordItem(UToolMaterials.AMETHYST, 3, -2.4F, new FabricItemSettings()));
     public static final UShovelItem AMETHYST_SHOVEL = registerItem(new Identifier(UAdd.MOD_ID, "amethyst_shovel"), new UShovelItem(UToolMaterials.AMETHYST, 1.5F, -3.0F, new FabricItemSettings()));
@@ -302,13 +321,16 @@ public class UItems {
     public static final TraderSatchel TRADER_SATCHEL = registerItem(new Identifier(UAdd.MOD_ID, "trader_satchel"), new TraderSatchel(new FabricItemSettings().maxCount(1).rarity(Rarity.UNCOMMON)));
     //Food
     public static final AllayCookie ALLAY_COOKIE = registerItem(new Identifier(UAdd.MOD_ID, "allay_cookie"), new AllayCookie(new FabricItemSettings().food(UFoodComponents.ALLAY_COOKIE), Formatting.GRAY));
-    public static final Item BONELESS_BAT_WING = registerItem(new Identifier(UAdd.MOD_ID, "boneless_bat_wing"), new Item(new FabricItemSettings().food(UFoodComponents.BAT_WING)));
-    public static final Item BAT_WING = registerItem(new Identifier(UAdd.MOD_ID, "bat_wing"), new Item(new FabricItemSettings().recipeRemainder(BONELESS_BAT_WING)));
-    public static final TooltipItem FROG_LEG = registerItem(new Identifier(UAdd.MOD_ID, "frog_leg"), new TooltipItem(new FabricItemSettings().food(UFoodComponents.FROG_LEG), Formatting.GRAY));
-    public static final StewItem FROG_LEG_STEW = registerItem(new Identifier(UAdd.MOD_ID, "frog_leg_stew"), new StewItem(new FabricItemSettings().food(UFoodComponents.FROG_LEG_STEW)));
     public static final Item RAW_AXOLOTL = registerItem(new Identifier(UAdd.MOD_ID, "raw_axolotl"), new Item(new FabricItemSettings().food(UFoodComponents.RAW_AXOLOTL)));
     public static final Item COOKED_AXOLOTL = registerItem(new Identifier(UAdd.MOD_ID, "cooked_axolotl"), new Item(new FabricItemSettings().food(UFoodComponents.COOKED_AXOLOTL)));
+    public static final StewItem BONE_STEW = registerItem(new Identifier(UAdd.MOD_ID, "bone_stew"), new StewItem(new FabricItemSettings().maxCount(1).food(UFoodComponents.BONE_STEW)));
+    public static final Item BONELESS_BAT_WING = registerItem(new Identifier(UAdd.MOD_ID, "boneless_bat_wing"), new Item(new FabricItemSettings().food(UFoodComponents.BAT_WING)));
+    public static final Item BAT_WING = registerItem(new Identifier(UAdd.MOD_ID, "bat_wing"), new Item(new FabricItemSettings().recipeRemainder(Items.BONE_MEAL)));
+    public static final StewItem BAT_WING_STEW = registerItem(new Identifier(UAdd.MOD_ID, "bat_wing_stew"), new StewItem(new FabricItemSettings().maxCount(1).food(UFoodComponents.BAT_WING_STEW)));
+    public static final TooltipItem FROG_LEG = registerItem(new Identifier(UAdd.MOD_ID, "frog_leg"), new TooltipItem(new FabricItemSettings().food(UFoodComponents.FROG_LEG), Formatting.GRAY));
+    public static final StewItem FROG_LEG_STEW = registerItem(new Identifier(UAdd.MOD_ID, "frog_leg_stew"), new StewItem(new FabricItemSettings().maxCount(1).food(UFoodComponents.FROG_LEG_STEW)));
     public static final Item DRAGON_FLESH = registerItem(new Identifier(UAdd.MOD_ID, "dragon_flesh"), new Item(new FabricItemSettings().food(UFoodComponents.DRAGON_FLESH).fireproof()));
+    public static final StewItem DRACONIC_STEW = registerItem(new Identifier(UAdd.MOD_ID, "draconic_stew"), new StewItem(new FabricItemSettings().maxCount(1).food(UFoodComponents.DRACONIC_STEW)));
     public static final Item LESSER_GOLDEN_CARROT = registerItem(new Identifier(UAdd.MOD_ID, "lesser_golden_carrot"), new Item(new FabricItemSettings().food(UFoodComponents.LESSER_GOLDEN_CARROT)));
     public static final GlintItem ENCHANTED_GOLDEN_CARROT = registerItem(new Identifier(UAdd.MOD_ID, "enchanted_golden_carrot"), new GlintItem(new FabricItemSettings().food(UFoodComponents.ENCHANTED_GOLDEN_CARROT).rarity(Rarity.RARE)));
     public static final GlintItem MAGIC_CARROT = registerItem(new Identifier(UAdd.MOD_ID, "magic_carrot"), new GlintItem(new FabricItemSettings().food(UFoodComponents.MAGIC_CARROT).rarity(Rarity.EPIC)));
@@ -410,6 +432,7 @@ public class UItems {
             entries.add(VILLAGER_SHARD.getDefaultStack());
             entries.add(VINDICATOR_SHARD.getDefaultStack());
             entries.add(WARDEN_SHARD.getDefaultStack());
+            entries.add(WITCH_SHARD.getDefaultStack());
             entries.add(WITHER_SKELETON_SHARD.getDefaultStack());
             entries.add(WOLF_SHARD.getDefaultStack());
             entries.add(ZOMBIE_SHARD.getDefaultStack());
@@ -467,6 +490,7 @@ public class UItems {
             entries.add(SMALL_VILLAGER_SHARD.getDefaultStack());
             entries.add(SMALL_VINDICATOR_SHARD.getDefaultStack());
             entries.add(SMALL_WARDEN_SHARD.getDefaultStack());
+            entries.add(SMALL_WITCH_SHARD.getDefaultStack());
             entries.add(SMALL_WITHER_SKELETON_SHARD.getDefaultStack());
             entries.add(SMALL_WOLF_SHARD.getDefaultStack());
             entries.add(SMALL_ZOMBIE_SHARD.getDefaultStack());
@@ -530,6 +554,7 @@ public class UItems {
             entries.add(VILLAGER_SPAWN_EGG.getDefaultStack());
             entries.add(VINDICATOR_SPAWN_EGG.getDefaultStack());
             entries.add(WARDEN_SPAWN_EGG.getDefaultStack());
+            entries.add(WITCH_SPAWN_EGG.getDefaultStack());
             entries.add(WITHER_SKELETON_SPAWN_EGG.getDefaultStack());
             entries.add(WOLF_SPAWN_EGG.getDefaultStack());
             entries.add(ZOGLIN_SPAWN_EGG.getDefaultStack());
@@ -539,6 +564,7 @@ public class UItems {
             // Materials
             // -- Misc
             entries.add(EMPTY_DISC.getDefaultStack());
+            entries.add(PLANT_FIBRE.getDefaultStack());
             entries.add(BUNDLED_FLOWERS.getDefaultStack());
             entries.add(CACTUS_LINING.getDefaultStack());
             //
@@ -577,6 +603,15 @@ public class UItems {
             entries.add(MAGIC_BOOK.getDefaultStack());
             entries.add(IRON_BUNDLE_UPGRADE.getDefaultStack());
             entries.add(DIAMOND_BUNDLE_UPGRADE.getDefaultStack());
+            // -- Meshes
+            entries.add(PLANT_MESH.getDefaultStack());
+            entries.add(STRING_MESH.getDefaultStack());
+            entries.add(FLINT_MESH.getDefaultStack());
+            entries.add(IRON_MESH.getDefaultStack());
+            entries.add(GOLD_MESH.getDefaultStack());
+            entries.add(DIAMOND_MESH.getDefaultStack());
+            entries.add(NETHERITE_MESH.getDefaultStack());
+            entries.add(DRAGON_MESH.getDefaultStack());
             // -- Dusts
             entries.add(DIRT_PILE.getDefaultStack());
             entries.add(SAND_PILE.getDefaultStack());
@@ -587,8 +622,14 @@ public class UItems {
             entries.add(ASH.getDefaultStack());
             entries.add(EXOTIC_DUST.getDefaultStack());
             // -- Nuggets
-            entries.add(FORTRESS_NUGGET.getDefaultStack());
+            entries.add(RAW_COPPER_NUGGET.getDefaultStack());
+            entries.add(RAW_IRON_NUGGET.getDefaultStack());
+            entries.add(RAW_GOLD_NUGGET.getDefaultStack());
+            entries.add(COPPER_NUGGET.getDefaultStack());
+            entries.add(EMERALD_NUGGET.getDefaultStack());
+            entries.add(DIAMOND_NUGGET.getDefaultStack());
             entries.add(NETHERITE_NUGGET.getDefaultStack());
+            entries.add(FORTRESS_NUGGET.getDefaultStack());
             // -- Ingots
             entries.add(RUBY.getDefaultStack());
             entries.add(EMPOWERED_EMERALD.getDefaultStack());
@@ -640,16 +681,21 @@ public class UItems {
             entries.add(ALLAY_COOKIE.getDefaultStack());
             entries.add(RAW_AXOLOTL.getDefaultStack());
             entries.add(COOKED_AXOLOTL.getDefaultStack());
+            entries.add(BONE_STEW.getDefaultStack());
             entries.add(BAT_WING.getDefaultStack());
             entries.add(BONELESS_BAT_WING.getDefaultStack());
+            entries.add(BAT_WING_STEW.getDefaultStack());
             entries.add(FROG_LEG.getDefaultStack());
             entries.add(FROG_LEG_STEW.getDefaultStack());
             entries.add(DRAGON_FLESH.getDefaultStack());
+            entries.add(DRACONIC_STEW.getDefaultStack());
             entries.add(LESSER_GOLDEN_CARROT.getDefaultStack());
             entries.add(ENCHANTED_GOLDEN_CARROT.getDefaultStack());
             entries.add(MAGIC_CARROT.getDefaultStack());
             entries.add(LESSER_GOLDEN_APPLE.getDefaultStack());
             entries.add(MAGIC_APPLE.getDefaultStack());
+            // Misc
+            entries.add(SIEVE.asItem().getDefaultStack());
             // Tables
             entries.add(ENHANCEMENT_TABLE.asItem().getDefaultStack());
             // Ores
@@ -869,6 +915,10 @@ public class UItems {
             entries.add(DEEPSLATE_WARDEN_ORE.asItem().getDefaultStack());
             entries.add(NETHER_WARDEN_ORE.asItem().getDefaultStack());
             entries.add(END_WARDEN_ORE.asItem().getDefaultStack());
+            entries.add(WITCH_ORE.asItem().getDefaultStack());
+            entries.add(DEEPSLATE_WITCH_ORE.asItem().getDefaultStack());
+            entries.add(NETHER_WITCH_ORE.asItem().getDefaultStack());
+            entries.add(END_WITCH_ORE.asItem().getDefaultStack());
             entries.add(WITHER_SKELETON_ORE.asItem().getDefaultStack());
             entries.add(DEEPSLATE_WITHER_SKELETON_ORE.asItem().getDefaultStack());
             entries.add(NETHER_WITHER_SKELETON_ORE.asItem().getDefaultStack());

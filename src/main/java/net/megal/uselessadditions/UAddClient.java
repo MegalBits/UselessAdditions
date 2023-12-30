@@ -3,6 +3,7 @@ package net.megal.uselessadditions;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.megal.uselessadditions.block.SieveEntityRenderer;
 import net.megal.uselessadditions.block.SurvivalSpawnerEntityRenderer;
 import net.megal.uselessadditions.block.UBlocks;
 import net.megal.uselessadditions.item.UItems;
@@ -25,9 +26,11 @@ public class UAddClient implements ClientModInitializer {
 	public static final KeyBinding EXPAND_TOOLTIP = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.uselessadditions.description", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_Z, "category.uselessadditions.keys"));
 	@Override
 	public void onInitializeClient() {
+		BlockRenderLayerMap.INSTANCE.putBlock(UBlocks.SIEVE, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(UBlocks.EMPTY_SPAWNER, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(UBlocks.SURVIVAL_SPAWNER, RenderLayer.getCutoutMipped());
 
+		BlockEntityRendererFactories.register(UBlocks.SIEVE_ENTITY, SieveEntityRenderer::new);
 		BlockEntityRendererFactories.register(UBlocks.SURVIVAL_SPAWNER_ENTITY, SurvivalSpawnerEntityRenderer::new);
 
 		HandledScreens.register(UScreens.ENHANCEMENT_SCREEN_HANDLER, EnhancementScreen::new);

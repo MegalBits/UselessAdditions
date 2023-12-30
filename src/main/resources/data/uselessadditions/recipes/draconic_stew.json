@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "uselessadditions:dragon_heart"
+    },
+    {
+      "item": "uselessadditions:dragon_flesh"
+    },
+    {
+      "item": "uselessadditions:dragon_flesh"
+    },
+    {
+      "item": "minecraft:chorus_fruit"
+    },
+    {
+      "item": "minecraft:chorus_fruit"
+    },
+    {
+      "item": "uselessadditions:ender_pearl_shard"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "item": "uselessadditions:draconic_stew",
+    "count": 1
+  }
+}

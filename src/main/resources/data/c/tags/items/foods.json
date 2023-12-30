@@ -1,8 +1,10 @@
 {
   "replace": false,
   "values": [
+    "uselessadditions:bone_stew",
     "uselessadditions:allay_cookie",
     "uselessadditions:boneless_bat_wing",
+    "uselessadditions:bat_wing_stew",
     "uselessadditions:raw_axolotl",
     "uselessadditions:cooked_axolotl",
     "uselessadditions:frog_leg",
@@ -12,6 +14,7 @@
     "uselessadditions:enchanted_golden_carrot",
     "uselessadditions:magic_apple",
     "uselessadditions:magic_carrot",
-    "uselessadditions:dragon_flesh"
+    "uselessadditions:dragon_flesh",
+    "uselessadditions:draconic_stew"
   ]
 }

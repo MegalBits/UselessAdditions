@@ -30,13 +30,12 @@ public class SpawnerRecipe extends SpecialCraftingRecipe {
 
     @Override
     public boolean matches(RecipeInputInventory recipeInputInventory, World world) {
-        ItemStack stack = new ItemStack(UBlocks.SURVIVAL_SPAWNER.asItem());
         ItemStack egg = new ItemStack(UItems.ZOMBIE_SPAWN_EGG);
         for (int i = 0; i < recipeInputInventory.size(); ++i) {
-            ItemStack stack2 = recipeInputInventory.getStack(i);
-            if (i == 0 && stack2.isIn(UAdd.MOB_EGGS)) egg = stack2;
-            if (i == 4 && !SPAWNER.test(stack2)) return false;
-            if (i != 4 && stack2.getItem() != egg.getItem()) return false;
+            ItemStack stack = recipeInputInventory.getStack(i);
+            if (i == 0 && stack.isIn(UAdd.MOB_EGGS)) egg = stack;
+            if (i == 4 && !SPAWNER.test(stack)) return false;
+            if (i != 4 && stack.getItem() != egg.getItem()) return false;
         }
         return true;
     }

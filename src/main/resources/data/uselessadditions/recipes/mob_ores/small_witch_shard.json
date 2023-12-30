@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "uselessadditions:witch_shard"
+    }
+  ],
+  "result": {
+    "item": "uselessadditions:small_witch_shard",
+    "count": 9
+  }
+}

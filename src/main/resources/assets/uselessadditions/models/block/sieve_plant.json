@@ -1,0 +1,6 @@
+{
+	"parent": "uselessadditions:block/sieve",
+	"textures": {
+		"mesh": "uselessadditions:block/plant_mesh"
+	}
+}

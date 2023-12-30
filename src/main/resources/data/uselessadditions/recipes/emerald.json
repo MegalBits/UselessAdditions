@@ -1,16 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " 1 ",
-    "121",
-    " 1 "
+    "###",
+    "###",
+    "###"
   ],
   "key": {
-    "1": {
-      "item": "uselessadditions:small_villager_shard"
-    },
-    "2": {
-      "item": "uselessadditions:villager_shard"
+    "#": {
+      "item": "uselessadditions:emerald_nugget"
     }
   },
   "result": {

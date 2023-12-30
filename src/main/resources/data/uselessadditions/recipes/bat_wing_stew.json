@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "uselessadditions:boneless_bat_wing"
+    },
+    {
+      "item": "uselessadditions:boneless_bat_wing"
+    },
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "uselessadditions:boneless_bat_wing"
+    },
+    [
+      {
+        "item": "minecraft:red_mushroom"
+      },
+      {
+        "item": "minecraft:brown_mushroom"
+      },
+      {
+        "item": "minecraft:rotten_flesh"
+      },
+      {
+        "item": "minecraft:spider_eye"
+      }
+    ]
+  ],
+  "result": {
+    "item": "uselessadditions:bat_wing_stew",
+    "count": 1
+  }
+}

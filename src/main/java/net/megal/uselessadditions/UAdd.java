@@ -1,6 +1,8 @@
 package net.megal.uselessadditions;
 
+import com.mojang.blaze3d.systems.RenderSystem;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
@@ -13,6 +15,8 @@ import net.megal.uselessadditions.item.UItems;
 import net.megal.uselessadditions.recipe.URecipes;
 import net.megal.uselessadditions.screen.UScreens;
 import net.minecraft.block.Block;
+import net.minecraft.client.render.*;
+import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
@@ -25,10 +29,14 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.RotationAxis;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.VillagerProfession;
+import org.jetbrains.annotations.Nullable;
+import org.joml.Matrix4f;
+import org.lwjgl.opengl.GL11;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -48,6 +56,7 @@ public class UAdd implements ModInitializer {
     public static final TagKey<Item> MOB_EGGS = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "mob_eggs"));
     public static final TagKey<Item> MOB_SHARDS = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "mob_shards"));
     public static final TagKey<Item> SMALL_MOB_SHARDS = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "small_mob_shards"));
+    public static final TagKey<Block> PICKAXE_SHOVEL_MINEABLE = TagKey.of(RegistryKeys.BLOCK, new Identifier("uselessadditions", "mineable/pickaxe_shovel"));
     public static final TagKey<Block> OBSIDIAN_BLOCKS = TagKey.of(RegistryKeys.BLOCK, new Identifier("c", "obsidian_blocks"));
     public static final List<Item> naturalMendingItems = new ArrayList<>();
     public static final List<Item> autoSmeltItems = new ArrayList<>();
@@ -66,6 +75,7 @@ public class UAdd implements ModInitializer {
         autoSmeltItems.add(UItems.BLAZE_METAL_AXE);
         autoSmeltItems.add(UItems.BLAZE_METAL_HOE);
     }
+
     private record VelocityCalculationValue(Vec3d pos, float movementTime, double velocity, float lastMove, float f) {}
     private static final HashMap<UUID, VelocityCalculationValue> playerLastPos = new HashMap<>();
     private static final HashMap<UUID, VelocityCalculationValue> mobLastPos = new HashMap<>();
@@ -107,6 +117,7 @@ public class UAdd implements ModInitializer {
 
     private void addCompostable() {
         compostableItem(UItems.DIRT_PILE, ComposterRarities.EXTREMELY_LOW);
+        compostableItem(UItems.PLANT_FIBRE, ComposterRarities.VERY_LOW);
         compostableItem(UItems.LESSER_GOLDEN_APPLE, ComposterRarities.HIGH);
         compostableItem(UItems.LESSER_GOLDEN_CARROT, ComposterRarities.HIGH);
         compostableItem(UItems.BUNDLED_FLOWERS, ComposterRarities.HIGH);
@@ -292,4 +303,6 @@ public class UAdd implements ModInitializer {
         }
         public float getRarity() {return rarity;}
     }
+
+
 }

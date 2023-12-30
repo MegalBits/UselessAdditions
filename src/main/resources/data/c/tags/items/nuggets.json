@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
+    "uselessadditions:copper_nugget",
+    "uselessadditions:emerald_nugget",
+    "uselessadditions:diamond_nugget",
     "uselessadditions:netherite_nugget"
   ]
 }

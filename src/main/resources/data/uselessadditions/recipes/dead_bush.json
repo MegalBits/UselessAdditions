@@ -10,7 +10,7 @@
       "tag": "minecraft:saplings"
     },
     "2": {
-      "tag": "uselessadditions:undead_essence"
+      "item": "uselessadditions:essence_of_undead"
     }
   },
   "result": {

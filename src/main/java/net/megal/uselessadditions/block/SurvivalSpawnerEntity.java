@@ -179,11 +179,10 @@ public class SurvivalSpawnerEntity extends BlockEntity {
     }
     public void setEntityFromNbt(NbtCompound nbt) {
         if (nbt.contains("EntityStored")) {
-            Registries.ENTITY_TYPE.getOrEmpty(new Identifier(nbt.getString("EntityStored"))).ifPresentOrElse(e -> {
-                entity = e;
-                }, () -> {
-                entity = EntityType.ZOMBIE;
-            });
+            Registries.ENTITY_TYPE.getOrEmpty(new Identifier(nbt.getString("EntityStored"))).ifPresentOrElse(
+                    e -> entity = e,
+                    () -> entity = EntityType.ZOMBIE
+            );
         }
         markDirty();
     }
