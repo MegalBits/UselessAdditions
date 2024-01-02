@@ -1,7 +1,7 @@
 package net.megal.uselessadditions.mixin;
 
-import net.megal.uselessadditions.enchantment.AntiCactusEnchantment;
-import net.megal.uselessadditions.enchantment.AugmentEnchantment;
+import net.megal.uselessadditions.enchantment.CactusLiningEnchantment;
+import net.megal.uselessadditions.enchantment.UEnchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.ItemEntity;
@@ -28,9 +28,9 @@ public abstract class ItemEntityDamageViaEnchant {
             boolean noCactus = false;
             Map<Enchantment, Integer> enchantments = EnchantmentHelper.get(stack);
             for (Enchantment ench : enchantments.keySet()) {
-                if (ench instanceof AugmentEnchantment aug) {
-                    if (aug.isFireproof()) fireProof = true;
-                    if (aug instanceof AntiCactusEnchantment) noCactus = true;
+                if (ench instanceof UEnchantment uEnch) {
+                    if (uEnch.isFireproof()) fireProof = true;
+                    if (uEnch instanceof CactusLiningEnchantment) noCactus = true;
                 }
             }
             if (source.isIn(DamageTypeTags.IS_FIRE) && fireProof) {
@@ -51,7 +51,7 @@ public abstract class ItemEntityDamageViaEnchant {
         if (stack.hasEnchantments()) {
             Map<Enchantment, Integer> enchantments = EnchantmentHelper.get(stack);
             for (Enchantment ench : enchantments.keySet()) {
-                if (ench instanceof AugmentEnchantment aug && aug.isFireproof()) cir.setReturnValue(true);
+                if (ench instanceof UEnchantment uEnch && uEnch.isFireproof()) cir.setReturnValue(true);
             }
         }
     }

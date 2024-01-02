@@ -1,8 +1,6 @@
 package net.megal.uselessadditions;
 
-import com.mojang.blaze3d.systems.RenderSystem;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
@@ -15,8 +13,6 @@ import net.megal.uselessadditions.item.UItems;
 import net.megal.uselessadditions.recipe.URecipes;
 import net.megal.uselessadditions.screen.UScreens;
 import net.minecraft.block.Block;
-import net.minecraft.client.render.*;
-import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
@@ -29,14 +25,10 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.RotationAxis;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.VillagerProfession;
-import org.jetbrains.annotations.Nullable;
-import org.joml.Matrix4f;
-import org.lwjgl.opengl.GL11;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -58,23 +50,6 @@ public class UAdd implements ModInitializer {
     public static final TagKey<Item> SMALL_MOB_SHARDS = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "small_mob_shards"));
     public static final TagKey<Block> PICKAXE_SHOVEL_MINEABLE = TagKey.of(RegistryKeys.BLOCK, new Identifier("uselessadditions", "mineable/pickaxe_shovel"));
     public static final TagKey<Block> OBSIDIAN_BLOCKS = TagKey.of(RegistryKeys.BLOCK, new Identifier("c", "obsidian_blocks"));
-    public static final List<Item> naturalMendingItems = new ArrayList<>();
-    public static final List<Item> autoSmeltItems = new ArrayList<>();
-    public static boolean expandDescriptions = true;
-
-    static {
-        naturalMendingItems.add(UItems.ENCHANTED_HAMMER);
-        naturalMendingItems.add(UItems.AMETHYST_SWORD);
-        naturalMendingItems.add(UItems.AMETHYST_SHOVEL);
-        naturalMendingItems.add(UItems.AMETHYST_PICKAXE);
-        naturalMendingItems.add(UItems.AMETHYST_AXE);
-        naturalMendingItems.add(UItems.AMETHYST_HOE);
-        autoSmeltItems.add(UItems.BLAZE_METAL_SWORD);
-        autoSmeltItems.add(UItems.BLAZE_METAL_SHOVEL);
-        autoSmeltItems.add(UItems.BLAZE_METAL_PICKAXE);
-        autoSmeltItems.add(UItems.BLAZE_METAL_AXE);
-        autoSmeltItems.add(UItems.BLAZE_METAL_HOE);
-    }
 
     private record VelocityCalculationValue(Vec3d pos, float movementTime, double velocity, float lastMove, float f) {}
     private static final HashMap<UUID, VelocityCalculationValue> playerLastPos = new HashMap<>();
@@ -109,10 +84,6 @@ public class UAdd implements ModInitializer {
             mobLastPos.put(uuid, new VelocityCalculationValue(pos, movementTime, vel, lastMove, 20f));
         }
         return List.of(vel, movementTime, lastMove);
-    }
-
-    public static int calcCooldown(ItemStack stack, int cooldown) {
-        return (int)(cooldown * (1f - EnchantmentHelper.getLevel(UEnchantments.QUICKER_COOLDOWN, stack)*.05f));
     }
 
     private void addCompostable() {
@@ -159,13 +130,6 @@ public class UAdd implements ModInitializer {
     }
     @Override
     public void onInitialize() {
-        ServerPlayNetworking.registerGlobalReceiver(new Identifier(MOD_ID, "expanded_descriptions"), (server, player, handler, buf, responseSender) -> {
-            boolean b = buf.readBoolean();
-            server.execute(() -> {
-                expandDescriptions = b;
-            });
-        });
-
         ServerTickEvents.END_SERVER_TICK.register(server -> {
             for (UUID uuid : playerLastPos.keySet()) {
                 VelocityCalculationValue calc = playerLastPos.get(uuid);

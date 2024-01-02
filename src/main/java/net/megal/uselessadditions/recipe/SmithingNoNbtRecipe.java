@@ -20,9 +20,6 @@ import net.minecraft.world.World;
 
 import java.util.stream.Stream;
 
-import static net.megal.uselessadditions.UAdd.autoSmeltItems;
-import static net.megal.uselessadditions.UAdd.naturalMendingItems;
-
 public class SmithingNoNbtRecipe implements SmithingRecipe {
     private final Identifier id;
     public final Ingredient template;
@@ -45,14 +42,7 @@ public class SmithingNoNbtRecipe implements SmithingRecipe {
 
     @Override
     public ItemStack craft(Inventory inventory, DynamicRegistryManager registryManager) {
-        ItemStack stack = this.result.copy();
-        if (naturalMendingItems.contains(stack.getItem())) {
-            stack.addEnchantment(UEnchantments.NATURAL_MENDING, 1);
-        }
-        if (autoSmeltItems.contains(stack.getItem())) {
-            stack.addEnchantment(UEnchantments.AUTO_SMELT, 1);
-        }
-        return stack;
+        return this.result.copy();
     }
 
     @Override

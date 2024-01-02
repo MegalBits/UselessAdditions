@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "223",
+    " 12",
+    " 1 "
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:stick"
+    },
+    "2": {
+      "item": "minecraft:emerald"
+    },
+    "3": {
+      "item": "uselessadditions:emerald_nugget"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:emerald_scythe",
+    "count": 1
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "223",
+    " 12",
+    "41 "
+  ],
+  "key": {
+    "1": {
+      "item": "uselessadditions:netherite_stick"
+    },
+    "2": {
+      "item": "uselessadditions:dragon_scale"
+    },
+    "3": {
+      "item": "minecraft:obsidian"
+    },
+    "4": {
+      "item": "uselessadditions:iron_scythe"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:dragon_scale_scythe",
+    "count": 1
+  }
+}

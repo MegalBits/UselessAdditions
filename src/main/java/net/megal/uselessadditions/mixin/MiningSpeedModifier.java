@@ -1,9 +1,8 @@
 package net.megal.uselessadditions.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
-import net.megal.uselessadditions.enchantment.AugmentEnchantment;
+import net.megal.uselessadditions.enchantment.UEnchantment;
 import net.megal.uselessadditions.enchantment.UEnchantments;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -26,18 +25,12 @@ public abstract class MiningSpeedModifier {
         float ff = player.getInventory().getBlockBreakingSpeed(block);
         if (ff > 1.0f) {
             ItemStack stack = player.getMainHandStack();
-            if (EnchantmentHelper.getLevel(UEnchantments.SUBTERRANEAN, stack) != 0 && player.getPos().getY() < player.getWorld().getSeaLevel()
-                    && player.getWorld().getDimensionKey() == DimensionTypes.OVERWORLD) {
-                double distance = player.getWorld().getSeaLevel() - player.getPos().getY();
-                distance = Math.sqrt(distance * distance);
-                f += (float)distance / 18f;
-            }
             if (stack.hasEnchantments()) {
                 Map<Enchantment, Integer> enchantments = EnchantmentHelper.get(stack);
                 for (Enchantment ench : enchantments.keySet()) {
                     int level = enchantments.get(ench);
-                    if (ench instanceof AugmentEnchantment aug) {
-                        f += aug.getMiningSpeed(level, block);
+                    if (ench instanceof UEnchantment uEnch) {
+                        f += uEnch.getMiningSpeed(level, block);
                     }
                 }
             }
@@ -53,8 +46,8 @@ public abstract class MiningSpeedModifier {
             Map<Enchantment, Integer> enchantments = EnchantmentHelper.get(stack);
             for (Enchantment ench : enchantments.keySet()) {
                 int level = enchantments.get(ench);
-                if (ench instanceof AugmentEnchantment aug) {
-                    f *= aug.getMiningMultiplier(level, block);
+                if (ench instanceof UEnchantment uEnch) {
+                    f *= uEnch.getMiningSpeedMultiplier(level, block);
                 }
             }
         }

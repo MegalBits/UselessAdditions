@@ -6,10 +6,6 @@ package net.megal.uselessadditions.recipe;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonSyntaxException;
-import net.megal.uselessadditions.UAdd;
-import net.megal.uselessadditions.enchantment.AugmentEnchantment;
-import net.megal.uselessadditions.enchantment.TurtleEnchantment;
-import net.megal.uselessadditions.enchantment.UEnchantments;
 import net.megal.uselessadditions.item.UItems;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -21,9 +17,6 @@ import net.minecraft.network.PacketByteBuf;
 import net.minecraft.recipe.*;
 import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.world.World;
@@ -31,9 +24,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Map;
 import java.util.stream.Stream;
-
-import static net.megal.uselessadditions.UAdd.autoSmeltItems;
-import static net.megal.uselessadditions.UAdd.naturalMendingItems;
 
 public class EnhancementAugmentRecipe implements EnhancementRecipe {
     private final Identifier id;
@@ -53,32 +43,8 @@ public class EnhancementAugmentRecipe implements EnhancementRecipe {
     @Override
     public boolean matches(Inventory inventory, World world) {
         ItemStack stack = inventory.getStack(1);
-        boolean isMaxed = false;
-        @Nullable Enchantment enchantment = Registries.ENCHANTMENT.get(modifier);
-        if (enchantment != null) {
-            if (enchantment instanceof TurtleEnchantment && stack.isOf(Items.TURTLE_HELMET)) return false;
-            
-            int level = EnchantmentHelper.getLevel(enchantment, stack);
-            isMaxed = level >= enchantment.getMaxLevel();
-            if (stack.hasEnchantments()) {
-                Map<Enchantment, Integer> enchantments = EnchantmentHelper.get(stack);
-                int augCap = 8;
-                int i = 0;
-                for (Enchantment ench : enchantments.keySet()) {
-                    if (ench instanceof AugmentEnchantment aug) {
-                        int extraAugSlots = aug.getAugmentSlots(enchantments.get(ench));
-                        i++;
-                        augCap += extraAugSlots;
-                    }
-                    else return false;
-                }
-                if (enchantment instanceof AugmentEnchantment aug) {
-                    augCap += aug.getAugmentSlots(level);
-                }
-                if (i >= augCap && !(level > 0)) return false;
-            }
-        }
-        return !isMaxed && this.template.test(inventory.getStack(0)) && this.base.test(inventory.getStack(1)) && this.addition.test(inventory.getStack(2));
+
+        return this.template.test(inventory.getStack(0)) && this.base.test(inventory.getStack(1)) && this.addition.test(inventory.getStack(2));
     }
 
     @Override

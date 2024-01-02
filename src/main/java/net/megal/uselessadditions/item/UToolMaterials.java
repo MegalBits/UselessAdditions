@@ -9,9 +9,6 @@ import net.minecraft.util.Lazy;
 import java.util.function.Supplier;
 
 public enum UToolMaterials implements ToolMaterial {
-    WOODEN_HAMMER(0, 16, 1.5f, 0.0f, 12, () -> Ingredient.fromTag(ItemTags.PLANKS)),
-    IRON_HAMMER(2, 64, 4.0f, 1.5f, 13, () -> Ingredient.ofItems(Items.IRON_INGOT)),
-    AMETHYST_HAMMER(2, 4096, 6.5f, 2.5f, 32, () -> Ingredient.ofItems(UItems.MAGIC_INGOT)),
     AMETHYST(2, 832, 11.0F, 2.5F, 52, () -> Ingredient.ofItems(UItems.MAGIC_INGOT)),
     AMETHYST_P5(AMETHYST.miningLevel, AMETHYST.itemDurability, AMETHYST.miningSpeed, AMETHYST.attackDamage-.5f, AMETHYST.enchantability, () -> AMETHYST.repairIngredient),
     EMERALD(3, 625, 8.5F, 3.0F, 21, () -> Ingredient.ofItems(Items.EMERALD)),

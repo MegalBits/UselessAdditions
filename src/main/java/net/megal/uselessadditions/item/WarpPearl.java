@@ -57,7 +57,7 @@ public class WarpPearl extends Item {
                     player.getItemCooldownManager().set(stack.getItem(), 20);
                 }
                 else if (teleportToPos(world, player, stack)) {
-                    player.getItemCooldownManager().set(stack.getItem(), UAdd.calcCooldown(stack, 300));
+                    player.getItemCooldownManager().set(stack.getItem(), 300);
                     stack.damage(1, player, p -> p.sendToolBreakStatus(hand));
                     world.playSound(null, user.getBlockPos(), SoundEvents.ITEM_CHORUS_FRUIT_TELEPORT, SoundCategory.PLAYERS);
                 }

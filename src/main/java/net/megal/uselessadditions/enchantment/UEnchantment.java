@@ -1,13 +1,14 @@
 package net.megal.uselessadditions.enchantment;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.screen.ScreenTexts;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.function.UnaryOperator;
@@ -21,24 +22,43 @@ public class UEnchantment extends Enchantment {
         //style -> style.withColor(<color>)
         return null;
     }
-    public int tooltipCount() {
+
+    public float getMiningSpeed(int level, BlockState block) {
+        return 0;
+    }
+
+    public float getMiningSpeedMultiplier(int level, BlockState block) {
         return 1;
     }
+
+    public int getDurability(int level) {
+        return 0;
+    }
+
+    public int getExperience(int level) {
+        return 0;
+    }
+
+    public float getExperienceMultiplier(int level) {
+        return 1;
+    }
+
+    public boolean isFireproof() {
+        return false;
+    }
+
+    public boolean tickEffectCondition(LivingEntity user, ItemStack stack, int level) {
+        return false;
+    }
+
+    public void equippedTick(LivingEntity user, ItemStack stack, int level) {}
+
+
     @Override
     public Text getName(int level) {
-        MutableText mutableText = Text.translatable(this.getTranslationKey());
+        MutableText mutableText = (MutableText) super.getName(level);
         if (getColor() != null) {
             mutableText.styled(getColor());
-        }
-        else {
-            if (this.isCursed()) {
-                mutableText.formatted(Formatting.RED);
-            } else {
-                mutableText.formatted(Formatting.GRAY);
-            }
-        }
-        if (level != 1 || this.getMaxLevel() != 1) {
-            mutableText.append(ScreenTexts.SPACE).append(Text.translatable("enchantment.level." + level));
         }
         return mutableText;
     }

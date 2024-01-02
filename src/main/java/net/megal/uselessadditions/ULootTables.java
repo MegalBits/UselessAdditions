@@ -392,10 +392,7 @@ public class ULootTables {
     private static void shardLootBuilder(Identifier id, EntityType<?> entity, Item item, LootTable.Builder tableBuilder, LootTableSource source, int max) {
         entityLootBuilder(id, entity, tableBuilder, source, LootPool.builder()
                 .conditionally(KilledByPlayerLootCondition.builder())
-                .with(ItemEntry.builder(item)
-                        .apply(uniformNumberBuilder(0,max))
-                        .apply(ApplyBonusLootFunction.uniformBonusCount(UEnchantments.SHATTERING, 2))
-                )
+                .with(ItemEntry.builder(item).apply(uniformNumberBuilder(0,max))).apply(lootingFunction(1,3))
         );
     }
     private static void globalItemLootBuilder(Identifier id, Item item, LootTable.Builder tableBuilder, LootTableSource source, float chance, int min, int max) {

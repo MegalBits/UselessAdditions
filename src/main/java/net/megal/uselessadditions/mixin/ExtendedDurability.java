@@ -1,21 +1,15 @@
 package net.megal.uselessadditions.mixin;
 
-import net.megal.uselessadditions.UAdd;
-import net.megal.uselessadditions.enchantment.AugmentEnchantment;
-import net.megal.uselessadditions.enchantment.UEnchantments;
+import net.megal.uselessadditions.enchantment.UEnchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.nbt.NbtList;
-import net.minecraft.registry.Registries;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.Map;
-import java.util.Optional;
 
 @Mixin(ItemStack.class)
 public abstract class ExtendedDurability {
@@ -30,14 +24,15 @@ public abstract class ExtendedDurability {
             Map<Enchantment, Integer> enchantments = EnchantmentHelper.get(stack);
             for (Enchantment ench : enchantments.keySet()) {
                 int level = enchantments.get(ench);
-                if (ench instanceof AugmentEnchantment aug && aug.getDurability(level) != 0) {
-                    f += aug.getDurability(level);
+                if (ench instanceof UEnchantment uEnch && uEnch.getDurability(level) != 0) {
+                    f += uEnch.getDurability(level);
                 }
             }
         }
         if (f > 0) cir.setReturnValue(Math.max(stack.getItem().getMaxDamage() + f, 1));
     }
 
+    /*
     @Inject(at = @At("HEAD"),
             method = "getItemBarColor()I",
             cancellable = true)
@@ -50,4 +45,5 @@ public abstract class ExtendedDurability {
             cir.setReturnValue(0xa63bcc);
         }
     }
+     */
 }

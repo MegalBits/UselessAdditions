@@ -23,7 +23,6 @@ import org.lwjgl.glfw.GLFW;
 
 public class UAddClient implements ClientModInitializer {
 	public static final String MOD_ID = "uselessadditions";
-	public static final KeyBinding EXPAND_TOOLTIP = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.uselessadditions.description", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_Z, "category.uselessadditions.keys"));
 	@Override
 	public void onInitializeClient() {
 		BlockRenderLayerMap.INSTANCE.putBlock(UBlocks.SIEVE, RenderLayer.getCutoutMipped());
@@ -40,15 +39,6 @@ public class UAddClient implements ClientModInitializer {
 		bundlePredicate(UItems.DIAMOND_BUNDLE);
 		bundlePredicate(UItems.NETHERITE_BUNDLE);
 		bundlePredicate(UItems.DRAGON_BUNDLE);
-
-//		ClientTickEvents.END_CLIENT_TICK.register(client -> {
-//			if (client.player != null) {
-//				client.player.sendMessage(Text.literal(String.valueOf(EXPAND_TOOLTIP.isPressed())));
-//				PacketByteBuf buf = PacketByteBufs.create();
-//				buf.writeBoolean(EXPAND_TOOLTIP.isPressed());
-//				ClientPlayNetworking.send(new Identifier(MOD_ID, "expanded_descriptions"), buf);
-//			}
-//		});
 	}
 	private void bundlePredicate(Item item) {
 		ModelPredicateProviderRegistry.register(item, new Identifier("filled"), (stack, world, entity, seed) -> BundleItem.getAmountFilled((ItemStack)stack));
