@@ -21,8 +21,8 @@ public class DamageableItem extends Item {
         return !(alteredStack.getDamage() >= alteredStack.getMaxDamage()) ? alteredStack : ItemStack.EMPTY;
     }
     @Override
-    public void onCraft(ItemStack stack, World world, PlayerEntity player) {
+    public void onCraftByPlayer(ItemStack stack, World world, PlayerEntity player) {
         UItemHelper.unstackItems(stack, world, player);
-        super.onCraft(stack, world, player);
+        super.onCraftByPlayer(stack, world, player);
     }
 }

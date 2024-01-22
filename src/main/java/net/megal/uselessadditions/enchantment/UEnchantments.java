@@ -12,6 +12,18 @@ import static net.minecraft.enchantment.Enchantment.*;
 public class UEnchantments {
     private static final EquipmentSlot[] ALL_ARMOR = new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET};
 
+    public static final LifeLeechEnchantment LIFE_LEECH = registerEnchantment(new Identifier(UAdd.MOD_ID, "life_leech"),
+            new LifeLeechEnchantment(Rarity.VERY_RARE, EquipmentSlot.values()));
+
+    public static final EverlastingEnchantment EVERLASTING = registerEnchantment(new Identifier(UAdd.MOD_ID, "everlasting"),
+            new EverlastingEnchantment(Rarity.VERY_RARE, EquipmentSlot.values()));
+
+    public static final SoulBoundEnchantment SOUL_BOUND = registerEnchantment(new Identifier(UAdd.MOD_ID, "soul_bound"),
+            new SoulBoundEnchantment(Rarity.VERY_RARE, EquipmentSlot.values()));
+
+    public static final TelekinesisEnchantment TELEKINESIS = registerEnchantment(new Identifier(UAdd.MOD_ID, "telekinesis"),
+            new TelekinesisEnchantment(Rarity.VERY_RARE, EquipmentSlot.MAINHAND));
+
     public static final RepairingEnchantment REPAIRING = registerEnchantment(new Identifier(UAdd.MOD_ID, "repairing"),
             new RepairingEnchantment(Rarity.VERY_RARE, EquipmentSlot.values()));
 
@@ -19,7 +31,14 @@ public class UEnchantments {
             new AutoSmeltEnchantment(Rarity.VERY_RARE, EquipmentSlot.MAINHAND));
 
     public static final CactusLiningEnchantment CACTUS_LINING = registerEnchantment(new Identifier(UAdd.MOD_ID, "cactus_lining"),
-            new CactusLiningEnchantment(Rarity.COMMON, EquipmentSlot.values()));
+            new CactusLiningEnchantment(Rarity.VERY_RARE));
+
+    public static final ObsidianPaddingEnchantment OBSIDIAN_PADDING = registerEnchantment(new Identifier(UAdd.MOD_ID, "obsidian_padding"),
+            new ObsidianPaddingEnchantment(Rarity.VERY_RARE));
+
+    public static final HookingEnchantment HOOKING = registerEnchantment(new Identifier(UAdd.MOD_ID, "hooking"),
+            new HookingEnchantment(Rarity.RARE, EquipmentSlot.MAINHAND));
+
 
 
     public static <T extends Enchantment> T registerEnchantment(Identifier id, T enchantment) {

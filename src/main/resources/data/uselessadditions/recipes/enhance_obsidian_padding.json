@@ -1,0 +1,14 @@
+{
+  "type": "uselessadditions:enhancement_augment",
+  "template": {
+    "tag": "c:smithing_hammers"
+  },
+  "base": {
+    "tag": "uselessadditions:augmentable"
+  },
+  "addition": {
+    "item": "uselessadditions:obsidian_padding"
+  },
+  "output_type": 1,
+  "effect": "obsidian_padding"
+}

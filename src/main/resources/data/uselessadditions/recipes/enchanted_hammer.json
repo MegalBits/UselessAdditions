@@ -1,15 +1,20 @@
 {
-  "type": "minecraft:smithing_transform",
-  "template": {
-    "item": "uselessadditions:magic_book"
-  },
-  "base": {
-    "item": "uselessadditions:hammer"
-  },
-  "addition": {
-    "item": "uselessadditions:enchanted_magic_ingot"
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 2 ",
+    " 12",
+    "1  "
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:stick"
+    },
+    "2": {
+      "item": "uselessadditions:magic_ingot"
+    }
   },
   "result": {
-    "item": "uselessadditions:amethyst_hammer"
+    "item": "uselessadditions:amethyst_hammer",
+    "count": 1
   }
 }

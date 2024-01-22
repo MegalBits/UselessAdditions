@@ -53,7 +53,6 @@ public class UEnchantment extends Enchantment {
 
     public void equippedTick(LivingEntity user, ItemStack stack, int level) {}
 
-
     @Override
     public Text getName(int level) {
         MutableText mutableText = (MutableText) super.getName(level);

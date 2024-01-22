@@ -1,0 +1,38 @@
+{
+  "display": {
+    "icon": {
+      "item": "uselessadditions:enhancement_table"
+    },
+    "title": {
+      "translate": "advancements.uselessadditions.enhancement.title"
+    },
+    "description": {
+      "translate": "advancements.uselessadditions.enhancement.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "uselessadditions:main/root",
+  "criteria": {
+    "item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "uselessadditions:enhancement_table"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

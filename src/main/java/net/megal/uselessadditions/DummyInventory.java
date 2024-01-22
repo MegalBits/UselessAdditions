@@ -5,7 +5,6 @@ import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 
 public class DummyInventory implements Inventory {
-
     private ItemStack stack;
     public DummyInventory() {}
     public DummyInventory(ItemStack stack) {

@@ -1,0 +1,5 @@
+accessWidener v2 named
+
+extendable class net/minecraft/enchantment/EnchantmentTarget
+
+accessible field net/minecraft/screen/EnchantmentScreenHandler inventory Lnet/minecraft/inventory/Inventory;

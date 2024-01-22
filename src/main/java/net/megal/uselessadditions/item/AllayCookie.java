@@ -16,9 +16,9 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class AllayCookie extends TooltipItem {
-    public AllayCookie(Settings settings, Formatting formatting) {
-        super(settings, formatting);
+public class AllayCookie extends Item {
+    public AllayCookie(Settings settings) {
+        super(settings);
     }
 
     @Override

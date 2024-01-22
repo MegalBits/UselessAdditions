@@ -24,6 +24,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class EnderdragonDropsStuff {
     @Shadow
     private BlockPos fightOrigin;
+
     @Inject(at = @At("RETURN"),
             method = "kill()V",
             cancellable = false)
@@ -34,7 +35,7 @@ public abstract class EnderdragonDropsStuff {
             World world = dragon.getWorld();
             BlockPos portalPos = world.getTopPosition(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, EndPortalFeature.offsetOrigin(fightOrigin));
             BlockPos dragonPos = dragon.getBlockPos();
-            for (int i = 0; i < random.nextBetween(4, 12); i++) {
+            for (int i = 0; i < random.nextBetween(6, 18); i++) {
                 ItemEntity scale = new ItemEntity(world, dragonPos.getX(), dragonPos.getY(), dragonPos.getZ(), new ItemStack(UItems.DRAGON_SCALE), (double) random.nextBetween(-8,8)/10d, (double) random.nextBetween(4,7)/4d, (double) random.nextBetween(-8,8)/10d);
                 scale.setPickupDelay(80);
                 world.spawnEntity(scale);
@@ -70,6 +71,7 @@ public abstract class EnderdragonDropsStuff {
             if (dragon.ticksSinceDeath == 200) {
                 for (int i = 0; i < random.nextBetween(4, 12); i++) {
                     ItemEntity scale = new ItemEntity(world, dragonPos.getX(), dragonPos.getY(), dragonPos.getZ(), new ItemStack(UItems.DRAGON_SCALE), (double) random.nextBetween(-8,8)/10d, (double) random.nextBetween(4,7)/4d, (double) random.nextBetween(-8,8)/10d);
+                    scale.setCovetedItem();
                     scale.setPickupDelay(80);
                     world.spawnEntity(scale);
                 }
@@ -81,6 +83,7 @@ public abstract class EnderdragonDropsStuff {
                 }
 
                 ItemEntity heart = new ItemEntity(world, dragonPos.getX(), dragonPos.getY(), dragonPos.getZ(), new ItemStack(UItems.DRAGON_HEART), (double) random.nextBetween(-8,8)/10d, (double) random.nextBetween(4,7)/4d, (double) random.nextBetween(-8,8)/10d);
+                heart.setCovetedItem();
                 heart.setPickupDelay(80);
                 world.spawnEntity(heart);
             }

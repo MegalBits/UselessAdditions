@@ -18,12 +18,11 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-import static net.megal.uselessadditions.TooltipStuff.*;
-
 public class SpawnerBlockItem extends BlockItem {
-    private MutableText s = Text.translatable("text.uselessadditions.second");
-    private MutableText m = Text.translatable("text.uselessadditions.minute");
-    private MutableText h = Text.translatable("text.uselessadditions.hour");
+    private final MutableText s = Text.literal("s");
+    private final MutableText m = Text.literal("m");
+    private final MutableText h = Text.literal("h");
+    public final int STAT_COLOR = 0x384258;
 
     public SpawnerBlockItem(Block block, Settings settings) {
         super(block, settings);
@@ -44,7 +43,7 @@ public class SpawnerBlockItem extends BlockItem {
             }, () -> {
             });
         }
-        tooltip.add(PREFIX.copy().append(Text.translatable("spawner.uselessadditions.stats")).formatted(Formatting.GRAY));
+        tooltip.add(Text.translatable("spawner.uselessadditions.stats").formatted(Formatting.GRAY));
         tooltip.add(rechargeText(SurvivalSpawner.EMERALD, SurvivalSpawner.EMERALD_TIME));
         tooltip.add(rechargeText(SurvivalSpawner.DIAMOND, SurvivalSpawner.DIAMOND_TIME));
         tooltip.add(rechargeText(SurvivalSpawner.NETHERITE, SurvivalSpawner.NETHERITE_TIME));
@@ -62,11 +61,11 @@ public class SpawnerBlockItem extends BlockItem {
             displayTime /= 60;
             timeType = h.copy();
         }
-        return TAB.copy().append(
+        return Text.literal(" ").append(
             Text.translatable("spawner.uselessadditions.recharge").append(
             Text.literal(String.valueOf(displayTime)).styled(style -> style.withColor(STAT_COLOR)).append(
             timeType.styled(style -> style.withColor(STAT_COLOR))).append(
-            Text.translatable("text.uselessadditions.per").formatted(Formatting.DARK_GRAY).append(
+            Text.translatable("spawner.uselessadditions.per").formatted(Formatting.DARK_GRAY).append(
             item.getName().copy().styled(style -> style.withColor(STAT_COLOR)))))).formatted(Formatting.DARK_GRAY);
     }
 }

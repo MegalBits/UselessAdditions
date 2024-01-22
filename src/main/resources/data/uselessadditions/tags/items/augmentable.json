@@ -4,14 +4,13 @@
     "#c:smithing_hammers",
     "#minecraft:tools",
     "#c:spears",
+    "#c:scythes",
     "#c:bows",
     "#c:armors",
-    "#c:elytras",
     "#c:shields",
     "#c:shears",
     "#c:fishing_rods",
     "#c:on_a_sticks",
-    "#c:flint_and_steels",
-    "#uselessadditions:cooldownable"
+    "#c:flint_and_steels"
   ]
 }

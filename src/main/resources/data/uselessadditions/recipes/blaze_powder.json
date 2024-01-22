@@ -2,15 +2,18 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "121",
-    "212",
+    "232",
     "121"
   ],
   "key": {
     "1": {
-      "item": "uselessadditions:blaze_shard"
+      "item": "uselessadditions:small_blaze_shard"
     },
     "2": {
       "item": "uselessadditions:ash"
+    },
+    "3": {
+      "item": "uselessadditions:blaze_shard"
     }
   },
   "result": {

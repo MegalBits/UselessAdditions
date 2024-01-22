@@ -22,6 +22,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Quaternionf;
+import org.joml.Vector3f;
 
 import java.util.List;
 import java.util.Optional;
@@ -89,7 +90,7 @@ public class EnhancementScreen extends ForgingScreen<EnhancementScreenHandler> {
         this.templateSlotIcon.render(this.handler, context, delta, this.x, this.y);
         this.baseSlotIcon.render(this.handler, context, delta, this.x, this.y);
         this.additionsSlotIcon.render(this.handler, context, delta, this.x, this.y);
-        InventoryScreen.drawEntity(context, this.x + 141, this.y + 75, 25, ARMOR_STAND_ROTATION, null, (LivingEntity)this.armorStand);
+        InventoryScreen.drawEntity(context, (float)(this.x + 141), (float)(this.y + 75), 25, new Vector3f(), ARMOR_STAND_ROTATION, null, this.armorStand);
     }
 
     @Override

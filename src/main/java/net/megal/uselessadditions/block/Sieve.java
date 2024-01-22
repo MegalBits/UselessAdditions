@@ -1,6 +1,7 @@
 package net.megal.uselessadditions.block;
 
 import com.google.common.collect.ImmutableMap;
+import com.mojang.serialization.MapCodec;
 import net.megal.uselessadditions.UAdd;
 import net.megal.uselessadditions.item.Mesh;
 import net.megal.uselessadditions.item.MeshType;
@@ -62,6 +63,11 @@ public class Sieve extends BlockWithEntity {
     }
 
     @Override
+    protected MapCodec<? extends BlockWithEntity> getCodec() {
+        return null;
+    }
+
+    @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(MESH);
     }
@@ -117,18 +123,14 @@ public class Sieve extends BlockWithEntity {
 
         BlockEntity blockEntity = builder.getOptional(LootContextParameters.BLOCK_ENTITY);
         if (blockEntity instanceof SieveEntity sieveEntity && sieveEntity.getMesh() != null) {
-            UAdd.LOGGER.info("item: " + sieveEntity.getMesh().getDefaultStack());
             drops.add(sieveEntity.getMesh().getDefaultStack());
-        }
-        for (ItemStack stack : drops) {
-            UAdd.LOGGER.info("drop: " + stack);
         }
         return drops;
     }
 
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return checkType(type, UBlocks.SIEVE_ENTITY, world.isClient ? SieveEntity::clientTick : SieveEntity::serverTick);
+        return validateTicker(type, UBlocks.SIEVE_ENTITY, world.isClient ? SieveEntity::clientTick : SieveEntity::serverTick);
     }
 
     @Override

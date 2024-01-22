@@ -55,11 +55,13 @@ public abstract class AutoSmelt {
     }
     private static Optional<ItemStack> getFurnaceOutput(ItemStack stack, ServerWorld world) {
         DUMMY.setStack(0, stack);
-        return world
+        Optional<ItemStack> output = world
                 .getRecipeManager()
                 .listAllOfType(RecipeType.SMELTING).stream()
-                .filter(recipe -> recipe.matches(DUMMY, world))
+                .filter(recipe -> recipe.value().matches(DUMMY, world))
                 .findFirst()
-                .map(recipe -> recipe.getOutput(world.getRegistryManager()).copy());
+                .map(recipe -> recipe.value().getResult(world.getRegistryManager()).copy().getItem().getDefaultStack());
+        output.ifPresent(itemStack -> itemStack.setCount(stack.getCount()));
+        return output;
     }
 }

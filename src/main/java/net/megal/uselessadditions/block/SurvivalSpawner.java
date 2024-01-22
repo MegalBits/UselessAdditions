@@ -1,5 +1,6 @@
 package net.megal.uselessadditions.block;
 
+import com.mojang.serialization.MapCodec;
 import net.megal.uselessadditions.UAdd;
 import net.megal.uselessadditions.item.UItems;
 import net.minecraft.block.BlockRenderType;
@@ -22,6 +23,7 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -36,6 +38,12 @@ public class SurvivalSpawner extends BlockWithEntity {
     protected SurvivalSpawner(Settings settings) {
         super(settings);
     }
+
+    @Override
+    protected MapCodec<? extends BlockWithEntity> getCodec() {
+        return null;
+    }
+
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         boolean wasItemUsed = false;
@@ -85,7 +93,7 @@ public class SurvivalSpawner extends BlockWithEntity {
     }
 
     @Override
-    public ItemStack getPickStack(BlockView world, BlockPos pos, BlockState state) {
+    public ItemStack getPickStack(WorldView world, BlockPos pos, BlockState state) {
         if (world.getBlockEntity(pos) instanceof SurvivalSpawnerEntity blockEntity) {
             ItemStack stack = new ItemStack(this.asItem());
             stack.setNbt(blockEntity.getEntityAsNbt("EntityStored"));
@@ -99,7 +107,7 @@ public class SurvivalSpawner extends BlockWithEntity {
     }
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return checkType(type, UBlocks.SURVIVAL_SPAWNER_ENTITY, world.isClient ? SurvivalSpawnerEntity::clientTick : SurvivalSpawnerEntity::serverTick);
+        return validateTicker(type, UBlocks.SURVIVAL_SPAWNER_ENTITY, world.isClient ? SurvivalSpawnerEntity::clientTick : SurvivalSpawnerEntity::serverTick);
     }
     @Override
     public BlockRenderType getRenderType(BlockState state) {

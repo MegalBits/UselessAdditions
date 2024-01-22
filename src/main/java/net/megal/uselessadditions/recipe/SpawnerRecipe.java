@@ -24,8 +24,8 @@ import net.minecraft.world.World;
 public class SpawnerRecipe extends SpecialCraftingRecipe {
     private static final Ingredient SPAWNER = Ingredient.ofItems(UBlocks.EMPTY_SPAWNER.asItem());
 
-    public SpawnerRecipe(Identifier identifier, CraftingRecipeCategory craftingRecipeCategory) {
-        super(identifier, craftingRecipeCategory);
+    public SpawnerRecipe(CraftingRecipeCategory craftingRecipeCategory) {
+        super(craftingRecipeCategory);
     }
 
     @Override
@@ -54,7 +54,7 @@ public class SpawnerRecipe extends SpecialCraftingRecipe {
         return width == 3 && height == 3;
     }
     @Override
-    public ItemStack getOutput(DynamicRegistryManager registryManager) {
+    public ItemStack getResult(DynamicRegistryManager registryManager) {
         return new ItemStack(UBlocks.SURVIVAL_SPAWNER.asItem());
     }
     @Override

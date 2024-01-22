@@ -1,0 +1,14 @@
+{
+  "type": "uselessadditions:enhancement_augment",
+  "template": {
+    "tag": "c:smithing_hammers"
+  },
+  "base": {
+    "tag": "minecraft:axes"
+  },
+  "addition": {
+    "item": "uselessadditions:tree_felling_upgrade"
+  },
+  "output_type": 1,
+  "effect": "tree_felling"
+}

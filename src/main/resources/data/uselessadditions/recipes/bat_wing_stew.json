@@ -2,16 +2,16 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "uselessadditions:boneless_bat_wing"
+      "item": "uselessadditions:bat_wing"
     },
     {
-      "item": "uselessadditions:boneless_bat_wing"
+      "item": "uselessadditions:bat_wing"
     },
     {
       "item": "minecraft:bowl"
     },
     {
-      "item": "uselessadditions:boneless_bat_wing"
+      "item": "uselessadditions:bat_wing"
     },
     [
       {

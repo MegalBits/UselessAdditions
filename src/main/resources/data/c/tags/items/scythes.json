@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "uselessadditions:wooden_scythe",
+    "uselessadditions:stone_scythe",
+    "uselessadditions:iron_scythe",
+    "uselessadditions:golden_scythe",
+    "uselessadditions:diamond_scythe",
+    "uselessadditions:netherite_scythe",
+    "uselessadditions:amethyst_scythe",
+    "uselessadditions:emerald_scythe",
+    "uselessadditions:blaze_metal_scythe",
+    "uselessadditions:dragon_scale_scythe"
+  ]
+}

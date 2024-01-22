@@ -11,6 +11,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.recipe.SmithingRecipe;
 import net.minecraft.screen.ForgingScreenHandler;
 import net.minecraft.screen.ScreenHandlerContext;
@@ -28,19 +29,10 @@ import java.util.Optional;
 import static net.megal.uselessadditions.UAdd.HAMMERS;
 
 public class EnhancementScreenHandler extends ForgingScreenHandler {
-    public static final int TEMPLATE_ID = 0;
-    public static final int EQUIPMENT_ID = 1;
-    public static final int MATERIAL_ID = 2;
-    public static final int OUTPUT_ID = 3;
-    public static final int TEMPLATE_X = 8;
-    public static final int EQUIPMENT_X = 26;
-    public static final int MATERIAL_X = 44;
-    private static final int OUTPUT_X = 98;
-    public static final int SLOT_Y = 48;
     private final World world;
     @Nullable
-    private EnhancementRecipe currentRecipe;
-    private final List<EnhancementRecipe> recipes;
+    private RecipeEntry<EnhancementRecipe> currentRecipe;
+    private final List<RecipeEntry<EnhancementRecipe>> recipes;
 
     public EnhancementScreenHandler(int syncId, PlayerInventory playerInventory) {
         this(syncId, playerInventory, ScreenHandlerContext.EMPTY);
@@ -54,7 +46,12 @@ public class EnhancementScreenHandler extends ForgingScreenHandler {
 
     @Override
     protected ForgingSlotsManager getForgingSlotsManager() {
-        return ForgingSlotsManager.create().input(0, 8, 48, stack -> this.recipes.stream().anyMatch(recipe -> recipe.testTemplate((ItemStack)stack))).input(1, 26, 48, stack -> this.recipes.stream().anyMatch(smithingRecipe -> smithingRecipe.testBase((ItemStack)stack))).input(2, 44, 48, stack -> this.recipes.stream().anyMatch(smithingRecipe -> smithingRecipe.testAddition((ItemStack)stack))).output(3, 98, 48).build();
+        return ForgingSlotsManager.create()
+                .input(0, 8, 48, stack -> this.recipes.stream().anyMatch(recipe -> recipe.value().testTemplate(stack)))
+                .input(1, 26, 48, stack -> this.recipes.stream().anyMatch(recipe -> recipe.value().testBase(stack)))
+                .input(2, 44, 48, stack -> this.recipes.stream().anyMatch(recipe -> recipe.value().testAddition(stack)))
+                .output(3, 98, 48)
+                .build();
     }
 
     @Override
@@ -64,17 +61,17 @@ public class EnhancementScreenHandler extends ForgingScreenHandler {
 
     @Override
     protected boolean canTakeOutput(PlayerEntity player, boolean present) {
-        return this.currentRecipe != null && this.currentRecipe.matches(this.input, this.world);
+        return this.currentRecipe != null && this.currentRecipe.value().matches(this.input, this.world);
     }
 
     @Override
     protected void onTakeOutput(PlayerEntity player, ItemStack stack) {
-        stack.onCraft(player.getWorld(), player, stack.getCount());
+        stack.onCraftByPlayer(player.getWorld(), player, stack.getCount());
         this.output.unlockLastRecipe(player, this.getInputStacks());
         this.decrementStack(0);
         this.decrementStack(1);
         this.decrementStack(2);
-        this.context.run((world, pos) -> world.syncWorldEvent(WorldEvents.SMITHING_TABLE_USED, (BlockPos)pos, 0));
+        this.context.run((world, pos) -> world.syncWorldEvent(WorldEvents.SMITHING_TABLE_USED, pos, 0));
     }
 
     private List<ItemStack> getInputStacks() {
@@ -98,12 +95,12 @@ public class EnhancementScreenHandler extends ForgingScreenHandler {
 
     @Override
     public void updateResult() {
-        List<EnhancementRecipe> list = this.world.getRecipeManager().getAllMatches(URecipes.ENHANCEMENT, this.input, this.world);
+        List<RecipeEntry<EnhancementRecipe>> list = this.world.getRecipeManager().getAllMatches(URecipes.ENHANCEMENT, this.input, this.world);
         if (list.isEmpty()) {
             this.output.setStack(0, ItemStack.EMPTY);
         } else {
-            EnhancementRecipe enhancementRecipe = list.get(0);
-            ItemStack itemStack = enhancementRecipe.craft(this.input, this.world.getRegistryManager());
+            RecipeEntry<EnhancementRecipe> enhancementRecipe = list.get(0);
+            ItemStack itemStack = enhancementRecipe.value().craft(this.input, this.world.getRegistryManager());
             if (itemStack.isItemEnabled(this.world.getEnabledFeatures())) {
                 this.currentRecipe = enhancementRecipe;
                 this.output.setLastRecipe(enhancementRecipe);
@@ -114,7 +111,7 @@ public class EnhancementScreenHandler extends ForgingScreenHandler {
 
     @Override
     public int getSlotFor(ItemStack stack) {
-        return this.recipes.stream().map(recipe -> EnhancementScreenHandler.getQuickMoveSlot(recipe, stack)).filter(Optional::isPresent).findFirst().orElse(Optional.of(0)).get();
+        return this.recipes.stream().map(recipe -> EnhancementScreenHandler.getQuickMoveSlot(recipe.value(), stack)).filter(Optional::isPresent).findFirst().orElse(Optional.of(0)).get();
     }
 
     private static Optional<Integer> getQuickMoveSlot(EnhancementRecipe recipe, ItemStack stack) {
@@ -137,7 +134,7 @@ public class EnhancementScreenHandler extends ForgingScreenHandler {
 
     @Override
     public boolean isValidIngredient(ItemStack stack) {
-        return this.recipes.stream().map(recipe -> EnhancementScreenHandler.getQuickMoveSlot(recipe, stack)).anyMatch(Optional::isPresent);
+        return this.recipes.stream().map(recipe -> EnhancementScreenHandler.getQuickMoveSlot(recipe.value(), stack)).anyMatch(Optional::isPresent);
     }
 }
 

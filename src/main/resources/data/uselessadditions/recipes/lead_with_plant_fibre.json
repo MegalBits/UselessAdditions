@@ -7,10 +7,10 @@
   ],
   "key": {
     "1": {
-      "item": "minecraft:slime_ball"
+      "item": "uselessadditions:plant_fibre"
     },
     "2": {
-      "item": "uselessadditions:plant_fibre"
+      "item": "minecraft:slime_ball"
     }
   },
   "result": {

@@ -4,18 +4,25 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.megal.uselessadditions.UAdd;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.MapColor;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.enums.Instrument;
+import net.minecraft.block.piston.PistonBehavior;
+import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.Registries;
 
+import static net.minecraft.block.Blocks.TRIPWIRE_HOOK;
+
 public class UBlocks {
+    public static final PlantFibreWire PLANT_FIBRE_TRIPWIRE = register(new Identifier(UAdd.MOD_ID, "plant_fibre_tripwire"), new PlantFibreWire(TRIPWIRE_HOOK, AbstractBlock.Settings.create().noCollision().pistonBehavior(PistonBehavior.DESTROY)));
     //Skyblock stuff
     public static final Sieve SIEVE = register(new Identifier(UAdd.MOD_ID, "sieve"), new Sieve(FabricBlockSettings.create().mapColor(MapColor.BROWN).strength(4.0f).sounds(BlockSoundGroup.WOOD).nonOpaque().notSolid()), new FabricItemSettings());
     //Enhancement table
@@ -270,7 +277,7 @@ public class UBlocks {
     private static <T extends BlockEntityType<?>> T registerEntity(Identifier id, T blockEntity) {
         return Registry.register(Registries.BLOCK_ENTITY_TYPE, id, blockEntity);
     }
-    private static <T extends BlockItem> T registerBlockItem(Identifier id, T item) {
+    public static <T extends BlockItem> T registerBlockItem(Identifier id, T item) {
         return Registry.register(Registries.ITEM, id, item);
     }
     private static void registerBlockItem(Identifier id, Block block, FabricItemSettings settings) {

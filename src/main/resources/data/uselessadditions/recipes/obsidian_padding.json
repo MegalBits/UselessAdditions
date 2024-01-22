@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 12",
+    "223",
+    "33 "
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:crying_obsidian"
+    },
+    "2": {
+      "item": "minecraft:obsidian"
+    },
+    "3": {
+      "tag": "minecraft:wool"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:obsidian_padding",
+    "count": 1
+  }
+}

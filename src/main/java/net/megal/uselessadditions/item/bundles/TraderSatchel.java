@@ -215,7 +215,6 @@ public class TraderSatchel extends Item {
     @Override
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
         tooltip.add(Text.translatable(this.getTranslationKey()+".tooltip").formatted(Formatting.DARK_GRAY));
-        tooltip.add(Text.translatable(this.getTranslationKey()+".tooltip2").formatted(Formatting.GRAY));
         tooltip.add(Text.translatable("item.minecraft.bundle.fullness", TraderSatchel.getBundleOccupancy(stack), MAX_STORAGE).formatted(Formatting.GRAY));
     }
 

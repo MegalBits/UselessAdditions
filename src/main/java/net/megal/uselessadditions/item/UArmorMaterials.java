@@ -18,7 +18,7 @@ public enum UArmorMaterials implements ArmorMaterial {
         map.put(ArmorItem.Type.CHESTPLATE, 8);
         map.put(ArmorItem.Type.HELMET, 4);
     }), 4, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 4.5F, 0.1F, () -> Ingredient.ofItems(UItems.DRAGON_SCALE));
-    public static final StringIdentifiable.Codec<ArmorMaterials> CODEC = StringIdentifiable.createCodec(ArmorMaterials::values);
+    public static final StringIdentifiable.BasicCodec<ArmorMaterials> CODEC = StringIdentifiable.createCodec(ArmorMaterials::values);
     private static final EnumMap<ArmorItem.Type, Integer> BASE_DURABILITY = Util.make(new EnumMap<ArmorItem.Type, Integer>(ArmorItem.Type.class), (map) -> {
         map.put(ArmorItem.Type.BOOTS, 13);
         map.put(ArmorItem.Type.LEGGINGS, 15);

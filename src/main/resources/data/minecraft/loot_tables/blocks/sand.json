@@ -69,7 +69,7 @@
               "children": [
                 {
                   "type": "minecraft:item",
-                  "weight": 389,
+                  "weight": 462,
                   "name": "minecraft:sand",
                   "conditions": [
                     {
@@ -79,7 +79,7 @@
                 },
                 {
                   "type": "minecraft:item",
-                  "weight": 10,
+                  "weight": 8,
                   "name": "uselessadditions:flint_shard",
                   "conditions": [
                     {

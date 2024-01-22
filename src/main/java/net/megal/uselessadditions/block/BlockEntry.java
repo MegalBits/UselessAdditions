@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.tag.convention.v1.TagUtil;
 import net.minecraft.block.Block;
 import net.minecraft.data.server.tag.TagProvider;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.tag.TagKey;
@@ -22,9 +23,14 @@ public class BlockEntry {
         this.blockTag = null;
     }
 
-    public BlockEntry(TagKey<Block> blockTag) {
+    public BlockEntry(TagKey<Block> blockTag, TagKey<Item> itemTag) {
         this.blockTag = blockTag;
         this.block = null;
+    }
+
+    public Item getBlockAsItem() {
+        if (block != null) return block.asItem();
+        return Items.AIR;
     }
 
     public boolean testBlock(Block block2) {

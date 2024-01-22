@@ -1,22 +1,48 @@
 {
-	"required": true,
-	"package": "net.megal.uselessadditions.mixin",
-	"compatibilityLevel": "JAVA_17",
-	"mixins": [
-		"AutoSmelt",
-		"ItemRemainder",
-		"SmithingDamageTemplate",
-		"ComposterOutput",
-		"ItemHooks",
-		"MiningSpeedModifier",
-		"ExtendedDurability",
-		"ExtraExperienceOnKill",
-		"ItemEntityDamageViaEnchant",
-		"EnderdragonDropsStuff",
-		"ItemEntityCanMerge",
-		"EnchantmentHelperHooks"
-	],
-	"injectors": {
-		"defaultRequire": 1
+  "required": true,
+  "package": "net.megal.uselessadditions.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "AddChestToWitchHut",
+    "ApplyDragonsCurse",
+    "ApplyLifeLeech",
+    "AttackDamageModifier",
+    "AutoSmelt",
+    "BuiltinEffectsText",
+    "CapSweepingDamage",
+    "ComposterOutput",
+    "DamagableItemsDontSupportMending",
+    "DamageEnchantmentExtra",
+    "DontDeleteSoulBoundItems",
+    "DontDropSoulBoundItems",
+    "EnchantmentHelperHooks",
+    "EnderdragonDropsStuff",
+    "EnderdragonShotgun",
+    "EverlastingDisablesDespawn",
+    "ExtendableEnchantmentTarget",
+    "ExtendedDurability",
+    "ExtraExperienceOnKill",
+    "ExtraSweeping",
+    "ExtraSweepingTarget",
+    "ItemEntityDamageViaEnchant",
+    "ItemRemainder",
+    "ItemTicking",
+    "MiningLevelModifier",
+    "MiningSpeedModifier",
+    "PlayerHealthFix",
+    "ReverseHookingVelocity",
+    "ShearsWorkOnPlantFibre",
+    "SmithingDamageTemplate",
+    "StopSpecialEffectConflicts",
+    "TelekinesisTransfersToInventory",
+    "Treecapitator",
+    "TripwireHookAcceptsPlantFibre"
+  ],
+  "client": [
+    "CreateFireballTrajectory",
+    "ShowSpecialEffectConflicts"
+  ],
+  "injectors": {
+    "defaultRequire": 1
 	}
 }

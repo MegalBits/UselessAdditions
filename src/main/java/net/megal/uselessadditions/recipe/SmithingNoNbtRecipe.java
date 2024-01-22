@@ -6,6 +6,9 @@ package net.megal.uselessadditions.recipe;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonSyntaxException;
+import com.mojang.datafixers.util.Function4;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.megal.uselessadditions.enchantment.UEnchantments;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.Item;
@@ -21,14 +24,12 @@ import net.minecraft.world.World;
 import java.util.stream.Stream;
 
 public class SmithingNoNbtRecipe implements SmithingRecipe {
-    private final Identifier id;
     public final Ingredient template;
     public final Ingredient base;
     public final Ingredient addition;
     final ItemStack result;
 
-    public SmithingNoNbtRecipe(Identifier id, Ingredient template, Ingredient base, Ingredient addition, ItemStack result) {
-        this.id = id;
+    public SmithingNoNbtRecipe(Ingredient template, Ingredient base, Ingredient addition, ItemStack result) {
         this.template = template;
         this.base = base;
         this.addition = addition;
@@ -46,7 +47,7 @@ public class SmithingNoNbtRecipe implements SmithingRecipe {
     }
 
     @Override
-    public ItemStack getOutput(DynamicRegistryManager registryManager) {
+    public ItemStack getResult(DynamicRegistryManager registryManager) {
         return this.result;
     }
 
@@ -66,11 +67,6 @@ public class SmithingNoNbtRecipe implements SmithingRecipe {
     }
 
     @Override
-    public Identifier getId() {
-        return this.id;
-    }
-
-    @Override
     public RecipeSerializer<?> getSerializer() {
         return URecipes.SMITHING_NO_NBT_RECIPE;
     }
@@ -82,22 +78,28 @@ public class SmithingNoNbtRecipe implements SmithingRecipe {
 
     public static class Serializer
     implements RecipeSerializer<SmithingNoNbtRecipe> {
+        private static final Codec<SmithingNoNbtRecipe> CODEC = RecordCodecBuilder.create(
+                instance -> instance.group(
+                        Ingredient.ALLOW_EMPTY_CODEC.fieldOf("template").forGetter(recipe -> recipe.template),
+                        Ingredient.ALLOW_EMPTY_CODEC.fieldOf("base").forGetter(recipe -> recipe.base),
+                        Ingredient.ALLOW_EMPTY_CODEC.fieldOf("addition").forGetter(recipe -> recipe.addition),
+                        ItemStack.RECIPE_RESULT_CODEC.fieldOf("result").forGetter(recipe -> recipe.result)
+                )
+                .apply(instance, SmithingNoNbtRecipe::new)
+        );
+
         @Override
-        public SmithingNoNbtRecipe read(Identifier identifier, JsonObject jsonObject) {
-            Ingredient ingredient = Ingredient.fromJson(JsonHelper.getElement(jsonObject, "template"));
-            Ingredient ingredient2 = Ingredient.fromJson(JsonHelper.getElement(jsonObject, "base"));
-            Ingredient ingredient3 = Ingredient.fromJson(JsonHelper.getElement(jsonObject, "addition"));
-            ItemStack itemStack = ShapedRecipe.outputFromJson(JsonHelper.getObject(jsonObject, "result"));
-            return new SmithingNoNbtRecipe(identifier, ingredient, ingredient2, ingredient3, itemStack);
+        public Codec<SmithingNoNbtRecipe> codec() {
+            return CODEC;
         }
 
         @Override
-        public SmithingNoNbtRecipe read(Identifier identifier, PacketByteBuf packetByteBuf) {
+        public SmithingNoNbtRecipe read(PacketByteBuf packetByteBuf) {
             Ingredient ingredient = Ingredient.fromPacket(packetByteBuf);
             Ingredient ingredient2 = Ingredient.fromPacket(packetByteBuf);
             Ingredient ingredient3 = Ingredient.fromPacket(packetByteBuf);
             ItemStack itemStack = packetByteBuf.readItemStack();
-            return new SmithingNoNbtRecipe(identifier, ingredient, ingredient2, ingredient3, itemStack);
+            return new SmithingNoNbtRecipe(ingredient, ingredient2, ingredient3, itemStack);
         }
 
         @Override

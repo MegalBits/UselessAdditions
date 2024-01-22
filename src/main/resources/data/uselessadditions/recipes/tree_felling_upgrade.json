@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "121",
+    "343",
+    "555"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:golden_axe"
+    },
+    "2": {
+      "item": "minecraft:iron_axe"
+    },
+    "3": {
+      "item": "uselessadditions:magic_ingot"
+    },
+    "4": {
+      "item": "uselessadditions:enchanted_magic_ingot"
+    },
+    "5": {
+      "tag": "minecraft:logs"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:tree_felling_upgrade",
+    "count": 1
+  }
+}

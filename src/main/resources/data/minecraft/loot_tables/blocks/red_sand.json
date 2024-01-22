@@ -83,7 +83,7 @@
               "children": [
                 {
                   "type": "minecraft:item",
-                  "weight": 380,
+                  "weight": 430,
                   "name": "minecraft:red_sand",
                   "conditions": [
                     {

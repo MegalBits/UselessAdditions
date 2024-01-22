@@ -21,7 +21,7 @@ public class UHoeItem extends HoeItem {
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         List<Text> effectsText = UItemHelper.effectsText(stack, effects);
-        if (!effectsText.isEmpty()) tooltip.addAll(effectsText);
+        if (!effectsText.isEmpty() && stack.getOrCreateNbt().isEmpty()) tooltip.addAll(effectsText);
     }
 
     @Override
@@ -31,7 +31,9 @@ public class UHoeItem extends HoeItem {
 
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-        if (UItemHelper.getEffects(stack) != effects) UItemHelper.setEffects(stack, effects);
+        for (String s : effects) {
+            if (!UItemHelper.getEffects(stack).contains(s)) UItemHelper.addEffects(stack, List.of(s));
+        }
         super.inventoryTick(stack, world, entity, slot, selected);
     }
 }

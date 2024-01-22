@@ -4,9 +4,12 @@
 package net.megal.uselessadditions.recipe;
 
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.JsonSyntaxException;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.megal.uselessadditions.UAdd;
+import net.megal.uselessadditions.item.SpecialEffects;
 import net.megal.uselessadditions.item.UItems;
+import net.megal.uselessadditions.item.base.UItemHelper;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.inventory.Inventory;
@@ -20,57 +23,68 @@ import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
 
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Stream;
 
 public class EnhancementAugmentRecipe implements EnhancementRecipe {
-    private final Identifier id;
+
     public final Ingredient template;
     public final Ingredient base;
     public final Ingredient addition;
-    final Identifier modifier;
+    public final int type;
+    public final String effect;
 
-    public EnhancementAugmentRecipe(Identifier id, Ingredient template, Ingredient base, Ingredient addition, Identifier modifier) {
-        this.id = id;
+    public EnhancementAugmentRecipe(Ingredient template, Ingredient base, Ingredient addition, int type, String effect) {
         this.template = template;
         this.base = base;
         this.addition = addition;
-        this.modifier = modifier;
+        this.type = type;
+        this.effect = effect;
     }
 
     @Override
     public boolean matches(Inventory inventory, World world) {
         ItemStack stack = inventory.getStack(1);
-
-        return this.template.test(inventory.getStack(0)) && this.base.test(inventory.getStack(1)) && this.addition.test(inventory.getStack(2));
+        boolean isCompatible = !UItemHelper.getEffects(stack).contains(effect);
+        List<Enchantment> enchantments = EnchantmentHelper.get(stack).keySet().stream().toList();
+        List<Enchantment> incompatibleEnchantments = SpecialEffects.effects.get(effect).enchantments;
+        List<String> incompatibleEffects = SpecialEffects.effects.get(effect).effects;
+        if (incompatibleEffects.contains(effect)) {
+            isCompatible = false;
+        }
+        for (Enchantment enchantment : enchantments) {
+            if (incompatibleEnchantments.contains(enchantment)) {
+                isCompatible = false;
+                break;
+            }
+        }
+        return isCompatible && this.template.test(inventory.getStack(0)) && this.base.test(inventory.getStack(1)) && this.addition.test(inventory.getStack(2));
     }
 
     @Override
     public ItemStack craft(Inventory inventory, DynamicRegistryManager registryManager) {
-        ItemStack stack = new ItemStack(inventory.getStack(1).getItem());
-        NbtCompound nbtCompound = inventory.getStack(1).getNbt();
-        if (nbtCompound != null) stack.setNbt(nbtCompound.copy());
-        @Nullable Enchantment enchantment = Registries.ENCHANTMENT.get(modifier);
-        if (enchantment != null) {
-            int level = EnchantmentHelper.getLevel(enchantment, stack);
-            Map<Enchantment, Integer> map = EnchantmentHelper.get(stack);
-            if (level <= 0) stack.addEnchantment(enchantment, 1);
-            else if (level < enchantment.getMaxLevel()) {
-                map.replace(enchantment, EnchantmentHelper.getLevel(enchantment, stack) + 1);
-                EnchantmentHelper.set(map, stack);
-            }
-        }
+        ItemStack stack = inventory.getStack(1).copy();
+        UItemHelper.addEffects(stack, List.of(effect));
         return stack;
     }
 
     @Override
-    public ItemStack getOutput(DynamicRegistryManager registryManager) {
-        ItemStack stack = new ItemStack(UItems.AUGMENT);
-        @Nullable Enchantment enchantment = Registries.ENCHANTMENT.get(modifier);
-        if (enchantment != null) stack.addEnchantment(enchantment, enchantment.getMaxLevel());
-        //stack.setCustomName(Text.translatable("item.uselessadditions.augment_book").formatted(Formatting.WHITE));
+    public ItemStack getResult(DynamicRegistryManager registryManager) {
+        ItemStack stack = ItemStack.EMPTY;
+        switch (type) {
+            case 1:
+                stack = UItems.MODIFIER.getDefaultStack();
+                break;
+            case 2:
+                break;
+            default:
+                UAdd.LOGGER.error("Incorrect recipe type given for enhancement recipe, this will cause it to show up with a blank output in REI!");
+                break;
+        }
+        if (!stack.isEmpty()) UItemHelper.addEffects(stack, List.of(effect));
         return stack;
     }
 
@@ -90,11 +104,6 @@ public class EnhancementAugmentRecipe implements EnhancementRecipe {
     }
 
     @Override
-    public Identifier getId() {
-        return this.id;
-    }
-
-    @Override
     public RecipeSerializer<?> getSerializer() {
         return URecipes.ENHANCMENT_AUGMENT_RECIPE;
     }
@@ -103,43 +112,33 @@ public class EnhancementAugmentRecipe implements EnhancementRecipe {
     public boolean isEmpty() {
         return Stream.of(this.template, this.base, this.addition).anyMatch(Ingredient::isEmpty);
     }
-
-    public static Identifier outputFromJson(JsonObject json) {
-        Identifier id = EnhancementAugmentRecipe.getIdentifier(json);
-        if (json.has("data")) {
-            throw new JsonParseException("Disallowed data tag found");
-        }
-        int i = JsonHelper.getInt(json, "count", 1);
-        if (i < 1) {
-            throw new JsonSyntaxException("Invalid output count: " + i);
-        }
-        return id;
-    }
-
-    public static Identifier getIdentifier(JsonObject json) {
-        String string = JsonHelper.getString(json, "enchantment");
-        return new Identifier(string);
-    }
-
+    
     public static class Serializer
     implements RecipeSerializer<EnhancementAugmentRecipe> {
+        private static final Codec<EnhancementAugmentRecipe> CODEC = RecordCodecBuilder.create(
+                instance -> instance.group(
+                                Ingredient.ALLOW_EMPTY_CODEC.fieldOf("template").forGetter(recipe -> recipe.template),
+                                Ingredient.ALLOW_EMPTY_CODEC.fieldOf("base").forGetter(recipe -> recipe.base),
+                                Ingredient.ALLOW_EMPTY_CODEC.fieldOf("addition").forGetter(recipe -> recipe.addition),
+                                Codec.INT.fieldOf("output_type").forGetter(recipe -> recipe.type),
+                                Codec.STRING.fieldOf("effect").forGetter(recipe -> recipe.effect)
+                        )
+                        .apply(instance, EnhancementAugmentRecipe::new)
+        );
 
         @Override
-        public EnhancementAugmentRecipe read(Identifier identifier, JsonObject jsonObject) {
-            Ingredient ingredient = Ingredient.fromJson(JsonHelper.getElement(jsonObject, "template"));
-            Ingredient ingredient2 = Ingredient.fromJson(JsonHelper.getElement(jsonObject, "base"));
-            Ingredient ingredient3 = Ingredient.fromJson(JsonHelper.getElement(jsonObject, "addition"));
-            Identifier modifier = EnhancementAugmentRecipe.outputFromJson(JsonHelper.getObject(jsonObject, "modifier"));
-            return new EnhancementAugmentRecipe(identifier, ingredient, ingredient2, ingredient3, modifier);
+        public Codec<EnhancementAugmentRecipe> codec() {
+            return CODEC;
         }
 
         @Override
-        public EnhancementAugmentRecipe read(Identifier identifier, PacketByteBuf packetByteBuf) {
+        public EnhancementAugmentRecipe read(PacketByteBuf packetByteBuf) {
             Ingredient ingredient = Ingredient.fromPacket(packetByteBuf);
             Ingredient ingredient2 = Ingredient.fromPacket(packetByteBuf);
             Ingredient ingredient3 = Ingredient.fromPacket(packetByteBuf);
-            Identifier modifier = packetByteBuf.readIdentifier();
-            return new EnhancementAugmentRecipe(identifier, ingredient, ingredient2, ingredient3, modifier);
+            int type = packetByteBuf.readInt();
+            String effect = packetByteBuf.readString();
+            return new EnhancementAugmentRecipe(ingredient, ingredient2, ingredient3, type, effect);
         }
 
         @Override
@@ -147,7 +146,8 @@ public class EnhancementAugmentRecipe implements EnhancementRecipe {
             enhancementAugmentRecipe.template.write(packetByteBuf);
             enhancementAugmentRecipe.base.write(packetByteBuf);
             enhancementAugmentRecipe.addition.write(packetByteBuf);
-            packetByteBuf.writeIdentifier(enhancementAugmentRecipe.modifier);
+            packetByteBuf.writeInt(enhancementAugmentRecipe.type);
+            packetByteBuf.writeString(enhancementAugmentRecipe.effect);
         }
     }
 }

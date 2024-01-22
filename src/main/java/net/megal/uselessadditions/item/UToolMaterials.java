@@ -11,8 +11,8 @@ import java.util.function.Supplier;
 public enum UToolMaterials implements ToolMaterial {
     AMETHYST(2, 832, 11.0F, 2.5F, 52, () -> Ingredient.ofItems(UItems.MAGIC_INGOT)),
     AMETHYST_P5(AMETHYST.miningLevel, AMETHYST.itemDurability, AMETHYST.miningSpeed, AMETHYST.attackDamage-.5f, AMETHYST.enchantability, () -> AMETHYST.repairIngredient),
-    EMERALD(3, 625, 8.5F, 3.0F, 21, () -> Ingredient.ofItems(Items.EMERALD)),
-    BLAZE_METAL(4, 1920, 8.5f, 3.5f, 15, () -> Ingredient.ofItems(UItems.BLAZE_METAL)),
+    EMERALD(2, 625, 8.5F, 3.0F, 21, () -> Ingredient.ofItems(Items.EMERALD)),
+    BLAZE_METAL(3, 1920, 8.5f, 3.5f, 15, () -> Ingredient.ofItems(UItems.BLAZE_METAL)),
     BLAZE_METAL_P5(BLAZE_METAL.miningLevel, BLAZE_METAL.itemDurability, BLAZE_METAL.miningSpeed, BLAZE_METAL.attackDamage-.5f, BLAZE_METAL.enchantability, () -> BLAZE_METAL.repairIngredient),
     DRAGON_SCALE(4, 5760, 10f, 4.5f, 7, () -> Ingredient.ofItems(UItems.DRAGON_SCALE)),
     DRAGON_SCALE_P5(DRAGON_SCALE.miningLevel, DRAGON_SCALE.itemDurability, DRAGON_SCALE.miningSpeed, DRAGON_SCALE.attackDamage-.5f, DRAGON_SCALE.enchantability, () -> DRAGON_SCALE.repairIngredient);

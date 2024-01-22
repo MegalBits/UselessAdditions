@@ -13,23 +13,29 @@ import me.shedaniel.rei.api.common.util.EntryStacks;
 import me.shedaniel.rei.plugin.common.displays.crafting.DefaultCustomDisplay;
 import net.megal.uselessadditions.UAdd;
 import net.megal.uselessadditions.block.UBlocks;
-import net.megal.uselessadditions.item.SpawnEgg;
+import net.megal.uselessadditions.item.*;
+import net.megal.uselessadditions.item.base.UItemHelper;
 import net.megal.uselessadditions.recipe.EnhancementAugmentRecipe;
 import net.megal.uselessadditions.recipe.SmithingNoNbtRecipe;
+import net.megal.uselessadditions.recipe.URecipes;
 import net.minecraft.entity.EntityType;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.registry.Registries;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
+import net.minecraft.util.Identifier;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class UAddREIClientPlugin implements REIClientPlugin {
 
     public static final CategoryIdentifier<SmithingNoNbtDisplay> SMITHING_NO_NBT = CategoryIdentifier.of(UAdd.MOD_ID, "smithing_no_nbt");
     public static final CategoryIdentifier<EnhancementDisplay> ENHANCEMENT = CategoryIdentifier.of(UAdd.MOD_ID, "enhancement");
+
     @Override
     public void registerCategories(CategoryRegistry registry) {
         registry.add(new SmithingNoNbtCategory());
@@ -41,7 +47,7 @@ public class UAddREIClientPlugin implements REIClientPlugin {
     @Override
     public void registerDisplays(DisplayRegistry registry) {
         registry.registerRecipeFiller(SmithingNoNbtRecipe.class, RecipeType.SMITHING, SmithingNoNbtDisplay::new);
-        registry.registerFiller(EnhancementAugmentRecipe.class, EnhancementDisplay::new);
+        registry.registerRecipeFiller(EnhancementAugmentRecipe.class, URecipes.ENHANCEMENT, EnhancementDisplay::new);
 
         //EntryIngredient mobEggs = EntryIngredients.ofItemTag(UAdd.MOB_EGGS);
         ReferenceSet<EntityType<?>> registeredEntities = new ReferenceOpenHashSet<>();
