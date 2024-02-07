@@ -4,7 +4,6 @@ import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ToolMaterial;
 import net.minecraft.text.Text;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
@@ -36,4 +35,6 @@ public class UItem extends Item {
         }
         super.inventoryTick(stack, world, entity, slot, selected);
     }
+
+
 }

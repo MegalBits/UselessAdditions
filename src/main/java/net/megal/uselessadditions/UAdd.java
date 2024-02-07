@@ -12,6 +12,9 @@ import net.megal.uselessadditions.item.UGroups;
 import net.megal.uselessadditions.item.UItems;
 import net.megal.uselessadditions.recipe.URecipes;
 import net.megal.uselessadditions.screen.UScreens;
+import net.megal.uselessadditions.worldgen.UFeatures;
+import net.megal.uselessadditions.worldgen.UStructurePieces;
+import net.megal.uselessadditions.worldgen.UStructures;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.LivingEntity;
@@ -19,16 +22,20 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOffers;
 import net.minecraft.village.VillagerProfession;
+import net.minecraft.world.GameRules;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
@@ -94,8 +101,12 @@ public class UAdd implements ModInitializer {
         });
         TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER, 1, factories -> {
             factories.add((entity, random) -> new TradeOffer(
-                    new ItemStack(Items.EMERALD, 1), new ItemStack(Items.BONE_MEAL, 2), 16, 3, 0.07f
+                    new ItemStack(Items.EMERALD, 1), new ItemStack(Items.BONE_MEAL, 2), 16, 1, 0.07f
             ));
+        });
+        TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER, 4, factories -> {
+            factories.add(((entity, random) -> new TradeOffers.SellItemFactory(UItems.CHOCOLATE_CAKE, 1, 1, 12, 15).create(entity, random)));
+            factories.add(((entity, random) -> new TradeOffers.SellItemFactory(UItems.RAINBOW_CAKE, 5, 1, 12, 20).create(entity, random)));
         });
         TradeOfferHelper.registerVillagerOffers(VillagerProfession.LIBRARIAN, 1, factories -> {
             factories.add((entity, random) -> new TradeOffers.EnchantBookFactory(5).create(entity, random));
@@ -122,8 +133,8 @@ public class UAdd implements ModInitializer {
             ));
         });
     }
-    @Override
-    public void onInitialize() {
+
+    private static void addServerEvents() {
         ServerTickEvents.END_SERVER_TICK.register(server -> {
             for (UUID uuid : playerLastPos.keySet()) {
                 VelocityCalculationValue calc = playerLastPos.get(uuid);
@@ -146,6 +157,14 @@ public class UAdd implements ModInitializer {
                 else mobLastPos.remove(uuid);
             }
         });
+    }
+
+    @Override
+    public void onInitialize() {
+        //"config/uadd/common.toml"
+
+        //Loads server events
+        addServerEvents();
 
         //Loads entity attributes
         UEntities.registerAttributes();
@@ -180,8 +199,14 @@ public class UAdd implements ModInitializer {
         //Loads recipes
         URecipes.loadStuff();
 
-        //Loads in world gen stuff such as ores
-        UWorldgen.wgenLoad();
+        //Loads structure pieces
+        UStructurePieces.loadStuff();
+
+        //Loads in structures
+        UStructures.loadStuff();
+
+        //Loads in features like ores
+        UFeatures.loadStuff();
 
         //Adds stuff to loot tables
         ULootTables.modifyLootTables();

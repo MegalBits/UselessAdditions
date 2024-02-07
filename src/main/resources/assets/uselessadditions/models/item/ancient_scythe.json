@@ -1,0 +1,6 @@
+{
+	"parent": "uselessadditions:item/handheld2x",
+	"textures": {
+		"layer0": "uselessadditions:item/ancient_scythe"
+	}
+}

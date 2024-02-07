@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "321",
+    "2 1",
+    "321"
+  ],
+  "key": {
+    "1": {
+      "item": "uselessadditions:netherite_string"
+    },
+    "2": {
+      "item": "uselessadditions:blaze_metal"
+    },
+    "3": {
+      "item": "minecraft:blaze_powder"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:blaze_metal_bow",
+    "count": 1
+  }
+}

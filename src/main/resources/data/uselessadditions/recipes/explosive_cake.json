@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "111",
+    "232",
+    "444"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:milk_bucket"
+    },
+    "2": {
+      "item": "minecraft:gunpowder"
+    },
+    "3": {
+      "item": "minecraft:tnt"
+    },
+    "4": {
+      "item": "minecraft:wheat"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:explosive_cake",
+    "count": 1
+  }
+}

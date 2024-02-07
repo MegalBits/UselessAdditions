@@ -1,6 +1,5 @@
 package net.megal.uselessadditions.item.base;
 
-import net.megal.uselessadditions.UAdd;
 import net.megal.uselessadditions.item.SpecialEffects;
 import net.megal.uselessadditions.item.TwoHanded;
 import net.minecraft.entity.ItemEntity;
@@ -93,7 +92,7 @@ public class UItemHelper {
     private static MutableText createEffectText(boolean isBuiltin, String s) {
         return Text.translatable(isBuiltin ? "specialeffect.builtin" : "specialeffect.modified").formatted(Formatting.DARK_GRAY).append(Text.literal(" ").append(Text.translatable("specialeffect.uselessadditions."+s).formatted(Formatting.GRAY)));
     }
-
+    /*
     public static ItemStack unstackItems(ItemStack stack, World world, PlayerEntity player) {
         if(stack.getCount() > stack.getMaxCount()) {
             for (int i = 0; i < stack.getCount()-1; i++) {
@@ -105,7 +104,7 @@ public class UItemHelper {
         }
         return stack;
     }
-
+    */
     public static ToolMaterial modifyMaterial(ToolMaterial material, int durability, float miningSpeed, float attackDamage, int miningLevel, int enchantability, @Nullable Ingredient ingredient) {
         return new ToolMaterial() {
             @Override

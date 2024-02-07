@@ -2,14 +2,10 @@ package net.megal.uselessadditions.enchantment;
 
 import com.chocohead.mm.api.ClassTinkerers;
 import net.megal.uselessadditions.EarlyRiser;
-import net.megal.uselessadditions.item.SpecialEffects;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
-import net.minecraft.enchantment.FireAspectEnchantment;
 import net.minecraft.enchantment.KnockbackEnchantment;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 
 public class HookingEnchantment extends UEnchantment {

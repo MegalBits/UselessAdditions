@@ -2,14 +2,14 @@ package net.megal.uselessadditions.enchantment;
 
 import com.chocohead.mm.api.ClassTinkerers;
 import net.megal.uselessadditions.EarlyRiser;
-import net.megal.uselessadditions.UAdd;
-import net.megal.uselessadditions.enchantment.target.ScytheEnchantmentTarget;
 import net.megal.uselessadditions.item.SpecialEffects;
 import net.minecraft.enchantment.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.BowItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.SwordItem;
 
 public class AutoSmeltEnchantment extends SpecEffEnchantment {
 
@@ -34,11 +34,11 @@ public class AutoSmeltEnchantment extends SpecEffEnchantment {
 
     @Override
     public boolean isAcceptableItem(ItemStack stack) {
-        return super.isAcceptableItem(stack);
+        return stack.getItem() instanceof SwordItem || stack.getItem() instanceof BowItem || super.isAcceptableItem(stack);
     }
     @Override
     public boolean canAccept(Enchantment other) {
-        if (other instanceof FireAspectEnchantment) {
+        if (other instanceof FireAspectEnchantment || other instanceof FlameEnchantment) {
             return false;
         }
         return super.canAccept(other);

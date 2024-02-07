@@ -2,13 +2,10 @@ package net.megal.uselessadditions.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import net.fabricmc.fabric.api.mininglevel.v1.MiningLevelManager;
-import net.megal.uselessadditions.UAdd;
-import net.megal.uselessadditions.item.SpecialEffects;
 import net.megal.uselessadditions.item.base.UItemHelper;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.MiningToolItem;
 import net.minecraft.item.ToolItem;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

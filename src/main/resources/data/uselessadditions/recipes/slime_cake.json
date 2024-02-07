@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "111",
+    "232",
+    "444"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:slime_block"
+    },
+    "2": {
+      "item": "minecraft:sugar"
+    },
+    "3": {
+      "item": "minecraft:slime_ball"
+    },
+    "4": {
+      "item": "minecraft:wheat"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:slime_cake",
+    "count": 1
+  }
+}

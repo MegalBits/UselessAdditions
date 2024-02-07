@@ -1,6 +1,5 @@
 package net.megal.uselessadditions.item.base;
 
-import net.megal.uselessadditions.UAdd;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.AxeItem;

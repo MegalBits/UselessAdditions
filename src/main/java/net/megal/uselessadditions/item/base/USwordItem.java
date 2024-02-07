@@ -36,4 +36,6 @@ public class USwordItem extends SwordItem {
         }
         super.inventoryTick(stack, world, entity, slot, selected);
     }
+
+
 }

@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "111",
+    "232",
+    "444"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:milk_bucket"
+    },
+    "2": {
+      "item": "minecraft:sugar"
+    },
+    "3": {
+      "item": "minecraft:egg"
+    },
+    "4": {
+      "item": "uselessadditions:bundled_flowers"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:rainbow_cake",
+    "count": 1
+  }
+}

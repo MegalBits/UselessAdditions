@@ -1,0 +1,16 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "frequency": 0.007,
+    "frequency_reduction_method": "legacy_type_3",
+    "salt": 12,
+    "separation": 1,
+    "spacing": 2
+  },
+  "structures": [
+    {
+      "structure": "uselessadditions:mineshaft",
+      "weight": 1
+    }
+  ]
+}

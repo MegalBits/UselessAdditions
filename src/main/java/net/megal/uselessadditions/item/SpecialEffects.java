@@ -19,15 +19,19 @@ public class SpecialEffects {
     public static float CXP_MINING_LEVEL_REQ = 30f;
     public static float CXP_DAMAGE = .075f;
     public static float CXP_EFFICIENCY = .15f;
-
+    public static float CXP_ARROW_SPEED = .0070313f;
+    public static float CXP_ACCURACY = .003172f;
+    public static float CXP_CHARGE_SPEED = .003125f;
 
     public static final HashMap<String, SpecialEffect> effects = new HashMap<>();
-    public static final String AUTO_SMELT = registerEffect("auto_smelt", new SpecialEffect(UEnchantments.AUTO_SMELT, Enchantments.FIRE_ASPECT));
-    public static final String CRYSTALLIZED_XP = registerEffect("crystallized_xp", new SpecialEffect(UEnchantments.REPAIRING, Enchantments.MENDING));
+    public static final String AUTO_SMELT = registerEffect("auto_smelt", new SpecialEffect(UEnchantments.AUTO_SMELT, Enchantments.FIRE_ASPECT, Enchantments.FLAME));
+    public static final String CRYSTALLIZED_XP = registerEffect("crystallized_xp", new SpecialEffect(UEnchantments.REPAIRING, Enchantments.MENDING, Enchantments.INFINITY));
     public static final String TREE_FELLING = registerEffect("tree_felling", new SpecialEffect(List.of(Enchantments.EFFICIENCY), List.of()));
+    public static final String DUAL_SHOT = registerEffect("dual_shot", new SpecialEffect());
+    public static final String SERRATED = registerEffect("serrated", new SpecialEffect());
     public static final String IMPROVED_SWEEPING = registerEffect("improved_sweeping", new SpecialEffect());
-    public static final String CACTUS_LINING = registerEffect("cactus_lining", new SpecialEffect(UEnchantments.CACTUS_LINING, DamageTypes.CACTUS, null));
-    public static final String OBSIDIAN_PADDING = registerEffect("obsidian_padding", new SpecialEffect(UEnchantments.OBSIDIAN_PADDING, null, DamageTypeTags.IS_EXPLOSION));
+    public static final String CACTUS_LINING = registerEffect("cactus_lining", new SpecialEffect(DamageTypes.CACTUS, null));
+    public static final String OBSIDIAN_PADDING = registerEffect("obsidian_padding", new SpecialEffect(null, DamageTypeTags.IS_EXPLOSION));
     public static final String FIREPROOF = registerEffect("fireproof", new SpecialEffect());
 
     private static String registerEffect(String id, SpecialEffect effect) {
@@ -54,8 +58,8 @@ public class SpecialEffects {
             this.damageTypesToPrevent = damageTypesToPrevent;
         }
 
-        public SpecialEffect(Enchantment enchantment, @Nullable RegistryKey<DamageType> damageTypeToPrevent, @Nullable TagKey<DamageType> damageTypesToPrevent) {
-            this(List.of(enchantment), List.of(), 0, 1, damageTypeToPrevent, damageTypesToPrevent);
+        public SpecialEffect(@Nullable RegistryKey<DamageType> damageTypeToPrevent, @Nullable TagKey<DamageType> damageTypesToPrevent) {
+            this(List.of(), List.of(), 0, 1, damageTypeToPrevent, damageTypesToPrevent);
         }
 
         public SpecialEffect(List<Enchantment> enchantments, List<String> effects) {

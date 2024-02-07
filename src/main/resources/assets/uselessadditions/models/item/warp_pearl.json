@@ -2,5 +2,41 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "uselessadditions:item/warp_pearl"
-  }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "inactive": 1
+      },
+      "model": "uselessadditions:item/warp_pearl_disabled"
+    },
+    {
+      "predicate": {
+        "inactive": 0,
+        "charge": 0.25
+      },
+      "model": "uselessadditions:item/warp_pearl_charge_0"
+    },
+    {
+      "predicate": {
+        "inactive": 0,
+        "charge": 0.5
+      },
+      "model": "uselessadditions:item/warp_pearl_charge_1"
+    },
+    {
+      "predicate": {
+        "inactive": 0,
+        "charge": 0.75
+      },
+      "model": "uselessadditions:item/warp_pearl_charge_2"
+    },
+    {
+      "predicate": {
+        "inactive": 0,
+        "charge": 1
+      },
+      "model": "uselessadditions:item/warp_pearl_charged"
+    }
+  ]
 }

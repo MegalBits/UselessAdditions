@@ -1,6 +1,5 @@
 package net.megal.uselessadditions.mixin;
 
-import net.megal.uselessadditions.UAdd;
 import net.megal.uselessadditions.enchantment.DamagePreventingEnch;
 import net.megal.uselessadditions.enchantment.UEnchantment;
 import net.megal.uselessadditions.item.SpecialEffects;

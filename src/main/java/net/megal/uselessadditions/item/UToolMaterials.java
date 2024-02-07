@@ -15,7 +15,8 @@ public enum UToolMaterials implements ToolMaterial {
     BLAZE_METAL(3, 1920, 8.5f, 3.5f, 15, () -> Ingredient.ofItems(UItems.BLAZE_METAL)),
     BLAZE_METAL_P5(BLAZE_METAL.miningLevel, BLAZE_METAL.itemDurability, BLAZE_METAL.miningSpeed, BLAZE_METAL.attackDamage-.5f, BLAZE_METAL.enchantability, () -> BLAZE_METAL.repairIngredient),
     DRAGON_SCALE(4, 5760, 10f, 4.5f, 7, () -> Ingredient.ofItems(UItems.DRAGON_SCALE)),
-    DRAGON_SCALE_P5(DRAGON_SCALE.miningLevel, DRAGON_SCALE.itemDurability, DRAGON_SCALE.miningSpeed, DRAGON_SCALE.attackDamage-.5f, DRAGON_SCALE.enchantability, () -> DRAGON_SCALE.repairIngredient);
+    DRAGON_SCALE_P5(DRAGON_SCALE.miningLevel, DRAGON_SCALE.itemDurability, DRAGON_SCALE.miningSpeed, DRAGON_SCALE.attackDamage-.5f, DRAGON_SCALE.enchantability, () -> DRAGON_SCALE.repairIngredient),
+    ANCIENT(4, 4608, 11f, 6f, 2, () -> Ingredient.ofItems(UItems.ANCIENT_ALLOY));
 
     //Copied from ToolMaterials
     private final int miningLevel;

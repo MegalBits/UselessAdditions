@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "111",
+    "222",
+    "222"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:mud"
+    },
+    "2": {
+      "item": "minecraft:packed_mud"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:mud_cake",
+    "count": 1
+  }
+}

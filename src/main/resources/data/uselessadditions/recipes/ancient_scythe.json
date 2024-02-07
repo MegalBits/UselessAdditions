@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "223",
+    " 12",
+    " 1 "
+  ],
+  "key": {
+    "1": {
+      "item": "uselessadditions:netherite_stick"
+    },
+    "2": {
+      "item": "uselessadditions:ancient_alloy"
+    },
+    "3": {
+      "item": "uselessadditions:ancient_shard"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:ancient_scythe",
+    "count": 1
+  }
+}

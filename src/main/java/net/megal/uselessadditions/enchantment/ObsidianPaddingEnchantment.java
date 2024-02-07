@@ -1,15 +1,9 @@
 package net.megal.uselessadditions.enchantment;
 
-import net.megal.uselessadditions.enchantment.DamagePreventingEnch;
-import net.megal.uselessadditions.enchantment.SpecEffEnchantment;
 import net.megal.uselessadditions.item.SpecialEffects;
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentTarget;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.damage.DamageType;
-import net.minecraft.entity.damage.DamageTypes;
 import net.minecraft.item.ItemStack;
-import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.tag.DamageTypeTags;
 import net.minecraft.registry.tag.TagKey;
 import org.jetbrains.annotations.Nullable;

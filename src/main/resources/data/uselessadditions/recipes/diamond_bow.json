@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "321",
+    "2 1",
+    "321"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:string"
+    },
+    "2": {
+      "item": "minecraft:diamond"
+    },
+    "3": {
+      "item": "uselessadditions:diamond_nugget"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:diamond_bow",
+    "count": 1
+  }
+}

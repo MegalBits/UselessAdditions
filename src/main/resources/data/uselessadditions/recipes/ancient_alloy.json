@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "uselessadditions:ancient_shard"
+    },
+    {
+      "item": "uselessadditions:ancient_shard"
+    },
+    {
+      "item": "minecraft:lava_bucket"
+    },
+    {
+      "item": "minecraft:netherite_ingot"
+    },
+    [
+      {
+        "item": "uselessadditions:warden_shard"
+      },
+      {
+        "item": "minecraft:echo_shard"
+      }
+    ]
+  ],
+  "result": {
+    "item": "uselessadditions:ancient_alloy",
+    "count": 1
+  }
+}

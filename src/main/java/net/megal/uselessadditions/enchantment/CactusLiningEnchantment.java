@@ -1,12 +1,7 @@
 package net.megal.uselessadditions.enchantment;
 
-import com.chocohead.mm.api.ClassTinkerers;
-import net.megal.uselessadditions.EarlyRiser;
 import net.megal.uselessadditions.item.SpecialEffects;
-import net.megal.uselessadditions.item.base.UItemHelper;
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentTarget;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.damage.DamageType;
 import net.minecraft.entity.damage.DamageTypes;
 import net.minecraft.item.ItemStack;

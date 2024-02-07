@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "131",
+    "121",
+    "141"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:diamond"
+    },
+    "2": {
+      "item": "minecraft:cobblestone"
+    },
+    "3": {
+      "item": "minecraft:coast_armor_trim_smithing_template"
+    },
+    "4": {
+      "item": "uselessadditions:exotic_dust"
+    }
+  },
+  "result": {
+    "count": 2,
+    "item": "minecraft:coast_armor_trim_smithing_template"
+  }
+}

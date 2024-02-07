@@ -36,7 +36,7 @@ dependencies {
 
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	modImplementation(include("com.github.Chocohead:Fabric-ASM:2.3"))
+	include modImplementation("com.github.Chocohead:Fabric-ASM:2.3")
 
 	include modImplementation("com.github.0x3C50:Renderer:master-SNAPSHOT")
 

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "321",
+    "2 1",
+    "321"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:string"
+    },
+    "2": {
+      "item": "minecraft:iron_ingot"
+    },
+    "3": {
+      "item": "minecraft:iron_nugget"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:iron_bow",
+    "count": 1
+  }
+}

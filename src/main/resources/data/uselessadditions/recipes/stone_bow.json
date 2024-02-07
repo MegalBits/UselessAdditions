@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "321",
+    "2 1",
+    "321"
+  ],
+  "key": {
+    "1": [
+      {
+        "item": "minecraft:string"
+      },
+      {
+        "item": "uselessadditions:plant_fibre"
+      }
+    ],
+    "2": {
+      "tag": "minecraft:stone_crafting_materials"
+    },
+    "3": [
+      {
+        "item": "uselessadditions:rock"
+      },
+      {
+        "item": "uselessadditions:deepslate_rock"
+      }
+    ]
+  },
+  "result": {
+    "item": "uselessadditions:stone_bow",
+    "count": 1
+  }
+}

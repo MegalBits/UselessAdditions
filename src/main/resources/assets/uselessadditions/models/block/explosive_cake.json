@@ -1,0 +1,22 @@
+{
+    "textures": {
+        "particle": "uselessadditions:block/explosive_cake_side",
+        "bottom": "uselessadditions:block/explosive_cake_bottom",
+        "top": "uselessadditions:block/explosive_cake_top",
+        "side": "uselessadditions:block/explosive_cake_side",
+        "inside": "uselessadditions:block/explosive_cake_inner"
+    },
+    "elements": [
+        {   "from": [ 1, 0, 1 ],
+            "to": [ 15, 8, 15 ],
+            "faces": {
+                "down":  { "texture": "#bottom", "cullface": "down" },
+                "up":    { "texture": "#top" },
+                "north": { "texture": "#side" },
+                "south": { "texture": "#side" },
+                "west":  { "texture": "#side" },
+                "east":  { "texture": "#side" }
+            }
+        }
+    ]
+}

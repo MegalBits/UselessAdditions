@@ -4,10 +4,14 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "AddChestToWitchHut",
+    "ApplyArrowEffectsToVanillaBow",
+    "ApplyDamageEffects",
     "ApplyDragonsCurse",
-    "ApplyLifeLeech",
+    "ApplySpecialEffectIncompatibility",
     "AttackDamageModifier",
     "AutoSmelt",
+    "BleedingStopsHealing",
+    "BounceIfSlimed",
     "BuiltinEffectsText",
     "CapSweepingDamage",
     "ComposterOutput",
@@ -15,6 +19,7 @@
     "DamageEnchantmentExtra",
     "DontDeleteSoulBoundItems",
     "DontDropSoulBoundItems",
+    "DontGenerateMineshafts",
     "EnchantmentHelperHooks",
     "EnderdragonDropsStuff",
     "EnderdragonShotgun",
@@ -24,11 +29,14 @@
     "ExtraExperienceOnKill",
     "ExtraSweeping",
     "ExtraSweepingTarget",
+    "IgnoreQuietEntity",
     "ItemEntityDamageViaEnchant",
     "ItemRemainder",
     "ItemTicking",
     "MiningLevelModifier",
     "MiningSpeedModifier",
+    "ModifyBowDurability",
+    "NegateFallDamage",
     "PlayerHealthFix",
     "ReverseHookingVelocity",
     "ShearsWorkOnPlantFibre",
@@ -39,8 +47,8 @@
     "TripwireHookAcceptsPlantFibre"
   ],
   "client": [
-    "CreateFireballTrajectory",
-    "ShowSpecialEffectConflicts"
+    "client.CreateFireballTrajectory",
+    "client.ShowSpecialEffectConflicts"
   ],
   "injectors": {
     "defaultRequire": 1

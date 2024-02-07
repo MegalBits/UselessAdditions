@@ -4,7 +4,6 @@ import net.megal.uselessadditions.UAdd;
 import net.megal.uselessadditions.mixin.ItemRemainder;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.text.Text;
 import net.minecraft.world.World;

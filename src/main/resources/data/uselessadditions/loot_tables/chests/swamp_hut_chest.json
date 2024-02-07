@@ -55,17 +55,38 @@
       ]
     },
     {
-      "rolls": 1,
+      "rolls": {
+        "min": 1,
+        "max": 2
+      },
       "bonus_rolls": 0,
       "entries": [
         {
+          "type": "minecraft:empty",
+          "weight": 2
+        },
+        {
           "type": "minecraft:item",
+          "weight": 3,
           "name": "minecraft:book",
           "functions": [
             {
               "function": "minecraft:enchant_randomly",
               "enchantments": [
                 "uselessadditions:life_leech"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "minecraft:book",
+          "functions": [
+            {
+              "function": "minecraft:enchant_randomly",
+              "enchantments": [
+                "uselessadditions:destabilizing"
               ]
             }
           ]

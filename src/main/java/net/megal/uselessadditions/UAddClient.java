@@ -6,6 +6,7 @@ import me.x150.renderer.render.Renderer3d;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents;
+import net.fabricmc.loader.impl.lib.sat4j.core.Vec;
 import net.megal.uselessadditions.client.block.UBlockRendering;
 import net.megal.uselessadditions.client.entity.UEntityRendering;
 import net.megal.uselessadditions.client.item.UPredicates;
@@ -19,6 +20,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.projectile.ExplosiveProjectileEntity;
 import net.minecraft.entity.projectile.FireballEntity;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Pair;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.RotationAxis;
 import net.minecraft.util.math.Vec3d;
@@ -28,6 +30,7 @@ import org.joml.Matrix4f;
 import org.lwjgl.opengl.GL11;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
@@ -74,7 +77,8 @@ public class UAddClient implements ClientModInitializer {
 
 	@Override
 	public void onInitializeClient() {
-		RenderEvents.WORLD.register(FireballHandler::line);
+		//Draws trajectories from fireballs
+		//RenderEvents.WORLD.register(FireballHandler::line);
 
 		UBlockRendering.registerBlockRenderers();
 

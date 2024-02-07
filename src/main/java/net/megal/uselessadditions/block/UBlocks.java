@@ -4,16 +4,13 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.megal.uselessadditions.UAdd;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.MapColor;
+import net.megal.uselessadditions.item.UFoodComponents;
+import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.enums.Instrument;
 import net.minecraft.block.piston.PistonBehavior;
-import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
+import net.minecraft.item.FoodComponent;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.registry.Registry;
@@ -22,9 +19,17 @@ import net.minecraft.registry.Registries;
 import static net.minecraft.block.Blocks.TRIPWIRE_HOOK;
 
 public class UBlocks {
-    public static final PlantFibreWire PLANT_FIBRE_TRIPWIRE = register(new Identifier(UAdd.MOD_ID, "plant_fibre_tripwire"), new PlantFibreWire(TRIPWIRE_HOOK, AbstractBlock.Settings.create().noCollision().pistonBehavior(PistonBehavior.DESTROY)));
+    public static final PlantFibreWire PLANT_FIBRE_TRIPWIRE = register(new Identifier(UAdd.MOD_ID, "plant_fibre_tripwire"), new PlantFibreWire(TRIPWIRE_HOOK, FabricBlockSettings.create().noCollision().pistonBehavior(PistonBehavior.DESTROY)));
+    public static final UCakeBlock MUD_CAKE = register(new Identifier(UAdd.MOD_ID, "mud_cake"), createCake(UFoodComponents.MUD_CAKE, BlockSoundGroup.MUD, false));
+    public static final UCakeBlock CHOCOLATE_CAKE = register(new Identifier(UAdd.MOD_ID, "chocolate_cake"), createCake(UFoodComponents.CHOCOLATE_CAKE, false));
+    public static final UCakeBlock RAINBOW_CAKE = register(new Identifier(UAdd.MOD_ID, "rainbow_cake"), createCake(UFoodComponents.RAINBOW_CAKE, false));
+    public static final UCakeBlock EXPLOSIVE_CAKE = register(new Identifier(UAdd.MOD_ID, "explosive_cake"), createCake(false));
+    public static final BlockEntityType<ExplosiveCakeEntity> EXPLOSIVE_CAKE_ENTITY = registerEntity(new Identifier(UAdd.MOD_ID, "explosive_cake"), FabricBlockEntityTypeBuilder.create(ExplosiveCakeEntity::new, UBlocks.EXPLOSIVE_CAKE).build());
+    public static final SlimeCake SLIME_CAKE = register(new Identifier(UAdd.MOD_ID, "slime_cake"), new SlimeCake(FabricBlockSettings.create().solid().strength(0.5F).sounds(BlockSoundGroup.SLIME).pistonBehavior(PistonBehavior.DESTROY), UFoodComponents.SLIME_CAKE, false));
+    public static final UCakeBlock SCULK_CAKE = register(new Identifier(UAdd.MOD_ID, "sculk_cake"), createCake(UFoodComponents.SCULK_CAKE, BlockSoundGroup.SCULK, false));
     //Skyblock stuff
     public static final Sieve SIEVE = register(new Identifier(UAdd.MOD_ID, "sieve"), new Sieve(FabricBlockSettings.create().mapColor(MapColor.BROWN).strength(4.0f).sounds(BlockSoundGroup.WOOD).nonOpaque().notSolid()), new FabricItemSettings());
+    public static final BlockEntityType<SieveEntity> SIEVE_ENTITY = registerEntity(new Identifier(UAdd.MOD_ID, "sieve"), FabricBlockEntityTypeBuilder.create(SieveEntity::new, UBlocks.SIEVE).build());
     //Enhancement table
     public static final EnhancementTable ENHANCEMENT_TABLE = register(new Identifier(UAdd.MOD_ID, "enhancement_table"), new EnhancementTable(FabricBlockSettings.create().mapColor(MapColor.RED).instrument(Instrument.BASEDRUM).strength(7.5f, 1200.0f).requiresTool().sounds(BlockSoundGroup.STONE).requiresTool()), new FabricItemSettings());
     //Ores
@@ -260,7 +265,6 @@ public class UBlocks {
     public static final Block DEEPSLATE_ZOMBIE_ORE = register(new Identifier(UAdd.MOD_ID, "deepslate_zombie_ore"), createDeepslateOre(), new FabricItemSettings());
     public static final Block NETHER_ZOMBIE_ORE = register(new Identifier(UAdd.MOD_ID, "nether_zombie_ore"), createNetherOre(), new FabricItemSettings());
     public static final Block END_ZOMBIE_ORE = register(new Identifier(UAdd.MOD_ID, "end_zombie_ore"), createDeepslateOre(), new FabricItemSettings());
-    public static final BlockEntityType<SieveEntity> SIEVE_ENTITY = registerEntity(new Identifier(UAdd.MOD_ID, "sieve"), FabricBlockEntityTypeBuilder.create(SieveEntity::new, UBlocks.SIEVE).build());
     //Spawners
     public static final Block EMPTY_SPAWNER = register(new Identifier(UAdd.MOD_ID, "empty_spawner"), new Block(FabricBlockSettings.create().mapColor(MapColor.STONE_GRAY).instrument(Instrument.BASEDRUM).requiresTool().strength(5.0f).sounds(BlockSoundGroup.METAL).nonOpaque()), new FabricItemSettings());
     public static final SurvivalSpawner SURVIVAL_SPAWNER = register(new Identifier(UAdd.MOD_ID, "survival_spawner"), new SurvivalSpawner(FabricBlockSettings.create().mapColor(MapColor.STONE_GRAY).instrument(Instrument.BASEDRUM).requiresTool().strength(5.0f).sounds(BlockSoundGroup.METAL).nonOpaque()));
@@ -284,6 +288,15 @@ public class UBlocks {
         Registry.register(Registries.ITEM, id, new BlockItem(block, settings));
     }
     //Some default block types so that I don't have to do as much copy/pasting
+    private static UCakeBlock createCake(boolean canHaveCandle) {
+        return createCake(UFoodComponents.DEFAULT_CAKE, canHaveCandle);
+    }
+    private static UCakeBlock createCake(FoodComponent foodComponent, boolean canHaveCandle) {
+        return createCake(foodComponent, BlockSoundGroup.WOOL, canHaveCandle);
+    }
+    private static UCakeBlock createCake(FoodComponent foodComponent, BlockSoundGroup sound, boolean canHaveCandle) {
+        return new UCakeBlock(FabricBlockSettings.create().solid().strength(0.5F).sounds(sound).pistonBehavior(PistonBehavior.DESTROY), foodComponent, canHaveCandle);
+    }
     private static Block createOre() {
         return new Block(FabricBlockSettings.create().mapColor(MapColor.STONE_GRAY).instrument(Instrument.BASEDRUM).strength(3.0F).requiresTool().sounds(BlockSoundGroup.STONE));
     }

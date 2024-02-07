@@ -1,18 +1,13 @@
 package net.megal.uselessadditions.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
-import net.megal.uselessadditions.UAdd;
-import net.megal.uselessadditions.enchantment.AutoSmeltEnchantment;
 import net.megal.uselessadditions.enchantment.UEnchantments;
 import net.megal.uselessadditions.item.SpecialEffects;
 import net.megal.uselessadditions.item.base.ScytheItem;
 import net.megal.uselessadditions.item.base.UItemHelper;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityGroup;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

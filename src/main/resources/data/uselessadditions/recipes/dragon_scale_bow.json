@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "321",
+    "241",
+    "321"
+  ],
+  "key": {
+    "1": {
+      "item": "uselessadditions:netherite_string"
+    },
+    "2": {
+      "item": "uselessadditions:dragon_scale"
+    },
+    "3": {
+      "item": "minecraft:obsidian"
+    },
+    "4": {
+      "item": "uselessadditions:iron_bow"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:dragon_scale_bow",
+    "count": 1
+  }
+}

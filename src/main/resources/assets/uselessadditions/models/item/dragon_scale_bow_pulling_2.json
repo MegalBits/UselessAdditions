@@ -1,0 +1,6 @@
+{
+    "parent": "item/bow",
+    "textures": {
+        "layer0": "uselessadditions:item/dragon_scale_bow_pulling_2"
+    }
+}
