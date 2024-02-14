@@ -694,6 +694,15 @@ public class UItems {
             entries.add(SLIME_CAKE);
             entries.add(SCULK_CAKE);
             // Misc
+            entries.add(WOODEN_PIPE.asItem());
+            entries.add(STONE_PIPE.asItem());
+            entries.add(IRON_PIPE.asItem());
+            entries.add(GOLD_PIPE.asItem());
+            entries.add(DIAMOND_PIPE.asItem());
+            entries.add(NETHERITE_PIPE.asItem());
+            entries.add(DRAGON_PIPE.asItem());
+            entries.add(PIPE_ENGINE.asItem());
+
             entries.add(SIEVE.asItem());
             // Tables
             entries.add(ENHANCEMENT_TABLE.asItem());

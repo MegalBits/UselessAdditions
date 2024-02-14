@@ -19,15 +19,26 @@ import net.minecraft.registry.Registries;
 import static net.minecraft.block.Blocks.TRIPWIRE_HOOK;
 
 public class UBlocks {
-    public static final PlantFibreWire PLANT_FIBRE_TRIPWIRE = register(new Identifier(UAdd.MOD_ID, "plant_fibre_tripwire"), new PlantFibreWire(TRIPWIRE_HOOK, FabricBlockSettings.create().noCollision().pistonBehavior(PistonBehavior.DESTROY)));
+    //No items
+    public static final PlantFibreWire PLANT_FIBRE_TRIPWIRE = register(new Identifier(UAdd.MOD_ID, "plant_fibre_tripwire"), new PlantFibreWire(TRIPWIRE_HOOK, FabricBlockSettings.create().noCollision().sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
     public static final UCakeBlock MUD_CAKE = register(new Identifier(UAdd.MOD_ID, "mud_cake"), createCake(UFoodComponents.MUD_CAKE, BlockSoundGroup.MUD, false));
     public static final UCakeBlock CHOCOLATE_CAKE = register(new Identifier(UAdd.MOD_ID, "chocolate_cake"), createCake(UFoodComponents.CHOCOLATE_CAKE, false));
     public static final UCakeBlock RAINBOW_CAKE = register(new Identifier(UAdd.MOD_ID, "rainbow_cake"), createCake(UFoodComponents.RAINBOW_CAKE, false));
     public static final UCakeBlock EXPLOSIVE_CAKE = register(new Identifier(UAdd.MOD_ID, "explosive_cake"), createCake(false));
-    public static final BlockEntityType<ExplosiveCakeEntity> EXPLOSIVE_CAKE_ENTITY = registerEntity(new Identifier(UAdd.MOD_ID, "explosive_cake"), FabricBlockEntityTypeBuilder.create(ExplosiveCakeEntity::new, UBlocks.EXPLOSIVE_CAKE).build());
+    public static final BlockEntityType<ExplosiveCakeEntity> EXPLOSIVE_CAKE_ENTITY = registerEntity(new Identifier(UAdd.MOD_ID, "explosive_cake"), FabricBlockEntityTypeBuilder.create(ExplosiveCakeEntity::new, EXPLOSIVE_CAKE).build());
     public static final SlimeCake SLIME_CAKE = register(new Identifier(UAdd.MOD_ID, "slime_cake"), new SlimeCake(FabricBlockSettings.create().solid().strength(0.5F).sounds(BlockSoundGroup.SLIME).pistonBehavior(PistonBehavior.DESTROY), UFoodComponents.SLIME_CAKE, false));
     public static final UCakeBlock SCULK_CAKE = register(new Identifier(UAdd.MOD_ID, "sculk_cake"), createCake(UFoodComponents.SCULK_CAKE, BlockSoundGroup.SCULK, false));
-    //Skyblock stuff
+    //Pipes
+    public static final Pipe WOODEN_PIPE = register(new Identifier(UAdd.MOD_ID, "wooden_pipe"), new Pipe(FabricBlockSettings.create().strength(3.0f).sounds(BlockSoundGroup.WOOD).nonOpaque().notSolid(), 0.25f), new FabricItemSettings());
+    public static final Pipe STONE_PIPE = register(new Identifier(UAdd.MOD_ID, "stone_pipe"), new Pipe(FabricBlockSettings.create().requiresTool().strength(2.5f, 6.0f).sounds(BlockSoundGroup.STONE).nonOpaque().notSolid(), 0.5f), new FabricItemSettings());
+    public static final Pipe IRON_PIPE = register(new Identifier(UAdd.MOD_ID, "iron_pipe"), new Pipe(FabricBlockSettings.create().requiresTool().strength(5.0F, 6.0F).sounds(BlockSoundGroup.METAL).nonOpaque().notSolid(), 1.0f), new FabricItemSettings());
+    public static final Pipe GOLD_PIPE = register(new Identifier(UAdd.MOD_ID, "gold_pipe"), new Pipe(FabricBlockSettings.create().requiresTool().strength(3.5F, 6.0F).sounds(BlockSoundGroup.METAL).nonOpaque().notSolid(), 1.5f), new FabricItemSettings());
+    public static final Pipe DIAMOND_PIPE = register(new Identifier(UAdd.MOD_ID, "diamond_pipe"), new Pipe(FabricBlockSettings.create().requiresTool().strength(5.0F, 6.0F).nonOpaque().notSolid(), 2.25f), new FabricItemSettings());
+    public static final Pipe NETHERITE_PIPE = register(new Identifier(UAdd.MOD_ID, "netherite_pipe"), new Pipe(FabricBlockSettings.create().requiresTool().strength(20.0f, 1200.0f).sounds(BlockSoundGroup.NETHERITE).nonOpaque().notSolid(), 3.0f), new FabricItemSettings());
+    public static final Pipe DRAGON_PIPE = register(new Identifier(UAdd.MOD_ID, "dragon_pipe"), new Pipe(FabricBlockSettings.create().requiresTool().strength(20.0f, 1200.0f).sounds(BlockSoundGroup.STONE).nonOpaque().notSolid(), 4.0f), new FabricItemSettings());
+    public static final PipeEngine PIPE_ENGINE = register(new Identifier(UAdd.MOD_ID, "pipe_engine"), new PipeEngine(FabricBlockSettings.create().requiresTool().strength(4.0f, 8.0f).sounds(BlockSoundGroup.COPPER).nonOpaque().notSolid()), new FabricItemSettings());
+    public static final BlockEntityType<PipeEntity> PIPE_ENTITY = registerEntity(new Identifier(UAdd.MOD_ID, "pipe"), FabricBlockEntityTypeBuilder.create(PipeEntity::new, WOODEN_PIPE, STONE_PIPE, IRON_PIPE, GOLD_PIPE, DIAMOND_PIPE, NETHERITE_PIPE, DRAGON_PIPE, PIPE_ENGINE).build());
+    //Renewable resource stuff
     public static final Sieve SIEVE = register(new Identifier(UAdd.MOD_ID, "sieve"), new Sieve(FabricBlockSettings.create().mapColor(MapColor.BROWN).strength(4.0f).sounds(BlockSoundGroup.WOOD).nonOpaque().notSolid()), new FabricItemSettings());
     public static final BlockEntityType<SieveEntity> SIEVE_ENTITY = registerEntity(new Identifier(UAdd.MOD_ID, "sieve"), FabricBlockEntityTypeBuilder.create(SieveEntity::new, UBlocks.SIEVE).build());
     //Enhancement table

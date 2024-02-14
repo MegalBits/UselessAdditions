@@ -1,0 +1,715 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_center"
+      },
+      "when": {
+        "up": "false",
+        "down": "false",
+        "north": "false",
+        "east": "false",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_end_up"
+      },
+      "when": {
+        "up": "false",
+        "down": "true",
+        "north": "false",
+        "east": "false",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_end_down"
+      },
+      "when": {
+        "up": "true",
+        "down": "false",
+        "north": "false",
+        "east": "false",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_end_north"
+      },
+      "when": {
+        "up": "false",
+        "down": "false",
+        "north": "false",
+        "east": "false",
+        "south": "true",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_end_east"
+      },
+      "when": {
+        "up": "false",
+        "down": "false",
+        "north": "false",
+        "east": "false",
+        "south": "false",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_end_south"
+      },
+      "when": {
+        "up": "false",
+        "down": "false",
+        "north": "true",
+        "east": "false",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_end_west"
+      },
+      "when": {
+        "up": "false",
+        "down": "false",
+        "north": "false",
+        "east": "true",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_center_up"
+      },
+      "when": {
+        "OR": [
+          {
+            "up": "false",
+
+            "north": "true",
+            "east": "true"
+          },
+          {
+            "up": "false",
+
+            "north": "true",
+            "west": "true"
+          },
+          {
+            "up": "false",
+
+            "south": "true",
+            "east": "true"
+          },
+          {
+            "up": "false",
+
+            "south": "true",
+            "west": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_center_down"
+      },
+      "when": {
+        "OR": [
+          {
+            "down": "false",
+
+            "north": "true",
+            "east": "true"
+          },
+          {
+            "down": "false",
+
+            "north": "true",
+            "west": "true"
+          },
+          {
+            "down": "false",
+
+            "south": "true",
+            "east": "true"
+          },
+          {
+            "down": "false",
+
+            "south": "true",
+            "west": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_center_north"
+      },
+      "when": {
+        "OR": [
+          {
+            "north": "false",
+
+            "up": "true",
+            "east": "true"
+          },
+          {
+            "north": "false",
+
+            "up": "true",
+            "west": "true"
+          },
+          {
+            "north": "false",
+
+            "down": "true",
+            "east": "true"
+          },
+          {
+            "north": "false",
+
+            "down": "true",
+            "west": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_center_east"
+      },
+      "when": {
+        "OR": [
+          {
+            "east": "false",
+
+            "up": "true",
+            "north": "true"
+          },
+          {
+            "east": "false",
+
+            "up": "true",
+            "south": "true"
+          },
+          {
+            "east": "false",
+
+            "down": "true",
+            "north": "true"
+          },
+          {
+            "east": "false",
+
+            "down": "true",
+            "south": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_center_south"
+      },
+      "when": {
+        "OR": [
+          {
+            "south": "false",
+
+            "up": "true",
+            "east": "true"
+          },
+          {
+            "south": "false",
+
+            "up": "true",
+            "west": "true"
+          },
+          {
+            "south": "false",
+
+            "down": "true",
+            "east": "true"
+          },
+          {
+            "south": "false",
+
+            "down": "true",
+            "west": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_center_west"
+      },
+      "when": {
+        "OR": [
+          {
+            "west": "false",
+
+            "up": "true",
+            "north": "true"
+          },
+          {
+            "west": "false",
+
+            "up": "true",
+            "south": "true"
+          },
+          {
+            "west": "false",
+
+            "down": "true",
+            "north": "true"
+          },
+          {
+            "west": "false",
+
+            "down": "true",
+            "south": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_center_up_down_north"
+      },
+      "when": {
+        "OR": [
+          {
+            "up": "true",
+
+            "north": "false",
+            "east": "false",
+            "west": "false"
+          },
+          {
+            "down": "true",
+
+            "north": "false",
+            "east": "false",
+            "west": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_center_up_down_east"
+      },
+      "when": {
+        "OR": [
+          {
+            "up": "true",
+
+            "north": "false",
+            "east": "false",
+            "south": "false"
+          },
+          {
+            "down": "true",
+
+            "north": "false",
+            "east": "false",
+            "south": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_center_up_down_south"
+      },
+      "when": {
+        "OR": [
+          {
+            "up": "true",
+
+            "east": "false",
+            "south": "false",
+            "west": "false"
+          },
+          {
+            "down": "true",
+
+            "east": "false",
+            "south": "false",
+            "west": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_center_up_down_west"
+      },
+      "when": {
+        "OR": [
+          {
+            "up": "true",
+
+            "north": "false",
+            "south": "false",
+            "west": "false"
+          },
+          {
+            "down": "true",
+
+            "north": "false",
+            "south": "false",
+            "west": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_center_north_south_up"
+      },
+      "when": {
+        "OR": [
+          {
+            "north": "true",
+
+            "up": "false",
+            "east": "false",
+            "west": "false"
+          },
+          {
+            "south": "true",
+
+            "up": "false",
+            "east": "false",
+            "west": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_center_north_south_down"
+      },
+      "when": {
+        "OR": [
+          {
+            "north": "true",
+
+            "down": "false",
+            "east": "false",
+            "west": "false"
+          },
+          {
+            "south": "true",
+
+            "down": "false",
+            "east": "false",
+            "west": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_center_north_south_east"
+      },
+      "when": {
+        "OR": [
+          {
+            "north": "true",
+
+            "up": "false",
+            "down": "false",
+            "east": "false"
+          },
+          {
+            "south": "true",
+
+            "up": "false",
+            "down": "false",
+            "east": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_center_north_south_west"
+      },
+      "when": {
+        "OR": [
+          {
+            "north": "true",
+
+            "up": "false",
+            "down": "false",
+            "west": "false"
+          },
+          {
+            "south": "true",
+
+            "up": "false",
+            "down": "false",
+            "west": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_center_north_south_up"
+      },
+      "when": {
+        "OR": [
+          {
+            "north": "true",
+
+            "up": "false",
+            "east": "false",
+            "west": "false"
+          },
+          {
+            "south": "true",
+
+            "up": "false",
+            "east": "false",
+            "west": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_center_north_south_down"
+      },
+      "when": {
+        "OR": [
+          {
+            "north": "true",
+
+            "down": "false",
+            "east": "false",
+            "west": "false"
+          },
+          {
+            "south": "true",
+
+            "down": "false",
+            "east": "false",
+            "west": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_center_north_south_east"
+      },
+      "when": {
+        "OR": [
+          {
+            "north": "true",
+
+            "up": "false",
+            "down": "false",
+            "east": "false"
+          },
+          {
+            "south": "true",
+
+            "up": "false",
+            "down": "false",
+            "east": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_center_north_south_west"
+      },
+      "when": {
+        "OR": [
+          {
+            "north": "true",
+
+            "up": "false",
+            "down": "false",
+            "west": "false"
+          },
+          {
+            "south": "true",
+
+            "up": "false",
+            "down": "false",
+            "west": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_center_east_west_up"
+      },
+      "when": {
+        "OR": [
+          {
+            "east": "true",
+
+            "up": "false",
+            "north": "false",
+            "south": "false"
+          },
+          {
+            "west": "true",
+
+            "up": "false",
+            "north": "false",
+            "south": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_center_east_west_down"
+      },
+      "when": {
+        "OR": [
+          {
+            "east": "true",
+
+            "down": "false",
+            "north": "false",
+            "south": "false"
+          },
+          {
+            "west": "true",
+
+            "down": "false",
+            "north": "false",
+            "south": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_center_east_west_north"
+      },
+      "when": {
+        "OR": [
+          {
+            "east": "true",
+
+            "up": "false",
+            "down": "false",
+            "north": "false"
+          },
+          {
+            "west": "true",
+
+            "up": "false",
+            "down": "false",
+            "north": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_center_east_west_south"
+      },
+      "when": {
+        "OR": [
+          {
+            "east": "true",
+
+            "up": "false",
+            "down": "false",
+            "south": "false"
+          },
+          {
+            "west": "true",
+
+            "up": "false",
+            "down": "false",
+            "south": "false"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_up",
+        "uvlock": false
+      },
+      "when": {
+        "up": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_down",
+        "uvlock": false
+      },
+      "when": {
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_north",
+        "uvlock": false
+      },
+      "when": {
+        "north": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_east",
+        "uvlock": false
+      },
+      "when": {
+        "east": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_south",
+        "uvlock": false
+      },
+      "when": {
+        "south": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "uselessadditions:block/iron_pipe_west",
+        "uvlock": false
+      },
+      "when": {
+        "west": "true"
+      }
+    }
+  ]
+}

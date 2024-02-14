@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "121",
+    "434",
+    "111"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:copper_block"
+    },
+    "2": {
+      "item": "minecraft:comparator"
+    },
+    "3": {
+      "item": "minecraft:hopper"
+    },
+    "4": {
+      "item": "uselessadditions:iron_pipe"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:pipe_engine",
+    "count": 4
+  }
+}

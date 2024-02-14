@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
+    "uselessadditions:iron_pipe",
+    "uselessadditions:pipe_engine",
     "uselessadditions:axolotl_ore",
     "uselessadditions:deepslate_axolotl_ore",
     "uselessadditions:allay_ore",

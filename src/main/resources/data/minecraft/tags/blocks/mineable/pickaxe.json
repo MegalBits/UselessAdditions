@@ -1,6 +1,13 @@
 {
   "replace": false,
   "values": [
+    "uselessadditions:stone_pipe",
+    "uselessadditions:iron_pipe",
+    "uselessadditions:gold_pipe",
+    "uselessadditions:diamond_pipe",
+    "uselessadditions:netherite_pipe",
+    "uselessadditions:dragon_pipe",
+    "uselessadditions:pipe_engine",
     "uselessadditions:enhancement_table",
     "uselessadditions:empty_spawner",
     "uselessadditions:survival_spawner",

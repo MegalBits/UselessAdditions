@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
+    "uselessadditions:gold_pipe",
+    "uselessadditions:diamond_pipe",
     "uselessadditions:empty_spawner",
     "uselessadditions:survival_spawner",
     "uselessadditions:cave_spider_ore",

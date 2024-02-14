@@ -47,7 +47,6 @@
     "TripwireHookAcceptsPlantFibre"
   ],
   "client": [
-    "client.CreateFireballTrajectory",
     "client.ShowSpecialEffectConflicts"
   ],
   "injectors": {

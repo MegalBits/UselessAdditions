@@ -1,6 +1,7 @@
 package net.megal.uselessadditions;
 
 import com.mojang.blaze3d.systems.RenderSystem;
+import dev.architectury.event.events.client.ClientChatEvent;
 import me.x150.renderer.event.RenderEvents;
 import me.x150.renderer.render.Renderer3d;
 import net.fabricmc.api.ClientModInitializer;

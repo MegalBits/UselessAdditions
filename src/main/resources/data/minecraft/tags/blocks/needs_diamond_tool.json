@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
+    "uselessadditions:netherite_pipe",
+    "uselessadditions:dragon_pipe",
     "uselessadditions:enhancement_table",
     "uselessadditions:blaze_ore",
     "uselessadditions:deepslate_blaze_ore",

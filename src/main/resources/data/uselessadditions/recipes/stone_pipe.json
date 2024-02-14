@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "111",
+    "232",
+    "111"
+  ],
+  "key": {
+    "1": {
+      "tag": "minecraft:stone_crafting_materials"
+    },
+    "2": {
+      "item": "minecraft:redstone"
+    },
+    "3": {
+      "item": "minecraft:glass"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:stone_pipe",
+    "count": 4
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "uselessadditions:smithing_no_nbt_transform",
+  "template": {
+    "tag": "c:smithing_hammers"
+  },
+  "base": {
+    "item": "uselessadditions:diamond_pipe"
+  },
+  "addition": {
+    "item": "uselessadditions:netherite_nugget"
+  },
+  "result": {
+    "item": "uselessadditions:netherite_pipe"
+  }
+}

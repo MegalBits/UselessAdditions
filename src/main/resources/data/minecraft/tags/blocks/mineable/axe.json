@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "uselessadditions:sieve"
+    "uselessadditions:sieve",
+    "uselessadditions:wooden_pipe"
   ]
 }

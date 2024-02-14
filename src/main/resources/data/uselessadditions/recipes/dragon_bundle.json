@@ -4,7 +4,7 @@
     "tag": "c:smithing_hammers"
   },
   "base": {
-    "item": "uselessadditions:netherite_bundle"
+    "item": "uselessadditions:iron_bundle"
   },
   "addition": {
     "item": "uselessadditions:dragon_scale"

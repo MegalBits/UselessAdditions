@@ -1,0 +1,17 @@
+{
+	"parent": "uselessadditions:block/iron_pipe",
+	"elements": [
+		{
+			"from": [10, 6, 6],
+			"to": [10, 10, 10],
+			"faces": {
+				"north": {"uv": [8, 8, 12, 12], "texture": "#pipe"},
+				"east": {"uv": [4, 12, 8, 16], "texture": "#pipe"},
+				"south": {"uv": [8, 8, 12, 12], "texture": "#pipe"},
+				"west": {"uv": [8, 8, 12, 12], "texture": "#pipe"},
+				"up": {"uv": [8, 8, 12, 12], "texture": "#pipe"},
+				"down": {"uv": [8, 8, 12, 12], "texture": "#pipe"}
+			}
+		}
+	]
+}

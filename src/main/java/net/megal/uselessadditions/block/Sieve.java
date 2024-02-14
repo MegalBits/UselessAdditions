@@ -51,7 +51,7 @@ public class Sieve extends BlockWithEntity {
             Block.createCuboidShape(2.0,7.0,14.0,14.0,9.0,16.0)
     );
     protected static final VoxelShape WITH_MESH = VoxelShapes.union(
-            //Corners and sides
+            //Corners & Sides
             EMPTY,
             //Mesh
             Block.createCuboidShape(2.0,7.9,2.0,14.0,8.0,14.0)
