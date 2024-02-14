@@ -2,26 +2,26 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "uselessadditions:creeper_shard"
+      "tag": "minecraft:decorated_pot_sherds"
     },
     {
-      "item": "uselessadditions:small_creeper_shard"
+      "tag": "minecraft:decorated_pot_sherds"
     },
     {
       "item": "uselessadditions:empty_disc"
     },
     {
-      "item": "minecraft:black_wool"
+      "item": "minecraft:emerald"
     },
     {
       "item": "minecraft:diamond"
     },
     {
-      "item": "minecraft:cobblestone"
+      "item": "uselessadditions:exotic_dust"
     }
   ],
   "result": {
-    "item": "minecraft:music_disc_11",
+    "item": "minecraft:music_disc_relic",
     "count": 1
   }
 }

@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PipeEntity extends BlockEntity {
+    private static final int maxPower = 8;
     public List<StoredItemStack> storedStacks = new ArrayList<>();
     public List<StoredItemStack> stacksToRemove = new ArrayList<>();
     private float itemsPerSecond = 1;
@@ -46,7 +47,7 @@ public class PipeEntity extends BlockEntity {
     }
 
     public static void engineCommonTick(World world, BlockPos pos, BlockState state, PipeEntity pipeEntity) {
-        pipeEntity.power = 8;
+        pipeEntity.power = maxPower;
         Direction direction = state.get(PipeEngine.DIRECTION);
         BlockEntity front = world.getBlockEntity(pos.offset(direction));
         BlockEntity back = world.getBlockEntity(pos.offset(direction.getOpposite()));
@@ -58,18 +59,22 @@ public class PipeEntity extends BlockEntity {
 
     public static void pipeCommonTick(World world, BlockPos pos, BlockState state, PipeEntity pipeEntity) {
         int newPower = 0;
+        boolean isPulling = false;
         for (Direction dir : Direction.values()) {
             BlockEntity entity = world.getBlockEntity(pos.offset(dir));
             if (entity == null) continue;
 
             if (entity instanceof PipeEntity nextPipeEntity && nextPipeEntity.power > newPower) {
+                BlockState nextState = entity.getCachedState();
+
                 newPower = nextPipeEntity.power - 1;
-                if (nextPipeEntity.pulling) pipeEntity.pulling = true;
+                if (nextPipeEntity.pulling || (nextState.getBlock() instanceof PipeEngine && dir == nextState.get(PipeEngine.DIRECTION))) isPulling = true;
             }
 
             takeFromInventory(world, pos, state, pipeEntity, entity, dir);
         }
         pipeEntity.power = newPower;
+        pipeEntity.pulling = isPulling;
 
         commonTick(world, pos, state, pipeEntity);
     }
@@ -85,7 +90,7 @@ public class PipeEntity extends BlockEntity {
                     if (stack.isEmpty() || !sidedInventory.canExtract(slot, stack, dir.getOpposite())) continue;
 
                     pipeEntity.addItem(world.getRandom(), state, stack, dir);
-                    if (!world.isClient()) stack.decrement(1);
+                    stack.decrement(1);
 
                     wasItemTaken = true;
                     break;
@@ -99,7 +104,7 @@ public class PipeEntity extends BlockEntity {
                     if (stack.isEmpty()) continue;
 
                     pipeEntity.addItem(world.getRandom(), state, stack, dir);
-                    if (!world.isClient()) stack.decrement(1);
+                    stack.decrement(1);
 
                     wasItemTaken = true;
                     break;
@@ -114,12 +119,12 @@ public class PipeEntity extends BlockEntity {
         for (StoredItemStack storedStack : pipeEntity.storedStacks) {
             if (pipeEntity.power > 0) {
                 if (storedStack.direction != null) storedStack.tickStack();
-                storedStack.direction = getItemDirection(world, pos, state, pipeEntity, storedStack.prevDirection, storedStack.stack);
+                if (storedStack.direction == null || storedStack.time <= 10) storedStack.direction = getItemDirection(world, pos, state, pipeEntity, storedStack.prevDirection, storedStack.stack);
 
                 if (!storedStack.shouldMove() || storedStack.direction == null) continue;
 
                 BlockEntity entity = world.getBlockEntity(pos.offset(storedStack.direction));
-                if (entity instanceof PipeEntity pipeEntity2 && pipeEntity2.power > 0 && pipeEntity2.cooldown <= 0 && pipeEntity.storedStacks.size() < 10) {
+                if (entity instanceof PipeEntity pipeEntity2 && pipeEntity2.power > 0 && pipeEntity2.cooldown <= 0 && pipeEntity2.storedStacks.size() < 10) {
                     pipeEntity2.addItem(storedStack);
                     pipeEntity.stacksToRemove.add(storedStack);
                 }
@@ -179,6 +184,8 @@ public class PipeEntity extends BlockEntity {
 
     @Nullable
     public static Direction getItemDirection(World world, BlockPos pos, BlockState state, PipeEntity pipeEntity, Direction prevDirection, @Nullable ItemStack stack) {
+        if (state.getBlock() instanceof PipeEngine) return state.get(PipeEngine.DIRECTION);
+
         @Nullable
         Direction newDirection = null;
         int selectedPower = 0;
@@ -203,10 +210,18 @@ public class PipeEntity extends BlockEntity {
                     continue;
                 }
 
-                if ((nextPipeEntity.pulling || !pipeEntity.pulling) && nextPipeEntity.power >= selectedPower) {
+                if (nextPipeEntity.pulling && nextPipeEntity.power >= selectedPower) {
                     if (nextPipeEntity.power > selectedPower) availablePipeDirections.clear();
 
                     selectedPower = nextPipeEntity.power;
+                    availablePipeDirections.add(dir);
+                    continue;
+                }
+
+                if (!pipeEntity.pulling && nextPipeEntity.power > 0 && maxPower - nextPipeEntity.power >= selectedPower) {
+                    if (maxPower - nextPipeEntity.power > selectedPower) availablePipeDirections.clear();
+
+                    selectedPower = maxPower - nextPipeEntity.power;
                     availablePipeDirections.add(dir);
                     continue;
                 }
@@ -267,6 +282,7 @@ public class PipeEntity extends BlockEntity {
     protected void writeNbt(NbtCompound nbt) {
         super.writeNbt(nbt);
         nbt.putFloat("speed", itemsPerSecond);
+        nbt.putInt("cooldown", cooldown);
         nbt.putInt("power", power);
         nbt.putBoolean("pulling", pulling);
 
@@ -296,6 +312,7 @@ public class PipeEntity extends BlockEntity {
     public void readNbt(NbtCompound nbt) {
         super.readNbt(nbt);
         itemsPerSecond = nbt.getFloat("speed");
+        cooldown = nbt.getInt("cooldown");
         power = nbt.getInt("power");
         pulling = nbt.getBoolean("pulling");
 

@@ -6,6 +6,15 @@
   "block.uselessadditions.slime_cake": "Slime Cake",
   "block.uselessadditions.sculk_cake": "Sculk Cake",
 
+  "block.uselessadditions.wooden_pipe": "Wooden Pipe",
+  "block.uselessadditions.stone_pipe": "Stone Pipe",
+  "block.uselessadditions.iron_pipe": "Iron Pipe",
+  "block.uselessadditions.gold_pipe": "Golden Pipe",
+  "block.uselessadditions.diamond_pipe": "Diamond Pipe",
+  "block.uselessadditions.netherite_pipe": "Netherite Pipe",
+  "block.uselessadditions.dragon_pipe": "Dragon Pipe",
+  "block.uselessadditions.pipe_engine": "Pipe Engine",
+
   "block.uselessadditions.sieve": "Sieve",
   "block.uselessadditions.enhancement_table": "Enhancement Table",
 

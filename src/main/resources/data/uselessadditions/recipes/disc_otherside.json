@@ -2,26 +2,26 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "uselessadditions:creeper_shard"
+      "item": "minecraft:lapis_lazuli"
     },
     {
-      "item": "uselessadditions:small_creeper_shard"
+      "item": "minecraft:lapis_lazuli"
     },
     {
       "item": "uselessadditions:empty_disc"
     },
     {
-      "item": "minecraft:black_wool"
+      "item": "minecraft:diamond"
     },
     {
       "item": "minecraft:diamond"
     },
     {
-      "item": "minecraft:cobblestone"
+      "item": "minecraft:moss_block"
     }
   ],
   "result": {
-    "item": "minecraft:music_disc_11",
+    "item": "minecraft:music_disc_otherside",
     "count": 1
   }
 }
