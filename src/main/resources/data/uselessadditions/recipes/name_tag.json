@@ -1,22 +1,19 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "4 1",
+    "  1",
     " 23",
     "23 "
   ],
   "key": {
     "1": {
-      "item": "minecraft:iron_nugget"
+      "item": "minecraft:string"
     },
     "2": {
       "item": "minecraft:leather"
     },
     "3": {
       "item": "minecraft:paper"
-    },
-    "4": {
-      "item": "minecraft:diamond"
     }
   },
   "result": {

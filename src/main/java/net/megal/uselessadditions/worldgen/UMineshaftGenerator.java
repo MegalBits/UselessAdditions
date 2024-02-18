@@ -70,11 +70,13 @@ public class UMineshaftGenerator {
                 return new Connector(chainLength, random, blockBox, orientation, level, bl, !bl);
             }
         }
-        blockBox = Terminator.getBoundingBox(holder, random, x, y, z, orientation);
+
+        blockBox = FancyTerminator.getBoundingBox(holder, random, x, y, z, orientation);
         if (blockBox != null) {
-            return new Terminator(chainLength, random, blockBox, orientation, level);
+            return new FancyTerminator(chainLength, random, blockBox, orientation, level);
         }
-        return null;
+
+        return Terminator.create(holder, random, x, y, z, orientation, level, chainLength + 1);
     }
 
     private static void pieceGenerator(Piece prev, StructurePiece start, StructurePiecesHolder holder, Random random, int x, int y, int z, Direction orientation, int level, int chainLength) {
@@ -86,6 +88,13 @@ public class UMineshaftGenerator {
             }
             return;
         }
+
+        BlockBox blockBox = FancyTerminator.getBoundingBox(holder, random, x, y, z, orientation);
+        if (blockBox != null) {
+            holder.addPiece(new FancyTerminator(chainLength + 1, random, blockBox, orientation, level));
+            return;
+        }
+
         holder.addPiece(Terminator.create(holder, random, x, y, z, orientation, level, chainLength + 1));
     }
 
@@ -621,16 +630,61 @@ public class UMineshaftGenerator {
             super(UStructurePieces.MS_END, nbtCompound);
         }
 
-        public static Terminator create(StructurePiecesHolder holder,Random random, int x, int y, int z, Direction orientation, int level, int chainLength) {
+        public static Terminator create(StructurePiecesHolder holder, Random random, int x, int y, int z, Direction orientation, int level, int chainLength) {
             BlockBox blockBox = Terminator.getBoundingBox(holder, random, x, y, z, orientation);
             return new Terminator(chainLength, random, blockBox, orientation, level);
         }
 
         @Nullable
         public static BlockBox getBoundingBox(StructurePiecesHolder holder, Random random, int x, int y, int z, Direction orientation) {
+            return BlockBox.rotated(x, y, z, 0, 0, 0, 5, 5, 1, orientation);
+        }
+
+        @Override
+        public void generate(StructureWorldAccess world, StructureAccessor structureAccessor, ChunkGenerator chunkGenerator, Random random, BlockBox chunkBox, ChunkPos chunkPos, BlockPos pivot) {
+            if (!this.cannotGenerate(world, chunkBox)) {
+                BlockState bricks = getBricks(world);
+                BlockState cobblestone = getCobble(world);
+
+                BlockState planks = getPlanks(world);
+                BlockState fence = getFence(world);
+
+                int x1 = 0;
+                int y1 = 0;
+                int z1 = 0;
+                int x2 = 4;
+                int y2 = 4;
+                int z2 = 0;
+
+                boolean isInAir = false;
+                int airCount = 0;
+                for (int i = 0; i < x2; i++) {
+                    if (getBlockAt(world, x1 + i, y1 - 1, z1, chunkBox).isAir()) airCount++;
+                }
+                isInAir = airCount > 3;
+
+                if (!isInAir) {
+                    this.fillWithOutline(world, chunkBox, x1, y1, z1, x2, y2, z2, bricks, bricks, false);
+                    this.fillWithOutline(world, chunkBox, x1 + 1, y1 + 1, z1, x2 - 1, y2 - 1, z2, IRON_BARS.getDefaultState(), IRON_BARS.getDefaultState(), false);
+                }
+            }
+        }
+    }
+
+    public static class FancyTerminator extends Piece {
+        public FancyTerminator(int chainLength, Random random, BlockBox boundingBox, Direction orientation, int level) {
+            super(UStructurePieces.MS_FANCY_END, chainLength, boundingBox, level);
+            setOrientation(orientation);
+        }
+
+        public FancyTerminator(NbtCompound nbtCompound) {
+            super(UStructurePieces.MS_FANCY_END, nbtCompound);
+        }
+
+        @Nullable
+        public static BlockBox getBoundingBox(StructurePiecesHolder holder, Random random, int x, int y, int z, Direction orientation) {
             BlockBox blockBox = BlockBox.rotated(x, y, z, 0, 0, 0, 5, 5, 4, orientation);
-            return blockBox;
-            //return holder.getIntersecting(blockBox) != null ? blockBox : null;
+            return holder.getIntersecting(blockBox) != null ? blockBox : null;
         }
 
         @Override

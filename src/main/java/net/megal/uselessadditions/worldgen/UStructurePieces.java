@@ -14,6 +14,7 @@ public class UStructurePieces {
     public static final StructurePieceType MS_STAIRS = registerSimple(new Identifier(UAdd.MOD_ID, "mineshaft_stairs"), UMineshaftGenerator.Stairs::new);
     public static final StructurePieceType MS_TUNNEL = registerSimple(new Identifier(UAdd.MOD_ID, "mineshaft_tunnel"), UMineshaftGenerator.Tunnel::new);
     public static final StructurePieceType MS_END = registerSimple(new Identifier(UAdd.MOD_ID, "mineshaft_end"), UMineshaftGenerator.Terminator::new);
+    public static final StructurePieceType MS_FANCY_END = registerSimple(new Identifier(UAdd.MOD_ID, "mineshaft_fancy_end"), UMineshaftGenerator.FancyTerminator::new);
 
     private static StructurePieceType registerSimple(Identifier id, StructurePieceType.Simple type) {
         return Registry.register(Registries.STRUCTURE_PIECE, id, type);

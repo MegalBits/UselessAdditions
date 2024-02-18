@@ -314,6 +314,7 @@ public class UItems {
     public static final ArmorItem DRAGON_SCALE_LEGGINGS = registerItem(new Identifier(UAdd.MOD_ID, "dragon_scale_leggings"), new ArmorItem(UArmorMaterials.DRAGON_SCALE, ArmorItem.Type.LEGGINGS, new FabricItemSettings().fireproof()));
     public static final ArmorItem DRAGON_SCALE_BOOTS = registerItem(new Identifier(UAdd.MOD_ID, "dragon_scale_boots"), new ArmorItem(UArmorMaterials.DRAGON_SCALE, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof()));
     //Utility
+    public static final SlimePearl SLIME_PEARL = registerItem(new Identifier(UAdd.MOD_ID, "slime_pearl"), new SlimePearl(new FabricItemSettings().maxCount(16)));
     public static final WarpPearl WARP_PEARL = registerItem(new Identifier(UAdd.MOD_ID, "warp_pearl"), new WarpPearl(new FabricItemSettings().maxCount(1).maxDamage(64)));
     public static final Bundle BUNDLE = registerItem(new Identifier(UAdd.MOD_ID, "bundle"), new Bundle(new FabricItemSettings().maxCount(1)));
     public static final IronBundle IRON_BUNDLE = registerItem(new Identifier(UAdd.MOD_ID, "iron_bundle"), new IronBundle(new FabricItemSettings().maxCount(1)));
@@ -670,6 +671,7 @@ public class UItems {
             entries.add(DRAGON_SCALE_LEGGINGS.getDefaultStack());
             entries.add(DRAGON_SCALE_BOOTS.getDefaultStack());
             // Utility
+            entries.add(SLIME_PEARL);
             entries.add(WARP_PEARL);
             entries.add(BUNDLE);
             entries.add(IRON_BUNDLE);

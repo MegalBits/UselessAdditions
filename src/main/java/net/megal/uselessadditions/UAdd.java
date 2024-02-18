@@ -16,9 +16,14 @@ import net.megal.uselessadditions.worldgen.UFeatures;
 import net.megal.uselessadditions.worldgen.UStructurePieces;
 import net.megal.uselessadditions.worldgen.UStructures;
 import net.minecraft.block.Block;
+import net.minecraft.block.DispenserBlock;
+import net.minecraft.block.dispenser.ProjectileDispenserBehavior;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.ArrowEntity;
+import net.minecraft.entity.projectile.PersistentProjectileEntity;
+import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -26,12 +31,14 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.Position;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOffers;
 import net.minecraft.village.VillagerProfession;
 import net.minecraft.world.GameRules;
+import net.minecraft.world.World;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -93,6 +100,17 @@ public class UAdd implements ModInitializer {
         compostableItem(UItems.BUNDLED_FLOWERS, ComposterRarities.HIGH);
         compostableItem(UItems.ASH, ComposterRarities.HIGH);
     }
+
+    private void addDispenserBehaviour() {
+        DispenserBlock.registerBehavior(Items.ARROW, new ProjectileDispenserBehavior() {
+            protected ProjectileEntity createProjectile(World world, Position position, ItemStack stack) {
+                ArrowEntity arrowEntity = new ArrowEntity(world, position.getX(), position.getY(), position.getZ(), stack.copyWithCount(1));
+                arrowEntity.pickupType = PersistentProjectileEntity.PickupPermission.ALLOWED;
+                return arrowEntity;
+            }
+        });
+    }
+
     private static void addTrades() {
         TradeOfferHelper.registerWanderingTraderOffers(1, factories -> {
             factories.add((entity, random) -> new TradeOffer(

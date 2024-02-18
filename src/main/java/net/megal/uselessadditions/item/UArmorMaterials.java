@@ -11,7 +11,7 @@ import net.minecraft.util.Util;
 import java.util.EnumMap;
 import java.util.function.Supplier;
 
-public enum UArmorMaterials implements ArmorMaterial {
+public enum UArmorMaterials implements StringIdentifiable, ArmorMaterial {
     DRAGON_SCALE("dragon_scale", 86, Util.make(new EnumMap<ArmorItem.Type, Integer>(ArmorItem.Type.class), (map) -> {
         map.put(ArmorItem.Type.BOOTS, 4);
         map.put(ArmorItem.Type.LEGGINGS, 7);
@@ -46,11 +46,11 @@ public enum UArmorMaterials implements ArmorMaterial {
     }
 
     public int getDurability(ArmorItem.Type type) {
-        return (Integer)BASE_DURABILITY.get(type) * this.durabilityMultiplier;
+        return BASE_DURABILITY.get(type) * this.durabilityMultiplier;
     }
 
     public int getProtection(ArmorItem.Type type) {
-        return (Integer)this.protectionAmounts.get(type);
+        return this.protectionAmounts.get(type);
     }
 
     public int getEnchantability() {
@@ -62,7 +62,7 @@ public enum UArmorMaterials implements ArmorMaterial {
     }
 
     public Ingredient getRepairIngredient() {
-        return (Ingredient)this.repairIngredientSupplier.get();
+        return this.repairIngredientSupplier.get();
     }
 
     public String getName() {

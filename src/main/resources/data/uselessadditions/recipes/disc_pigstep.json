@@ -2,26 +2,26 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "minecraft:lapis_lazuli"
+      "item": "minecraft:netherrack"
     },
     {
-      "item": "minecraft:lapis_lazuli"
+      "item": "minecraft:gold_ingot"
     },
     {
       "item": "uselessadditions:empty_disc"
     },
     {
-      "item": "minecraft:diamond"
+      "item": "minecraft:gold_ingot"
     },
     {
-      "item": "minecraft:moss_block"
+      "item": "minecraft:netherrack"
     },
     {
       "item": "uselessadditions:exotic_dust"
     }
   ],
   "result": {
-    "item": "minecraft:music_disc_otherside",
+    "item": "minecraft:music_disc_pigstep",
     "count": 1
   }
 }

@@ -22,6 +22,13 @@ public class UEntities {
             .dimensions(EntityDimensions.fixed(0.6f, 1.95f))
             .build());
 
+    public static final EntityType<SlimePearlEntity> SLIME_PEARL = registerEntity(new Identifier(UAdd.MOD_ID, "slime_pearl"), FabricEntityTypeBuilder.<SlimePearlEntity>create()
+            .entityFactory(SlimePearlEntity::new)
+            .dimensions(EntityDimensions.fixed(0.25f, 0.25f))
+            .trackRangeBlocks(4)
+            .trackedUpdateRate(10)
+            .build());
+
     public static <T extends Entity> EntityType<T> registerEntity(Identifier id, EntityType<T> entityType) {
         return Registry.register(Registries.ENTITY_TYPE, id, entityType);
     }
