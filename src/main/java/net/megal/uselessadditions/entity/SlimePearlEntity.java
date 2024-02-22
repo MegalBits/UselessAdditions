@@ -41,7 +41,7 @@ public class SlimePearlEntity extends EnderPearlEntity {
                 Direction.Axis axis = blockHitResult.getSide().getAxis();
                 Vec3d vel = getVelocity();
 
-                setVelocity(vel.getX() * (axis == Direction.Axis.X ? -0.75f : 0.75f), vel.getY() * (axis == Direction.Axis.Y ? -0.75f : 0.75f), vel.getZ() * (axis == Direction.Axis.Z ? -0.75f : 0.75f));
+                setVelocity(vel.getX() * (axis == Direction.Axis.X ? -0.75f : 1), vel.getY() * (axis == Direction.Axis.Y ? -0.75f : 1), vel.getZ() * (axis == Direction.Axis.Z ? -0.75f : 1));
 
                 canBounce = false;
             }

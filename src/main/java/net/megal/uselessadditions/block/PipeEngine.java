@@ -47,7 +47,7 @@ public class PipeEngine extends BlockWithEntity implements Waterloggable {
 
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         return this.getDefaultState()
-                .with(DIRECTION, ctx.getPlayerLookDirection().getOpposite())
+                .with(DIRECTION, ctx.getPlayerLookDirection())
                 .with(Properties.WATERLOGGED, ctx.getWorld().getFluidState(ctx.getBlockPos()).isOf(Fluids.WATER));
     }
 

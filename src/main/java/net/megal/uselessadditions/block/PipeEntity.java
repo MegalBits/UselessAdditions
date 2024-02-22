@@ -2,6 +2,7 @@ package net.megal.uselessadditions.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SidedInventory;
@@ -134,7 +135,7 @@ public class PipeEntity extends BlockEntity {
                         for (int slot : slots) {
                             ItemStack stack2 = sidedInventory.getStack(slot);
 
-                            if ((stack2.isEmpty() || canMergeItems(storedStack.stack, stack2)) && sidedInventory.canInsert(slot, stack2, storedStack.direction.getOpposite())) {
+                            if ((stack2.isEmpty() || canMergeItems(storedStack.stack, stack2)) && sidedInventory.canInsert(slot, storedStack.stack, storedStack.direction.getOpposite())) {
                                 ItemStack newStack = storedStack.stack;
                                 newStack.increment(stack2.getCount());
                                 sidedInventory.setStack(slot, newStack);

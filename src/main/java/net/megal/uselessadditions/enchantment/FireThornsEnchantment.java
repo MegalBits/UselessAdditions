@@ -44,7 +44,7 @@ public class FireThornsEnchantment extends ThornsVariant {
             }
 
             if (entry != null) {
-                (entry.getValue()).damage(2, user, e -> {
+                (entry.getValue()).damage(1, user, e -> {
                     e.sendEquipmentBreakStatus(entry.getKey());
                 });
             }
