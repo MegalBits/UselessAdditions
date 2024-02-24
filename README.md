@@ -1,2 +1,6 @@
 refer to mod page:
-https://legacy.curseforge.com/minecraft/mc-mods/useless-additions
+
+
+**Curse: https://www.curseforge.com/minecraft/mc-mods/useless-additions**
+
+**Modrinth: https://modrinth.com/mod/uselessadditions**
