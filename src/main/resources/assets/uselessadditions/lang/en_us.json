@@ -18,6 +18,8 @@
   "block.uselessadditions.sieve": "Sieve",
   "block.uselessadditions.enhancement_table": "Enhancement Table",
 
+  "block.uselessadditions.pile_of_slime": "Pile of Slime",
+
   "block.uselessadditions.survival_spawner": "Monster Spawner",
   "block.uselessadditions.empty_spawner": "Empty Monster Spawner",
 
@@ -478,7 +480,9 @@
   "item.uselessadditions.dragon_scale": "Dragon Scale",
   "item.uselessadditions.dragon_heart": "Dragon Heart",
   "item.uselessadditions.dragon_flesh": "Dragon Flesh",
+  "item.uselessadditions.stunning_upgrade": "Stunning Upgrade",
   "item.uselessadditions.tree_felling_upgrade": "Tree Felling Upgrade",
+  "item.uselessadditions.vein_mine_upgrade": "Vein Mine Upgrade",
   "item.uselessadditions.magic_ingot": "Magic Ingot",
   "item.uselessadditions.magic_feather": "Magic Feather",
   "item.uselessadditions.enchanted_magic_ingot": "Enchanted Magic Ingot",
@@ -511,6 +515,7 @@
   "item.uselessadditions.magic_apple": "Magic Apple",
   "item.uselessadditions.explosive_cake": "Explosive Cake",
 
+  "item.uselessadditions.slime_pearl": "Slime Pearl",
   "item.uselessadditions.warp_pearl": "Warp Pearl",
   "item.uselessadditions.warp_pearl.none": "No position set",
   "item.uselessadditions.warp_pearl.teleport": "Teleports to: ",
@@ -522,9 +527,17 @@
   "item.uselessadditions.netherite_bundle": "Netherite Bundle",
   "item.uselessadditions.dragon_bundle": "Dragon Bundle",
 
-  "item.uselessadditions.makeshift_hammer": "Makeshift Hammer",
-  "item.uselessadditions.hammer": "Smithing Hammer",
+  "item.uselessadditions.wooden_hammer": "Wooden Hammer",
+  "item.uselessadditions.stone_hammer": "Stone Hammer",
+  "item.uselessadditions.iron_hammer": "Iron Hammer",
+  "item.uselessadditions.golden_hammer": "Golden Hammer",
+  "item.uselessadditions.diamond_hammer": "Diamond Hammer",
+  "item.uselessadditions.netherite_hammer": "Netherite Hammer",
+  "item.uselessadditions.emerald_hammer": "Emerald Hammer",
+  "item.uselessadditions.blaze_metal_hammer": "Blaze-Metal Hammer",
   "item.uselessadditions.amethyst_hammer": "Amethyst Hammer",
+  "item.uselessadditions.dragon_scale_hammer": "Dragon Scale Hammer",
+  "item.uselessadditions.ancient_hammer": "Ancient Hammer",
   "item.uselessadditions.wooden_scythe": "Wooden Scythe",
   "item.uselessadditions.stone_scythe": "Stone Scythe",
   "item.uselessadditions.iron_scythe": "Iron Scythe",
@@ -567,7 +580,12 @@
   "item.uselessadditions.dragon_scale_pickaxe": "Dragon Scale Pickaxe",
   "item.uselessadditions.dragon_scale_axe": "Dragon Scale Axe",
   "item.uselessadditions.dragon_scale_hoe": "Dragon Scale Hoe",
-
+  "item.uselessadditions.ancient_sword": "Ancient Sword",
+  "item.uselessadditions.ancient_shovel": "Ancient Shovel",
+  "item.uselessadditions.ancient_pickaxe": "Ancient Pickaxe",
+  "item.uselessadditions.ancient_axe": "Ancient Axe",
+  "item.uselessadditions.ancient_hoe": "Ancient Hoe",
+  
   "item.uselessadditions.dragon_scale_helmet": "Dragon Scalemail Helmet",
   "item.uselessadditions.dragon_scale_chestplate": "Dragon Scalemail Chestplate",
   "item.uselessadditions.dragon_scale_leggings": "Dragon Scalemail Leggings",
@@ -611,6 +629,10 @@
   "specialeffect.modified": "[MODIFIED]",
   "specialeffect.uselessadditions.two_handed": "Two Handed",
   "specialeffect.uselessadditions.serrated": "Serrated",
+  "specialeffect.uselessadditions.fracturing": "Fracturing",
+  "specialeffect.uselessadditions.harvesting": "Harvesting",
+  "specialeffect.uselessadditions.stunning": "Stunning",
+  "specialeffect.uselessadditions.vein_mine": "Vein Mine",
   "specialeffect.uselessadditions.auto_smelt": "Auto Smelting",
   "specialeffect.uselessadditions.cactus_lining": "Cactus Lining",
   "specialeffect.uselessadditions.obsidian_padding": "Obsidian Padding",
@@ -636,6 +658,7 @@
   "spawner.uselessadditions.per": " per ",
 
   "effect.uselessadditions.bleeding": "Bleeding",
+  "effect.uselessadditions.fractured": "Fractured",
   "effect.uselessadditions.slimed": "Slimed",
   "effect.uselessadditions.muted": "Muted",
   "effect.uselessadditions.destabilized": "Destabilized",
@@ -647,6 +670,7 @@
   "category.uselessadditions.enhancement": "Enhancement",
   "category.uselessadditions.keys": "Useless Additions",
 
+  "entity.uselessadditions.slime_pearl": "Slime Pearl",
   "entity.uselessadditions.frigid_zombie": "Frigid Zombie",
 
   "advancements.uselessadditions.root.title": "Checklist",
@@ -655,6 +679,10 @@
   "advancements.uselessadditions.enhancement.description": "Improve and change your weapons",
   "advancements.uselessadditions.enhancement.tree_felling.title": "Tree Felling",
   "advancements.uselessadditions.enhancement.tree_felling.description": "Break em down in one go!",
+  "advancements.uselessadditions.enhancement.vein_mine.title": "Vein Mine",
+  "advancements.uselessadditions.enhancement.vein_mine.description": "I don't know what to put for the description on this one :/",
+  "advancements.uselessadditions.enhancement.stunning.title": "Stunning",
+  "advancements.uselessadditions.enhancement.stunning.description": "Hit em hard!",
 
   "stats.damage": "Attack Damage",
   "stats.efficiency": "Efficiency",

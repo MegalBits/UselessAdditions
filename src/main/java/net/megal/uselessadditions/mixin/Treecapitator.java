@@ -11,12 +11,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Block.class)
 public abstract class Treecapitator {
+    @Unique
     private static final int maxCount = 128;
     @Inject(at = @At("TAIL"),
             method = "onBreak")
@@ -30,6 +32,7 @@ public abstract class Treecapitator {
         }
     }
 
+    @Unique
     private static int tryApplyBreak(World world, PlayerEntity player, BlockPos pos, BlockState state, ItemStack stack, int i) {
         if (i > maxCount) return i;
         if (state.getBlock() instanceof PillarBlock && stack.isSuitableFor(state)) {
@@ -68,9 +71,10 @@ public abstract class Treecapitator {
         return i;
     }
 
+    @Unique
     private static int applyBreak(World world, PlayerEntity player, BlockPos pos, BlockState state, ItemStack stack, int i) {
         BlockState state2 = world.getBlockState(pos);
-        if (state2.getBlock() != state.getBlock() || stack.getDamage() >= stack.getMaxDamage() || i > maxCount) return i;
+        if (state2.getBlock() != state.getBlock() || stack.getDamage() + (i / 2f) >= stack.getMaxDamage() || i > maxCount) return i;
         if (!world.isClient()) {
             world.removeBlock(pos, false);
             BlockEntity entity = state2.hasBlockEntity() ? world.getBlockEntity(pos) : null;

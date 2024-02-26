@@ -1,0 +1,14 @@
+{
+  "type": "uselessadditions:enhancement_augment",
+  "template": {
+    "tag": "c:smithing_hammers"
+  },
+  "base": {
+    "tag": "minecraft:pickaxes"
+  },
+  "addition": {
+    "item": "uselessadditions:vein_mine_upgrade"
+  },
+  "output_type": 1,
+  "effect": "vein_mine"
+}

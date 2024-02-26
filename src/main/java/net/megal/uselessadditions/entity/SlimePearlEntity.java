@@ -1,11 +1,15 @@
 package net.megal.uselessadditions.entity;
 
 import net.megal.uselessadditions.UAdd;
+import net.megal.uselessadditions.item.UItems;
+import net.megal.uselessadditions.item.base.UItem;
+import net.minecraft.block.FlowerBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.ProjectileUtil;
 import net.minecraft.entity.projectile.thrown.EnderPearlEntity;
+import net.minecraft.item.Item;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.HitResult;
@@ -14,7 +18,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
 
-public class SlimePearlEntity extends EnderPearlEntity {
+public class SlimePearlEntity extends UPearlEntity {
     private boolean canBounce;
 
     public SlimePearlEntity(EntityType<? extends SlimePearlEntity> entityType, World world) {
@@ -23,8 +27,13 @@ public class SlimePearlEntity extends EnderPearlEntity {
     }
 
     public SlimePearlEntity(World world, LivingEntity owner) {
-        super(world, owner);
+        super(UEntities.SLIME_PEARL, world, owner);
         canBounce = true;
+    }
+
+    @Override
+    protected Item getDefaultItem() {
+        return UItems.SLIME_PEARL;
     }
 
     @Override

@@ -656,17 +656,18 @@ public class UMineshaftGenerator {
                 int y2 = 4;
                 int z2 = 0;
 
-                boolean isInAir = false;
                 int airCount = 0;
                 for (int i = 0; i < x2; i++) {
                     if (getBlockAt(world, x1 + i, y1 - 1, z1, chunkBox).isAir()) airCount++;
                 }
-                isInAir = airCount > 3;
+                boolean isInAir = airCount > 3;
 
-                if (!isInAir) {
-                    this.fillWithOutline(world, chunkBox, x1, y1, z1, x2, y2, z2, bricks, bricks, false);
-                    this.fillWithOutline(world, chunkBox, x1 + 1, y1 + 1, z1, x2 - 1, y2 - 1, z2, IRON_BARS.getDefaultState(), IRON_BARS.getDefaultState(), false);
-                }
+
+                this.fillWithOutline(world, chunkBox, x1, y1, z1, x2, y1, z2, isInAir ? planks : bricks, isInAir ? planks : bricks, false);
+                this.generateSupport(world, random, chunkBox, x1, y1, z1);
+
+                BlockState bars = isInAir ? fence.with(FenceBlock.EAST, true).with(FenceBlock.WEST, true) : IRON_BARS.getDefaultState().with(PaneBlock.EAST, true).with(PaneBlock.WEST, true);
+                this.fillWithOutline(world, chunkBox, x1 + 1, y1 + 1, z1, x2 - 1, y2 - 1, z2, bars, bars, false);
             }
         }
     }
@@ -684,7 +685,7 @@ public class UMineshaftGenerator {
         @Nullable
         public static BlockBox getBoundingBox(StructurePiecesHolder holder, Random random, int x, int y, int z, Direction orientation) {
             BlockBox blockBox = BlockBox.rotated(x, y, z, 0, 0, 0, 5, 5, 4, orientation);
-            return holder.getIntersecting(blockBox) != null ? blockBox : null;
+            return holder.getIntersecting(blockBox) == null ? blockBox : null;
         }
 
         @Override

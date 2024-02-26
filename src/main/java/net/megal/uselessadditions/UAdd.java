@@ -27,22 +27,18 @@ import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Position;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.math.random.Random;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOffers;
 import net.minecraft.village.VillagerProfession;
-import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
@@ -54,10 +50,8 @@ public class UAdd implements ModInitializer {
     public static final TagKey<Item> BUNDLES = TagKey.of(RegistryKeys.ITEM, new Identifier("c", "bundles"));
     public static final TagKey<Item> HAMMERS = TagKey.of(RegistryKeys.ITEM, new Identifier("c", "smithing_hammers"));
     public static final TagKey<Item> MOB_EGGS = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "mob_eggs"));
-    public static final TagKey<Item> MOB_SHARDS = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "mob_shards"));
-    public static final TagKey<Item> SMALL_MOB_SHARDS = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "small_mob_shards"));
     public static final TagKey<Block> PICKAXE_SHOVEL_MINEABLE = TagKey.of(RegistryKeys.BLOCK, new Identifier("uselessadditions", "mineable/pickaxe_shovel"));
-    public static final TagKey<Block> OBSIDIAN_BLOCKS = TagKey.of(RegistryKeys.BLOCK, new Identifier("c", "obsidian_blocks"));
+    public static final TagKey<Block> VEIN_MINABLE = TagKey.of(RegistryKeys.BLOCK, new Identifier(MOD_ID, "vein_minable"));
 
     private record VelocityCalculationValue(Vec3d pos, float movementTime, double velocity, float lastMove, float f) {}
     private static final HashMap<UUID, VelocityCalculationValue> playerLastPos = new HashMap<>();

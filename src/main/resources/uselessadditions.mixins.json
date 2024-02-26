@@ -7,6 +7,7 @@
     "ApplyArrowEffectsToVanillaBow",
     "ApplyDamageEffects",
     "ApplyDragonsCurse",
+    "ApplyJumpEffects",
     "ApplySpecialEffectIncompatibility",
     "AttackDamageModifier",
     "AutoSmelt",
@@ -30,6 +31,7 @@
     "ExtraExperienceOnKill",
     "ExtraSweeping",
     "ExtraSweepingTarget",
+    "Harvesting",
     "IgnoreQuietEntity",
     "ItemEntityDamageViaEnchant",
     "ItemRemainder",
@@ -45,7 +47,8 @@
     "StopSpecialEffectConflicts",
     "TelekinesisTransfersToInventory",
     "Treecapitator",
-    "TripwireHookAcceptsPlantFibre"
+    "TripwireHookAcceptsPlantFibre",
+    "VeinMine"
   ],
   "client": [
     "client.ShowSpecialEffectConflicts"

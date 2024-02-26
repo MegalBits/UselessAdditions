@@ -10,6 +10,7 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.random.Random;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -20,6 +21,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(LivingEntity.class)
 public abstract class ApplyDamageEffects {
     @Shadow private @Nullable LivingEntity attacker;
+
+    @Shadow public abstract Random getRandom();
 
     @Inject(at = @At(
                 value = "INVOKE",
@@ -37,6 +40,14 @@ public abstract class ApplyDamageEffects {
 
             if (UItemHelper.getEffects(stack).contains(SpecialEffects.SERRATED)) {
                 entity.addStatusEffect(new StatusEffectInstance(UStatusEffects.BLEEDING, 100, 0), attacker);
+            }
+
+            if (UItemHelper.getEffects(stack).contains(SpecialEffects.FRACTURING)) {
+                entity.addStatusEffect(new StatusEffectInstance(UStatusEffects.FRACTURED, getRandom().nextBetween(100, 200), 0), attacker);
+            }
+
+            if (UItemHelper.getEffects(stack).contains(SpecialEffects.STUNNING)) {
+                entity.addStatusEffect(new StatusEffectInstance(UStatusEffects.STUNNED, 100, 0), attacker);
             }
         }
     }

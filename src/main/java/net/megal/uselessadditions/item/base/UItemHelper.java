@@ -140,7 +140,65 @@ public class UItemHelper {
         };
     }
 
+    public static ToolMaterial createMaterial(int durability, float miningSpeed, float damage, int miningLevel, int enchantability, Ingredient repairIngredient) {
+        return new ToolMaterial() {
+            @Override
+            public int getDurability() {
+                return durability;
+            }
+
+            @Override
+            public float getMiningSpeedMultiplier() {
+                return miningSpeed;
+            }
+
+            @Override
+            public float getAttackDamage() {
+                return damage;
+            }
+
+            @Override
+            public int getMiningLevel() {
+                return miningLevel;
+            }
+
+            @Override
+            public int getEnchantability() {
+                return enchantability;
+            }
+
+            @Override
+            public Ingredient getRepairIngredient() {
+                return repairIngredient;
+            }
+        };
+    }
+
     public static ToolMaterial modifyMaterial(ToolMaterial material, int durability, float miningSpeed, float attackDamage) {
         return modifyMaterial(material, durability, miningSpeed, attackDamage, 0, 0, null);
+    }
+
+    public static ToolMaterial setMaterialDurability(ToolMaterial material, int durability) {
+        return createMaterial(durability, material.getMiningSpeedMultiplier(), material.getAttackDamage(), material.getMiningLevel(), material.getEnchantability(), material.getRepairIngredient());
+    }
+
+    public static ToolMaterial setMaterialMiningSpeed(ToolMaterial material, int miningSpeed) {
+        return createMaterial(material.getDurability(), miningSpeed, material.getAttackDamage(), material.getMiningLevel(), material.getEnchantability(), material.getRepairIngredient());
+    }
+
+    public static ToolMaterial setMaterialDamage(ToolMaterial material, float attackDamage) {
+        return createMaterial(material.getDurability(), material.getMiningSpeedMultiplier(), attackDamage, material.getMiningLevel(), material.getEnchantability(), material.getRepairIngredient());
+    }
+
+    public static ToolMaterial setMaterialMiningLevel(ToolMaterial material, int miningLevel) {
+        return createMaterial(material.getDurability(), material.getMiningSpeedMultiplier(), material.getAttackDamage(), miningLevel, material.getEnchantability(), material.getRepairIngredient());
+    }
+
+    public static ToolMaterial setMaterialEnchantability(ToolMaterial material, int enchantability) {
+        return createMaterial(material.getDurability(), material.getMiningSpeedMultiplier(), material.getAttackDamage(), material.getMiningLevel(), enchantability, material.getRepairIngredient());
+    }
+
+    public static ToolMaterial setMaterialRepairIngredient(ToolMaterial material, Ingredient ingredient) {
+        return createMaterial(material.getDurability(), material.getMiningSpeedMultiplier(), material.getAttackDamage(), material.getMiningLevel(), material.getEnchantability(), ingredient);
     }
 }

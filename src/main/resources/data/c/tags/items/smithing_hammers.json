@@ -1,8 +1,16 @@
 {
   "replace": false,
   "values": [
-    "uselessadditions:makeshift_hammer",
-    "uselessadditions:hammer",
-    "uselessadditions:amethyst_hammer"
+    "uselessadditions:wooden_hammer",
+    "uselessadditions:stone_hammer",
+    "uselessadditions:iron_hammer",
+    "uselessadditions:golden_hammer",
+    "uselessadditions:diamond_hammer",
+    "uselessadditions:netherite_hammer",
+    "uselessadditions:amethyst_hammer",
+    "uselessadditions:emerald_hammer",
+    "uselessadditions:blaze_metal_hammer",
+    "uselessadditions:dragon_scale_hammer",
+    "uselessadditions:ancient_hammer"
   ]
 }

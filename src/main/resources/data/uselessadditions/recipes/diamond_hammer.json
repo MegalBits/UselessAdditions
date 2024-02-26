@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 2 ",
+    " 12",
+    "1  "
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:stick"
+    },
+    "2": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:diamond_hammer",
+    "count": 1
+  }
+}

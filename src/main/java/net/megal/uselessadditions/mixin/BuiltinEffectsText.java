@@ -1,9 +1,12 @@
 package net.megal.uselessadditions.mixin;
 
+import com.google.common.collect.Multimap;
 import com.llamalad7.mixinextras.sugar.Local;
 import net.megal.uselessadditions.item.base.UBowItem;
 import net.megal.uselessadditions.item.base.UItemHelper;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.attribute.EntityAttribute;
+import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.MutableText;
@@ -29,8 +32,8 @@ public abstract class BuiltinEffectsText {
                 target = "Lnet/minecraft/item/ItemStack;getItem()Lnet/minecraft/item/Item;"
             ),
             slice = @Slice(
-                    from = @At(value = "INVOKE", target = "Ljava/util/List;add(Ljava/lang/Object;)Z"),
-                    to = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;hasNbt()Z")
+                from = @At(value = "INVOKE", target = "Ljava/util/List;add(Ljava/lang/Object;)Z"),
+                to = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;hasNbt()Z")
             ),
             method = "getTooltip(Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/client/item/TooltipContext;)Ljava/util/List;")
     private void appendBuiltinTooltips(@Nullable PlayerEntity player, TooltipContext context, CallbackInfoReturnable<List<Text>> cir, @Local(ordinal = 0) List<Text> list) {
@@ -62,8 +65,8 @@ public abstract class BuiltinEffectsText {
 
     @ModifyVariable(at = @At("STORE"),
             slice = @Slice(
-                    from = @At(value = "INVOKE", target = "Lnet/minecraft/entity/attribute/EntityAttributeModifier;getId()Ljava/util/UUID;"),
-                    to = @At(value = "INVOKE", target = "Lnet/minecraft/enchantment/EnchantmentHelper;getAttackDamage(Lnet/minecraft/item/ItemStack;Lnet/minecraft/entity/EntityGroup;)F")
+                from = @At(value = "INVOKE", target = "Lnet/minecraft/entity/attribute/EntityAttributeModifier;getId()Ljava/util/UUID;"),
+                to = @At(value = "INVOKE", target = "Lnet/minecraft/enchantment/EnchantmentHelper;getAttackDamage(Lnet/minecraft/item/ItemStack;Lnet/minecraft/entity/EntityGroup;)F")
             ),
             method = "getTooltip(Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/client/item/TooltipContext;)Ljava/util/List;", ordinal = 0)
     private double modifyAttackDamage(double d, @Nullable PlayerEntity player, TooltipContext context) {

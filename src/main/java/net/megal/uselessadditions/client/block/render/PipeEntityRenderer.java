@@ -47,8 +47,9 @@ public class PipeEntityRenderer implements BlockEntityRenderer<PipeEntity> {
     }
 
     public Vec3d calculateOffset(@Nullable Direction direction, PipeEntity.StoredItemStack storedStack) {
-        if (storedStack.getTime() < 10) {
-            float progress = 10 - storedStack.getTime();
+        float time = Math.min(storedStack.getTime(), 20);
+        if (time < 10) {
+            float progress = 10 - time;
             return storedStack.initialPos.multiply(progress / 10);
         }
 
@@ -64,7 +65,7 @@ public class PipeEntityRenderer implements BlockEntityRenderer<PipeEntity> {
             case WEST -> offset = new Vec3d(1, 0, 0);
         }
 
-        float progress = storedStack.getTime() - 10;
+        float progress = time - 10;
         return offset.multiply(progress / 10);
     }
 }

@@ -21,6 +21,8 @@ public class SurvivalSpawnerEntityRenderer implements BlockEntityRenderer<Surviv
     }
 
     public void render(SurvivalSpawnerEntity spawnerEntity, float f, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, int j) {
+        if (spawnerEntity.getWorld() == null) return;
+
         matrixStack.push();
         matrixStack.translate(0.5F, 0.0F, 0.5F);
         Entity entity = spawnerEntity.getRenderedEntity(spawnerEntity.getWorld(), spawnerEntity.getWorld().getRandom(), spawnerEntity.getPos());

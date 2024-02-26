@@ -29,6 +29,10 @@ public class SpecialEffects {
     public static final String TREE_FELLING = registerEffect("tree_felling", new SpecialEffect(List.of(Enchantments.EFFICIENCY), List.of()));
     public static final String DUAL_SHOT = registerEffect("dual_shot", new SpecialEffect());
     public static final String SERRATED = registerEffect("serrated", new SpecialEffect());
+    public static final String FRACTURING = registerEffect("fracturing", new SpecialEffect());
+    public static final String STUNNING = registerEffect("stunning", new SpecialEffect());
+    public static final String HARVESTING = registerEffect("harvesting", new SpecialEffect());
+    public static final String VEIN_MINE = registerEffect("vein_mine", new SpecialEffect(List.of(Enchantments.EFFICIENCY), List.of()));
     public static final String IMPROVED_SWEEPING = registerEffect("improved_sweeping", new SpecialEffect());
     public static final String CACTUS_LINING = registerEffect("cactus_lining", new SpecialEffect(DamageTypes.CACTUS, null));
     public static final String OBSIDIAN_PADDING = registerEffect("obsidian_padding", new SpecialEffect(null, DamageTypeTags.IS_EXPLOSION));

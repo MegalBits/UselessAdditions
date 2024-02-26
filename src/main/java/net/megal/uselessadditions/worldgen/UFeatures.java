@@ -4,15 +4,28 @@ import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectionContext;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.megal.uselessadditions.UAdd;
+import net.megal.uselessadditions.block.UBlocks;
+import net.minecraft.block.Blocks;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.GenerationStep;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.FeatureConfig;
 import net.minecraft.world.gen.feature.PlacedFeature;
+import net.minecraft.world.gen.placementmodifier.PlacementModifier;
 
+import java.util.List;
 import java.util.function.Predicate;
 
 public class UFeatures {
+    public static final SlimePileFeature SLIME_PILE_FEATURE = (SlimePileFeature) register(new Identifier(UAdd.MOD_ID, "slime_pile"), new SlimePileFeature(SlimePileConfig.CODEC));
+    //public static final PlacedFeature SLIME_PILE_PLACED = new PlacedFeature(RegistryEntry.of(new ConfiguredFeature<>(SLIME_PILE_FEATURE, new SlimePileConfig(new Identifier(UAdd.MOD_ID, "pile_of_slime")))), List.of());
+
     public static final RegistryKey<PlacedFeature> ALLAY_ORE = register(new Identifier(UAdd.MOD_ID,"allay_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
     public static final RegistryKey<PlacedFeature> AXOLOTL_ORE = register(new Identifier(UAdd.MOD_ID,"axolotl_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
     public static final RegistryKey<PlacedFeature> BAT_ORE = register(new Identifier(UAdd.MOD_ID,"bat_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
@@ -70,11 +83,17 @@ public class UFeatures {
     public static final RegistryKey<PlacedFeature> WITHER_SKELETON_ORE = register(new Identifier(UAdd.MOD_ID,"wither_skeleton_ore"), BiomeSelectors.foundInTheNether(), GenerationStep.Feature.UNDERGROUND_ORES);
     public static final RegistryKey<PlacedFeature> WOLF_ORE = register(new Identifier(UAdd.MOD_ID,"wolf_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
     public static final RegistryKey<PlacedFeature> ZOMBIE_ORE = register(new Identifier(UAdd.MOD_ID,"zombie_ore"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
+    public static final RegistryKey<PlacedFeature> SLIME_PILE = register(new Identifier(UAdd.MOD_ID,"slime_pile"), BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_DECORATION);
+
 
     private static RegistryKey<PlacedFeature> register(Identifier id, Predicate<BiomeSelectionContext> selector, GenerationStep.Feature generationStep) {
         RegistryKey<PlacedFeature> feature = RegistryKey.of(RegistryKeys.PLACED_FEATURE, id);
         BiomeModifications.addFeature(selector, generationStep, feature);
         return feature;
+    }
+
+    private static Feature<?> register(Identifier id, Feature<?> feature) {
+        return Registry.register(Registries.FEATURE, id, feature);
     }
 
     public static void loadStuff() {}

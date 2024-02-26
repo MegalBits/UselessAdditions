@@ -43,6 +43,8 @@ public class UBlocks {
     public static final BlockEntityType<SieveEntity> SIEVE_ENTITY = registerEntity(new Identifier(UAdd.MOD_ID, "sieve"), FabricBlockEntityTypeBuilder.create(SieveEntity::new, UBlocks.SIEVE).build());
     //Enhancement table
     public static final EnhancementTable ENHANCEMENT_TABLE = register(new Identifier(UAdd.MOD_ID, "enhancement_table"), new EnhancementTable(FabricBlockSettings.create().mapColor(MapColor.RED).instrument(Instrument.BASEDRUM).strength(7.5f, 1200.0f).requiresTool().sounds(BlockSoundGroup.STONE).requiresTool()), new FabricItemSettings());
+    //Misc
+    public static final SlimePile PILE_OF_SLIME = register(new Identifier(UAdd.MOD_ID, "pile_of_slime"), new SlimePile(FabricBlockSettings.create().mapColor(MapColor.PALE_GREEN).slipperiness(0.8F).sounds(BlockSoundGroup.SLIME).offset(AbstractBlock.OffsetType.XZ).dynamicBounds().nonOpaque()), new FabricItemSettings());
     //Ores
     public static final Block ALLAY_ORE = register(new Identifier(UAdd.MOD_ID, "allay_ore"), createOre(), new FabricItemSettings());
     public static final Block DEEPSLATE_ALLAY_ORE = register(new Identifier(UAdd.MOD_ID, "deepslate_allay_ore"), createDeepslateOre(), new FabricItemSettings());

@@ -14,7 +14,7 @@ import java.util.List;
 public class UHoeItem extends HoeItem {
     private final List<String> effects;
     public UHoeItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings, @Nullable String ... effects) {
-        super(material, attackDamage, attackSpeed, settings);
+        super(UItemHelper.setMaterialDamage(material, 0), attackDamage, attackSpeed, settings);
         this.effects = List.of(effects);
     }
 

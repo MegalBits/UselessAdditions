@@ -1,6 +1,7 @@
 package net.megal.uselessadditions.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
+import net.megal.uselessadditions.UAdd;
 import net.megal.uselessadditions.enchantment.UEnchantment;
 import net.megal.uselessadditions.item.SpecialEffects;
 import net.megal.uselessadditions.item.base.UItemHelper;
@@ -62,7 +63,8 @@ public abstract class MiningSpeedModifier {
         }
         List<String> effects = UItemHelper.getEffects(stack);
         for (String s : effects) {
-            if (s.equals(SpecialEffects.TREE_FELLING) && stack.isSuitableFor(block) && block.getBlock() instanceof PillarBlock) f *= 0.07f;
+            if (s.equals(SpecialEffects.TREE_FELLING) && stack.isSuitableFor(block) && block.getBlock() instanceof PillarBlock) f *= 0.15f;
+            if (s.equals(SpecialEffects.VEIN_MINE) && stack.isSuitableFor(block) && block.isIn(UAdd.VEIN_MINABLE)) f *= 0.15f;
             f *= SpecialEffects.effects.get(s).miningSpeedMul;
         }
         return f;

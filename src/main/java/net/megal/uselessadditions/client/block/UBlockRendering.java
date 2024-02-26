@@ -16,16 +16,19 @@ import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 public class UBlockRendering {
     public static void registerBlockRenderers() {
         BlockRenderLayerMap.INSTANCE.putBlock(UBlocks.PLANT_FIBRE_TRIPWIRE, RenderLayer.getTripwire());
-        BlockRenderLayerMap.INSTANCE.putBlock(UBlocks.WOODEN_PIPE, RenderLayer.getCutoutMipped());
-        BlockRenderLayerMap.INSTANCE.putBlock(UBlocks.STONE_PIPE, RenderLayer.getCutoutMipped());
-        BlockRenderLayerMap.INSTANCE.putBlock(UBlocks.IRON_PIPE, RenderLayer.getCutoutMipped());
-        BlockRenderLayerMap.INSTANCE.putBlock(UBlocks.GOLD_PIPE, RenderLayer.getCutoutMipped());
-        BlockRenderLayerMap.INSTANCE.putBlock(UBlocks.DIAMOND_PIPE, RenderLayer.getCutoutMipped());
-        BlockRenderLayerMap.INSTANCE.putBlock(UBlocks.NETHERITE_PIPE, RenderLayer.getCutoutMipped());
-        BlockRenderLayerMap.INSTANCE.putBlock(UBlocks.DRAGON_PIPE, RenderLayer.getCutoutMipped());
-        BlockRenderLayerMap.INSTANCE.putBlock(UBlocks.SIEVE, RenderLayer.getCutoutMipped());
-        BlockRenderLayerMap.INSTANCE.putBlock(UBlocks.EMPTY_SPAWNER, RenderLayer.getCutoutMipped());
-        BlockRenderLayerMap.INSTANCE.putBlock(UBlocks.SURVIVAL_SPAWNER, RenderLayer.getCutoutMipped());
+
+        BlockRenderLayerMap.INSTANCE.putBlock(UBlocks.WOODEN_PIPE, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(UBlocks.STONE_PIPE, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(UBlocks.IRON_PIPE, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(UBlocks.GOLD_PIPE, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(UBlocks.DIAMOND_PIPE, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(UBlocks.NETHERITE_PIPE, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(UBlocks.DRAGON_PIPE, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(UBlocks.SIEVE, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(UBlocks.EMPTY_SPAWNER, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(UBlocks.SURVIVAL_SPAWNER, RenderLayer.getCutout());
+
+        BlockRenderLayerMap.INSTANCE.putBlock(UBlocks.PILE_OF_SLIME, RenderLayer.getTranslucent());
 
         BlockEntityRendererFactories.register(UBlocks.SIEVE_ENTITY, SieveEntityRenderer::new);
         BlockEntityRendererFactories.register(UBlocks.PIPE_ENTITY, PipeEntityRenderer::new);

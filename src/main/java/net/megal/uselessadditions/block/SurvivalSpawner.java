@@ -26,12 +26,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class SurvivalSpawner extends BlockWithEntity {
-    public static int EMERALD_TIME = 300;
-    public static Item EMERALD = Items.EMERALD;
-    public static int DIAMOND_TIME = 36000;
-    public static Item DIAMOND = Items.DIAMOND;
-    public static int NETHERITE_TIME = 216000;
-    public static Item NETHERITE = Items.NETHERITE_INGOT;
     protected SurvivalSpawner(Settings settings) {
         super(settings);
     }
@@ -41,34 +35,6 @@ public class SurvivalSpawner extends BlockWithEntity {
         return null;
     }
 
-    @Override
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        boolean wasItemUsed = false;
-        if (world.getBlockEntity(pos) instanceof SurvivalSpawnerEntity blockEntity) {
-            Item handItem = player.getStackInHand(hand).getItem();
-            wasItemUsed = itemUsedToRecharge(handItem, blockEntity, world, pos);
-        }
-        if (world.isClient) {
-            return ActionResult.SUCCESS;
-        }
-        if (wasItemUsed && !player.isCreative()) player.getStackInHand(hand).decrement(1);
-        return ActionResult.CONSUME;
-    }
-    private boolean itemUsedToRecharge(Item item, SurvivalSpawnerEntity blockEntity ,World world, BlockPos pos) {
-        if (item == EMERALD) {
-            blockEntity.setTimeRemaining(blockEntity.getTimeRemaining() + EMERALD_TIME, 8, world, pos);
-            return true;
-        }
-        if (item == DIAMOND) {
-            blockEntity.setTimeRemaining(blockEntity.getTimeRemaining() + DIAMOND_TIME, 12, world, pos);
-            return true;
-        }
-        if (item == NETHERITE) {
-            blockEntity.setTimeRemaining(blockEntity.getTimeRemaining() + NETHERITE_TIME, 16, world, pos);
-            return true;
-        }
-        return false;
-    }
     @Override
     public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
         super.onPlaced(world, pos, state, placer, itemStack);

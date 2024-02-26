@@ -7,14 +7,14 @@
   ],
   "key": {
     "1": {
-      "item": "minecraft:stick"
+      "item": "uselessadditions:netherite_stick"
     },
     "2": {
-      "item": "minecraft:iron_ingot"
+      "item": "uselessadditions:ancient_alloy"
     }
   },
   "result": {
-    "item": "uselessadditions:hammer",
+    "item": "uselessadditions:ancient_axe",
     "count": 1
   }
 }

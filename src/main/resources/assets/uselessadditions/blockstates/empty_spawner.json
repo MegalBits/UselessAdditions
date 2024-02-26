@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "uselessadditions:block/empty_spawner"
+      "model": "uselessadditions:block/survival_spawner"
     }
   }
 }

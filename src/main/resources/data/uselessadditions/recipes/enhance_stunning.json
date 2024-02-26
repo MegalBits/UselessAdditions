@@ -1,0 +1,19 @@
+{
+  "type": "uselessadditions:enhancement_augment",
+  "template": {
+    "tag": "c:smithing_hammers"
+  },
+  "base": [
+    {
+      "tag": "minecraft:shovels"
+    },
+    {
+      "tag": "c:smithing_hammers"
+    }
+  ],
+  "addition": {
+    "item": "uselessadditions:stunning_upgrade"
+  },
+  "output_type": 1,
+  "effect": "stunning"
+}

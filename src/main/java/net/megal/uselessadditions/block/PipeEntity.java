@@ -119,7 +119,14 @@ public class PipeEntity extends BlockEntity {
     public static void commonTick(World world, BlockPos pos, BlockState state, PipeEntity pipeEntity) {
         for (StoredItemStack storedStack : pipeEntity.storedStacks) {
             if (pipeEntity.power > 0) {
-                if (storedStack.direction != null) storedStack.tickStack();
+                if (storedStack.direction != null) {
+                    if (storedStack.overtimeTicks > 2 && storedStack.shouldMove()) {
+                        pipeEntity.storedStacks.add(new StoredItemStack(storedStack.stack, storedStack.itemsPerSecond, StoredItemStack.posFromDirection(storedStack.direction.getOpposite()), storedStack.rotation, null, storedStack.direction.getOpposite()));
+                        pipeEntity.stacksToRemove.add(storedStack);
+                        break;
+                    }
+                    storedStack.tickStack();
+                }
                 if (storedStack.direction == null || storedStack.time <= 10) storedStack.direction = getItemDirection(world, pos, state, pipeEntity, storedStack.prevDirection, storedStack.stack);
 
                 if (!storedStack.shouldMove() || storedStack.direction == null) continue;
@@ -339,6 +346,7 @@ public class PipeEntity extends BlockEntity {
         public final Direction prevDirection;
         @Nullable
         public Direction direction;
+        private int overtimeTicks = 0;
         private float time = 0;
 
         public StoredItemStack(ItemStack stack, float itemsPerSecond, Vec3d pos, int rotation, @Nullable Direction direction, @Nullable Direction prevDirection) {
@@ -359,7 +367,8 @@ public class PipeEntity extends BlockEntity {
         }
 
         public void tickStack() {
-            if (time < 20) time = Math.min(time + itemsPerSecond, 20);
+            time += itemsPerSecond;
+            if (time >= 20) overtimeTicks++;
         }
 
         public boolean shouldMove() {

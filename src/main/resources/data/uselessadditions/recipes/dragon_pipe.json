@@ -1,15 +1,18 @@
 {
-  "type": "minecraft:smithing_transform",
-  "template": {
-    "tag": "c:smithing_hammers"
-  },
-  "base": {
-    "item": "uselessadditions:iron_pipe"
-  },
-  "addition": {
-    "item": "uselessadditions:dragon_scale"
-  },
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "uselessadditions:iron_pipe"
+    },
+    {
+      "item": "uselessadditions:iron_pipe"
+    },
+    {
+      "item": "uselessadditions:dragon_scale"
+    }
+  ],
   "result": {
-    "item": "uselessadditions:dragon_pipe"
+    "item": "uselessadditions:dragon_pipe",
+    "count": 2
   }
 }

@@ -1,5 +1,5 @@
 {
-  "parent": "block/cube_all",
+  "parent": "block/cube_all_inner_faces",
   "textures": {
     "all": "uselessadditions:block/empty_spawner"
   }

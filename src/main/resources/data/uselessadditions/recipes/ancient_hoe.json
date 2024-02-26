@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "22",
+    " 1",
+    " 1"
+  ],
+  "key": {
+    "1": {
+      "item": "uselessadditions:netherite_stick"
+    },
+    "2": {
+      "item": "uselessadditions:ancient_alloy"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:ancient_hoe",
+    "count": 1
+  }
+}

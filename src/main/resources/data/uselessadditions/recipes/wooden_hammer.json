@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "32 ",
+    " 2 ",
     " 12",
     "1  "
   ],
@@ -11,18 +11,10 @@
     },
     "2": {
       "tag": "minecraft:planks"
-    },
-    "3": [
-      {
-        "item": "uselessadditions:rock"
-      },
-      {
-        "item": "uselessadditions:deepslate_rock"
-      }
-    ]
+    }
   },
   "result": {
-    "item": "uselessadditions:makeshift_hammer",
+    "item": "uselessadditions:wooden_hammer",
     "count": 1
   }
 }
