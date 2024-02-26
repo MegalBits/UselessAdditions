@@ -3,6 +3,7 @@ package net.megal.uselessadditions.effect;
 import net.megal.uselessadditions.UAdd;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.effect.JumpEffect;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.registry.Registries;
@@ -11,7 +12,7 @@ import net.minecraft.util.Identifier;
 
 public class UStatusEffects {
     public static final StatusEffect SPLINTERS = register(new Identifier(UAdd.MOD_ID, "splinters"), new SplintersEffect(StatusEffectCategory.HARMFUL, 0x67502c));
-    public static final StatusEffect STUNNED = register(new Identifier(UAdd.MOD_ID, "stunned"), new UStatusEffect(StatusEffectCategory.HARMFUL, 0xffce00)
+    public static final StatusEffect STUNNED = register(new Identifier(UAdd.MOD_ID, "stunned"), new JumpEffect(StatusEffectCategory.HARMFUL, 0xffce00, 0f, 0.05f)
             .addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED, "bc78878d-b676-447e-aef8-4c70cb80b92e", -0.95f, EntityAttributeModifier.Operation.MULTIPLY_TOTAL));
     public static final StatusEffect DRAGONS_CURSE = register(new Identifier(UAdd.MOD_ID, "dragons_curse"), new UStatusEffect(StatusEffectCategory.HARMFUL, 0x8228cf)
             .addAttributeModifier(EntityAttributes.GENERIC_MAX_HEALTH, "dffcbc0c-29e3-442c-b064-7b8066a7ec9e", -0.5f, EntityAttributeModifier.Operation.MULTIPLY_TOTAL)
