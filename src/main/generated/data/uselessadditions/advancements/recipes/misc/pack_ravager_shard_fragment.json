@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_ravager_shard": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "uselessadditions:ravager_shard"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:pack_ravager_shard_fragment"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_ravager_shard"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:pack_ravager_shard_fragment"
+    ]
+  }
+}

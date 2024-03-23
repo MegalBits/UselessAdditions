@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "minecraft:stone_crafting_materials"
+    },
+    "n": {
+      "tag": "c:rocks"
+    },
+    "s": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    "n#s",
+    "# s",
+    "n#s"
+  ],
+  "result": {
+    "item": "uselessadditions:stone_bow"
+  }
+}

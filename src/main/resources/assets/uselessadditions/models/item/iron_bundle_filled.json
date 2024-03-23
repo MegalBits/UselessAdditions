@@ -1,6 +1,0 @@
-{
-    "parent": "uselessadditions:item/iron_bundle",
-    "textures": {
-        "layer0": "uselessadditions:item/iron_bundle_filled"
-    }
-}

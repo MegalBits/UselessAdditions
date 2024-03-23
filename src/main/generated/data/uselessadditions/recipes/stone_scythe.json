@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "minecraft:stone_crafting_materials"
+    },
+    "n": {
+      "item": "minecraft:stick"
+    },
+    "s": {
+      "tag": "c:rocks"
+    }
+  },
+  "pattern": [
+    "##n",
+    " s#",
+    " s "
+  ],
+  "result": {
+    "item": "uselessadditions:stone_scythe"
+  }
+}

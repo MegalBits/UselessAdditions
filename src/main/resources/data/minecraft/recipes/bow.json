@@ -6,14 +6,9 @@
     "321"
   ],
   "key": {
-    "1": [
-      {
-        "item": "minecraft:string"
-      },
-      {
-        "item": "uselessadditions:plant_fibre"
-      }
-    ],
+    "1": {
+      "item": "minecraft:string"
+    },
     "2": {
       "tag": "minecraft:planks"
     },

@@ -2,46 +2,47 @@
 	"schemaVersion": 1,
 	"id": "uselessadditions",
 	"version": "${version}",
-	"name": "UselessAdditions",
+	"name": "Useless Additions",
 	"description": "Adds a bunch of stuff to the game",
 	"authors": [
-		"Megal",
-		"EhrenClol"
+		"Megal"
 	],
 	"contact": {
+		"curseforge": "https://www.curseforge.com/minecraft/mc-mods/uselessadditions",
+		"modrinth": "https://modrinth.com/mod/uselessadditions",
+		"sources": "https://github.com/MegalBits/UselessAdditions"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/uselessadditions/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"net.megal.uselessadditions.UAdd"
+			"net.megal.UAdd"
 		],
 		"client": [
-			"net.megal.uselessadditions.UAddClient"
+			"net.megal.UAddClient"
 		],
-		"mm:early_risers": [
-			"net.megal.uselessadditions.EarlyRiser"
-		],
-		"rei_server": [
-			"net.megal.uselessadditions.plugins.rei.UAddREIServerPlugin"
-		],
-		"rei_client": [
-			"net.megal.uselessadditions.plugins.rei.UAddREIClientPlugin"
+		"fabric-datagen": [
+          "net.megal.UAddDataGen"
 		]
 	},
+	"accessWidener" : "uselessadditions.accesswidener",
 	"mixins": [
 		"uselessadditions.mixins.json"
 	],
-	"accessWidener" : "uselessadditions.accesswidener",
 	"depends": {
-		"fabricloader": ">=0.14.23",
+		"fabricloader": ">=0.15.7",
 		"minecraft": "~1.20.4",
 		"java": ">=17",
 		"fabric-api": "*"
 	},
 	"suggests": {
-		"roughlyenoughitems": "*",
-		"roughlyenoughresources": "*"
+		"roughlyenoughitems": "*"
+	},
+	"custom": {
+		"fabric-api:module-lifecycle": "stable",
+		"loom:injected_interfaces": {
+			"net/minecraft/class_1792": ["net/megal/item/UItem"]
+		}
 	}
 }

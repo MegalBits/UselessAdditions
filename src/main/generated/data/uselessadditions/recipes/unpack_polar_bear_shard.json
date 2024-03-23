@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "uselessadditions:polar_bear_shard_fragment"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "uselessadditions:polar_bear_shard"
+  }
+}

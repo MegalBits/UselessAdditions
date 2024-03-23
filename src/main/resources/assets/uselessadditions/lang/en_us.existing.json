@@ -1,0 +1,13 @@
+{
+  "itemgroup.uadd": "Useless Additions",
+  "itemgroup.shards": "Mob Shards",
+
+  "uselessadditions.modifiers.prefixes.modified": "[Modified]",
+  "uselessadditions.modifiers.prefixes.builtin": "[Built In]",
+  "uselessadditions.modifiers.auto_smelting": "Auto Smelting",
+  "uselessadditions.modifiers.crystallized_xp": "Crystallized Xp",
+  "uselessadditions.modifiers.crystallized_xp.providing": "Levels Providing",
+  "uselessadditions.modifiers.crystallized_xp.damage": "Attack Damage",
+  "uselessadditions.modifiers.crystallized_xp.mining": "Mining Speed",
+  "uselessadditions.modifiers.fireproof": "Fireproof"
+}

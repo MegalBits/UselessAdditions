@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:unpack_vex_shard"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_vex_shard_fragment": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "uselessadditions:vex_shard_fragment"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_vex_shard_fragment"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:unpack_vex_shard"
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:diamond"
+    },
+    "n": {
+      "item": "uselessadditions:diamond_nugget"
+    },
+    "s": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    "n#s",
+    "# s",
+    "n#s"
+  ],
+  "result": {
+    "item": "uselessadditions:diamond_bow"
+  }
+}

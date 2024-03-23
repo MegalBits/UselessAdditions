@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "uselessadditions:ancient_alloy"
+    },
+    "/": {
+      "item": "uselessadditions:netherite_stick"
+    }
+  },
+  "pattern": [
+    "###",
+    " / ",
+    " / "
+  ],
+  "result": {
+    "item": "uselessadditions:ancient_pickaxe"
+  }
+}

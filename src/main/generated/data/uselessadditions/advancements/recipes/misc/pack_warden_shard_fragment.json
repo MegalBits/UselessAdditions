@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:pack_warden_shard_fragment"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_warden_shard": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "uselessadditions:warden_shard"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_warden_shard"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:pack_warden_shard_fragment"
+    ]
+  }
+}

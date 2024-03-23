@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "minecraft:planks"
+    },
+    "n": {
+      "item": "minecraft:stick"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "##n",
+    " s#",
+    " s "
+  ],
+  "result": {
+    "item": "uselessadditions:wooden_scythe"
+  }
+}

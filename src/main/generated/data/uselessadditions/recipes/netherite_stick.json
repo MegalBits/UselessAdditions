@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "uselessadditions:netherite_nugget"
+  },
+  "base": {
+    "item": "minecraft:stick"
+  },
+  "result": {
+    "item": "uselessadditions:netherite_stick"
+  },
+  "template": {
+    "tag": "c:hammers"
+  }
+}

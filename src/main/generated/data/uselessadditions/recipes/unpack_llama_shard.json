@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "uselessadditions:llama_shard_fragment"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "uselessadditions:llama_shard"
+  }
+}

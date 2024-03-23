@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "uselessadditions:ancient_alloy"
+    },
+    "n": {
+      "item": "uselessadditions:netherite_stick"
+    },
+    "s": {
+      "item": "uselessadditions:ancient_alloy_nugget"
+    }
+  },
+  "pattern": [
+    "##n",
+    " s#",
+    " s "
+  ],
+  "result": {
+    "item": "uselessadditions:ancient_scythe"
+  }
+}

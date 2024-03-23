@@ -1,6 +1,0 @@
-{
-	"parent": "uselessadditions:block/sieve",
-	"textures": {
-		"mesh": "uselessadditions:block/diamond_mesh"
-	}
-}

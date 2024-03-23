@@ -1,0 +1,7 @@
+{
+  "parent": "uselessadditions:item/pulled_bow",
+  "textures": {
+    "layer0": "uselessadditions:item/blaze_metal_bow_pulling_1",
+    "layer1": "uselessadditions:item/emerald_arrow_pulling_1"
+  }
+}

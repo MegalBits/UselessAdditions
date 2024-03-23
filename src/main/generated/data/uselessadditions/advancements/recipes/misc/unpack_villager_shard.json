@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:unpack_villager_shard"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_villager_shard_fragment": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "uselessadditions:villager_shard_fragment"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_villager_shard_fragment"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:unpack_villager_shard"
+    ]
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "parent": "uselessadditions:item/bow",
+  "overrides": [
+    {
+      "model": "uselessadditions:item/dragon_scale_bow_pulling_with_arrow_0",
+      "predicate": {
+        "arrow_type": 0.0,
+        "pulling": 1
+      }
+    },
+    {
+      "model": "uselessadditions:item/dragon_scale_bow_pulling_with_arrow_1",
+      "predicate": {
+        "arrow_type": 0.0,
+        "pull": 0.65,
+        "pulling": 1
+      }
+    },
+    {
+      "model": "uselessadditions:item/dragon_scale_bow_pulling_with_arrow_2",
+      "predicate": {
+        "arrow_type": 0.0,
+        "pull": 0.9,
+        "pulling": 1
+      }
+    },
+    {
+      "model": "uselessadditions:item/dragon_scale_bow_pulling_with_spectral_arrow_0",
+      "predicate": {
+        "arrow_type": 0.01,
+        "pulling": 1
+      }
+    },
+    {
+      "model": "uselessadditions:item/dragon_scale_bow_pulling_with_spectral_arrow_1",
+      "predicate": {
+        "arrow_type": 0.01,
+        "pull": 0.65,
+        "pulling": 1
+      }
+    },
+    {
+      "model": "uselessadditions:item/dragon_scale_bow_pulling_with_spectral_arrow_2",
+      "predicate": {
+        "arrow_type": 0.01,
+        "pull": 0.9,
+        "pulling": 1
+      }
+    },
+    {
+      "model": "uselessadditions:item/dragon_scale_bow_pulling_with_iron_arrow_0",
+      "predicate": {
+        "arrow_type": 0.02,
+        "pulling": 1
+      }
+    },
+    {
+      "model": "uselessadditions:item/dragon_scale_bow_pulling_with_iron_arrow_1",
+      "predicate": {
+        "arrow_type": 0.02,
+        "pull": 0.65,
+        "pulling": 1
+      }
+    },
+    {
+      "model": "uselessadditions:item/dragon_scale_bow_pulling_with_iron_arrow_2",
+      "predicate": {
+        "arrow_type": 0.02,
+        "pull": 0.9,
+        "pulling": 1
+      }
+    },
+    {
+      "model": "uselessadditions:item/dragon_scale_bow_pulling_with_gold_arrow_0",
+      "predicate": {
+        "arrow_type": 0.03,
+        "pulling": 1
+      }
+    },
+    {
+      "model": "uselessadditions:item/dragon_scale_bow_pulling_with_gold_arrow_1",
+      "predicate": {
+        "arrow_type": 0.03,
+        "pull": 0.65,
+        "pulling": 1
+      }
+    },
+    {
+      "model": "uselessadditions:item/dragon_scale_bow_pulling_with_gold_arrow_2",
+      "predicate": {
+        "arrow_type": 0.03,
+        "pull": 0.9,
+        "pulling": 1
+      }
+    },
+    {
+      "model": "uselessadditions:item/dragon_scale_bow_pulling_with_diamond_arrow_0",
+      "predicate": {
+        "arrow_type": 0.04,
+        "pulling": 1
+      }
+    },
+    {
+      "model": "uselessadditions:item/dragon_scale_bow_pulling_with_diamond_arrow_1",
+      "predicate": {
+        "arrow_type": 0.04,
+        "pull": 0.65,
+        "pulling": 1
+      }
+    },
+    {
+      "model": "uselessadditions:item/dragon_scale_bow_pulling_with_diamond_arrow_2",
+      "predicate": {
+        "arrow_type": 0.04,
+        "pull": 0.9,
+        "pulling": 1
+      }
+    },
+    {
+      "model": "uselessadditions:item/dragon_scale_bow_pulling_with_netherite_arrow_0",
+      "predicate": {
+        "arrow_type": 0.05,
+        "pulling": 1
+      }
+    },
+    {
+      "model": "uselessadditions:item/dragon_scale_bow_pulling_with_netherite_arrow_1",
+      "predicate": {
+        "arrow_type": 0.05,
+        "pull": 0.65,
+        "pulling": 1
+      }
+    },
+    {
+      "model": "uselessadditions:item/dragon_scale_bow_pulling_with_netherite_arrow_2",
+      "predicate": {
+        "arrow_type": 0.05,
+        "pull": 0.9,
+        "pulling": 1
+      }
+    },
+    {
+      "model": "uselessadditions:item/dragon_scale_bow_pulling_with_emerald_arrow_0",
+      "predicate": {
+        "arrow_type": 0.06,
+        "pulling": 1
+      }
+    },
+    {
+      "model": "uselessadditions:item/dragon_scale_bow_pulling_with_emerald_arrow_1",
+      "predicate": {
+        "arrow_type": 0.06,
+        "pull": 0.65,
+        "pulling": 1
+      }
+    },
+    {
+      "model": "uselessadditions:item/dragon_scale_bow_pulling_with_emerald_arrow_2",
+      "predicate": {
+        "arrow_type": 0.06,
+        "pull": 0.9,
+        "pulling": 1
+      }
+    },
+    {
+      "model": "uselessadditions:item/dragon_scale_bow_pulling_with_blaze_metal_arrow_0",
+      "predicate": {
+        "arrow_type": 0.07,
+        "pulling": 1
+      }
+    },
+    {
+      "model": "uselessadditions:item/dragon_scale_bow_pulling_with_blaze_metal_arrow_1",
+      "predicate": {
+        "arrow_type": 0.07,
+        "pull": 0.65,
+        "pulling": 1
+      }
+    },
+    {
+      "model": "uselessadditions:item/dragon_scale_bow_pulling_with_blaze_metal_arrow_2",
+      "predicate": {
+        "arrow_type": 0.07,
+        "pull": 0.9,
+        "pulling": 1
+      }
+    },
+    {
+      "model": "uselessadditions:item/dragon_scale_bow_pulling_with_dragon_scale_arrow_0",
+      "predicate": {
+        "arrow_type": 0.08,
+        "pulling": 1
+      }
+    },
+    {
+      "model": "uselessadditions:item/dragon_scale_bow_pulling_with_dragon_scale_arrow_1",
+      "predicate": {
+        "arrow_type": 0.08,
+        "pull": 0.65,
+        "pulling": 1
+      }
+    },
+    {
+      "model": "uselessadditions:item/dragon_scale_bow_pulling_with_dragon_scale_arrow_2",
+      "predicate": {
+        "arrow_type": 0.08,
+        "pull": 0.9,
+        "pulling": 1
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "uselessadditions:item/dragon_scale_bow"
+  }
+}

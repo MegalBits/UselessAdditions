@@ -1,0 +1,47 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_ancient_alloy": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "uselessadditions:ancient_alloy"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_netherite_stick": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "uselessadditions:netherite_stick"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:ancient_axe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_netherite_stick",
+      "has_ancient_alloy"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:ancient_axe"
+    ]
+  }
+}

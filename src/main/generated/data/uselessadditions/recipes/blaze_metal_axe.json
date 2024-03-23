@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "uselessadditions:blaze_metal"
+    },
+    "/": {
+      "item": "uselessadditions:netherite_stick"
+    }
+  },
+  "pattern": [
+    "##",
+    "#/",
+    " /"
+  ],
+  "result": {
+    "item": "uselessadditions:blaze_metal_axe"
+  }
+}

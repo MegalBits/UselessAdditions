@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "uselessadditions:magic_ingot"
+    },
+    "n": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "s": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    "n#s",
+    "# s",
+    "n#s"
+  ],
+  "result": {
+    "item": "uselessadditions:amethyst_bow"
+  }
+}

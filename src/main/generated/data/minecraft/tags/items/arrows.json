@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:arrow",
+    "minecraft:spectral_arrow",
+    "uselessadditions:iron_arrow",
+    "uselessadditions:gold_arrow",
+    "uselessadditions:diamond_arrow",
+    "uselessadditions:netherite_arrow",
+    "uselessadditions:emerald_arrow",
+    "uselessadditions:blaze_metal_arrow",
+    "uselessadditions:dragon_scale_arrow"
+  ]
+}

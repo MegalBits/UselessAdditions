@@ -1,6 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "uselessadditions:block/end_stone_enderman_ore"
-  }
-}

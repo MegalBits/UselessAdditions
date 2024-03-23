@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "uselessadditions:snow_golem_shard_fragment"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "uselessadditions:snow_golem_shard"
+  }
+}

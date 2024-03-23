@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "#c:smithing_hammers",
+    "#c:hammers",
     "#c:scythes"
   ]
 }

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:emerald"
+    },
+    "n": {
+      "item": "uselessadditions:emerald_nugget"
+    },
+    "s": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    "n#s",
+    "# s",
+    "n#s"
+  ],
+  "result": {
+    "item": "uselessadditions:emerald_bow"
+  }
+}

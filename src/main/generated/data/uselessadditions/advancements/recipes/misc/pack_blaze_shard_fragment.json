@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_blaze_shard": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "uselessadditions:blaze_shard"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:pack_blaze_shard_fragment"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_blaze_shard"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:pack_blaze_shard_fragment"
+    ]
+  }
+}

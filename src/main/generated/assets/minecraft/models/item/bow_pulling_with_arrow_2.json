@@ -1,0 +1,7 @@
+{
+  "parent": "uselessadditions:item/pulled_bow",
+  "textures": {
+    "layer0": "minecraft:item/bow_pulling_2",
+    "layer1": "uselessadditions:item/arrow_pulling_2"
+  }
+}

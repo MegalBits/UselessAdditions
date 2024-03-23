@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "uselessadditions:item/cave_spider_spawn_egg"
+  }
+}

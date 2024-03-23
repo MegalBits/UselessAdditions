@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "232",
+    "313",
+    "232"
+  ],
+  "key": {
+    "1": {
+      "item": "uselessadditions:skeleton_spawn_egg"
+    },
+    "2": {
+      "item": "uselessadditions:snow_golem_shard_fragment"
+    },
+    "3": {
+      "item": "uselessadditions:snow_golem_shard"
+    }
+  },
+  "result": {
+    "item": "uselessadditions:stray_spawn_egg",
+    "count": 1
+  }
+}
