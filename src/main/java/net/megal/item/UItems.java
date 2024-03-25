@@ -849,36 +849,36 @@ public class UItems {
     @ItemModel(ModelType.HANDHELD)
     @Name
     @Recipe(type = RecipeType.SWORD, ingredients = {@SimpleIngredient("minecraft:stick"), @SimpleIngredient("uselessadditions:magic_ingot")})
-    public static final SwordItem AMETHYST_SWORD = registerItem("amethyst_sword", new SwordItem(UToolMaterials.AMETHYST, 3, -2.4F, new FabricItemSettings()), Modifiers.CRYSTALLIZED_XP);
+    public static final SwordItem AMETHYST_SWORD = registerItem("amethyst_sword", new SwordItem(UToolMaterials.AMETHYST, 3, -2.4F, new UItemSettings().modifiers(Modifiers.CRYSTALLIZED_XP)));
     @ItemModel(ModelType.HANDHELD)
     @Name
     @Recipe(type = RecipeType.SHOVEL, ingredients = {@SimpleIngredient("minecraft:stick"), @SimpleIngredient("uselessadditions:magic_ingot")})
-    public static final ShovelItem AMETHYST_SHOVEL = registerItem("amethyst_shovel", new ShovelItem(UToolMaterials.AMETHYST, 1.5F, -3.0F, new FabricItemSettings()), Modifiers.CRYSTALLIZED_XP);
+    public static final ShovelItem AMETHYST_SHOVEL = registerItem("amethyst_shovel", new ShovelItem(UToolMaterials.AMETHYST, 1.5F, -3.0F, new UItemSettings().modifiers(Modifiers.CRYSTALLIZED_XP)));
     @ItemModel(ModelType.HANDHELD)
     @Name
     @Recipe(type = RecipeType.PICKAXE, ingredients = {@SimpleIngredient("minecraft:stick"), @SimpleIngredient("uselessadditions:magic_ingot")})
-    public static final PickaxeItem AMETHYST_PICKAXE = registerItem("amethyst_pickaxe", new PickaxeItem(UToolMaterials.AMETHYST, 1, -2.8F, new FabricItemSettings()), Modifiers.CRYSTALLIZED_XP);
+    public static final PickaxeItem AMETHYST_PICKAXE = registerItem("amethyst_pickaxe", new PickaxeItem(UToolMaterials.AMETHYST, 1, -2.8F, new UItemSettings().modifiers(Modifiers.CRYSTALLIZED_XP)));
     @ItemModel(ModelType.HANDHELD)
     @Name
     @Recipe(type = RecipeType.AXE, ingredients = {@SimpleIngredient("minecraft:stick"), @SimpleIngredient("uselessadditions:magic_ingot")})
-    public static final AxeItem AMETHYST_AXE = registerItem("amethyst_axe", new AxeItem(UToolMaterials.AMETHYST, 5.0F, -3F, new FabricItemSettings()), Modifiers.CRYSTALLIZED_XP);
+    public static final AxeItem AMETHYST_AXE = registerItem("amethyst_axe", new AxeItem(UToolMaterials.AMETHYST, 5.0F, -3F, new UItemSettings().modifiers(Modifiers.CRYSTALLIZED_XP)));
     @ItemModel(ModelType.HANDHELD)
     @Name
     @Recipe(type = RecipeType.HOE, ingredients = {@SimpleIngredient("minecraft:stick"), @SimpleIngredient("uselessadditions:magic_ingot")})
-    public static final UHoeItem AMETHYST_HOE = registerItem("amethyst_hoe", new UHoeItem(UToolMaterials.AMETHYST, 0, 0.0F, new FabricItemSettings()), Modifiers.CRYSTALLIZED_XP);
+    public static final UHoeItem AMETHYST_HOE = registerItem("amethyst_hoe", new UHoeItem(UToolMaterials.AMETHYST, 0, 0.0F, new UItemSettings().modifiers(Modifiers.CRYSTALLIZED_XP)));
     @ItemModel(ModelType.HANDHELD)
     @Name
     @Recipe(type = RecipeType.HAMMER, ingredients = {@SimpleIngredient("minecraft:stick"), @SimpleIngredient("uselessadditions:magic_ingot")})
-    public static final HammerItem AMETHYST_HAMMER = registerItem("amethyst_hammer", new HammerItem(UToolMaterials.AMETHYST, 3, -3.2F, new FabricItemSettings()), Modifiers.CRYSTALLIZED_XP);
+    public static final HammerItem AMETHYST_HAMMER = registerItem("amethyst_hammer", new HammerItem(UToolMaterials.AMETHYST, 3, -3.2F, new UItemSettings().modifiers(Modifiers.CRYSTALLIZED_XP)));
     @ItemModel(ModelType.HANDHELD2X)
     @Name
     @Recipe(type = RecipeType.SCYTHE, ingredients = {@SimpleIngredient("minecraft:stick"), @SimpleIngredient("uselessadditions:magic_ingot"), @SimpleIngredient("minecraft:amethyst_shard")})
     //Todo: magic nugget
-    public static final ScytheItem AMETHYST_SCYTHE = registerItem("amethyst_scythe", new ScytheItem(UToolMaterials.AMETHYST, 4.5F, -2.8F, new FabricItemSettings()), Modifiers.CRYSTALLIZED_XP);
+    public static final ScytheItem AMETHYST_SCYTHE = registerItem("amethyst_scythe", new ScytheItem(UToolMaterials.AMETHYST, 4.5F, -2.8F, new UItemSettings().modifiers(Modifiers.CRYSTALLIZED_XP)));
     @ItemModel(ModelType.BOW)
     @Name
     @Recipe(type = RecipeType.BOW, ingredients = {@SimpleIngredient("minecraft:string"), @SimpleIngredient("uselessadditions:magic_ingot"), @SimpleIngredient("minecraft:amethyst_shard")})
-    public static final UBowItem AMETHYST_BOW = registerItem("amethyst_bow", new UBowItem(UToolMaterials.AMETHYST, 1.625f, 1.5f, 1.5f, new FabricItemSettings()), Modifiers.CRYSTALLIZED_XP);
+    public static final UBowItem AMETHYST_BOW = registerItem("amethyst_bow", new UBowItem(UToolMaterials.AMETHYST, 1.625f, 1.5f, 1.5f, new UItemSettings().modifiers(Modifiers.CRYSTALLIZED_XP)));
     @ItemModel(ModelType.HANDHELD)
     @Name
     @Recipe(type = RecipeType.SWORD, ingredients = {@SimpleIngredient("minecraft:stick"), @SimpleIngredient("minecraft:emerald")})
@@ -914,36 +914,36 @@ public class UItems {
     @ItemModel(ModelType.HANDHELD)
     @Name
     @Recipe(type = RecipeType.SWORD, ingredients = {@SimpleIngredient("uselessadditions:netherite_stick"), @SimpleIngredient("uselessadditions:blaze_metal")})
-    public static final SwordItem BLAZE_METAL_SWORD = registerItem("blaze_metal_sword", new SwordItem(UToolMaterials.BLAZE_METAL, 3, -2.4F, new FabricItemSettings()), Modifiers.AUTO_SMELTING);
+    public static final SwordItem BLAZE_METAL_SWORD = registerItem("blaze_metal_sword", new SwordItem(UToolMaterials.BLAZE_METAL, 3, -2.4F, new UItemSettings().modifiers(Modifiers.AUTO_SMELTING)));
     @ItemModel(ModelType.HANDHELD)
     @Name
     @Recipe(type = RecipeType.SHOVEL, ingredients = {@SimpleIngredient("uselessadditions:netherite_stick"), @SimpleIngredient("uselessadditions:blaze_metal")})
-    public static final ShovelItem BLAZE_METAL_SHOVEL = registerItem("blaze_metal_shovel", new ShovelItem(UToolMaterials.BLAZE_METAL, 1.5F, -3.0F, new FabricItemSettings()), Modifiers.AUTO_SMELTING);
+    public static final ShovelItem BLAZE_METAL_SHOVEL = registerItem("blaze_metal_shovel", new ShovelItem(UToolMaterials.BLAZE_METAL, 1.5F, -3.0F, new UItemSettings().modifiers(Modifiers.AUTO_SMELTING)));
     @ItemModel(ModelType.HANDHELD)
     @Name
     @Recipe(type = RecipeType.PICKAXE, ingredients = {@SimpleIngredient("uselessadditions:netherite_stick"), @SimpleIngredient("uselessadditions:blaze_metal")})
-    public static final PickaxeItem BLAZE_METAL_PICKAXE = registerItem("blaze_metal_pickaxe", new PickaxeItem(UToolMaterials.BLAZE_METAL, 1, -2.8F, new FabricItemSettings()), Modifiers.AUTO_SMELTING);
+    public static final PickaxeItem BLAZE_METAL_PICKAXE = registerItem("blaze_metal_pickaxe", new PickaxeItem(UToolMaterials.BLAZE_METAL, 1, -2.8F, new UItemSettings().modifiers(Modifiers.AUTO_SMELTING)));
     @ItemModel(ModelType.HANDHELD)
     @Name
     @Recipe(type = RecipeType.AXE, ingredients = {@SimpleIngredient("uselessadditions:netherite_stick"), @SimpleIngredient("uselessadditions:blaze_metal")})
-    public static final AxeItem BLAZE_METAL_AXE = registerItem("blaze_metal_axe", new AxeItem(UToolMaterials.BLAZE_METAL, 5.0F, -3.0F, new FabricItemSettings()), Modifiers.AUTO_SMELTING);
+    public static final AxeItem BLAZE_METAL_AXE = registerItem("blaze_metal_axe", new AxeItem(UToolMaterials.BLAZE_METAL, 5.0F, -3.0F, new UItemSettings().modifiers(Modifiers.AUTO_SMELTING)));
     @ItemModel(ModelType.HANDHELD)
     @Name
     @Recipe(type = RecipeType.HOE, ingredients = {@SimpleIngredient("uselessadditions:netherite_stick"), @SimpleIngredient("uselessadditions:blaze_metal")})
-    public static final UHoeItem BLAZE_METAL_HOE = registerItem("blaze_metal_hoe", new UHoeItem(UToolMaterials.BLAZE_METAL, 0, 0.0F, new FabricItemSettings()), Modifiers.AUTO_SMELTING);
+    public static final UHoeItem BLAZE_METAL_HOE = registerItem("blaze_metal_hoe", new UHoeItem(UToolMaterials.BLAZE_METAL, 0, 0.0F, new UItemSettings().modifiers(Modifiers.AUTO_SMELTING)));
     @ItemModel(ModelType.HANDHELD)
     @Name
     @Recipe(type = RecipeType.HAMMER, ingredients = {@SimpleIngredient("uselessadditions:netherite_stick"), @SimpleIngredient("uselessadditions:blaze_metal")})
-    public static final HammerItem BLAZE_METAL_HAMMER = registerItem("blaze_metal_hammer", new HammerItem(UToolMaterials.BLAZE_METAL, 3, -3.2F, new FabricItemSettings()), Modifiers.AUTO_SMELTING);
+    public static final HammerItem BLAZE_METAL_HAMMER = registerItem("blaze_metal_hammer", new HammerItem(UToolMaterials.BLAZE_METAL, 3, -3.2F, new UItemSettings().modifiers(Modifiers.AUTO_SMELTING)));
     @ItemModel(ModelType.HANDHELD2X)
     @Name
     @Recipe(type = RecipeType.SCYTHE, ingredients = {@SimpleIngredient("uselessadditions:netherite_stick"), @SimpleIngredient("uselessadditions:blaze_metal"), @SimpleIngredient("minecraft:blaze_powder")})
     //Todo: blaze metal nugget
-    public static final ScytheItem BLAZE_METAL_SCYTHE = registerItem("blaze_metal_scythe", new ScytheItem(UToolMaterials.BLAZE_METAL, 4.5F, -2.8F, new FabricItemSettings()), Modifiers.AUTO_SMELTING);
+    public static final ScytheItem BLAZE_METAL_SCYTHE = registerItem("blaze_metal_scythe", new ScytheItem(UToolMaterials.BLAZE_METAL, 4.5F, -2.8F, new UItemSettings().modifiers(Modifiers.AUTO_SMELTING)));
     @ItemModel(ModelType.BOW)
     @Name
     @Recipe(type = RecipeType.BOW, ingredients = {@SimpleIngredient("uselessadditions:netherite_string"), @SimpleIngredient("uselessadditions:blaze_metal"), @SimpleIngredient("minecraft:blaze_powder")})
-    public static final UBowItem BLAZE_METAL_BOW = registerItem("blaze_metal_bow", new UBowItem(UToolMaterials.BLAZE_METAL, 1.875f, 1.3f, 1.2f, new FabricItemSettings()), Modifiers.AUTO_SMELTING);
+    public static final UBowItem BLAZE_METAL_BOW = registerItem("blaze_metal_bow", new UBowItem(UToolMaterials.BLAZE_METAL, 1.875f, 1.3f, 1.2f, new UItemSettings().modifiers(Modifiers.AUTO_SMELTING)));
     @ItemModel(ModelType.HANDHELD)
     @Name
     public static final SwordItem DRAGON_SCALE_SWORD = registerItem("dragon_scale_sword", new SwordItem(UToolMaterials.DRAGON_SCALE, 3, -2.4F, new FabricItemSettings().fireproof()));
@@ -1050,11 +1050,6 @@ public class UItems {
 
     public static USpawnEgg createSpawnEgg(EntityType<? extends MobEntity> entityType) {
         return new USpawnEgg(new FabricItemSettings(), entityType);
-    }
-
-    public static <T extends Item> T registerItem(String name, T item, String... modifiers) {
-        ((UItem)item).UAdd$setModifiers(modifiers);
-        return Registry.register(Registries.ITEM, new Identifier(UAdd.ID, name), item);
     }
 
     public static <T extends Item> T registerItem(String name, T item) {
