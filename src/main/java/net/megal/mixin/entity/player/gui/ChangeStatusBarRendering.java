@@ -1,5 +1,7 @@
 package net.megal.mixin.entity.player.gui;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.megal.UAdd;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
@@ -37,6 +39,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Environment(EnvType.CLIENT)
 @Mixin(InGameHud.class)
 public abstract class ChangeStatusBarRendering {
     @Shadow @Nullable protected abstract PlayerEntity getCameraPlayer();

@@ -15,6 +15,7 @@ import org.spongepowered.asm.mixin.injection.At;
 @Environment(EnvType.CLIENT)
 @Mixin(AbstractClientPlayerEntity.class)
 public abstract class ZoomModdedBows {
+    //TODO: Change the amount of time it takes to zoom in based on the bows charge speed
     @WrapOperation(
             at = @At(
                     value = "INVOKE",
