@@ -33,10 +33,10 @@ public enum TooltipType {
         return baseEndColor.withAlpha(240).get();
     }
     public int getBorderStart() {
-        return borderStartColor.withAlpha(80).multiply(2).get();
+        return borderStartColor.withAlpha(80).get();
     }
     public int getBorderEnd() {
-        return borderEndColor.withAlpha(80).multiply(2).get();
+        return borderEndColor.withAlpha(80).get();
     }
 
     TooltipType(ShaderProgram program, Supplier<ShaderProgram> supplier, Color baseStartColor, Color baseEndColor, Color borderStartColor, Color borderEndColor) {
@@ -49,7 +49,7 @@ public enum TooltipType {
     }
 
     TooltipType(ShaderProgram program, Supplier<ShaderProgram> supplier, Color startColor, Color endColor) {
-        this(program, supplier, startColor, endColor, startColor, endColor);
+        this(program, supplier, startColor, endColor, startColor.multiply(2), endColor.multiply(2));
     }
 
     private static class Color {
