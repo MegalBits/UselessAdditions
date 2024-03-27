@@ -20,7 +20,7 @@ public abstract class ApplyModifierAnvilIncompatibilities {
 
         List<String> modifiers = Modifiers.getModifiersFromStack(stack);
         for (String modifier : modifiers) {
-            if (Modifiers.getModifier(modifier).isCompatibleWith(enchantment)) return false;
+            if (!Modifiers.getModifier(modifier).isCompatibleWith(enchantment)) return false;
         }
 
         return b;
