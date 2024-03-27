@@ -15,9 +15,11 @@ public enum TooltipType {
             new Color(0.068f, 0.0f, 0.068f), new Color(0.06f, 0.0f, 0.06f),
             new Color(0.3137f, 0.0f, 1.0f), new Color(0.1568f, 0.0f, 0.5f)),
     FIRE(ShaderLoader.getFireTooltipProgram(), ShaderLoader::getFireTooltipProgram,
-            new Color(0.5f, 0.375f, 0.0f), new Color(0.5f, 0.125f, 0.0f)),
+            new Color(0.5f, 0.375f, 0.0f), new Color(0.5f, 0.125f, 0.0f),
+            new Color(1.0f, 0.825f, 0.0f), new Color(1.0f, 0.325f, 0.0f)),
     CRYSTAL(ShaderLoader.getCrystalTooltipProgram(), ShaderLoader::getCrystalTooltipProgram,
-            new Color(0.406f, 0.3135f, 0.4765f), new Color(0.2175f, 0.155f, 0.335f));
+            new Color(0.406f, 0.3135f, 0.4765f), new Color(0.2175f, 0.155f, 0.335f),
+            new Color(0.9f, 0.825f, 0.925f), new Color(0.45f, 0.325f, 0.685f));
 
     public final ShaderProgram program;
     public final Supplier<ShaderProgram> supplier;
@@ -33,10 +35,10 @@ public enum TooltipType {
         return baseEndColor.withAlpha(240).get();
     }
     public int getBorderStart() {
-        return borderStartColor.withAlpha(80).get();
+        return borderStartColor.withAlpha(120).get();
     }
     public int getBorderEnd() {
-        return borderEndColor.withAlpha(80).get();
+        return borderEndColor.withAlpha(120).get();
     }
 
     TooltipType(ShaderProgram program, Supplier<ShaderProgram> supplier, Color baseStartColor, Color baseEndColor, Color borderStartColor, Color borderEndColor) {
