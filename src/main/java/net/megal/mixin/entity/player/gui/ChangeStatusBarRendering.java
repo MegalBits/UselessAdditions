@@ -105,8 +105,6 @@ public abstract class ChangeStatusBarRendering {
     private static final String hardcoreSuffix = "_hardcore";
 
     //Todo: Have mount health be in quarters instead of halves
-    //Todo: Have status effects such as poison display
-
     @Redirect(
             at = @At(
                     value = "INVOKE",
@@ -243,6 +241,24 @@ public abstract class ChangeStatusBarRendering {
                 Identifier container = emptyHeartTextureId;
                 Identifier texture = isAbsorption ? absorptionHeartTextureId : heartTexture;
                 Identifier blinking = blinkingHeartOverlayTextureId;
+
+                String effect = "";
+                if (!isAbsorption) {
+                    InGameHud.HeartType heartType = InGameHud.HeartType.fromPlayerState(playerEntity);
+                    if (heartType != InGameHud.HeartType.NORMAL) {
+                        Identifier heartTypeId = heartType.getTexture(false, false, false);
+                        String untestedEffect = heartTypeId.getPath().replaceFirst("hud/heart/", "").replaceFirst("_full", "");
+
+                        if (!client.getGuiAtlasManager().getSprite(texture.withSuffixedPath("_" + untestedEffect + "_4")).equals(missing)) {
+                            effect = untestedEffect;
+                        }
+                        else {
+                            UAdd.LOGGER.warn("Found unsupported heart type: " + heartTypeId.getPath() + " with namespace: " + heartTypeId.getNamespace());
+                        }
+                    }
+
+                    if (!effect.isEmpty()) texture = texture.withSuffixedPath("_" + effect);
+                }
 
 
                 int heart2 = isAbsorption ? heart - heartCount : heart;
