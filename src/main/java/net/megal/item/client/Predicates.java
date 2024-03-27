@@ -1,5 +1,7 @@
 package net.megal.item.client;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.megal.UAdd;
 import net.megal.item.UBowItem;
 import net.megal.item.UItems;
@@ -11,13 +13,14 @@ import net.minecraft.util.Identifier;
 
 import java.lang.reflect.Field;
 
+@Environment(EnvType.CLIENT)
 public class Predicates {
     public static void addBowPredicates() {
         Field[] fields = UItems.class.getDeclaredFields();
-        for (Field field : fields) {
+        for (Field f : fields) {
             Object object;
             try {
-                object = field.get(UItems.class);
+                object = f.get(UItems.class);
             } catch (IllegalAccessException e) {
                 throw new RuntimeException(e);
             }

@@ -18,11 +18,12 @@ bool line(float x, float y, float f, float i, float time) {
 }
 
 void mainImage(out vec4 fragColor, in vec2 fragCoord) {
+    //Todo: Make this look like embers rising
     vec2 uv = (fragCoord - QuadSize.xy) / (QuadSize.zw - QuadSize.xy);
 
     //Vanilla background color; vec(0.063, 0.0, 0.063)
-    vec3 col = (vec3(0.06, 0.0, 0.06) * uv.y) + (vec3(0.068, 0.0, 0.068) * (1.0 - uv.y));
-    vec3 col2 = col * 1.5;
+    vec3 col = (vec3(0.5, 0.125, 0.0) * uv.y) + (vec3(0.5, 0.375, 0.0) * (1.0 - uv.y));
+    vec3 col2 = col * 1.1;
 
     fragColor = vec4(col, 0.94);
 

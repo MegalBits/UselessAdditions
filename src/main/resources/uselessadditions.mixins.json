@@ -21,9 +21,13 @@
     "item.modifier.SmeltDrops"
   ],
   "client": [
+    "entity.LoadAfterClientInit",
     "entity.player.HeldItemRendererConsistency",
     "entity.player.ZoomModdedBows",
     "entity.player.gui.ChangeStatusBarRendering",
+    "entity.player.gui.RenderShaderOnTooltip",
+    "entity.player.gui.ResetTooltipOnHandledScreen",
+    "entity.player.gui.UDrawContextMixin",
     "entity.projectile.ApplyArrowTypeTexture",
     "item.ShowLongerBowPullback",
     "item.modifier.ShowModifierEnchantingIncompatibilities"

@@ -104,8 +104,8 @@ public abstract class ChangeStatusBarRendering {
     @Unique
     private static final String hardcoreSuffix = "_hardcore";
 
-    //TODO: Have mount health be in quarters instead of halves
-    //TODO: Have status effects such as poison display
+    //Todo: Have mount health be in quarters instead of halves
+    //Todo: Have status effects such as poison display
 
     @Redirect(
             at = @At(

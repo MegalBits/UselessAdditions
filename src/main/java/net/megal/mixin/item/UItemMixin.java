@@ -1,9 +1,13 @@
 package net.megal.mixin.item;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.megal.UAdd;
+import net.megal.item.TooltipType;
 import net.megal.item.UItem;
 import net.megal.item.UItemSettings;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.item.BowItem;
 import net.minecraft.item.Item;
 import org.spongepowered.asm.mixin.Mixin;

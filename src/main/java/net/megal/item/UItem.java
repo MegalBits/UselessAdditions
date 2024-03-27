@@ -1,5 +1,8 @@
 package net.megal.item;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.megal.UAddClient;
 import net.minecraft.item.Item;
 import org.spongepowered.asm.mixin.Unique;
 
