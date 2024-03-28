@@ -6,10 +6,10 @@
       "item": "minecraft:diamond"
     },
     "n": {
-      "item": "minecraft:stick"
+      "item": "uselessadditions:diamond_nugget"
     },
     "s": {
-      "item": "uselessadditions:diamond_nugget"
+      "item": "minecraft:stick"
     }
   },
   "pattern": [

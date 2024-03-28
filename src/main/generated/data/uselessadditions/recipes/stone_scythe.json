@@ -6,10 +6,10 @@
       "tag": "minecraft:stone_crafting_materials"
     },
     "n": {
-      "item": "minecraft:stick"
+      "tag": "c:rocks"
     },
     "s": {
-      "tag": "c:rocks"
+      "item": "minecraft:stick"
     }
   },
   "pattern": [

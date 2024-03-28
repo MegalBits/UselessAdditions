@@ -6,10 +6,10 @@
       "item": "minecraft:gold_ingot"
     },
     "n": {
-      "item": "minecraft:stick"
+      "item": "minecraft:gold_nugget"
     },
     "s": {
-      "item": "minecraft:gold_nugget"
+      "item": "minecraft:stick"
     }
   },
   "pattern": [

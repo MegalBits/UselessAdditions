@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_sheep_shard_fragment": {
+    "has_sheep_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:sheep_shard_fragment"
+              "uselessadditions:sheep_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_sheep_shard_fragment"
+      "has_sheep_shard"
     ]
   ],
   "rewards": {

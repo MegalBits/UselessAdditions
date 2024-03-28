@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cod_shard": {
+    "has_cod_shard_fragment": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:cod_shard"
+              "uselessadditions:cod_shard_fragment"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_cod_shard"
+      "has_cod_shard_fragment"
     ]
   ],
   "rewards": {

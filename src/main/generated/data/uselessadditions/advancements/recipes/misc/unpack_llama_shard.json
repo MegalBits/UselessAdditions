@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_llama_shard_fragment": {
+    "has_llama_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:llama_shard_fragment"
+              "uselessadditions:llama_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_llama_shard_fragment"
+      "has_llama_shard"
     ]
   ],
   "rewards": {

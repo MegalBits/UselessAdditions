@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_endermite_shard_fragment": {
+    "has_endermite_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:endermite_shard_fragment"
+              "uselessadditions:endermite_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_endermite_shard_fragment"
+      "has_endermite_shard"
     ]
   ],
   "rewards": {

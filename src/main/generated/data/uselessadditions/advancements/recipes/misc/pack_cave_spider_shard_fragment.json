@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cave_spider_shard": {
+    "has_cave_spider_shard_fragment": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:cave_spider_shard"
+              "uselessadditions:cave_spider_shard_fragment"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_cave_spider_shard"
+      "has_cave_spider_shard_fragment"
     ]
   ],
   "rewards": {

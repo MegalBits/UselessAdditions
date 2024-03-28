@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_guardian_shard_fragment": {
+    "has_guardian_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:guardian_shard_fragment"
+              "uselessadditions:guardian_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_guardian_shard_fragment"
+      "has_guardian_shard"
     ]
   ],
   "rewards": {

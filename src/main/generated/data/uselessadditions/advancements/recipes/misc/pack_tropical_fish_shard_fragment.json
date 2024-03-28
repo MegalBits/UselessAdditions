@@ -7,12 +7,12 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_tropical_fish_shard": {
+    "has_tropical_fish_shard_fragment": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:tropical_fish_shard"
+              "uselessadditions:tropical_fish_shard_fragment"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_tropical_fish_shard"
+      "has_tropical_fish_shard_fragment"
     ]
   ],
   "rewards": {

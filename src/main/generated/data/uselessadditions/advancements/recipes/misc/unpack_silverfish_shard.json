@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_silverfish_shard_fragment": {
+    "has_silverfish_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:silverfish_shard_fragment"
+              "uselessadditions:silverfish_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_silverfish_shard_fragment"
+      "has_silverfish_shard"
     ]
   ],
   "rewards": {

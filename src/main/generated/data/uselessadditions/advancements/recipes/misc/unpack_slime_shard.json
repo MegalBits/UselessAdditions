@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_slime_shard_fragment": {
+    "has_slime_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:slime_shard_fragment"
+              "uselessadditions:slime_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_slime_shard_fragment"
+      "has_slime_shard"
     ]
   ],
   "rewards": {

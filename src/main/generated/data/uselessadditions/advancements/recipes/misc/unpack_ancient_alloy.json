@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_ancient_alloy_nugget": {
+    "has_ancient_alloy": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:ancient_alloy_nugget"
+              "uselessadditions:ancient_alloy"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_ancient_alloy_nugget"
+      "has_ancient_alloy"
     ]
   ],
   "rewards": {

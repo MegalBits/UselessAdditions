@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_allay_shard": {
+    "has_allay_shard_fragment": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:allay_shard"
+              "uselessadditions:allay_shard_fragment"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_allay_shard"
+      "has_allay_shard_fragment"
     ]
   ],
   "rewards": {

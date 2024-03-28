@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_iron_golem_shard_fragment": {
+    "has_iron_golem_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:iron_golem_shard_fragment"
+              "uselessadditions:iron_golem_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_iron_golem_shard_fragment"
+      "has_iron_golem_shard"
     ]
   ],
   "rewards": {

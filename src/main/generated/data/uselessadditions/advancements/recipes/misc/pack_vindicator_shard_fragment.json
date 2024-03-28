@@ -7,12 +7,12 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_vindicator_shard": {
+    "has_vindicator_shard_fragment": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:vindicator_shard"
+              "uselessadditions:vindicator_shard_fragment"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_vindicator_shard"
+      "has_vindicator_shard_fragment"
     ]
   ],
   "rewards": {

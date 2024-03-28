@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_salmon_shard_fragment": {
+    "has_salmon_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:salmon_shard_fragment"
+              "uselessadditions:salmon_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_salmon_shard_fragment"
+      "has_salmon_shard"
     ]
   ],
   "rewards": {

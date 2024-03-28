@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_hoglin_shard_fragment": {
+    "has_hoglin_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:hoglin_shard_fragment"
+              "uselessadditions:hoglin_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_hoglin_shard_fragment"
+      "has_hoglin_shard"
     ]
   ],
   "rewards": {

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_ocelot_shard_fragment": {
+    "has_ocelot_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:ocelot_shard_fragment"
+              "uselessadditions:ocelot_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_ocelot_shard_fragment"
+      "has_ocelot_shard"
     ]
   ],
   "rewards": {

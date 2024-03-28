@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_enderman_shard": {
+    "has_enderman_shard_fragment": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:enderman_shard"
+              "uselessadditions:enderman_shard_fragment"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_enderman_shard"
+      "has_enderman_shard_fragment"
     ]
   ],
   "rewards": {

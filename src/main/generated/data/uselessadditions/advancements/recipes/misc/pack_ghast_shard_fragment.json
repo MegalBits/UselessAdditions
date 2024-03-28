@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_ghast_shard": {
+    "has_ghast_shard_fragment": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:ghast_shard"
+              "uselessadditions:ghast_shard_fragment"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_ghast_shard"
+      "has_ghast_shard_fragment"
     ]
   ],
   "rewards": {

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_pufferfish_shard_fragment": {
+    "has_pufferfish_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:pufferfish_shard_fragment"
+              "uselessadditions:pufferfish_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_pufferfish_shard_fragment"
+      "has_pufferfish_shard"
     ]
   ],
   "rewards": {

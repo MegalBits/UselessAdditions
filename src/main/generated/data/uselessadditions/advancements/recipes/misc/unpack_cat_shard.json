@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cat_shard_fragment": {
+    "has_cat_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:cat_shard_fragment"
+              "uselessadditions:cat_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_cat_shard_fragment"
+      "has_cat_shard"
     ]
   ],
   "rewards": {

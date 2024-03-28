@@ -7,12 +7,12 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_villager_shard_fragment": {
+    "has_villager_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:villager_shard_fragment"
+              "uselessadditions:villager_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_villager_shard_fragment"
+      "has_villager_shard"
     ]
   ],
   "rewards": {

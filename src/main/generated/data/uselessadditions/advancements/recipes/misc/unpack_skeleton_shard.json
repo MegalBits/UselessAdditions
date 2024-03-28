@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_skeleton_shard_fragment": {
+    "has_skeleton_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:skeleton_shard_fragment"
+              "uselessadditions:skeleton_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_skeleton_shard_fragment"
+      "has_skeleton_shard"
     ]
   ],
   "rewards": {

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_horse_shard": {
+    "has_horse_shard_fragment": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:horse_shard"
+              "uselessadditions:horse_shard_fragment"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_horse_shard"
+      "has_horse_shard_fragment"
     ]
   ],
   "rewards": {

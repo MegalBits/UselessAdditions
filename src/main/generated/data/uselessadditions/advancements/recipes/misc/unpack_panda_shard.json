@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_panda_shard_fragment": {
+    "has_panda_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:panda_shard_fragment"
+              "uselessadditions:panda_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_panda_shard_fragment"
+      "has_panda_shard"
     ]
   ],
   "rewards": {

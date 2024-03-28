@@ -7,12 +7,12 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_witch_shard_fragment": {
+    "has_witch_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:witch_shard_fragment"
+              "uselessadditions:witch_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_witch_shard_fragment"
+      "has_witch_shard"
     ]
   ],
   "rewards": {

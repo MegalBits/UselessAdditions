@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_squid_shard_fragment": {
+    "has_squid_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:squid_shard_fragment"
+              "uselessadditions:squid_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_squid_shard_fragment"
+      "has_squid_shard"
     ]
   ],
   "rewards": {

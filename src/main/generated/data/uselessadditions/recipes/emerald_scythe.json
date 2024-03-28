@@ -6,10 +6,10 @@
       "item": "minecraft:emerald"
     },
     "n": {
-      "item": "minecraft:stick"
+      "item": "uselessadditions:emerald_nugget"
     },
     "s": {
-      "item": "uselessadditions:emerald_nugget"
+      "item": "minecraft:stick"
     }
   },
   "pattern": [

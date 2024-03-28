@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_blaze_shard": {
+    "has_blaze_shard_fragment": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:blaze_shard"
+              "uselessadditions:blaze_shard_fragment"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_blaze_shard"
+      "has_blaze_shard_fragment"
     ]
   ],
   "rewards": {

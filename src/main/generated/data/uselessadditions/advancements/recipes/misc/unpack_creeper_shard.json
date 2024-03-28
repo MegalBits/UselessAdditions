@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_creeper_shard_fragment": {
+    "has_creeper_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:creeper_shard_fragment"
+              "uselessadditions:creeper_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_creeper_shard_fragment"
+      "has_creeper_shard"
     ]
   ],
   "rewards": {

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_strider_shard": {
+    "has_strider_shard_fragment": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:strider_shard"
+              "uselessadditions:strider_shard_fragment"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_strider_shard"
+      "has_strider_shard_fragment"
     ]
   ],
   "rewards": {

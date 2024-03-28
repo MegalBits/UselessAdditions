@@ -7,12 +7,12 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_warden_shard": {
+    "has_warden_shard_fragment": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:warden_shard"
+              "uselessadditions:warden_shard_fragment"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_warden_shard"
+      "has_warden_shard_fragment"
     ]
   ],
   "rewards": {

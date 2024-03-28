@@ -682,67 +682,67 @@ public class UItems {
     public static final USpawnEgg ZOMBIFIED_PIGLIN_SPAWN_EGG = registerItem("zombified_piglin_spawn_egg", createSpawnEgg(EntityType.ZOMBIFIED_PIGLIN));
     @ItemModel(ModelType.GENERATED)
     @Name
-    @Recipe(type = RecipeType.PACKING_2X2, ingredients = @SimpleIngredient("minecraft:cobblestone"))
-    @Recipe(type = RecipeType.UNPACKING_4, ingredients = @SimpleIngredient("minecraft:cobblestone"), swapInputOutput = true)
+    @Recipe(type = RecipeType.PACKING_2X2, ingredients = @SimpleIngredient("minecraft:cobblestone"), swapInputOutput = true)
+    @Recipe(type = RecipeType.UNPACKING_4, ingredients = @SimpleIngredient("minecraft:cobblestone"))
     public static final Item ROCK = registerItem("rock", createItem());
     @ItemModel(ModelType.GENERATED)
     @Name
-    @Recipe(type = RecipeType.PACKING_2X2, ingredients = @SimpleIngredient("minecraft:cobbled_deepslate"))
-    @Recipe(type = RecipeType.UNPACKING_4, ingredients = @SimpleIngredient("minecraft:cobbled_deepslate"), swapInputOutput = true)
+    @Recipe(type = RecipeType.PACKING_2X2, ingredients = @SimpleIngredient("minecraft:cobbled_deepslate"), swapInputOutput = true)
+    @Recipe(type = RecipeType.UNPACKING_4, ingredients = @SimpleIngredient("minecraft:cobbled_deepslate"))
     public static final Item DEEPSLATE_ROCK = registerItem("deepslate_rock", createItem());
     @ItemModel(ModelType.GENERATED)
     @Name
-    @Recipe(type = RecipeType.PACKING_2X2, ingredients = @SimpleIngredient("minecraft:ender_pearl"))
-    @Recipe(type = RecipeType.UNPACKING_4, ingredients = @SimpleIngredient("minecraft:ender_pearl"), swapInputOutput = true)
+    @Recipe(type = RecipeType.PACKING_2X2, ingredients = @SimpleIngredient("minecraft:ender_pearl"), swapInputOutput = true)
+    @Recipe(type = RecipeType.UNPACKING_4, ingredients = @SimpleIngredient("minecraft:ender_pearl"))
     public static final Item ENDER_PEARL_SHARD = registerItem("ender_pearl_shard", createItem());
     @ItemModel(ModelType.GENERATED)
     @Name
     public static final Item ANCIENT_SHARD = registerItem("ancient_shard", createFireproofItem());
     @ItemModel(ModelType.GENERATED)
     @Name
-    @Recipe(type = RecipeType.PACKING, ingredients = @SimpleIngredient("uselessadditions:exotic_ingot"))
+    @Recipe(type = RecipeType.PACKING, ingredients = @SimpleIngredient("uselessadditions:exotic_ingot"), swapInputOutput = true)
     public static final Item EXOTIC_DUST = registerItem("exotic_dust", createItem());
     @ItemModel(ModelType.GENERATED)
     @Name
-    @Recipe(type = RecipeType.PACKING, ingredients = @SimpleIngredient("minecraft:raw_copper"))
+    @Recipe(type = RecipeType.PACKING, ingredients = @SimpleIngredient("minecraft:raw_copper"), swapInputOutput = true)
     @Recipe(type = RecipeType.SMELTING, ticks = 100, xp = 0.1f, ingredients = @SimpleIngredient("uselessadditions:copper_nugget"), swapInputOutput = true)
     @Recipe(type = RecipeType.BLASTING, ticks = 50, xp = 0.1f, ingredients = @SimpleIngredient("uselessadditions:copper_nugget"), swapInputOutput = true)
     public static final Item RAW_COPPER_NUGGET = registerItem("raw_copper_nugget", createItem());
     @ItemModel(ModelType.GENERATED)
     @Name
-    @Recipe(type = RecipeType.PACKING, ingredients = @SimpleIngredient("minecraft:raw_iron"))
+    @Recipe(type = RecipeType.PACKING, ingredients = @SimpleIngredient("minecraft:raw_iron"), swapInputOutput = true)
     @Recipe(type = RecipeType.SMELTING, ticks = 100, xp = 0.1f, ingredients = @SimpleIngredient("minecraft:iron_nugget"), swapInputOutput = true)
     @Recipe(type = RecipeType.BLASTING, ticks = 50, xp = 0.1f, ingredients = @SimpleIngredient("minecraft:iron_nugget"), swapInputOutput = true)
     public static final Item RAW_IRON_NUGGET = registerItem("raw_iron_nugget", createItem());
     @ItemModel(ModelType.GENERATED)
     @Name
-    @Recipe(type = RecipeType.PACKING, ingredients = @SimpleIngredient("minecraft:raw_gold"))
+    @Recipe(type = RecipeType.PACKING, ingredients = @SimpleIngredient("minecraft:raw_gold"), swapInputOutput = true)
     @Recipe(type = RecipeType.SMELTING, ticks = 100, xp = 0.1f, ingredients = @SimpleIngredient("minecraft:gold_nugget"), swapInputOutput = true)
     @Recipe(type = RecipeType.BLASTING, ticks = 50, xp = 0.1f, ingredients = @SimpleIngredient("minecraft:gold_nugget"), swapInputOutput = true)
     public static final Item RAW_GOLD_NUGGET = registerItem("raw_gold_nugget", createItem());
     @ItemModel(ModelType.GENERATED)
     @Name
-    @Recipe(type = RecipeType.PACKING, ingredients = @SimpleIngredient("minecraft:copper_ingot"))
-    @Recipe(type = RecipeType.UNPACKING, ingredients = @SimpleIngredient("minecraft:copper_ingot"), swapInputOutput = true)
+    @Recipe(type = RecipeType.PACKING, ingredients = @SimpleIngredient("minecraft:copper_ingot"), swapInputOutput = true)
+    @Recipe(type = RecipeType.UNPACKING, ingredients = @SimpleIngredient("minecraft:copper_ingot"))
     public static final Item COPPER_NUGGET = registerItem("copper_nugget", createItem());
     @ItemModel(ModelType.GENERATED)
     @Name
-    @Recipe(type = RecipeType.PACKING, ingredients = @SimpleIngredient("minecraft:emerald"))
-    @Recipe(type = RecipeType.UNPACKING, ingredients = @SimpleIngredient("minecraft:emerald"), swapInputOutput = true)
+    @Recipe(type = RecipeType.PACKING, ingredients = @SimpleIngredient("minecraft:emerald"), swapInputOutput = true)
+    @Recipe(type = RecipeType.UNPACKING, ingredients = @SimpleIngredient("minecraft:emerald"))
     public static final Item EMERALD_NUGGET = registerItem("emerald_nugget", createItem());
     @ItemModel(ModelType.GENERATED)
     @Name
-    @Recipe(type = RecipeType.PACKING, ingredients = @SimpleIngredient("minecraft:diamond"))
-    @Recipe(type = RecipeType.UNPACKING, ingredients = @SimpleIngredient("minecraft:diamond"), swapInputOutput = true)
+    @Recipe(type = RecipeType.PACKING, ingredients = @SimpleIngredient("minecraft:diamond"), swapInputOutput = true)
+    @Recipe(type = RecipeType.UNPACKING, ingredients = @SimpleIngredient("minecraft:diamond"))
     public static final Item DIAMOND_NUGGET = registerItem("diamond_nugget", createItem());
     @ItemModel(ModelType.GENERATED)
     @Name
-    @Recipe(type = RecipeType.PACKING, ingredients = @SimpleIngredient("minecraft:netherite_ingot"))
-    @Recipe(type = RecipeType.UNPACKING, ingredients = @SimpleIngredient("minecraft:netherite_ingot"), swapInputOutput = true)
+    @Recipe(type = RecipeType.PACKING, ingredients = @SimpleIngredient("minecraft:netherite_ingot"), swapInputOutput = true)
+    @Recipe(type = RecipeType.UNPACKING, ingredients = @SimpleIngredient("minecraft:netherite_ingot"))
     public static final Item NETHERITE_NUGGET = registerItem("netherite_nugget", createFireproofItem());
     @ItemModel(ModelType.GENERATED)
     @Name
-    @Recipe(type = RecipeType.PACKING, ingredients = @SimpleIngredient("uselessadditions:ancient_alloy"))
+    @Recipe(type = RecipeType.PACKING, ingredients = @SimpleIngredient("uselessadditions:ancient_alloy"), swapInputOutput = true)
     public static final Item ANCIENT_ALLOY_NUGGET = registerItem("ancient_alloy_nugget", createFireproofItem());
     @ItemModel(ModelType.GENERATED)
     @Name

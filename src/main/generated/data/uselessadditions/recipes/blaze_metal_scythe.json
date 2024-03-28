@@ -6,10 +6,10 @@
       "item": "uselessadditions:blaze_metal"
     },
     "n": {
-      "item": "uselessadditions:netherite_stick"
+      "item": "minecraft:blaze_powder"
     },
     "s": {
-      "item": "minecraft:blaze_powder"
+      "item": "uselessadditions:netherite_stick"
     }
   },
   "pattern": [

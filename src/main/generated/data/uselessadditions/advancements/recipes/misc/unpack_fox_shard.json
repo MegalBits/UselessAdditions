@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_fox_shard_fragment": {
+    "has_fox_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:fox_shard_fragment"
+              "uselessadditions:fox_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_fox_shard_fragment"
+      "has_fox_shard"
     ]
   ],
   "rewards": {

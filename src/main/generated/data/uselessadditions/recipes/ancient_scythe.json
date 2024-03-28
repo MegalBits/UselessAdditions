@@ -6,10 +6,10 @@
       "item": "uselessadditions:ancient_alloy"
     },
     "n": {
-      "item": "uselessadditions:netherite_stick"
+      "item": "uselessadditions:ancient_alloy_nugget"
     },
     "s": {
-      "item": "uselessadditions:ancient_alloy_nugget"
+      "item": "uselessadditions:netherite_stick"
     }
   },
   "pattern": [

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cow_shard_fragment": {
+    "has_cow_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:cow_shard_fragment"
+              "uselessadditions:cow_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_cow_shard_fragment"
+      "has_cow_shard"
     ]
   ],
   "rewards": {

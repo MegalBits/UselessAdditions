@@ -7,12 +7,12 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_turtle_shard_fragment": {
+    "has_turtle_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:turtle_shard_fragment"
+              "uselessadditions:turtle_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_turtle_shard_fragment"
+      "has_turtle_shard"
     ]
   ],
   "rewards": {

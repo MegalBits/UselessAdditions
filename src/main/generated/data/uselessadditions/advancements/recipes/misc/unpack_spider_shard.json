@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_spider_shard_fragment": {
+    "has_spider_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:spider_shard_fragment"
+              "uselessadditions:spider_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_spider_shard_fragment"
+      "has_spider_shard"
     ]
   ],
   "rewards": {

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_parrot_shard_fragment": {
+    "has_parrot_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:parrot_shard_fragment"
+              "uselessadditions:parrot_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_parrot_shard_fragment"
+      "has_parrot_shard"
     ]
   ],
   "rewards": {

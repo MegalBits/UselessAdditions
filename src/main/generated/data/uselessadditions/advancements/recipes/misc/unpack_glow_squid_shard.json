@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_glow_squid_shard_fragment": {
+    "has_glow_squid_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:glow_squid_shard_fragment"
+              "uselessadditions:glow_squid_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_glow_squid_shard_fragment"
+      "has_glow_squid_shard"
     ]
   ],
   "rewards": {

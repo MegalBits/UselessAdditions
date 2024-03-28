@@ -442,9 +442,9 @@ public class UAddDataGen implements DataGeneratorEntrypoint {
 						.pattern("##n")
 						.pattern(" s#")
 						.pattern(" s ")
-						.input('n', ingredients[0])
+						.input('s', ingredients[0])
 						.input('#', ingredients[1])
-						.input('s', ingredients[2]);
+						.input('n', ingredients[2]);
 
 				Arrays.stream(ingredients).forEach(ingredient -> {
 					Arrays.stream(ingredient.getMatchingStacks()).forEach(stack -> {

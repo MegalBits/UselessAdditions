@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_exotic_dust": {
+    "has_exotic_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:exotic_dust"
+              "uselessadditions:exotic_ingot"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_exotic_dust"
+      "has_exotic_ingot"
     ]
   ],
   "rewards": {

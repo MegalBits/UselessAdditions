@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_pig_shard": {
+    "has_pig_shard_fragment": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:pig_shard"
+              "uselessadditions:pig_shard_fragment"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_pig_shard"
+      "has_pig_shard_fragment"
     ]
   ],
   "rewards": {

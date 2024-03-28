@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_axolotl_shard_fragment": {
+    "has_axolotl_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:axolotl_shard_fragment"
+              "uselessadditions:axolotl_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_axolotl_shard_fragment"
+      "has_axolotl_shard"
     ]
   ],
   "rewards": {

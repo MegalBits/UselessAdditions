@@ -7,12 +7,12 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_zombie_shard": {
+    "has_zombie_shard_fragment": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:zombie_shard"
+              "uselessadditions:zombie_shard_fragment"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_zombie_shard"
+      "has_zombie_shard_fragment"
     ]
   ],
   "rewards": {

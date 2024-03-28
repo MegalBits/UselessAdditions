@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_ravager_shard": {
+    "has_ravager_shard_fragment": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:ravager_shard"
+              "uselessadditions:ravager_shard_fragment"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_ravager_shard"
+      "has_ravager_shard_fragment"
     ]
   ],
   "rewards": {

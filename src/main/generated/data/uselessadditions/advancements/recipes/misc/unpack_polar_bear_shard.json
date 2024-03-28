@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_polar_bear_shard_fragment": {
+    "has_polar_bear_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:polar_bear_shard_fragment"
+              "uselessadditions:polar_bear_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_polar_bear_shard_fragment"
+      "has_polar_bear_shard"
     ]
   ],
   "rewards": {

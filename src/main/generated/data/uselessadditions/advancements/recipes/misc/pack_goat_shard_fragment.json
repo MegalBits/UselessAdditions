@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_goat_shard": {
+    "has_goat_shard_fragment": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:goat_shard"
+              "uselessadditions:goat_shard_fragment"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_goat_shard"
+      "has_goat_shard_fragment"
     ]
   ],
   "rewards": {

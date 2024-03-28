@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_bee_shard": {
+    "has_bee_shard_fragment": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:bee_shard"
+              "uselessadditions:bee_shard_fragment"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_bee_shard"
+      "has_bee_shard_fragment"
     ]
   ],
   "rewards": {

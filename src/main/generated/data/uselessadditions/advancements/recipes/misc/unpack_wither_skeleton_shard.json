@@ -7,12 +7,12 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_wither_skeleton_shard_fragment": {
+    "has_wither_skeleton_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:wither_skeleton_shard_fragment"
+              "uselessadditions:wither_skeleton_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_wither_skeleton_shard_fragment"
+      "has_wither_skeleton_shard"
     ]
   ],
   "rewards": {

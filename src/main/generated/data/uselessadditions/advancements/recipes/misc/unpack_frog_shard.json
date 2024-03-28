@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_frog_shard_fragment": {
+    "has_frog_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:frog_shard_fragment"
+              "uselessadditions:frog_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_frog_shard_fragment"
+      "has_frog_shard"
     ]
   ],
   "rewards": {

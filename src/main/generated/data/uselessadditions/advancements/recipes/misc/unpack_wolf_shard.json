@@ -7,12 +7,12 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_wolf_shard_fragment": {
+    "has_wolf_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:wolf_shard_fragment"
+              "uselessadditions:wolf_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_wolf_shard_fragment"
+      "has_wolf_shard"
     ]
   ],
   "rewards": {

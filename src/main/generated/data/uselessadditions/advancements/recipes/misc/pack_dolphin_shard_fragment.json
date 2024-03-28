@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_dolphin_shard": {
+    "has_dolphin_shard_fragment": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:dolphin_shard"
+              "uselessadditions:dolphin_shard_fragment"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_dolphin_shard"
+      "has_dolphin_shard_fragment"
     ]
   ],
   "rewards": {

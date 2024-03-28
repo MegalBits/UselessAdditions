@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_magma_cube_shard_fragment": {
+    "has_magma_cube_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:magma_cube_shard_fragment"
+              "uselessadditions:magma_cube_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_magma_cube_shard_fragment"
+      "has_magma_cube_shard"
     ]
   ],
   "rewards": {

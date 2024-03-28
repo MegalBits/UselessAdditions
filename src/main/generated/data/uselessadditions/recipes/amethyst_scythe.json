@@ -6,10 +6,10 @@
       "item": "uselessadditions:magic_ingot"
     },
     "n": {
-      "item": "minecraft:stick"
+      "item": "minecraft:amethyst_shard"
     },
     "s": {
-      "item": "minecraft:amethyst_shard"
+      "item": "minecraft:stick"
     }
   },
   "pattern": [

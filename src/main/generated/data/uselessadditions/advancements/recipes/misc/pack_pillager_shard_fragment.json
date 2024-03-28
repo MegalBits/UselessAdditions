@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_pillager_shard": {
+    "has_pillager_shard_fragment": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:pillager_shard"
+              "uselessadditions:pillager_shard_fragment"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_pillager_shard"
+      "has_pillager_shard_fragment"
     ]
   ],
   "rewards": {

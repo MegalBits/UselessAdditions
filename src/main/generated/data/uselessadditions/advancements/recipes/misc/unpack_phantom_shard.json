@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_phantom_shard_fragment": {
+    "has_phantom_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:phantom_shard_fragment"
+              "uselessadditions:phantom_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_phantom_shard_fragment"
+      "has_phantom_shard"
     ]
   ],
   "rewards": {

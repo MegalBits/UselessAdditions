@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_evoker_shard_fragment": {
+    "has_evoker_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:evoker_shard_fragment"
+              "uselessadditions:evoker_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_evoker_shard_fragment"
+      "has_evoker_shard"
     ]
   ],
   "rewards": {

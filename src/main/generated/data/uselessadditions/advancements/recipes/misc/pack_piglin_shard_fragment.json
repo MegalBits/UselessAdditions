@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_piglin_shard": {
+    "has_piglin_shard_fragment": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:piglin_shard"
+              "uselessadditions:piglin_shard_fragment"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_piglin_shard"
+      "has_piglin_shard_fragment"
     ]
   ],
   "rewards": {

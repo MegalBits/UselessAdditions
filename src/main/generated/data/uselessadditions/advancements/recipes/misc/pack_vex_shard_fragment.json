@@ -7,12 +7,12 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_vex_shard": {
+    "has_vex_shard_fragment": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:vex_shard"
+              "uselessadditions:vex_shard_fragment"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_vex_shard"
+      "has_vex_shard_fragment"
     ]
   ],
   "rewards": {

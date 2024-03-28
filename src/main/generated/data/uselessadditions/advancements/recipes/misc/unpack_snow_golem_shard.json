@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_snow_golem_shard_fragment": {
+    "has_snow_golem_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:snow_golem_shard_fragment"
+              "uselessadditions:snow_golem_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_snow_golem_shard_fragment"
+      "has_snow_golem_shard"
     ]
   ],
   "rewards": {

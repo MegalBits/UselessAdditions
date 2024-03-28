@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_donkey_shard_fragment": {
+    "has_donkey_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:donkey_shard_fragment"
+              "uselessadditions:donkey_shard"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_donkey_shard_fragment"
+      "has_donkey_shard"
     ]
   ],
   "rewards": {

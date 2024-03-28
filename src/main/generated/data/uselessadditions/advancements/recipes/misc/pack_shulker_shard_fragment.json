@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_shulker_shard": {
+    "has_shulker_shard_fragment": {
       "conditions": {
         "items": [
           {
             "items": [
-              "uselessadditions:shulker_shard"
+              "uselessadditions:shulker_shard_fragment"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_shulker_shard"
+      "has_shulker_shard_fragment"
     ]
   ],
   "rewards": {
