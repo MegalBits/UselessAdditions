@@ -280,5 +280,7 @@
   "uselessadditions.modifiers.crystallized_xp.providing": "Levels Providing",
   "uselessadditions.modifiers.fireproof": "Fireproof",
   "uselessadditions.modifiers.prefixes.builtin": "[Built In]",
-  "uselessadditions.modifiers.prefixes.modified": "[Modified]"
+  "uselessadditions.modifiers.prefixes.modified": "[Modified]",
+  "uselessadditions.rei.enchanting": "Enchanting",
+  "uselessadditions.rei.enchantment_incompatibility": "Incompatible Enchantments"
 }
