@@ -1036,7 +1036,9 @@ public class UItems {
     @ItemModel(ModelType.ARMOR)
     @Name
     public static final ArmorItem DRAGON_SCALE_BOOTS = registerItem("dragon_scale_boots", new ArmorItem(UArmorMaterials.DRAGON_SCALE, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof()));
-
+    @ItemModel(ModelType.GENERATED)
+    @Name
+    public static final WarpPearl WARP_PEARL = registerItem("warp_pearl", new WarpPearl(new FabricItemSettings()));
 
     public static Item createItem() {
         return new Item(new FabricItemSettings());
@@ -1149,6 +1151,7 @@ public class UItems {
             entries.add(DRAGON_SCALE_CHESTPLATE);
             entries.add(DRAGON_SCALE_LEGGINGS);
             entries.add(DRAGON_SCALE_BOOTS);
+            entries.add(WARP_PEARL);
         });
         ItemGroupEvents.modifyEntriesEvent(UItemGroups.SHARDS).register(entries -> {
             entries.add(ALLAY_SHARD);

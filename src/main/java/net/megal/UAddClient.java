@@ -6,9 +6,25 @@ import net.megal.item.client.Predicates;
 import net.megal.mixin.entity.projectile.SetStack;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.*;
+import net.minecraft.text.Text;
+import net.minecraft.util.Colors;
 import net.minecraft.util.Identifier;
 
 public class UAddClient implements ClientModInitializer {
+	public static ItemStack feedbackStack = ItemStack.EMPTY;
+	public static Text feedbackText = Text.empty();
+	public static float textTimer = -1;
+	public static float textTimerMax = -1;
+	public static int textColor = Colors.WHITE;
+
+	public static void setFeedback(ItemStack stack, Text text, float time, int color) {
+		feedbackStack = stack.copyWithCount(1);
+		feedbackText = text;
+		textTimer = time;
+		textTimerMax = time;
+		textColor = color;
+	}
+
 	@Override
 	public void onInitializeClient() {
 		Predicates.addBowPredicates();
