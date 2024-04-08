@@ -21,10 +21,10 @@ public class UItemGroups {
 
     static {
         registerGroup(MAIN, FabricItemGroup.builder()
-                .displayName(Text.translatable("itemgroup.uadd"))
+                .displayName(Text.translatable("uselessadditions.itemgroup.uadd"))
                 .icon(() -> new ItemStack(UItems.EXOTIC_INGOT)).build());
         registerGroup(SHARDS, FabricItemGroup.builder()
-                .displayName(Text.translatable("itemgroup.shards"))
+                .displayName(Text.translatable("uselessadditions.itemgroup.shards"))
                 .icon(() -> new ItemStack(UItems.BLAZE_SHARD)).build());
     }
 

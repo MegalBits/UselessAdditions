@@ -1038,7 +1038,7 @@ public class UItems {
     public static final ArmorItem DRAGON_SCALE_BOOTS = registerItem("dragon_scale_boots", new ArmorItem(UArmorMaterials.DRAGON_SCALE, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof()));
     @ItemModel(ModelType.GENERATED)
     @Name
-    public static final WarpPearl WARP_PEARL = registerItem("warp_pearl", new WarpPearl(new FabricItemSettings()));
+    public static final WarpPearl WARP_PEARL = registerItem("warp_pearl", new WarpPearl(new FabricItemSettings().maxCount(1).maxDamage(315)));
 
     public static Item createItem() {
         return new Item(new FabricItemSettings());

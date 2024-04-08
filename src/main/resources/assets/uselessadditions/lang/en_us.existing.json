@@ -2,8 +2,10 @@
   "uselessadditions.item.warp_pearl.too_far": "Too far away, position must be less than 2500 blocks",
   "uselessadditions.item.warp_pearl.wrong_dimension": "Cannot warp, position must be within the same dimension",
 
-  "itemgroup.uadd": "Useless Additions",
-  "itemgroup.shards": "Mob Shards",
+  "uselessadditions.itemgroup.uadd": "Useless Additions",
+  "uselessadditions.itemgroup.shards": "Mob Shards",
+
+  "uselessadditions.container.infuser": "Infuser",
 
   "uselessadditions.modifiers.prefixes.modified": "[Modified]",
   "uselessadditions.modifiers.prefixes.builtin": "[Built In]",

@@ -1,4 +1,4 @@
-package net.megal.mixin.entity;
+package net.megal.mixin;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;

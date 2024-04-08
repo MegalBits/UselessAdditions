@@ -21,9 +21,9 @@
     "item.modifier.SmeltDrops"
   ],
   "client": [
-    "entity.LoadAfterClientInit",
+    "LoadAfterClientInit",
     "entity.player.HeldItemRendererConsistency",
-    "entity.player.ZoomModdedBows",
+    "entity.player.FovZoomOnModdedStuff",
     "entity.player.gui.ChangeStatusBarRendering",
     "entity.player.gui.RenderItemFeedback",
     "entity.player.gui.RenderShaderOnTooltip",

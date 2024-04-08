@@ -2,6 +2,8 @@ package net.megal;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.megal.block.UBlocks;
+import net.megal.block.entity.UBlockEntities;
 import net.megal.item.UArrowItem;
 import net.megal.item.UItemGroups;
 import net.megal.item.UItems;
@@ -22,6 +24,9 @@ public class UAdd implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		UBlocks.loadStuff();
+		UBlockEntities.loadStuff();
+
 		UItems.itemTabs();
 
 		getArrowTypes();

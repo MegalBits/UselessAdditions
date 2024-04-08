@@ -1,29 +1,19 @@
 package net.megal.item;
 
-import net.megal.UAdd;
 import net.megal.UAddClient;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.font.TextRenderer;
-import net.minecraft.client.gui.DrawContext;
-import net.minecraft.client.gui.hud.InGameHud;
-import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtHelper;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
 
 public class WarpPearl extends Item {
     public WarpPearl(Settings settings) {
@@ -33,6 +23,18 @@ public class WarpPearl extends Item {
     @Override
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
         if (user instanceof ServerPlayerEntity serverPlayer) {
+            if (!readDimension(serverPlayer, stack)) {
+                if (world.isClient()) {
+                    UAddClient.setFeedback(stack, Text.translatable("uselessadditions.item.warp_pearl.wrong_dimension"), 60, Colors.LIGHT_RED);
+                }
+                return stack;
+            }
+            else if (!readPosition(stack).isWithinDistance(user.getBlockPos(), 2500)) {
+                if (world.isClient()) {
+                    UAddClient.setFeedback(stack, Text.translatable("uselessadditions.item.warp_pearl.too_far"), 60, Colors.LIGHT_RED);
+                }
+                return stack;
+            }
             stack.damage(1, user, p -> p.sendToolBreakStatus(user.getActiveHand()));
             serverPlayer.getItemCooldownManager().set(stack.getItem(), 600);
             teleportToPos(serverPlayer, stack);

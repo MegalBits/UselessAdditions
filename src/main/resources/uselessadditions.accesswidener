@@ -4,6 +4,7 @@ extendable class net/minecraft/enchantment/EnchantmentTarget
 
 accessible class net/minecraft/client/gui/hud/InGameHud$HeartType
 
+accessible method net/minecraft/client/gui/DrawContext tryDraw ()V
 accessible method net/minecraft/entity/projectile/ArrowEntity asItemStack ()Lnet/minecraft/item/ItemStack;
 accessible method net/minecraft/client/gui/hud/InGameHud$HeartType fromPlayerState (Lnet/minecraft/entity/player/PlayerEntity;)Lnet/minecraft/client/gui/hud/InGameHud$HeartType;
 
