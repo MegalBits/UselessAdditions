@@ -482,7 +482,7 @@ public class UAddDataGen implements DataGeneratorEntrypoint {
 				Ingredient[] ingredients = recipeInstance.ingredients;
 				Item output = recipeInstance.output;
 
-				ShapedRecipeJsonBuilder recipe = ShapedRecipeJsonBuilder.create(recipeInstance.category, output)
+				ShapedRecipeJsonBuilder recipe = ShapedRecipeJsonBuilder.create(recipeInstance.category, output, 4)
 						.pattern("#")
 						.pattern("/")
 						.pattern("f")
