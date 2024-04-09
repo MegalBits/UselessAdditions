@@ -15,8 +15,6 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 
-import java.util.Arrays;
-
 public class UItems {
     @ItemModel(ModelType.GENERATED)
     @Name
