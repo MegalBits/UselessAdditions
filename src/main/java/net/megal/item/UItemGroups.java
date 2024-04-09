@@ -17,15 +17,11 @@ import java.util.Arrays;
 
 public class UItemGroups {
     public static final RegistryKey<ItemGroup> MAIN = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(UAdd.ID, "uadd"));
-    public static final RegistryKey<ItemGroup> SHARDS = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(UAdd.ID, "shards"));
 
     static {
         registerGroup(MAIN, FabricItemGroup.builder()
                 .displayName(Text.translatable("uselessadditions.itemgroup.uadd"))
                 .icon(() -> new ItemStack(UItems.EXOTIC_INGOT)).build());
-        registerGroup(SHARDS, FabricItemGroup.builder()
-                .displayName(Text.translatable("uselessadditions.itemgroup.shards"))
-                .icon(() -> new ItemStack(UItems.BLAZE_SHARD)).build());
     }
 
     private static void registerGroup(RegistryKey<ItemGroup> key, ItemGroup builder) {

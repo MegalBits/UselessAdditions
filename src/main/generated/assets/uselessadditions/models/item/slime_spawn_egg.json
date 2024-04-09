@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "uselessadditions:item/slime_spawn_egg"
-  }
-}

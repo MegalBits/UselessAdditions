@@ -9,9 +9,6 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class UBlockEntities {
-    public static final BlockEntityType<InfuserEntity> INFUSER = register("infuser", FabricBlockEntityTypeBuilder.create(InfuserEntity::new, UBlocks.INFUSER).build());
-
-
     private static <T extends BlockEntityType<?>> T register(String id, T blockEntity) {
         return Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(UAdd.ID, id), blockEntity);
     }

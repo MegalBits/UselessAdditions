@@ -14,8 +14,6 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
 public class UBlocks {
-    public static final Infuser INFUSER = register("infuser", new Infuser(FabricBlockSettings.create().mapColor(MapColor.STONE_GRAY).instrument(Instrument.BASEDRUM).strength(7.5f, 1200.0f).requiresTool().sounds(BlockSoundGroup.STONE).requiresTool()), new FabricItemSettings());
-
     private static <T extends Block, Y extends Item.Settings> T register(String id, T block, Y settings) {
         registerBlockItem(id, block, settings);
         return Registry.register(Registries.BLOCK, new Identifier(UAdd.ID, id), block);
