@@ -8,6 +8,7 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ToolItem;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -27,7 +28,7 @@ public abstract class EnchantmentHelperMixin {
         ItemStack stack = user.getMainHandStack();
         List<String> modifiers = Modifiers.getModifiersFromStack(stack);
 
-        if (modifiers.contains(Modifiers.AUTO_SMELTING)) {
+        if (modifiers.contains(Modifiers.AUTO_SMELTING) && stack.getItem() instanceof ToolItem) {
             target.setFireTicks(60);
         }
     }

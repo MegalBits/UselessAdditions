@@ -45,6 +45,7 @@
 	"custom": {
 		"fabric-api:module-lifecycle": "stable",
 		"loom:injected_interfaces": {
+			"net.minecraft.class_1308": ["net/megal/entity/RangedMob"],
 			"net/minecraft/class_1792": ["net/megal/item/UItem"],
 			"net/minecraft/class_332": ["net/megal/gui/UDrawContext"]
 		}

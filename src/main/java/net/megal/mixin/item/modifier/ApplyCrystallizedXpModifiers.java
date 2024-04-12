@@ -12,6 +12,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.MiningToolItem;
+import net.minecraft.item.ToolItem;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -40,8 +41,10 @@ public abstract class ApplyCrystallizedXpModifiers {
         float f = 0;
 
         ItemStack stack = player.getMainHandStack();
-        if (Modifiers.getModifiersFromStack(stack).contains(Modifiers.CRYSTALLIZED_XP)) f += Math.min(player.experienceLevel, 100) * cxp_damageAmount;
-        dmg.set(dmg.get() + (f * h));
+        if (stack.getItem() instanceof ToolItem) {
+            if (Modifiers.getModifiersFromStack(stack).contains(Modifiers.CRYSTALLIZED_XP)) f += Math.min(player.experienceLevel, 100) * cxp_damageAmount;
+            dmg.set(dmg.get() + (f * h));
+        }
     }
 
     @ModifyVariable(

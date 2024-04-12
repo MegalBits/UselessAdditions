@@ -130,7 +130,7 @@ public class UItems {
     @ItemModel(ModelType.BOW)
     @Name
     @Recipe(type = RecipeType.BOW, ingredients = {@SimpleIngredient("minecraft:string"), @SimpleIngredient("#minecraft:stone_crafting_materials"), @SimpleIngredient("#c:rocks")})
-    public static final UBowItem STONE_BOW = registerItem("stone_bow", new UBowItem(ToolMaterials.STONE, 1.25f, 1.8f, 1.8f, new FabricItemSettings()));
+    public static final UBowItem STONE_BOW = registerItem("stone_bow", new UBowItem(ToolMaterials.STONE, 1.25f, 1.8f, 1.4f, new FabricItemSettings()));
     @ItemModel(ModelType.HANDHELD)
     @Name
     @Recipe(type = RecipeType.HAMMER, ingredients = {@SimpleIngredient("minecraft:stick"), @SimpleIngredient("minecraft:iron_ingot")})
@@ -142,7 +142,7 @@ public class UItems {
     @ItemModel(ModelType.BOW)
     @Name
     @Recipe(type = RecipeType.BOW, ingredients = {@SimpleIngredient("minecraft:string"), @SimpleIngredient("minecraft:iron_ingot"), @SimpleIngredient("minecraft:iron_nugget")})
-    public static final UBowItem IRON_BOW = registerItem("iron_bow", new UBowItem(ToolMaterials.IRON, 1.5f, 1.6f, 1.6f, new FabricItemSettings()));
+    public static final UBowItem IRON_BOW = registerItem("iron_bow", new UBowItem(ToolMaterials.IRON, 1.5f, 1.6f, 1.3f, new FabricItemSettings()));
     @ItemModel(ModelType.HANDHELD)
     @Name
     @Recipe(type = RecipeType.HAMMER, ingredients = {@SimpleIngredient("minecraft:stick"), @SimpleIngredient("minecraft:gold_ingot")})
@@ -154,7 +154,7 @@ public class UItems {
     @ItemModel(ModelType.BOW)
     @Name
     @Recipe(type = RecipeType.BOW, ingredients = {@SimpleIngredient("minecraft:string"), @SimpleIngredient("minecraft:gold_ingot"), @SimpleIngredient("minecraft:gold_nugget")})
-    public static final UBowItem GOLDEN_BOW = registerItem("golden_bow", new UBowItem(ToolMaterials.GOLD, 1f, 2f, 2f, new FabricItemSettings()));
+    public static final UBowItem GOLDEN_BOW = registerItem("golden_bow", new UBowItem(ToolMaterials.GOLD, 1f, 2f, 1.5f, new FabricItemSettings()));
     @ItemModel(ModelType.HANDHELD)
     @Name
     @Recipe(type = RecipeType.HAMMER, ingredients = {@SimpleIngredient("minecraft:stick"), @SimpleIngredient("minecraft:diamond")})
@@ -166,7 +166,7 @@ public class UItems {
     @ItemModel(ModelType.BOW)
     @Name
     @Recipe(type = RecipeType.BOW, ingredients = {@SimpleIngredient("minecraft:string"), @SimpleIngredient("minecraft:diamond"), @SimpleIngredient("uselessadditions:diamond_nugget")})
-    public static final UBowItem DIAMOND_BOW = registerItem("diamond_bow", new UBowItem(ToolMaterials.DIAMOND, 1.75f, 1.4f, 1.4f, new FabricItemSettings()));
+    public static final UBowItem DIAMOND_BOW = registerItem("diamond_bow", new UBowItem(ToolMaterials.DIAMOND, 1.75f, 1.4f, 1.2f, new FabricItemSettings()));
     @ItemModel(ModelType.HANDHELD)
     @Name
     @Recipe(type = RecipeType.SMITHING, ingredients = {@SimpleIngredient("minecraft:netherite_upgrade_smithing_template"), @SimpleIngredient("uselessadditions:diamond_hammer"), @SimpleIngredient("minecraft:netherite_ingot")})
@@ -178,7 +178,7 @@ public class UItems {
     @ItemModel(ModelType.BOW)
     @Name
     @Recipe(type = RecipeType.SMITHING, ingredients = {@SimpleIngredient("minecraft:netherite_upgrade_smithing_template"), @SimpleIngredient("uselessadditions:diamond_bow"), @SimpleIngredient("minecraft:netherite_ingot")})
-    public static final UBowItem NETHERITE_BOW = registerItem("netherite_bow", new UBowItem(ToolMaterials.NETHERITE, 2f, 1.2f, 1.2f, new FabricItemSettings().fireproof()));
+    public static final UBowItem NETHERITE_BOW = registerItem("netherite_bow", new UBowItem(ToolMaterials.NETHERITE, 2f, 1.2f, 1.1f, new FabricItemSettings().fireproof()));
     @ItemModel(ModelType.HANDHELD)
     @Name
     @Recipe(type = RecipeType.SWORD, ingredients = {@SimpleIngredient("minecraft:stick"), @SimpleIngredient("uselessadditions:magic_ingot")})
@@ -211,7 +211,7 @@ public class UItems {
     @ItemModel(ModelType.BOW)
     @Name
     @Recipe(type = RecipeType.BOW, ingredients = {@SimpleIngredient("minecraft:string"), @SimpleIngredient("uselessadditions:magic_ingot"), @SimpleIngredient("minecraft:amethyst_shard")})
-    public static final UBowItem AMETHYST_BOW = registerItem("amethyst_bow", new UBowItem(UToolMaterials.AMETHYST, 1.625f, 1.5f, 1.5f, new UItemSettings().modifiers(Modifiers.CRYSTALLIZED_XP)));
+    public static final UBowItem AMETHYST_BOW = registerItem("amethyst_bow", new UBowItem(UToolMaterials.AMETHYST, 1.625f, 1.5f, 1.25f, new UItemSettings().modifiers(Modifiers.CRYSTALLIZED_XP)));
     @ItemModel(ModelType.HANDHELD)
     @Name
     @Recipe(type = RecipeType.SWORD, ingredients = {@SimpleIngredient("minecraft:stick"), @SimpleIngredient("minecraft:emerald")})
@@ -243,7 +243,7 @@ public class UItems {
     @ItemModel(ModelType.BOW)
     @Name
     @Recipe(type = RecipeType.BOW, ingredients = {@SimpleIngredient("minecraft:string"), @SimpleIngredient("minecraft:emerald"), @SimpleIngredient("uselessadditions:emerald_nugget")})
-    public static final UBowItem EMERALD_BOW = registerItem("emerald_bow", new UBowItem(UToolMaterials.EMERALD, 1.75f, 1.4f, 1.4f, new FabricItemSettings()));
+    public static final UBowItem EMERALD_BOW = registerItem("emerald_bow", new UBowItem(UToolMaterials.EMERALD, 1.75f, 1.4f, 1.2f, new FabricItemSettings()));
     @ItemModel(ModelType.HANDHELD)
     @Name
     @Recipe(type = RecipeType.SWORD, ingredients = {@SimpleIngredient("uselessadditions:netherite_stick"), @SimpleIngredient("uselessadditions:blaze_metal")})
@@ -276,7 +276,7 @@ public class UItems {
     @ItemModel(ModelType.BOW)
     @Name
     @Recipe(type = RecipeType.BOW, ingredients = {@SimpleIngredient("uselessadditions:netherite_string"), @SimpleIngredient("uselessadditions:blaze_metal"), @SimpleIngredient("minecraft:blaze_powder")})
-    public static final UBowItem BLAZE_METAL_BOW = registerItem("blaze_metal_bow", new UBowItem(UToolMaterials.BLAZE_METAL, 1.875f, 1.3f, 1.2f, new UItemSettings().modifiers(Modifiers.AUTO_SMELTING)));
+    public static final UBowItem BLAZE_METAL_BOW = registerItem("blaze_metal_bow", new UBowItem(UToolMaterials.BLAZE_METAL, 1.875f, 1.3f, 1.15f, new UItemSettings().modifiers(Modifiers.AUTO_SMELTING)));
     @ItemModel(ModelType.HANDHELD)
     @Name
     public static final SwordItem DRAGON_SCALE_SWORD = registerItem("dragon_scale_sword", new SwordItem(UToolMaterials.DRAGON_SCALE, 3, -2.4F, new FabricItemSettings().fireproof()));
@@ -300,7 +300,7 @@ public class UItems {
     public static final ScytheItem DRAGON_SCALE_SCYTHE = registerItem("dragon_scale_scythe", new ScytheItem(UToolMaterials.DRAGON_SCALE, 4.5F, -2.8F, new FabricItemSettings().fireproof()));
     @ItemModel(ModelType.BOW)
     @Name
-    public static final UBowItem DRAGON_SCALE_BOW = registerItem("dragon_scale_bow", new UBowItem(UToolMaterials.DRAGON_SCALE, 2.125f, 1.1f, 1.1f, new FabricItemSettings().fireproof()));
+    public static final UBowItem DRAGON_SCALE_BOW = registerItem("dragon_scale_bow", new UBowItem(UToolMaterials.DRAGON_SCALE, 2.125f, 1.1f, 1.05f, new FabricItemSettings().fireproof()));
     @ItemModel(ModelType.HANDHELD)
     @Name
     @Recipe(type = RecipeType.SWORD, ingredients = {@SimpleIngredient("uselessadditions:netherite_stick"), @SimpleIngredient("uselessadditions:ancient_alloy")})
@@ -332,7 +332,7 @@ public class UItems {
     @ItemModel(ModelType.BOW)
     @Name
     @Recipe(type = RecipeType.BOW, ingredients = {@SimpleIngredient("uselessadditions:netherite_string"), @SimpleIngredient("uselessadditions:ancient_alloy"), @SimpleIngredient("uselessadditions:ancient_alloy_nugget")})
-    public static final UBowItem ANCIENT_BOW = registerItem("ancient_bow", new UBowItem(UToolMaterials.ANCIENT, 2.5f, 0.8f, 0.8f, new FabricItemSettings().fireproof()));
+    public static final UBowItem ANCIENT_BOW = registerItem("ancient_bow", new UBowItem(UToolMaterials.ANCIENT, 2.5f, 0.8f, 0.9f, new FabricItemSettings().fireproof()));
     @ItemModel(ModelType.GENERATED)
     @Name
     @Recipe(type = RecipeType.ARROW, ingredients = {@SimpleIngredient("minecraft:stick"), @SimpleIngredient("minecraft:iron_ingot"), @SimpleIngredient("minecraft:feather")})

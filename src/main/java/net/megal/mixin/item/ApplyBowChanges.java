@@ -55,10 +55,10 @@ public abstract class ApplyBowChanges {
     private float getCustomUseTime(float pullProgress, @Local(ordinal = 1) int i) {
         BowItem bow = (BowItem)(Object)this;
         if (bow instanceof UBowItem uBow) {
-            pullProgress = getUseTime(i, uBow.useTime);
+            pullProgress = UBowItem.getUseTime(i, uBow.useTime);
         }
         else if (bow == Items.BOW) {
-            pullProgress = getUseTime(i, 2f);
+            pullProgress = UBowItem.getUseTime(i, UBowItem.WoodenBowUseTime);
         }
 
         return pullProgress;
@@ -76,14 +76,4 @@ public abstract class ApplyBowChanges {
         if (Modifiers.getModifiersFromStack(stack).contains(Modifiers.AUTO_SMELTING)) projectile.setOnFireFor(100);
     }
 
-    @Unique
-    private static float getUseTime(int useTicks, float useTime) {
-        float f = (float)useTicks / (useTime * 20f);
-        f = (f * f + f * 2.0f) / 3.0f;
-        if (f > 1.0f) {
-            f = 1.0f;
-        }
-
-        return f;
-    }
 }

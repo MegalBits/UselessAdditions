@@ -3,9 +3,12 @@ package net.megal.mixin.entity;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.megal.UAdd;
+import net.megal.entity.RangedMob;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.mob.AbstractSkeletonEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.network.PacketByteBuf;
+import net.minecraft.registry.Registries;
 import net.minecraft.server.network.EntityTrackerEntry;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
@@ -31,6 +34,13 @@ public abstract class SendExtraDataToClient {
             buf.writeInt(projectile.getId());
 
             ServerPlayNetworking.send(player, new Identifier(UAdd.ID, "sync_projectile_item"), buf);
+        }
+        if (entity instanceof AbstractSkeletonEntity abstractSkeleton) {
+            PacketByteBuf buf = PacketByteBufs.create();
+            buf.writeString(Registries.ITEM.getId(((RangedMob)abstractSkeleton).UAdd$getProjectile()).toString());
+            buf.writeInt(abstractSkeleton.getId());
+
+            ServerPlayNetworking.send(player, new Identifier(UAdd.ID, "sync_mob_projectile"), buf);
         }
     }
 }
