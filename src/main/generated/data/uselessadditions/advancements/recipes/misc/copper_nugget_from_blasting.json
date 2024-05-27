@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "uselessadditions:raw_copper_nugget"
-            ]
+            "items": "uselessadditions:raw_copper_nugget"
           }
         ]
       },

@@ -1,14 +1,12 @@
 accessWidener v2 named
 
-extendable class net/minecraft/enchantment/EnchantmentTarget
-
 accessible class net/minecraft/client/gui/hud/InGameHud$HeartType
-
-accessible method net/minecraft/client/gui/DrawContext tryDraw ()V
-accessible method net/minecraft/entity/projectile/ArrowEntity asItemStack ()Lnet/minecraft/item/ItemStack;
 accessible method net/minecraft/client/gui/hud/InGameHud$HeartType fromPlayerState (Lnet/minecraft/entity/player/PlayerEntity;)Lnet/minecraft/client/gui/hud/InGameHud$HeartType;
 
-accessible field net/minecraft/item/Item ATTACK_DAMAGE_MODIFIER_ID Ljava/util/UUID;
-accessible field net/minecraft/item/Item ATTACK_SPEED_MODIFIER_ID Ljava/util/UUID;
-accessible field net/minecraft/entity/projectile/PersistentProjectileEntity stack Lnet/minecraft/item/ItemStack;
-accessible field net/minecraft/screen/EnchantmentScreenHandler inventory Lnet/minecraft/inventory/Inventory;
+accessible method net/minecraft/entity/mob/AbstractSkeletonEntity getStepSound ()Lnet/minecraft/sound/SoundEvent;
+
+accessible method net/minecraft/block/SpreadableBlock canSurvive (Lnet/minecraft/block/BlockState;Lnet/minecraft/world/WorldView;Lnet/minecraft/util/math/BlockPos;)Z
+accessible method net/minecraft/block/SpreadableBlock canSpread (Lnet/minecraft/block/BlockState;Lnet/minecraft/world/WorldView;Lnet/minecraft/util/math/BlockPos;)Z
+accessible field net/minecraft/entity/TntEntity causingEntity Lnet/minecraft/entity/LivingEntity;
+accessible field net/minecraft/entity/TntEntity FUSE Lnet/minecraft/entity/data/TrackedData;
+accessible field net/minecraft/entity/TntEntity BLOCK_STATE Lnet/minecraft/entity/data/TrackedData;

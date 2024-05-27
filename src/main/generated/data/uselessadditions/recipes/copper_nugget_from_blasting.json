@@ -1,10 +1,12 @@
 {
   "type": "minecraft:blasting",
   "category": "misc",
-  "cookingtime": 50,
-  "experience": 0.1,
+  "cookingtime": 15,
+  "experience": 0.075,
   "ingredient": {
     "item": "uselessadditions:raw_copper_nugget"
   },
-  "result": "uselessadditions:copper_nugget"
+  "result": {
+    "id": "uselessadditions:copper_nugget"
+  }
 }

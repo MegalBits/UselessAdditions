@@ -1,20 +1,21 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "category": "equipment",
   "key": {
-    "#": {
-      "item": "uselessadditions:magic_ingot"
-    },
-    "/": {
+    "0": {
       "item": "minecraft:stick"
+    },
+    "1": {
+      "item": "uselessadditions:amethyst_alloy"
     }
   },
   "pattern": [
-    "##",
-    "#/",
-    " /"
+    "11",
+    "10",
+    " 0"
   ],
   "result": {
-    "item": "uselessadditions:amethyst_axe"
+    "count": 1,
+    "id": "uselessadditions:amethyst_axe"
   }
 }

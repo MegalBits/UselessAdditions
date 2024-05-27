@@ -1,55 +1,72 @@
 package net.megal.item;
 
+import com.google.common.base.Suppliers;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
+import net.megal.UAdd;
+import net.minecraft.block.Block;
+import net.minecraft.item.ArmorMaterials;
 import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.util.Lazy;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.registry.tag.TagKey;
+import net.minecraft.util.Identifier;
 
+import java.util.Objects;
 import java.util.function.Supplier;
 
 public enum UToolMaterials implements ToolMaterial {
-    AMETHYST(2, 832, 11.0F, 2.5F, 52, () -> Ingredient.ofItems(UItems.MAGIC_INGOT)),
-    EMERALD(2, 625, 8.5F, 3.0F, 21, () -> Ingredient.ofItems(Items.EMERALD)),
-    BLAZE_METAL(3, 1920, 8.5f, 3.5f, 15, () -> Ingredient.ofItems(UItems.BLAZE_METAL)),
-    DRAGON_SCALE(4, 5760, 10f, 4.5f, 7, () -> Ingredient.ofItems(UItems.DRAGON_SCALE)),
-    ANCIENT(4, 4608, 11f, 6f, 2, () -> Ingredient.ofItems(UItems.ANCIENT_ALLOY));
-    private final int miningLevel;
+    AMETHYST(tag("amethyst"), 712, 7.0F, 2.5F, 20, () -> Ingredient.ofItems(UItems.AMETHYST_ALLOY));
+
+    private final TagKey<Block> inverseTag;
     private final int itemDurability;
     private final float miningSpeed;
     private final float attackDamage;
     private final int enchantability;
-    private final Lazy<Ingredient> repairIngredient;
+    private final Supplier<Ingredient> repairIngredient;
 
-    UToolMaterials(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier repairIngredient) {
-        this.miningLevel = miningLevel;
+    UToolMaterials(final TagKey<Block> inverseTag, final int itemDurability, final float miningSpeed, final float attackDamage, final int enchantability, final Supplier<Ingredient> repairIngredient) {
+        this.inverseTag = inverseTag;
         this.itemDurability = itemDurability;
         this.miningSpeed = miningSpeed;
         this.attackDamage = attackDamage;
         this.enchantability = enchantability;
-        this.repairIngredient = new Lazy(repairIngredient);
+        Objects.requireNonNull(repairIngredient);
+        this.repairIngredient = Suppliers.memoize(repairIngredient::get);
     }
 
+    @Override
     public int getDurability() {
-        return this.itemDurability;
+        return itemDurability;
     }
 
+    @Override
     public float getMiningSpeedMultiplier() {
-        return this.miningSpeed;
+        return miningSpeed;
     }
 
+    @Override
     public float getAttackDamage() {
-        return this.attackDamage;
+        return attackDamage;
     }
 
-    public int getMiningLevel() {
-        return this.miningLevel;
+    @Override
+    public TagKey<Block> getInverseTag() {
+        return inverseTag;
     }
 
+    @Override
     public int getEnchantability() {
-        return this.enchantability;
+        return enchantability;
     }
 
+    @Override
     public Ingredient getRepairIngredient() {
-        return this.repairIngredient.get();
+        return repairIngredient.get();
+    }
+
+    private static TagKey<Block> tag(String id) {
+        return TagKey.of(RegistryKeys.BLOCK, new Identifier(UAdd.ID, id + "_incorrect_tool"));
     }
 }

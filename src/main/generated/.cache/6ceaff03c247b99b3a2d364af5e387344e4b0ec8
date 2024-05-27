@@ -1,2 +1,5 @@
-// 1.20.4	2024-04-09T21:24:43.6236686	Useless Additions/Tags for minecraft:item
-9f291c9c9e4694230548b4a2a627c5c779386593 data\minecraft\tags\items\arrows.json
+// 1.20.6	2024-05-26T17:04:48.5960007	Useless Additions/Tags for minecraft:item
+3974229427618834566400f7973035c642a00901 data\minecraft\tags\items\swords.json
+70e41d705ed82374110d584cba49ad5f1388c1dc data\minecraft\tags\items\axes.json
+0cb995b7067a909b4f6020e518ae80c9405294bc data\minecraft\tags\items\shovels.json
+4ec91346be9cd5b049602cf398850be0f89620aa data\minecraft\tags\items\pickaxes.json

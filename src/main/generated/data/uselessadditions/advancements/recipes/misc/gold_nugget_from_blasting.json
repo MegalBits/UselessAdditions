@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "uselessadditions:raw_gold_nugget"
-            ]
+            "items": "uselessadditions:raw_gold_nugget"
           }
         ]
       },

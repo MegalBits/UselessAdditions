@@ -23,10 +23,7 @@
 			"net.megal.UAddClient"
 		],
 		"fabric-datagen": [
-          "net.megal.UAddDataGen"
-		],
-		"rei_client": [
-			"net.megal.plugins.rei.UAddReiClient"
+			"net.megal.UAddDataGen"
 		]
 	},
 	"accessWidener" : "uselessadditions.accesswidener",
@@ -34,20 +31,18 @@
 		"uselessadditions.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.15.7",
-		"minecraft": "~1.20.4",
-		"java": ">=17",
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.20.6",
+		"java": ">=21",
 		"fabric-api": "*"
 	},
 	"suggests": {
-		"roughlyenoughitems": "*"
+		"another-mod": "*"
 	},
 	"custom": {
 		"fabric-api:module-lifecycle": "stable",
 		"loom:injected_interfaces": {
-			"net.minecraft.class_1308": ["net/megal/entity/RangedMob"],
-			"net/minecraft/class_1792": ["net/megal/item/UItem"],
-			"net/minecraft/class_332": ["net/megal/gui/UDrawContext"]
+			"net.minecraft.class_1657": ["net/megal/player/PlayerNbt"]
 		}
 	}
 }

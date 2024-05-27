@@ -3,51 +3,45 @@ package net.megal;
 import net.fabricmc.api.ModInitializer;
 
 import net.megal.block.UBlocks;
-import net.megal.block.entity.UBlockEntities;
-import net.megal.item.UArrowItem;
-import net.megal.item.UItemGroups;
+import net.megal.entity.UEntities;
 import net.megal.item.UItems;
-import net.minecraft.item.Item;
-import net.minecraft.item.Items;
+import net.megal.loot.ULootTableModifications;
+import net.megal.network.UNetworking;
+import net.megal.particle.UParticles;
+import net.megal.sound.USounds;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.List;
-
 public class UAdd implements ModInitializer {
-	public static final List<Item> arrowTypes = new ArrayList<>();
-
 	public static final String ID = "uselessadditions";
-    public static final Logger LOGGER = LoggerFactory.getLogger(ID);
+    public static final Logger LOG = LoggerFactory.getLogger("Useless Additions");
 
 	@Override
 	public void onInitialize() {
+		USounds.loadStuff();
 		UBlocks.loadStuff();
-		UBlockEntities.loadStuff();
+		UItems.fillItemGroups();
+		UEntities.registerSpawning();
+		UNetworking.registerPayloads();
+		UNetworking.registerEvents();
+		ULootTableModifications.modify();
+		UParticles.loadStuff();
 
-		UItems.itemTabs();
-
-		getArrowTypes();
-
-		UItemGroups.groupLoad();
-	}
-
-	private void getArrowTypes() {
-		arrowTypes.add(Items.ARROW);
-		arrowTypes.add(Items.SPECTRAL_ARROW);
-
-		Field[] fields = UItems.class.getDeclaredFields();
-		for (Field field : fields) {
-			Object object;
-			try {
-				object = field.get(UItems.class);
-			} catch (IllegalAccessException e) {
-				throw new RuntimeException(e);
-			}
-
-			if (object instanceof UArrowItem item) arrowTypes.add(item);
-		}
+		LOG.info("                                        ");
+		LOG.info("           *@/                          ");
+		LOG.info("          @@@@@,        *@*             ");
+		LOG.info("         /@@(/@@*     &@@@@@*           ");
+		LOG.info("         @@@  *@@#   .@@, *@@/          ");
+		LOG.info("        /@@*    @@@  /@@.  (@@,         ");
+		LOG.info("        @@@      @@@.#@@    &@@         ");
+		LOG.info("       (@@/       ,@#&(      @@@        ");
+		LOG.info("       %@@      #   .   #    .@@#       ");
+		LOG.info("       @@%      #       #     ,@@,      ");
+		LOG.info("      (@@   ///     v    ///   #@@      ");
+		LOG.info("      &@@#.                   .%@@      ");
+		LOG.info("         ,&@@@#.       ,/&@@@@@%,       ");
+		LOG.info("              .%@@@@@@&(.               ");
+		LOG.info("                                        ");
+		LOG.info("        Useless Additions Loaded        ");
 	}
 }

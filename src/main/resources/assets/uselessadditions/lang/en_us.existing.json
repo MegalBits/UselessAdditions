@@ -1,21 +1,4 @@
 {
-  "uselessadditions.item.warp_pearl.too_far": "Too far away, position must be less than 2500 blocks",
-  "uselessadditions.item.warp_pearl.wrong_dimension": "Cannot warp, position must be within the same dimension",
-
-  "uselessadditions.itemgroup.uadd": "Useless Additions",
-  "uselessadditions.itemgroup.shards": "Mob Shards",
-
-  "uselessadditions.container.infuser": "Infuser",
-
-  "uselessadditions.modifiers.prefixes.modified": "[Modified]",
-  "uselessadditions.modifiers.prefixes.builtin": "[Built In]",
-  "uselessadditions.modifiers.auto_smelting": "Auto Smelting",
-  "uselessadditions.modifiers.crystallized_xp": "Crystallized Xp",
-  "uselessadditions.modifiers.crystallized_xp.providing": "Levels Providing",
-  "uselessadditions.modifiers.crystallized_xp.damage": "Attack Damage",
-  "uselessadditions.modifiers.crystallized_xp.mining": "Mining Speed",
-  "uselessadditions.modifiers.fireproof": "Fireproof",
-
-  "uselessadditions.rei.enchantment_incompatibility": "Incompatible Enchantments",
-  "uselessadditions.rei.enchanting": "Enchanting"
+  "uselessadditions.itemgroup.main": "UAdd",
+  "item.uselessadditions.health_increase.increase": "Increases max health by"
 }

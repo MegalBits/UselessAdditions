@@ -1,10 +1,12 @@
 {
   "type": "minecraft:blasting",
   "category": "misc",
-  "cookingtime": 50,
-  "experience": 0.1,
+  "cookingtime": 15,
+  "experience": 0.075,
   "ingredient": {
     "item": "uselessadditions:raw_gold_nugget"
   },
-  "result": "minecraft:gold_nugget"
+  "result": {
+    "id": "minecraft:gold_nugget"
+  }
 }

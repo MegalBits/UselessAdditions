@@ -2,10 +2,9 @@ package net.megal.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.megal.UAdd;
-import net.minecraft.item.Item;
+import net.megal.block.UBlocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -13,20 +12,19 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
-import java.util.Arrays;
-
 public class UItemGroups {
-    public static final RegistryKey<ItemGroup> MAIN = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(UAdd.ID, "uadd"));
+    public static final RegistryKey<ItemGroup> MAIN = register(createKey("main"), FabricItemGroup.builder()
+            .displayName(Text.translatable("uselessadditions.itemgroup.main"))
+            .icon(() -> new ItemStack(UItems.AMETHYST_CORE))
+            .build()
+    );
 
-    static {
-        registerGroup(MAIN, FabricItemGroup.builder()
-                .displayName(Text.translatable("uselessadditions.itemgroup.uadd"))
-                .icon(() -> new ItemStack(UItems.EXOTIC_INGOT)).build());
+    public static RegistryKey<ItemGroup> createKey(String id) {
+        return RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(UAdd.ID, id));
     }
 
-    private static void registerGroup(RegistryKey<ItemGroup> key, ItemGroup builder) {
-        Registry.register(Registries.ITEM_GROUP, key, builder);
+    public static RegistryKey<ItemGroup> register(RegistryKey<ItemGroup> registryKey, ItemGroup itemGroup) {
+        Registry.register(Registries.ITEM_GROUP, registryKey, itemGroup);
+        return registryKey;
     }
-
-    public static void groupLoad() {}
 }
