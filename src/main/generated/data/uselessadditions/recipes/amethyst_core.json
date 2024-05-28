@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "0": {
+      "item": "uselessadditions:amethyst_alloy"
+    },
+    "1": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "2": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "pattern": [
+    "010",
+    "120",
+    "001"
+  ],
+  "result": {
+    "count": 1,
+    "id": "uselessadditions:amethyst_core"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "0": {
+      "item": "uselessadditions:amethyst_alloy"
+    },
+    "1": {
+      "item": "uselessadditions:amethyst_alloy_nugget"
+    },
+    "2": {
+      "item": "uselessadditions:amethyst_core"
+    }
+  },
+  "pattern": [
+    "010",
+    "020",
+    " 0 "
+  ],
+  "result": {
+    "count": 1,
+    "id": "uselessadditions:amethyst_heart"
+  }
+}

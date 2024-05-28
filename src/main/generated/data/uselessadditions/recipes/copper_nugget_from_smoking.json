@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 30,
+  "experience": 0.075,
+  "ingredient": {
+    "item": "uselessadditions:raw_copper_nugget"
+  },
+  "result": {
+    "id": "uselessadditions:copper_nugget"
+  }
+}

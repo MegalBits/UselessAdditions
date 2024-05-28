@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_emerald_nugget": {
+      "conditions": {
+        "items": [
+          {
+            "items": "uselessadditions:emerald_nugget"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:emerald_packing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_emerald_nugget"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:emerald_packing"
+    ]
+  }
+}

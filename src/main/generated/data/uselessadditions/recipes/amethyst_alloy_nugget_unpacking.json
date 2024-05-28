@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "uselessadditions:amethyst_alloy"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "uselessadditions:amethyst_alloy_nugget"
+  }
+}

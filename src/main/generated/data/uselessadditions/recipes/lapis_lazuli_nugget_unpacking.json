@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:lapis_lazuli"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "uselessadditions:lapis_lazuli_nugget"
+  }
+}
